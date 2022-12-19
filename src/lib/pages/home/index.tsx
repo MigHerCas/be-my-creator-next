@@ -8,12 +8,14 @@ const Home = () => {
   const videoJsOptions: VideoJsPlayerOptions = {
     autoplay: true,
     muted: true,
-    controls: true,
+    loop: true,
+    controls: false,
     preload: "auto",
     bigPlayButton: false,
     responsive: true,
     fluid: true,
     aspectRatio: "9:16",
+    poster: "/images/poster.jpg",
     sources: [
       {
         src: "/videos/trend.mp4",
