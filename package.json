@@ -1,8 +1,8 @@
 {
-  "name": "nextarter-chakra",
+  "name": "be-my-creator",
   "version": "0.1.0",
   "private": true,
-  "author": "sozonome",
+  "author": "MigHerCas",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
