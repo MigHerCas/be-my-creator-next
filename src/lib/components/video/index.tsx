@@ -1,4 +1,5 @@
-import * as React from "react";
+import type { FC } from "react";
+import { useEffect, useRef } from "react";
 import type { VideoJsPlayerOptions, VideoJsPlayer } from "video.js";
 import videojs from "video.js";
 
@@ -19,18 +20,17 @@ const initialOptions: VideoJsPlayerOptions = {
   },
 };
 
-const VideoPlayer: React.FC<Props> = ({ options }) => {
-  const videoNode = React.useRef<HTMLVideoElement>(null);
-  const player = React.useRef<VideoJsPlayer | null>(null);
+const VideoPlayer: FC<Props> = ({ options }) => {
+  const videoNode = useRef<HTMLVideoElement>(null);
+  const player = useRef<VideoJsPlayer | null>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!videoNode.current) return () => {};
 
     player.current = videojs(videoNode.current, {
       ...initialOptions,
       ...options,
     }).ready(() => {
-      // eslint-disable-next-line no-console
       console.log("Video player is ready");
     });
     return () => {
