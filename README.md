@@ -13,7 +13,7 @@
 
 - ✔️ toolings for linting, formatting, and conventions configured
 
-  `eslint`, `prettier`, `husky`, `lint-staged`, `commitlint`, `commitizen`, and `standard-version`
+  `eslint`, `prettier`, `lint-staged`, `commitlint`, `commitizen`, and `standard-version`
 
 - 📱 PWA-ready
 
