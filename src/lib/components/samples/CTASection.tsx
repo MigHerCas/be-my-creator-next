@@ -4,7 +4,6 @@ import { AiFillGithub } from "react-icons/ai";
 const repoLink = "https://github.com/sozonome/nextarter-chakra";
 
 const CTASection = () => {
-  console.log("hey");
   return (
     <Box textAlign="center">
       <Box transform="scale(0.85)">
