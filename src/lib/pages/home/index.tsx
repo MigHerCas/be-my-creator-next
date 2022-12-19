@@ -1,4 +1,4 @@
-import { Flex } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 import type { VideoJsPlayerOptions } from "video.js";
 
@@ -6,28 +6,35 @@ import VideoPlayer from "lib/components/video";
 
 const Home = () => {
   const videoJsOptions: VideoJsPlayerOptions = {
+    autoplay: true,
+    muted: true,
+    controls: true,
+    preload: "auto",
+    bigPlayButton: false,
+    responsive: true,
+    fluid: true,
+    aspectRatio: "9:16",
     sources: [
       {
-        src: "//vjs.zencdn.net/v/oceans.mp4",
+        src: "/videos/trend.mp4",
         type: "video/mp4",
       },
     ],
   };
 
   return (
-    <Flex
-      direction="column"
-      alignItems="center"
-      justifyContent="center"
-      minHeight="70vh"
-      gap={4}
-      mb={8}
-      w="full"
+    <Box
+      w={220}
+      minH={380}
+      border="4px"
+      borderColor="white"
+      borderRadius="25"
+      overflow="hidden"
     >
       <NextSeo title="Home" />
 
       <VideoPlayer options={videoJsOptions} />
-    </Flex>
+    </Box>
   );
 };
 
