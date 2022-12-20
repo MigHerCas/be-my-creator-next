@@ -4,10 +4,20 @@ import { breakpoints } from "./breakpoints";
 import { colors } from "./colors";
 import { components } from "./components";
 import { config } from "./config";
-import { typography } from "./typography";
+import {
+  fonts,
+  fontSizes,
+  fontWeights,
+  lineHeights,
+  letterSpacings,
+} from "./typography";
 
 const customTheme = extendTheme({
-  typography,
+  fonts,
+  fontSizes,
+  fontWeights,
+  lineHeights,
+  letterSpacings,
   colors,
   config,
   components,
