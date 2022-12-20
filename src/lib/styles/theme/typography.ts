@@ -1,11 +1,11 @@
 import type { DeepPartial, Theme } from "@chakra-ui/react";
 
-const fonts: DeepPartial<Theme["fonts"]> = {
+export const fonts: DeepPartial<Theme["fonts"]> = {
   body: "Inter, sans-serif",
-  heading: "Hauora, serif",
+  heading: "Hauora, sans-serif",
 };
 
-const fontSizes: DeepPartial<Theme["fontSizes"]> = {
+export const fontSizes: DeepPartial<Theme["fontSizes"]> = {
   xs: "0.75rem",
   sm: "0.875rem",
   md: "1rem",
@@ -21,7 +21,7 @@ const fontSizes: DeepPartial<Theme["fontSizes"]> = {
   "9xl": "8rem",
 };
 
-const fontWeights: DeepPartial<Theme["fontWeights"]> = {
+export const fontWeights: DeepPartial<Theme["fontWeights"]> = {
   hairline: 100,
   thin: 200,
   light: 300,
@@ -33,7 +33,7 @@ const fontWeights: DeepPartial<Theme["fontWeights"]> = {
   black: 900,
 };
 
-const lineHeights: DeepPartial<Theme["lineHeights"]> = {
+export const lineHeights: DeepPartial<Theme["lineHeights"]> = {
   normal: "normal",
   none: 1,
   shorter: 1.25,
@@ -51,19 +51,11 @@ const lineHeights: DeepPartial<Theme["lineHeights"]> = {
   "10": "2.5rem",
 };
 
-const letterSpacings: DeepPartial<Theme["letterSpacings"]> = {
+export const letterSpacings: DeepPartial<Theme["letterSpacings"]> = {
   tighter: "-0.05em",
   tight: "-0.025em",
   normal: "0",
   wide: "0.025em",
   wider: "0.05em",
   widest: "0.1em",
-};
-
-export const typography = {
-  fonts,
-  fontSizes,
-  fontWeights,
-  lineHeights,
-  letterSpacings,
 };
