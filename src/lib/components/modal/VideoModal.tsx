@@ -12,7 +12,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const Modal: FC<Props> = ({ children }) => {
+const VideoModal: FC<Props> = ({ children }) => {
   const [showDialog, setShowDialog] = useState(false);
   const open = () => setShowDialog(true);
   const close = () => setShowDialog(false);
@@ -41,4 +41,4 @@ const Modal: FC<Props> = ({ children }) => {
   );
 };
 
-export default Modal;
+export default VideoModal;
