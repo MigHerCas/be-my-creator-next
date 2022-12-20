@@ -1,5 +1,5 @@
-import { Button } from "./button";
+import { Heading } from "./heading";
 
 export const components = {
-  Button,
+  Heading,
 };
