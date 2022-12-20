@@ -7,7 +7,11 @@ import VideoPlayer from "lib/components/video/VideoPlayer";
 const Home = () => {
   return (
     <Container>
-      <Heading as="h1">Be My Creator!</Heading>
+      <Heading size="xl">Be My Creator!</Heading>
+      <Heading size="lg">Be My Creator!</Heading>
+      <Heading size="md">Be My Creator!</Heading>
+      <Heading size="sm">Be My Creator!</Heading>
+      <Heading size="xs">Be My Creator!</Heading>
 
       <Flex>
         <NextSeo title="Home" />
