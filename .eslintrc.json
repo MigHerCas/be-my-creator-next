@@ -1,4 +1,8 @@
 {
+  "rules": {
+    "jsx-a11y/media-has-caption": "off",
+    "no-console": "off"
+  },
   "extends": [
     "sznm/react",
     "plugin:react/jsx-runtime",
