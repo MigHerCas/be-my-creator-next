@@ -14,6 +14,8 @@ const VideoPlayer: FC<Props> = ({ source = "/videos/trend.mp4" }) => {
     controls: true,
     preload: "auto",
     poster: "/images/poster.jpg",
+    playsinline: "true",
+    controlsList: "nodownload",
   } as VideoHTMLAttributes<HTMLVideoElement>;
 
   return (
