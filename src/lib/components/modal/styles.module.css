@@ -1,0 +1,43 @@
+.overlay {
+  display: flex;
+  place-content: center;
+  background: rgba(17, 19, 20, 0.8);
+}
+
+.content {
+  position: relative;
+  width: auto;
+  padding: 0;
+  max-width: 406px;
+  margin: auto;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  color: unset;
+  background-color: transparent;
+
+  isolation: isolate;
+}
+
+.closeButton {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  font-size: 30px;
+  font-weight: 300;
+  z-index: 1;
+}
+
+.footerContent {
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: black;
+}
+
+.footerContent > a {
+  background-color: lightskyblue;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
