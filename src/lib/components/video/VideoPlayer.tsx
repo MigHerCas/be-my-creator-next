@@ -1,5 +1,7 @@
 import type { FC, VideoHTMLAttributes } from "react";
 
+import styles from "./styles.module.css";
+
 interface Props {
   source?: string;
 }
@@ -10,13 +12,12 @@ const VideoPlayer: FC<Props> = ({ source = "/videos/trend.mp4" }) => {
     muted: true,
     loop: true,
     controls: true,
-    height: "100%",
     preload: "auto",
     poster: "/images/poster.jpg",
   } as VideoHTMLAttributes<HTMLVideoElement>;
 
   return (
-    <video {...options}>
+    <video {...options} className={styles.video}>
       <source src={source} type="video/mp4" />
     </video>
   );
