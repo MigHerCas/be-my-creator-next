@@ -30,11 +30,23 @@ const VideoModal: FC<Props> = ({ children }) => {
 
       <DialogOverlay className={styles.overlay} {...dialogOptions}>
         <DialogContent className={styles.content}>
-          <button type="button" className={styles.closeButton} onClick={close}>
-            <VisuallyHidden>Close</VisuallyHidden>
-            <span aria-hidden>×</span>
-          </button>
+          <div className={styles.headerContent}>
+            <button
+              type="button"
+              className={styles.closeButton}
+              onClick={close}
+            >
+              <VisuallyHidden>Close</VisuallyHidden>
+              <span aria-hidden>×</span>
+            </button>
+          </div>
+
           {children}
+
+          <div className={styles.footerContent}>
+            <p>Like this?</p>
+            <a>Try this out</a>
+          </div>
         </DialogContent>
       </DialogOverlay>
     </div>
