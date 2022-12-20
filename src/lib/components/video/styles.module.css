@@ -1,0 +1,6 @@
+.video {
+  height: calc(100vh - 200px);
+  max-height: 720px;
+  width: 100%;
+  object-fit: cover;
+}

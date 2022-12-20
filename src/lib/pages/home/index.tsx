@@ -1,23 +1,16 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 
+import VideoModal from "lib/components/modal/VideoModal";
 import VideoPlayer from "lib/components/video/VideoPlayer";
 
 const Home = () => {
   return (
     <Flex>
       <NextSeo title="Home" />
-
-      <Box
-        w={220}
-        minH={380}
-        border="4px"
-        borderColor="white"
-        borderRadius="25"
-        overflow="hidden"
-      >
+      <VideoModal>
         <VideoPlayer />
-      </Box>
+      </VideoModal>
     </Flex>
   );
 };
