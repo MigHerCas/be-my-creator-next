@@ -66,10 +66,17 @@ const VideoModal: FC<Props> = ({ children }) => {
 
           {children}
 
-          <div className={styles.footerContent}>
+          <Stack
+            direction="row"
+            alignItems="center"
+            justifyContent="space-between"
+            backgroundColor="white"
+            padding={3}
+            className={styles.footerContent}
+          >
             <p>Like this?</p>
             <a>Try this out</a>
-          </div>
+          </Stack>
         </DialogContent>
       </DialogOverlay>
     </div>
