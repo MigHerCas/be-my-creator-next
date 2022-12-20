@@ -21,8 +21,27 @@
 .closeButton {
   position: absolute;
   top: 0;
-  right: 20px;
+  right: 15px;
   font-size: 30px;
   font-weight: 300;
   z-index: 1;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 20px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: black;
+}
+
+.footerContent > a {
+  background-color: lightskyblue;
+  padding: 4px 8px;
+  border-radius: 8px;
 }
