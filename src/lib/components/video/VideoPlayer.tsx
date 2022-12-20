@@ -18,9 +18,13 @@ const VideoPlayer: FC<Props> = ({ source = "/videos/trend.mp4" }) => {
     controlsList: "nodownload",
   } as VideoHTMLAttributes<HTMLVideoElement>;
 
+  const notSupportedText =
+    "Sorry, your browser doesn't support embedded videos.";
+
   return (
     <video {...options} className={styles.video}>
       <source src={source} type="video/mp4" />
+      {notSupportedText}
     </video>
   );
 };
