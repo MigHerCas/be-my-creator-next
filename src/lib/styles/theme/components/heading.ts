@@ -7,29 +7,34 @@ export const Heading = defineStyleConfig({
   },
   sizes: {
     xs: {
-      fontSize: "1.5em",
+      fontSize: "1.5rem",
       lineHeight: "1.4",
       fontWeight: "600",
+      marginBottom: "0.75rem",
     },
     sm: {
-      fontSize: "1.8em",
+      fontSize: "1.75rem",
       lineHeight: "1.4",
       fontWeight: "700",
+      marginBottom: "0.875rem",
     },
     md: {
-      fontSize: "2.4em",
+      fontSize: "2.375rem",
       lineHeight: "1.25",
       fontWeight: "700",
+      marginBottom: "1.25rem",
     },
     lg: {
-      fontSize: "4em",
+      fontSize: "4rem",
       lineHeight: "1.1",
       fontWeight: "700",
+      marginBottom: "2rem",
     },
     xl: {
-      fontSize: "6em",
+      fontSize: "6rem",
       lineHeight: "1.1",
       fontWeight: "700",
+      marginBottom: "2.5rem",
     },
   },
 
