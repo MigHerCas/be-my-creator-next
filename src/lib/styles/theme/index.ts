@@ -13,15 +13,15 @@ import {
 } from "./typography";
 
 const customTheme = extendTheme({
+  breakpoints,
+  colors,
+  config,
   fonts,
   fontSizes,
   fontWeights,
   lineHeights,
   letterSpacings,
-  colors,
-  config,
   components,
-  breakpoints,
 });
 
 export default customTheme;
