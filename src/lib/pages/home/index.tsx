@@ -1,4 +1,4 @@
-import { Container, Flex, Link } from "@chakra-ui/react";
+import { Container, Flex } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 import NextLink from "next/link";
 
@@ -8,15 +8,15 @@ import VideoPlayer from "lib/components/video/VideoPlayer";
 const Home = () => {
   return (
     <Container>
-      <Flex>
+      <Flex direction="column" gap={8}>
         <NextSeo title="Home" />
         <VideoModal>
           <VideoPlayer />
         </VideoModal>
 
-        <Link as={NextLink} href="/styleguide">
-          To Styleguide
-        </Link>
+        <NextLink href="/styleguide" style={{ color: "#00c2ae" }}>
+          To Style guide
+        </NextLink>
       </Flex>
     </Container>
   );

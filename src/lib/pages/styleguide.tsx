@@ -1,8 +1,15 @@
 import { Container, Heading, Text } from "@chakra-ui/react";
+import NextLink from "next/link";
+
+import { sampleText } from "lib/helpers/text";
 
 const Styleguide = () => {
   return (
     <Container>
+      <NextLink href="/" style={{ color: "#00c2ae" }}>
+        Back home
+      </NextLink>
+
       {/* Heading */}
       <Heading size="xl">Be My Creator!</Heading>
       <Heading size="lg">Be My Creator!</Heading>
@@ -11,34 +18,10 @@ const Styleguide = () => {
       <Heading size="xs">Be My Creator!</Heading>
 
       {/* Text */}
-      <Text size="lg">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        varius enim in eros elementum tristique. Duis cursus, mi quis viverra
-        ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
-        Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut
-        sem vitae risus tristique posuere.
-      </Text>
-      <Text size="md">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        varius enim in eros elementum tristique. Duis cursus, mi quis viverra
-        ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
-        Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut
-        sem vitae risus tristique posuere.
-      </Text>
-      <Text size="sm">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        varius enim in eros elementum tristique. Duis cursus, mi quis viverra
-        ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
-        Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut
-        sem vitae risus tristique posuere.
-      </Text>
-      <Text size="xs">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        varius enim in eros elementum tristique. Duis cursus, mi quis viverra
-        ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
-        Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut
-        sem vitae risus tristique posuere.
-      </Text>
+      <Text size="lg">{sampleText}</Text>
+      <Text size="md">{sampleText}</Text>
+      <Text size="sm">{sampleText}</Text>
+      <Text size="xs">{sampleText}</Text>
     </Container>
   );
 };
