@@ -1,6 +1,7 @@
 import { Container, Heading, Text } from "@chakra-ui/react";
 import NextLink from "next/link";
 
+import CTA from "lib/components/cta/CTA";
 import { sampleText } from "lib/helpers/text";
 
 const Styleguide = () => {
@@ -22,6 +23,14 @@ const Styleguide = () => {
       <Text size="md">{sampleText}</Text>
       <Text size="sm">{sampleText}</Text>
       <Text size="xs">{sampleText}</Text>
+
+      {/* CTA */}
+      <CTA href="" customStyles={{ marginBottom: "16px" }}>
+        Get in touch
+      </CTA>
+      <CTA href="" isExternal>
+        Get in touch - external link
+      </CTA>
     </Container>
   );
 };
