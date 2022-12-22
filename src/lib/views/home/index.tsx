@@ -1,10 +1,10 @@
-import { Container, Flex } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 import NextLink from "next/link";
 
-import Logo from "lib/components/logo/Logo";
-import VideoModal from "lib/components/modal/VideoModal";
-import VideoPlayer from "lib/components/video/VideoPlayer";
+import { Container, Flex } from "@chakra-ui/react";
+import Logo from "@components/logo/Logo";
+import VideoModal from "@components/modal/VideoModal";
+import VideoPlayer from "@components/video/VideoPlayer";
 
 const Home = () => {
   return (
