@@ -1,10 +1,11 @@
 import { Container, Heading, Text } from "@chakra-ui/react";
 import NextLink from "next/link";
+import type { FC } from "react";
 
 import CTA from "lib/components/cta/CTA";
-import { sampleText } from "lib/helpers/text";
+import { sampleText } from "lib/helpers/text.helpers";
 
-const Styleguide = () => {
+const Styleguide: FC = () => {
   return (
     <Container>
       <NextLink href="/" style={{ color: "#00c2ae" }}>
