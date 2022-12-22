@@ -1,12 +1,13 @@
 import type { FC } from "react";
 import { Container as ChakraContainer } from "@chakra-ui/react";
-import type { StyleProps } from "@chakra-ui/react";
+import type { StyleProps, As } from "@chakra-ui/react";
 
 interface Props {
   children: React.ReactNode;
+  htmlTag: As;
 }
 
-const Container: FC<Props> = ({ children }) => {
+const Container: FC<Props> = ({ children, htmlTag = "div" }) => {
   const baseStyles: StyleProps = {
     position: "relative",
     maxWidth: "1380px",
@@ -16,7 +17,7 @@ const Container: FC<Props> = ({ children }) => {
   };
 
   return (
-    <ChakraContainer as="section" {...baseStyles}>
+    <ChakraContainer as={htmlTag} {...baseStyles}>
       {children}
     </ChakraContainer>
   );
