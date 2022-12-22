@@ -1,3 +1,6 @@
+import type { FC } from "react";
+import { useState } from "react";
+
 import {
   Avatar,
   AvatarBadge,
@@ -5,14 +8,12 @@ import {
   Stack,
   VisuallyHidden,
 } from "@chakra-ui/react";
-import type { DialogProps } from "@reach/dialog";
 import { DialogContent, DialogOverlay } from "@reach/dialog";
-import type { FC } from "react";
-import { useState } from "react";
+import type { DialogProps } from "@reach/dialog";
+import styles from "./styles.module.css";
 
 // Styles
 import "@reach/dialog/styles.css";
-import styles from "./styles.module.css";
 
 interface Props {
   children: React.ReactNode;
