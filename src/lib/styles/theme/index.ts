@@ -1,14 +1,26 @@
 import { extendTheme } from "@chakra-ui/react";
 
+import { breakpoints } from "./breakpoints";
 import { colors } from "./colors";
 import { components } from "./components";
 import { config } from "./config";
-import { fonts } from "./fonts";
+import {
+  fonts,
+  fontSizes,
+  fontWeights,
+  lineHeights,
+  letterSpacings,
+} from "./typography";
 
 const customTheme = extendTheme({
-  fonts,
+  breakpoints,
   colors,
   config,
+  fonts,
+  fontSizes,
+  fontWeights,
+  lineHeights,
+  letterSpacings,
   components,
 });
 

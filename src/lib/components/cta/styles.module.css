@@ -1,0 +1,16 @@
+.icon,
+.iconExternal {
+  transform: translate(0);
+  transition: 200ms ease-in;
+  transition-property: transform;
+}
+
+.link:hover > .icon,
+.link:focus > .icon {
+  transform: translate(5px, 0);
+}
+
+.link:hover > .iconExternal,
+.link:focus > .iconExternal {
+  transform: translate(2px, -2px);
+}
