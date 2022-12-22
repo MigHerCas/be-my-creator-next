@@ -5,6 +5,7 @@ import Logo from "@components/logo/Logo";
 
 import ThemeToggle from "@components/themeToggle/ThemeToggle";
 import { MAX_WIDTH } from "@helpers/ui-values";
+import WithSubnavigation from "@templates/NavBar";
 
 const Header = () => {
   return (
@@ -50,4 +51,8 @@ const Header = () => {
   );
 };
 
-export default Header;
+const HeaderTemplate = () => {
+  return <WithSubnavigation />;
+};
+
+export { Header, HeaderTemplate };
