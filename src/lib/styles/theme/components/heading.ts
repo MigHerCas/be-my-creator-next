@@ -9,7 +9,7 @@ export const Heading = defineStyleConfig({
     xs: {
       fontSize: "1.125rem",
       lineHeight: "1.4",
-      fontWeight: "600",
+      fontWeight: "700",
       marginBottom: "0.75rem",
     },
     sm: {
