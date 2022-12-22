@@ -20,8 +20,7 @@
       "@layout/*": ["lib/layout/*"],
       "@pages/*": ["pages/*"],
       "@styles/*": ["lib/styles/*"],
-      "@helpers/*": ["lib/helpers/*"],
-      "@types/*": ["lib/types/*"]
+      "@helpers/*": ["lib/helpers/*"]
     },
     "incremental": true
   },
