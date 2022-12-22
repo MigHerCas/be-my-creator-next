@@ -3,7 +3,6 @@ import NextLink from "next/link";
 
 import { ArrowRight, ArrowUpRight } from "react-feather";
 import { Link } from "@chakra-ui/react";
-
 import type { StyleProps } from "@chakra-ui/react";
 
 // Styles (needed for hover icon effect)

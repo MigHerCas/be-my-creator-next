@@ -1,10 +1,10 @@
 import { DefaultSeo } from "next-seo";
 import Head from "next/head";
+import type { AppProps } from "next/app";
 
 import { Chakra } from "@components/Chakra";
 import Layout from "@layout/index";
 import defaultSEOConfig from "../../next-seo.config";
-import type { AppProps } from "next/app";
 
 import "lib/styles/globals.css";
 
