@@ -1,7 +1,37 @@
 {
   "rules": {
     "jsx-a11y/media-has-caption": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "import/order": [
+      "error",
+      {
+        "pathGroups": [
+          {
+            "pattern": "next",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "after"
+          },
+          {
+            "pattern": "@**/**",
+            "group": "parent"
+          }
+        ],
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object"
+        ]
+      }
+    ]
   },
   "extends": [
     "sznm/react",

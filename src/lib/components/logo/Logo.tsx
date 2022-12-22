@@ -1,5 +1,5 @@
-import { useColorModeValue } from "@chakra-ui/react";
 import type { FC } from "react";
+import { useColorModeValue } from "@chakra-ui/react";
 
 interface Props {
   height?: string;

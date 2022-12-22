@@ -1,3 +1,3 @@
-import Styleguide from "lib/pages/styleguide";
+import Styleguide from "@views/styleguide";
 
 export default Styleguide;
