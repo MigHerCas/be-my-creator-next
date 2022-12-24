@@ -15,6 +15,7 @@ import {
   useBreakpointValue,
   useDisclosure,
 } from "@chakra-ui/react";
+import { MAX_WIDTH } from "@helpers/ui-values";
 
 import { Menu, X, ChevronDown, ChevronRight } from "react-feather";
 
@@ -226,17 +227,7 @@ export default function WithSubnavigation() {
 
   return (
     <Box>
-      <Flex
-        bg={useColorModeValue("white", "gray.800")}
-        color={useColorModeValue("gray.600", "white")}
-        minH="60px"
-        py={{ base: 2 }}
-        px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle="solid"
-        borderColor={useColorModeValue("gray.200", "gray.900")}
-        align="center"
-      >
+      <Flex align="center" px="30px" mx="auto" maxW={MAX_WIDTH}>
         <Flex
           flex={{ base: 1, md: "auto" }}
           ml={{ base: -2 }}
