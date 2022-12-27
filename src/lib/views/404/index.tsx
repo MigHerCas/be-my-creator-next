@@ -10,8 +10,9 @@ import {
 import MotionBox from "@components/motion/Box";
 import { NextSeo } from "next-seo";
 import Link from "next/link";
+import type { FC } from "react";
 
-const Page404 = () => {
+const Page404View: FC = () => {
   const { colorMode } = useColorMode();
 
   return (
@@ -51,4 +52,4 @@ const Page404 = () => {
   );
 };
 
-export default Page404;
+export default Page404View;

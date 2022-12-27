@@ -1,3 +1,3 @@
-import Styleguide from "@views/styleguide";
+import StyleguideView from "@views/styleguide";
 
-export default Styleguide;
+export default StyleguideView;
