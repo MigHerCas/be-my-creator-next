@@ -1,6 +1,3 @@
-import type { FC } from "react";
-import { useState } from "react";
-
 import {
   Avatar,
   AvatarBadge,
@@ -10,6 +7,9 @@ import {
 } from "@chakra-ui/react";
 import { DialogContent, DialogOverlay } from "@reach/dialog";
 import type { DialogProps } from "@reach/dialog";
+import { useState } from "react";
+import type { FC } from "react";
+
 import styles from "./styles.module.css";
 
 // Styles

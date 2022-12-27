@@ -1,6 +1,6 @@
-import type { FC } from "react";
-import NextLink from "next/link";
 import { IconButton, useColorModeValue } from "@chakra-ui/react";
+import NextLink from "next/link";
+import type { FC } from "react";
 
 type SocialPlatforms = "LinkedIn" | "Twitter" | "Facebook" | "Instagram";
 

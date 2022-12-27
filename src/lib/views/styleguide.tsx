@@ -1,9 +1,8 @@
-import type { FC } from "react";
 import { Container, Heading, Text } from "@chakra-ui/react";
-import NextLink from "next/link";
-
 import CTA from "@components/cta/CTA";
 import { sampleText } from "@helpers/text";
+import NextLink from "next/link";
+import type { FC } from "react";
 
 const Styleguide: FC = () => {
   return (

@@ -1,6 +1,6 @@
-import type { FC } from "react";
 import { Container as ChakraContainer } from "@chakra-ui/react";
 import type { StyleProps, As } from "@chakra-ui/react";
+import type { FC } from "react";
 
 interface Props {
   children: React.ReactNode;

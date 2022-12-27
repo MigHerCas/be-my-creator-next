@@ -1,11 +1,10 @@
-import NextLink from "next/link";
 import { Flex, Spacer, HStack, Link } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import Logo from "@components/logo/Logo";
-
 import ThemeToggle from "@components/themeToggle/ThemeToggle";
-import { MAX_WIDTH } from "@helpers/ui-values";
 import WithSubnavigation from "@compositions/NavBar";
+import { MAX_WIDTH } from "@helpers/ui-values";
+import NextLink from "next/link";
 
 const Header = () => {
   return (
