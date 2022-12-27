@@ -16,7 +16,7 @@ const Container: FC<Props> = ({ children, htmlTag = "div" }) => {
     mx: "auto",
     flex: "1",
     display: "flex",
-    gap: "60px",
+    gap: "90px",
     flexDir: "column",
   };
 
