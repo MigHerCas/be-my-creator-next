@@ -5,7 +5,6 @@ import {
   HStack,
   Link,
   IconButton,
-  Button,
   useColorModeValue,
   Stack,
   useDisclosure,
@@ -14,6 +13,7 @@ import { Menu as MenuIcon, X } from "react-feather";
 import { MAX_WIDTH } from "@helpers/ui-values";
 import Logo from "@components/logo/Logo";
 import type { FC } from "react";
+import CTA from "@components/cta/CTA";
 
 const Links = ["Dashboard", "Projects", "Team"];
 
@@ -48,9 +48,9 @@ const NavBar: FC = () => {
             ))}
           </HStack>
 
-          <Button variant="solid" colorScheme="teal" size="sm">
-            Action
-          </Button>
+          <CTA href="" showArrow={false}>
+            Book a call
+          </CTA>
         </Flex>
       </Flex>
 
