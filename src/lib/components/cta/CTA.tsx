@@ -1,9 +1,8 @@
-import type { FC } from "react";
-import NextLink from "next/link";
-
-import { ArrowRight, ArrowUpRight } from "react-feather";
 import { Link } from "@chakra-ui/react";
 import type { StyleProps } from "@chakra-ui/react";
+import NextLink from "next/link";
+import type { FC } from "react";
+import { ArrowRight, ArrowUpRight } from "react-feather";
 
 // Styles (needed for hover icon effect)
 import styles from "./styles.module.css";

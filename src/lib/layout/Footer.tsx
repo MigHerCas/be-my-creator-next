@@ -1,5 +1,3 @@
-import type { FC } from "react";
-import NextLink from "next/link";
 import {
   Grid,
   GridItem,
@@ -13,6 +11,8 @@ import {
 import Logo from "@components/logo/Logo";
 import IconSocial from "@components/social/IconsSocial";
 import { MAX_WIDTH } from "@helpers/ui-values";
+import NextLink from "next/link";
+import type { FC } from "react";
 
 const Footer: FC = () => {
   return (
