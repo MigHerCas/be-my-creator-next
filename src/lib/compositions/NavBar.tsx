@@ -4,7 +4,6 @@ import {
   HStack,
   Link,
   IconButton,
-  useColorModeValue,
   Stack,
   useDisclosure,
 } from "@chakra-ui/react";
@@ -21,7 +20,7 @@ const NavBar: FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box bg={useColorModeValue("gray.100", "gray.900")}>
+    <Box as="header">
       <Flex
         alignItems="center"
         justifyContent="space-between"

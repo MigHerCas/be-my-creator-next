@@ -1,8 +1,8 @@
-import { Box } from "@chakra-ui/react";
 import type { ReactNode } from "react";
 
-import Footer from "./Footer";
-import { HeaderTemplate } from "./Header";
+import Container from "./modules/Container";
+import Footer from "./modules/Footer";
+import Header from "./modules/Header";
 
 type LayoutProps = {
   children: ReactNode;
@@ -11,10 +11,8 @@ type LayoutProps = {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <>
-      <HeaderTemplate />
-      <Box as="main" marginY={22}>
-        {children}
-      </Box>
+      <Header />
+      <Container htmlTag="main">{children}</Container>
       <Footer />
     </>
   );
