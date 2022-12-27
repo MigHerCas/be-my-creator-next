@@ -28,4 +28,5 @@ const useOnScreen = <T extends Element>(
   }, [ref, rootMargin]); // Empty array ensures that effect is only run on mount and unmount
   return isIntersecting;
 };
-export { useOnScreen };
+
+export default useOnScreen;
