@@ -23,6 +23,8 @@ const Footer: FC = () => {
       p="30px"
       gridTemplateColumns={["repeat(2, 1fr)", null, null, "repeat(12, 1fr)"]}
       gap={["18px", null, null, "36px"]}
+      borderTop="1px solid"
+      borderColor="gray.300"
     >
       {/* Company info */}
       <GridItem colStart={1} colEnd={[3, null, null, 5]}>
@@ -112,8 +114,8 @@ const Footer: FC = () => {
             <Link as={NextLink} href="/" py="6px">
               Licenses
             </Link>
-            <Link as={NextLink} href="/" py="6px">
-              Style Guide
+            <Link as={NextLink} href="/styleguide" py="6px">
+              Styleguide
             </Link>
             <Link as={NextLink} href="/" py="6px">
               Changelog
@@ -123,7 +125,12 @@ const Footer: FC = () => {
       </GridItem>
 
       <GridItem colStart={1} colEnd={[3, null, null, 5]}>
-        <Text fontSize="sm" color="gray.500" mb={0}>
+        <Text
+          fontSize="sm"
+          color="gray.500"
+          mb={0}
+          textAlign={["center", null, "initial"]}
+        >
           {new Date().getFullYear()} - Be My Creator
         </Text>
       </GridItem>
