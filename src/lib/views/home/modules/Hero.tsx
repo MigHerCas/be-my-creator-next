@@ -52,9 +52,7 @@ const Hero: FC = () => {
             Campaigns from $200
           </Tag>
         </HStack>
-        <Heading size="lg">
-          Connect instantly with influencers and UGC creators
-        </Heading>
+        <Heading size="lg">Instantly connect with UGC creators</Heading>
         <Text maxW="40ch" mb={8} mx={["auto", null, null, 0]}>
           Lorem ipsum dolor sit ame consectetur adipiscing suspendisse varius
           enim in
