@@ -1,7 +1,7 @@
 import type { FC } from "react";
 
 const Hero: FC = () => {
-  return <div>Hero</div>;
+  return <section>Hero</section>;
 };
 
 export default Hero;

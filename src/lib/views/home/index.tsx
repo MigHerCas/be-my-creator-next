@@ -1,19 +1,18 @@
-import { Container, Flex } from "@chakra-ui/react";
 import VideoModal from "@components/modal/VideoModal";
 import VideoPlayer from "@components/video/VideoPlayer";
 import { NextSeo } from "next-seo";
 
+import Hero from "./modules/Hero";
+
 const Home = () => {
   return (
-    <Container>
-      <Flex direction="column" gap={8}>
-        <NextSeo title="Home" />
-
-        <VideoModal>
-          <VideoPlayer />
-        </VideoModal>
-      </Flex>
-    </Container>
+    <>
+      <NextSeo title="Home" />
+      <Hero />
+      <VideoModal>
+        <VideoPlayer />
+      </VideoModal>
+    </>
   );
 };
 
