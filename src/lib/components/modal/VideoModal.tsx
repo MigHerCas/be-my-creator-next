@@ -1,6 +1,7 @@
 import {
   Avatar,
   AvatarBadge,
+  Button,
   Spacer,
   Stack,
   VisuallyHidden,
@@ -31,9 +32,9 @@ const VideoModal: FC<Props> = ({ children }) => {
 
   return (
     <div>
-      <button type="button" onClick={open}>
+      <Button type="button" onClick={open} variant="solid">
         Open Dialog
-      </button>
+      </Button>
 
       <DialogOverlay className={styles.overlay} {...dialogOptions}>
         <DialogContent className={styles.content}>
