@@ -52,7 +52,7 @@ const VideoModal: FC<Props> = ({ children }) => {
               <AvatarBadge boxSize="1.25em" bg="green.500" />
             </Avatar>
 
-            <span>Tupi Flower Capuccino</span>
+            <span className={styles.contentTitle}>Tupi Flower Capuccino</span>
 
             <Spacer />
             <button
