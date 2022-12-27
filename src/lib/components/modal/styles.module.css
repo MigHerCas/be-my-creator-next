@@ -4,7 +4,7 @@
   background: rgba(17, 19, 20, 0.8);
 }
 
-.content {
+.content[data-reach-dialog-content] {
   position: relative;
   width: auto;
   padding: 0;
@@ -14,15 +14,20 @@
   position: relative;
   overflow: hidden;
   color: unset;
-  background-color: transparent;
+  background-color: #fff;
 
   isolation: isolate;
+}
+
+.contentTitle {
+  color: #fff;
 }
 
 .closeButton {
   position: absolute;
   top: 0;
   right: 15px;
+  color: #fff;
   font-size: 30px;
   font-weight: 300;
   z-index: 1;
