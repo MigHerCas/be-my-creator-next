@@ -12,6 +12,7 @@ const Container: FC<Props> = ({ children, htmlTag = "div" }) => {
     position: "relative",
     maxWidth: "1380px",
     px: "30px",
+    pt: "5vh",
     mx: "auto",
     flex: "1",
   };
