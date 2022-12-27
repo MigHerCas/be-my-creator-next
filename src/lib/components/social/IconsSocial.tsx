@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import NextLink from "next/link";
-import { useColorModeValue } from "@chakra-ui/react";
+import { IconButton, useColorModeValue } from "@chakra-ui/react";
 
 type SocialPlatforms = "LinkedIn" | "Twitter" | "Facebook" | "Instagram";
 
@@ -67,7 +67,11 @@ const IconSocial: FC<IconSocialProps> = ({ variant, href }) => {
     ),
   } as Record<SocialPlatforms, JSX.Element>;
 
-  return <NextLink href={href}>{iconVariants[variant]}</NextLink>;
+  return (
+    <NextLink href={href}>
+      <IconButton aria-label="theme toggle" icon={iconVariants[variant]} />
+    </NextLink>
+  );
 };
 
 export default IconSocial;

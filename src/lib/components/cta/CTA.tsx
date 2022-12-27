@@ -27,6 +27,7 @@ const CTA: FC<Props> = ({ children, href, isExternal, customStyles }) => {
     borderRadius: "4px",
     width: "fit-content",
     gap: "8px",
+    color: "#fff",
     // TODO: align with theme colors
     backgroundColor: "#00C4A2",
     ...customStyles,

@@ -16,6 +16,7 @@
     "baseUrl": "src",
     "paths": {
       "@components/*": ["lib/components/*"],
+      "@compositions/*": ["lib/compositions/*"],
       "@views/*": ["lib/views/*"],
       "@layout/*": ["lib/layout/*"],
       "@pages/*": ["pages/*"],
