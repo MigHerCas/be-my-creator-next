@@ -1,15 +1,14 @@
-import NextLink from "next/link";
 import type { FC } from "react";
-
+import NextLink from "next/link";
 import {
   Grid,
   GridItem,
-  Text,
-  Stack,
-  VStack,
-  StackItem,
   Heading,
   Link,
+  Stack,
+  StackItem,
+  Text,
+  VStack,
 } from "@chakra-ui/react";
 import Logo from "@components/logo/Logo";
 import IconSocial from "@components/social/IconsSocial";
@@ -65,9 +64,9 @@ const Footer: FC = () => {
         paddingTop={["24px", null, null, "72px"]}
       >
         <Grid
-          templateColumns={["1fr 1fr", "1fr 1fr 1fr"]}
-          justifyContent="space-between"
-          gap={4}
+          templateColumns={["1fr 1fr", null, "auto auto auto"]}
+          justifyContent={["normal", "space-between"]}
+          gap={6}
         >
           <VStack as="ul" role="list" alignItems="start" listStyleType="none">
             <Heading size="xs" m={0} py="6px">
