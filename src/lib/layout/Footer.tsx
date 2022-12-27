@@ -1,3 +1,4 @@
+import type { FC } from "react";
 import NextLink from "next/link";
 import {
   Grid,
@@ -10,12 +11,14 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import Logo from "@components/logo/Logo";
+import IconSocial from "@components/social/IconsSocial";
+import { MAX_WIDTH } from "@helpers/ui-values";
 
-const Footer = () => {
+const Footer: FC = () => {
   return (
     <Grid
       as="footer"
-      maxW="1380px"
+      maxW={MAX_WIDTH}
       mx="auto"
       p="30px"
       gridTemplateColumns={["repeat(2, 1fr)", null, null, "repeat(12, 1fr)"]}
@@ -40,16 +43,16 @@ const Footer = () => {
         >
           {/* TODO: set links */}
           <StackItem as="li">
-            {/* <IconSocial href="" variant="LinkedIn" /> */}
+            <IconSocial href="" variant="LinkedIn" />
           </StackItem>
           <StackItem as="li">
-            {/* <IconSocial href="" variant="Instagram" /> */}
+            <IconSocial href="" variant="Instagram" />
           </StackItem>
           <StackItem as="li">
-            {/* <IconSocial href="" variant="Twitter" /> */}
+            <IconSocial href="" variant="Twitter" />
           </StackItem>
           <StackItem as="li">
-            {/* <IconSocial href="" variant="Facebook" /> */}
+            <IconSocial href="" variant="Facebook" />
           </StackItem>
         </Stack>
       </GridItem>
