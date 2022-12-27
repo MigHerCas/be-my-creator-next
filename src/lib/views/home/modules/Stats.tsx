@@ -28,7 +28,7 @@ const Stats: FC = () => {
         gap={6}
         mb="60px"
       >
-        <Heading maxW="25ch">
+        <Heading maxW="25ch" as="h2">
           Make the Most of Every Single Site Visit with{" "}
           <b style={{ color: "#00C4A2", display: "block" }}>BeMyCreator</b>
         </Heading>
