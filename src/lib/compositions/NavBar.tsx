@@ -21,7 +21,7 @@ const NavBar: FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box bg={useColorModeValue("gray.100", "gray.900")}>
+    <Box as="header" bg={useColorModeValue("gray.100", "gray.900")}>
       <Flex
         alignItems="center"
         justifyContent="space-between"
