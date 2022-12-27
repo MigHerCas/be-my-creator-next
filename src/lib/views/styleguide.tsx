@@ -4,7 +4,7 @@ import { sampleText } from "@helpers/text";
 import NextLink from "next/link";
 import type { FC } from "react";
 
-const Styleguide: FC = () => {
+const StyleguideView: FC = () => {
   return (
     <Container>
       <NextLink href="/" style={{ color: "#00c2ae" }}>
@@ -35,4 +35,4 @@ const Styleguide: FC = () => {
   );
 };
 
-export default Styleguide;
+export default StyleguideView;

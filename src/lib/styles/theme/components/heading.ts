@@ -21,19 +21,19 @@ export const Heading = defineStyleConfig({
     md: {
       fontSize: "2.375rem",
       lineHeight: "1.25",
-      fontWeight: "700",
+      fontWeight: "800",
       marginBottom: "1.25rem",
     },
     lg: {
       fontSize: "4rem",
       lineHeight: "1.1",
-      fontWeight: "700",
+      fontWeight: "900",
       marginBottom: "2rem",
     },
     xl: {
       fontSize: "6rem",
       lineHeight: "1.1",
-      fontWeight: "700",
+      fontWeight: "900",
       marginBottom: "2.5rem",
     },
   },
