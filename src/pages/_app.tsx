@@ -1,9 +1,9 @@
-import { DefaultSeo } from "next-seo";
-import Head from "next/head";
-import type { AppProps } from "next/app";
-
 import { Chakra } from "@components/Chakra";
 import Layout from "@layout/index";
+import { DefaultSeo } from "next-seo";
+import type { AppProps } from "next/app";
+import Head from "next/head";
+
 import defaultSEOConfig from "../../next-seo.config";
 
 import "lib/styles/globals.css";

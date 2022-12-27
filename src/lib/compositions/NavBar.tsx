@@ -1,4 +1,3 @@
-import NextLink from "next/link";
 import {
   Box,
   Flex,
@@ -9,11 +8,12 @@ import {
   Stack,
   useDisclosure,
 } from "@chakra-ui/react";
-import { Menu as MenuIcon, X } from "react-feather";
-import { MAX_WIDTH } from "@helpers/ui-values";
-import Logo from "@components/logo/Logo";
-import type { FC } from "react";
 import CTA from "@components/cta/CTA";
+import Logo from "@components/logo/Logo";
+import { MAX_WIDTH } from "@helpers/ui-values";
+import NextLink from "next/link";
+import type { FC } from "react";
+import { Menu as MenuIcon, X } from "react-feather";
 
 const Links = ["Dashboard", "Projects", "Team"];
 
