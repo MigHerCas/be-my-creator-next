@@ -13,9 +13,16 @@ interface Props {
   href: string;
   isExternal?: boolean;
   customStyles?: StyleProps;
+  showArrow?: boolean;
 }
 
-const CTA: FC<Props> = ({ children, href, isExternal, customStyles }) => {
+const CTA: FC<Props> = ({
+  children,
+  href,
+  isExternal,
+  customStyles,
+  showArrow = true,
+}) => {
   const baseStyles: StyleProps = {
     display: "flex",
     alignItems: "center",
@@ -33,6 +40,12 @@ const CTA: FC<Props> = ({ children, href, isExternal, customStyles }) => {
     ...customStyles,
   };
 
+  const arrowIcon = isExternal ? (
+    <ArrowUpRight className={styles.iconExternal} />
+  ) : (
+    <ArrowRight className={styles.icon} />
+  );
+
   return (
     <Link
       as={NextLink}
@@ -42,11 +55,7 @@ const CTA: FC<Props> = ({ children, href, isExternal, customStyles }) => {
       _hover={{ textDecoration: "none" }}
     >
       {children}
-      {isExternal ? (
-        <ArrowUpRight className={styles.iconExternal} />
-      ) : (
-        <ArrowRight className={styles.icon} />
-      )}
+      {showArrow ? arrowIcon : null}
     </Link>
   );
 };
