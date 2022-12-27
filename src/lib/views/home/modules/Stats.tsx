@@ -23,10 +23,10 @@ const Stats: FC = () => {
     >
       <Flex
         alignItems="center"
+        flexDir={["column", null, null, "row"]}
         justifyContent={["center", null, null, "space-between"]}
         gap={6}
         mb="60px"
-        wrap="wrap"
       >
         <Heading maxW="25ch">
           Make the Most of Every Single Site Visit with{" "}
@@ -35,10 +35,10 @@ const Stats: FC = () => {
         <CTA href="/">Get started</CTA>
       </Flex>
       <Flex
-        flexDir={["column", null, null, "row"]}
+        flexDir={["column", null, "row"]}
         justifyItems="center"
         justifyContent="center"
-        alignItems={["center", null, null, "stretch"]}
+        alignItems={["center", null, "stretch"]}
         textAlign="center"
         gap="30px"
         wrap="wrap"
@@ -49,7 +49,7 @@ const Stats: FC = () => {
           border="2px solid"
           borderColor="gray.300"
           bgColor="gray.100"
-          w="360px"
+          w="320px"
         >
           <Box
             p={2}
@@ -80,7 +80,7 @@ const Stats: FC = () => {
           border="2px solid"
           borderColor="gray.300"
           bgColor="gray.100"
-          w="360px"
+          w="320px"
         >
           <Box
             p={2}
@@ -112,7 +112,7 @@ const Stats: FC = () => {
           border="2px solid"
           borderColor="gray.300"
           bgColor="gray.100"
-          w="360px"
+          w="320px"
         >
           <Box
             p={2}
