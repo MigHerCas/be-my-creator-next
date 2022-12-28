@@ -1,7 +1,7 @@
+import ReviewBox from "@compositions/ReviewBox";
 import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
 
-// Modules
 import Carousel from "./modules/Carousel/Carousel";
 import Hero from "./modules/Hero";
 import Stats from "./modules/Stats";
@@ -13,6 +13,7 @@ const HomeView: NextPage = () => {
       <Hero />
       <Stats />
       <Carousel />
+      <ReviewBox />
     </>
   );
 };
