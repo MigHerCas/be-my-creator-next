@@ -1,3 +1,3 @@
-import useOnScreen from "./useOnScreen";
+import useIsMounted from "./useIsMounted";
 
-export { useOnScreen };
+export { useIsMounted };

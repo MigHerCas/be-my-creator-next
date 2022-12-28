@@ -68,9 +68,12 @@ const IconSocial: FC<IconSocialProps> = ({ variant, href }) => {
   } as Record<SocialPlatforms, JSX.Element>;
 
   return (
-    <NextLink href={href}>
-      <IconButton aria-label="theme toggle" icon={iconVariants[variant]} />
-    </NextLink>
+    <IconButton
+      as={NextLink}
+      href={href}
+      aria-label="theme toggle"
+      icon={iconVariants[variant]}
+    />
   );
 };
 
