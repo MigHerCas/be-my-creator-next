@@ -53,9 +53,15 @@ const Slider: FC = () => {
 
 const Carousel: FC = () => {
   return (
-    <Box as="section">
+    <Box
+      as="section"
+      mx={{
+        md: "clamp(-30px, calc((100vw - 1320px) / 2 * -1), -30px)",
+        xl: "max(calc((100vw - 1320px) / 2 * -1), -400px)",
+      }}
+    >
       <Center>
-        <Heading as="h2" size="md" mb={20}>
+        <Heading as="h2" size="md" mb={20} textAlign="center">
           Check some examples
         </Heading>
       </Center>
