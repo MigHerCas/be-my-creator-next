@@ -1,20 +1,21 @@
 import { Box, Flex, GridItem, Heading, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
-import { useOnScreen } from "@hooks";
 import type { FC } from "react";
-import { useRef } from "react";
 import CountUp from "react-countup";
 import { DollarSign } from "react-feather";
+import { useInView } from "react-intersection-observer";
 
 const Stats: FC = () => {
-  const visibleRef = useRef<HTMLDivElement>(null);
-
-  const onScreen: boolean = useOnScreen<HTMLDivElement>(visibleRef, "-20%");
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    rootMargin: "-20%",
+    threshold: 0,
+  });
 
   return (
     <Box
       as="section"
-      ref={visibleRef}
+      ref={ref}
       alignItems="center"
       p="60px"
       bgColor="gray.100"
@@ -60,7 +61,7 @@ const Stats: FC = () => {
           >
             <DollarSign />
           </Box>
-          {onScreen ? (
+          {inView ? (
             <CountUp start={1} end={35} duration={1}>
               {({ countUpRef }) => (
                 <Heading size="lg" fontWeight={900} mb={2}>
@@ -92,7 +93,7 @@ const Stats: FC = () => {
             <DollarSign />
           </Box>
 
-          {onScreen ? (
+          {inView ? (
             <CountUp start={1} end={11} duration={1}>
               {({ countUpRef }) => (
                 <Heading size="lg" fontWeight={900} mb={2}>
@@ -123,7 +124,7 @@ const Stats: FC = () => {
           >
             <DollarSign />
           </Box>
-          {onScreen ? (
+          {inView ? (
             <CountUp start={1} end={18} duration={1}>
               {({ countUpRef }) => (
                 <Heading size="lg" fontWeight={900} mb={2}>
