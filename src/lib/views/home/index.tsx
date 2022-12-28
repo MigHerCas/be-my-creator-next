@@ -1,15 +1,18 @@
+import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
-import type { FC } from "react";
 
+// Modules
+import Carousel from "./modules/Carousel/Carousel";
 import Hero from "./modules/Hero";
 import Stats from "./modules/Stats";
 
-const HomeView: FC = () => {
+const HomeView: NextPage = () => {
   return (
     <>
       <NextSeo title="Home" />
       <Hero />
       <Stats />
+      <Carousel />
     </>
   );
 };
