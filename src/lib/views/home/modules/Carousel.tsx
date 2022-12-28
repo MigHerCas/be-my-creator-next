@@ -16,8 +16,6 @@ const Slider: FC = () => {
         slidesPerView={4}
         autoplay
         loop
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiperInstance) => console.log(swiperInstance)}
       >
         {Array.from({ length: 16 }).map((_, index) => {
           return (
