@@ -15,23 +15,24 @@ const ReviewBox: FC = () => {
     <Grid
       as="section"
       gridTemplateColumns={["1fr", null, null, "repeat(12, 1fr)"]}
-      p={[5, 10, 20]}
+      px={["30px", null, "60px"]}
+      py={["50px", null, "60px"]}
+      borderRadius={["0", null, "20px"]}
       backgroundColor="#272727"
-      borderRadius="20px"
       isolation="isolate"
-      mx={["-30px", null, "auto"]}
+      mx={["-30px", null, "initial"]}
     >
       <Box
         color="white"
         backgroundColor="#00C4A2"
         borderRadius="12px"
+        display={["none", null, null, "flex"]}
         my={[0, null, null, "90px"]}
-        minHeight={["300px", "350px", null, "420px"]}
+        minHeight={["200px", "350px", null, "420px"]}
         gridColumnStart={1}
         gridColumnEnd={7}
         gridRowStart={1}
         zIndex={1}
-        display="flex"
         alignItems="center"
         justifyContent="center"
       >
@@ -47,14 +48,12 @@ const ReviewBox: FC = () => {
         display={["none", null, null, "block"]}
       />
       <Box
-        p={[5, 10]}
+        p="30px"
         backgroundColor="#1b1b1b"
         color="white"
         maxW="700px"
-        w={["95%", "90%", null, "auto"]}
         my="auto"
         mx="auto"
-        mt={["-60px", null, null, "auto"]}
         borderRadius="12px"
         gridColumnStart={[1, null, null, 8]}
         gridColumnEnd={[-1, null, null, -1, -2]}
