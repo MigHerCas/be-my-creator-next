@@ -1,26 +1,25 @@
 import { Link } from "@chakra-ui/react";
 import type { StyleProps } from "@chakra-ui/react";
 import NextLink from "next/link";
-import type { FC } from "react";
+import type { FC, PropsWithChildren } from "react";
 import { ArrowRight, ArrowUpRight } from "react-feather";
 
 // Styles (needed for hover icon effect)
 import styles from "./styles.module.css";
 
 interface Props {
-  children: React.ReactNode;
   href: string;
   isExternal?: boolean;
   customStyles?: StyleProps;
   showArrow?: boolean;
 }
 
-const CTA: FC<Props> = ({
-  children,
+const CTA: FC<PropsWithChildren<Props>> = ({
   href,
   isExternal,
   customStyles,
   showArrow = true,
+  children,
 }) => {
   const baseStyles: StyleProps = {
     display: "flex",
