@@ -1,28 +1,38 @@
 import { Box, Center, Heading } from "@chakra-ui/react";
+import CTA from "@components/cta/CTA";
 import type { FC } from "react";
-import { A11y, Lazy, Autoplay } from "swiper";
+import { A11y, Autoplay, EffectCoverflow } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/a11y";
 import "swiper/css/autoplay";
+import styles from "./styles.module.css";
 
 const Slider: FC = () => {
   return (
     <Box>
       <Swiper
-        modules={[A11y, Lazy, Autoplay]}
-        spaceBetween={8}
-        slidesPerView={4}
+        modules={[A11y, Autoplay, EffectCoverflow]}
+        slidesPerView="auto"
+        spaceBetween={30}
         autoplay
+        grabCursor
+        autoHeight
+        mousewheel
         loop
+        effect="coverflow"
+        coverflowEffect={{
+          slideShadows: true,
+          rotate: 25,
+          modifier: 1,
+        }}
       >
-        {Array.from({ length: 16 }).map((_, index) => {
+        {Array.from({ length: 10 }).map((_, index) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide className={styles.swiperSlide}>
               <Box
                 h="560px"
-                w="315px"
                 bgColor={index % 4 ? "gray.200" : "#00C4A2"}
                 p="30px"
                 borderRadius="20px"
@@ -33,6 +43,10 @@ const Slider: FC = () => {
           );
         })}
       </Swiper>
+
+      <Center mt={14}>
+        <CTA href="">Book a demo</CTA>
+      </Center>
     </Box>
   );
 };
