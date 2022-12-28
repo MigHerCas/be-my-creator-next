@@ -84,3 +84,14 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+/* Swiper */
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  border-radius: 20px;
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0)
+  ) !important;
+}
