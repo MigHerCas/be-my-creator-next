@@ -15,6 +15,7 @@ const Slider: FC = () => {
         spaceBetween={8}
         slidesPerView={4}
         autoplay
+        loop
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiperInstance) => console.log(swiperInstance)}
       >
