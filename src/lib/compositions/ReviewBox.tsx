@@ -13,7 +13,6 @@ import { Star, GitHub } from "react-feather";
 const ReviewBox: FC = () => {
   return (
     <Grid
-      as="section"
       gridTemplateColumns={["1fr", null, null, "repeat(12, 1fr)"]}
       px={["30px", null, "60px"]}
       py={["50px", null, "60px"]}
@@ -86,8 +85,15 @@ const ReviewBox: FC = () => {
           </Box>
           {/* Rating stars */}
           <Flex direction="row" gap="5px">
-            {Array.from({ length: 5 }).map(() => (
-              <Star fill="#FCC54E" stroke="none" width={24} height={24} />
+            {Array.from({ length: 5 }).map((_, index) => (
+              <Star
+                // eslint-disable-next-line react/no-array-index-key
+                key={`star-${index}`}
+                fill="#FCC54E"
+                stroke="none"
+                width={24}
+                height={24}
+              />
             ))}
           </Flex>
 
