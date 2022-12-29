@@ -60,6 +60,7 @@ const NavBar: FC = () => {
           <CTA
             href=""
             showArrow={false}
+            isSmall
             customStyles={{
               display: ["none", null, "block"],
             }}
