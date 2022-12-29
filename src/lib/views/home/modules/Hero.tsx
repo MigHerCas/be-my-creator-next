@@ -30,6 +30,7 @@ const Hero: FC = () => {
           spacing={4}
           mb={4}
           justifyContent={["center", null, null, "initial"]}
+          display={["none", "flex"]}
         >
           <Tag
             size="lg"

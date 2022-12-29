@@ -5,6 +5,90 @@ import CountUp from "react-countup";
 import { DollarSign } from "react-feather";
 import { useInView } from "react-intersection-observer";
 
+type StatItemContent = {
+  CountupElement: JSX.Element;
+  title: string;
+};
+
+const StatsItems = ({ inView }: { inView: boolean }) => {
+  const items = [
+    {
+      CountupElement: (
+        <CountUp start={1} end={35} duration={2}>
+          {({ countUpRef }) => (
+            <Heading size="lg" fontWeight={900} mb={2}>
+              +<span ref={countUpRef} />%
+            </Heading>
+          )}
+        </CountUp>
+      ),
+      title: "Conversion rate",
+    },
+    {
+      CountupElement: (
+        <CountUp start={1} end={11} duration={2}>
+          {({ countUpRef }) => (
+            <Heading size="lg" fontWeight={900} mb={2}>
+              x<span ref={countUpRef} />
+            </Heading>
+          )}
+        </CountUp>
+      ),
+      title: "Added time on site",
+    },
+    {
+      CountupElement: (
+        <CountUp start={1} end={18} duration={2}>
+          {({ countUpRef }) => (
+            <Heading size="lg" fontWeight={900} mb={2}>
+              +<span ref={countUpRef} />%
+            </Heading>
+          )}
+        </CountUp>
+      ),
+      title: "Engagement rate",
+    },
+  ] as Array<StatItemContent>;
+
+  return (
+    <Flex
+      flexDir={["column", null, "row"]}
+      justifyItems="center"
+      justifyContent="center"
+      alignItems={["center", null, "stretch"]}
+      textAlign="center"
+      gap="30px"
+      wrap="wrap"
+    >
+      {items.map(({ title, CountupElement }) => (
+        <GridItem
+          p={["20px", "30px"]}
+          borderRadius="24px"
+          bgColor="#1B1B1B"
+          key={title}
+          w={["260px", "280px", null, null, "320px"]}
+        >
+          <>
+            <Box
+              p={2}
+              display="inline-block"
+              bgColor="#272727"
+              borderRadius="full"
+              mb={8}
+            >
+              <DollarSign />
+            </Box>
+            {inView ? CountupElement : null}
+
+            <Text size="md" mb={0}>
+              {title}
+            </Text>
+          </>
+        </GridItem>
+      ))}
+    </Flex>
+  );
+};
 const Stats: FC = () => {
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -17,9 +101,12 @@ const Stats: FC = () => {
       as="section"
       ref={ref}
       alignItems="center"
-      p="60px"
-      bgColor="gray.100"
-      borderRadius="20px"
+      px={["30px", null, "60px"]}
+      py={["50px", null, "60px"]}
+      bgColor="#272727"
+      color="white"
+      borderRadius={["0", null, "20px"]}
+      mx={["-30px", null, "initial"]}
       textAlign={["center", null, null, "initial"]}
     >
       <Flex
@@ -31,114 +118,11 @@ const Stats: FC = () => {
       >
         <Heading maxW="25ch" as="h2">
           Make the Most of Every Single Site Visit with{" "}
-          <b style={{ color: "#00C4A2", display: "block" }}>BeMyCreator</b>
+          <b style={{ color: "#00C4A2" }}>BeMyCreator</b>
         </Heading>
         <CTA href="/">Get started</CTA>
       </Flex>
-      <Flex
-        flexDir={["column", null, "row"]}
-        justifyItems="center"
-        justifyContent="center"
-        alignItems={["center", null, "stretch"]}
-        textAlign="center"
-        gap="30px"
-        wrap="wrap"
-      >
-        <GridItem
-          p="30px"
-          borderRadius="24px"
-          border="2px solid"
-          borderColor="gray.300"
-          bgColor="gray.100"
-          w="320px"
-        >
-          <Box
-            p={2}
-            display="inline-block"
-            bgColor="gray.300"
-            borderRadius="full"
-            mb={8}
-          >
-            <DollarSign />
-          </Box>
-          {inView ? (
-            <CountUp start={1} end={35} duration={1}>
-              {({ countUpRef }) => (
-                <Heading size="lg" fontWeight={900} mb={2}>
-                  +<span ref={countUpRef} />%
-                </Heading>
-              )}
-            </CountUp>
-          ) : null}
-
-          <Text size="md" mb={0}>
-            Conversion rate
-          </Text>
-        </GridItem>
-        <GridItem
-          p="30px"
-          borderRadius="24px"
-          border="2px solid"
-          borderColor="gray.300"
-          bgColor="gray.100"
-          w="320px"
-        >
-          <Box
-            p={2}
-            display="inline-block"
-            bgColor="gray.300"
-            borderRadius="full"
-            mb={8}
-          >
-            <DollarSign />
-          </Box>
-
-          {inView ? (
-            <CountUp start={1} end={11} duration={1}>
-              {({ countUpRef }) => (
-                <Heading size="lg" fontWeight={900} mb={2}>
-                  x<span ref={countUpRef} />
-                </Heading>
-              )}
-            </CountUp>
-          ) : null}
-
-          <Text size="md" mb={0}>
-            Added time on site
-          </Text>
-        </GridItem>
-        <GridItem
-          p="30px"
-          borderRadius="24px"
-          border="2px solid"
-          borderColor="gray.300"
-          bgColor="gray.100"
-          w="320px"
-        >
-          <Box
-            p={2}
-            display="inline-block"
-            bgColor="gray.300"
-            borderRadius="full"
-            mb={8}
-          >
-            <DollarSign />
-          </Box>
-          {inView ? (
-            <CountUp start={1} end={18} duration={1}>
-              {({ countUpRef }) => (
-                <Heading size="lg" fontWeight={900} mb={2}>
-                  +<span ref={countUpRef} />%
-                </Heading>
-              )}
-            </CountUp>
-          ) : null}
-
-          <Text size="md" mb={0}>
-            Engagement rate
-          </Text>
-        </GridItem>
-      </Flex>
+      <StatsItems inView={inView} />
     </Box>
   );
 };

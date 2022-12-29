@@ -9,18 +9,14 @@ import {
 import { DialogContent, DialogOverlay } from "@reach/dialog";
 import type { DialogProps } from "@reach/dialog";
 import { useState } from "react";
-import type { FC } from "react";
+import type { FC, PropsWithChildren } from "react";
 
 import styles from "./styles.module.css";
 
 // Styles
 import "@reach/dialog/styles.css";
 
-interface Props {
-  children: React.ReactNode;
-}
-
-const VideoModal: FC<Props> = ({ children }) => {
+const VideoModal: FC<PropsWithChildren> = ({ children }) => {
   const [showDialog, setShowDialog] = useState(false);
   const open = () => setShowDialog(true);
   const close = () => setShowDialog(false);
