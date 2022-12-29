@@ -58,7 +58,7 @@ const Carousel: FC = () => {
       as="section"
       mx="clamp(-380px, calc((100vw - 1320px) / 2 * -1), -30px)"
     >
-      <Center>
+      <Center px="30px">
         <Heading as="h2" size="md" mb={20} textAlign="center">
           Check some examples
         </Heading>
