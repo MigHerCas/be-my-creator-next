@@ -10,6 +10,7 @@ import styles from "./styles.module.css";
 interface Props {
   href: string;
   isExternal?: boolean;
+  isSmall?: boolean;
   customStyles?: StyleProps;
   showArrow?: boolean;
 }
@@ -17,6 +18,7 @@ interface Props {
 const CTA: FC<PropsWithChildren<Props>> = ({
   href,
   isExternal,
+  isSmall = false,
   customStyles,
   showArrow = true,
   children,
@@ -25,11 +27,11 @@ const CTA: FC<PropsWithChildren<Props>> = ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    fontSize: "1rem",
+    fontSize: isSmall ? "1rem" : "1.25rem",
     fontWeight: "500",
     whiteSpace: "nowrap",
     padding: "1rem 1.5rem",
-    borderRadius: "4px",
+    borderRadius: "12px",
     width: "fit-content",
     gap: "8px",
     color: "#fff",
