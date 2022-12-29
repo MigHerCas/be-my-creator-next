@@ -2,18 +2,19 @@ import { Box, Flex, GridItem, Heading, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import type { FC } from "react";
 import CountUp from "react-countup";
-import { DollarSign } from "react-feather";
+import { DollarSign, Clock, ThumbsUp } from "react-feather";
 import { useInView } from "react-intersection-observer";
 
 type StatItemContent = {
-  CountupElement: JSX.Element;
+  countupElement: JSX.Element;
+  icon: JSX.Element;
   title: string;
 };
 
 const StatsItems = ({ inView }: { inView: boolean }) => {
   const items = [
     {
-      CountupElement: (
+      countupElement: (
         <CountUp start={1} end={35} duration={2}>
           {({ countUpRef }) => (
             <Heading size="lg" fontWeight={900} mb={2}>
@@ -23,9 +24,10 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
         </CountUp>
       ),
       title: "Conversion rate",
+      icon: <DollarSign />,
     },
     {
-      CountupElement: (
+      countupElement: (
         <CountUp start={1} end={11} duration={2}>
           {({ countUpRef }) => (
             <Heading size="lg" fontWeight={900} mb={2}>
@@ -35,9 +37,10 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
         </CountUp>
       ),
       title: "Added time on site",
+      icon: <Clock />,
     },
     {
-      CountupElement: (
+      countupElement: (
         <CountUp start={1} end={18} duration={2}>
           {({ countUpRef }) => (
             <Heading size="lg" fontWeight={900} mb={2}>
@@ -47,6 +50,7 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
         </CountUp>
       ),
       title: "Engagement rate",
+      icon: <ThumbsUp />,
     },
   ] as Array<StatItemContent>;
 
@@ -60,7 +64,7 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
       gap="30px"
       wrap="wrap"
     >
-      {items.map(({ title, CountupElement }) => (
+      {items.map(({ countupElement, icon, title }) => (
         <GridItem
           p={["20px", "30px"]}
           borderRadius="24px"
@@ -70,15 +74,15 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
         >
           <>
             <Box
-              p={2}
+              p={3}
               display="inline-block"
               bgColor="#272727"
               borderRadius="full"
               mb={8}
             >
-              <DollarSign />
+              {icon}
             </Box>
-            {inView ? CountupElement : null}
+            {inView ? countupElement : null}
 
             <Text size="md" mb={0}>
               {title}
