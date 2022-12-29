@@ -6,7 +6,12 @@ const SuccessStories: FC = () => {
   return (
     <Box as="section" py="60px">
       <Center>
-        <Heading maxW="20ch" size="lg" textAlign="center" mb="60px">
+        <Heading
+          maxW="20ch"
+          size={["md", null, "lg"]}
+          textAlign="center"
+          mb="60px"
+        >
           Trusted by <span style={{ color: "#00C4A2" }}>leaders</span> of the
           creative community
         </Heading>
