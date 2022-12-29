@@ -65,6 +65,7 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
           p={["20px", "30px"]}
           borderRadius="24px"
           bgColor="#1B1B1B"
+          key={title}
           w={["260px", "280px", null, null, "320px"]}
         >
           <>
