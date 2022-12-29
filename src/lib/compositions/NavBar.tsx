@@ -102,8 +102,13 @@ const NavBar: FC = () => {
                 alignItems="center"
                 gap={4}
               >
-                <ArrowRightCircle fill="#00C4A2" stroke="white" />
                 {link}
+                <ArrowRightCircle
+                  height="30px"
+                  width="30px"
+                  fill="#00C4A2"
+                  stroke="white"
+                />
               </Link>
             ))}
 
