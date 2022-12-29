@@ -5,6 +5,7 @@ import Carousel from "./modules/Carousel/Carousel";
 import Hero from "./modules/Hero";
 import Stats from "./modules/Stats";
 import SuccessStories from "./modules/SuccessStories";
+import Versus from "./modules/Versus/Versus";
 
 const HomeView: NextPage = () => {
   return (
@@ -14,6 +15,7 @@ const HomeView: NextPage = () => {
       <Stats />
       <Carousel />
       <SuccessStories />
+      <Versus />
     </>
   );
 };
