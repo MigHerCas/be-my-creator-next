@@ -25,7 +25,7 @@ const rightSideItems = [
 
 const Versus: FC = () => {
   const { ref, inView } = useInView({
-    threshold: 1,
+    threshold: 0.8,
     triggerOnce: true,
   });
 
@@ -34,7 +34,7 @@ const Versus: FC = () => {
       as="section"
       ref={ref}
       isolation="isolate"
-      py="60px"
+      py={["10px", "20px", null, "60px"]}
       className={inView ? styles.containerIsAnimated : undefined}
     >
       <Box textAlign="center" mb="50px">
@@ -43,35 +43,43 @@ const Versus: FC = () => {
         </Heading>
       </Box>
 
-      <Flex justifyContent="center" alignItems="center">
+      <Flex
+        justifyContent="center"
+        alignItems="center"
+        wrap="wrap"
+        gap={[8, 10, null, "10px"]}
+      >
         {/* Left side (BMC) */}
         <Box
           backgroundColor="white"
           zIndex="1"
           borderRadius="20px"
           position="relative"
+          overflow="hidden"
           className={styles.animatedBoxOurs}
+          boxShadow="rgba(0, 0, 0, 0.25) 0px 25px 50px -12px"
         >
-          <Heading as="h3" size="sm" textAlign="center" mb={4}>
-            BeMyCreator
-          </Heading>
           <VStack
             as="ul"
             alignItems="flex-start"
             spacing={0}
             gap={4}
-            p="40px"
-            borderRadius="20px"
+            p={["15px", "20px", "30px", "40px"]}
             backgroundColor="white"
-            boxShadow="rgba(0, 0, 0, 0.25) 0px 25px 50px -12px"
-            borderBottom="10px solid #00C4A2"
           >
             {leftSideItems.map((itemText) => (
               <Flex as="li" alignItems="center" gap={4}>
-                <Box p={1} borderRadius="full" bgColor="#00C4A2">
-                  <Check stroke="white" />
+                <Box
+                  width={["20px", "24px"]}
+                  padding="4px"
+                  borderRadius="full"
+                  bgColor="#00C4A2"
+                >
+                  <Check stroke="white" width="100%" height="100%" />
                 </Box>
-                <Text mb="0">{itemText}</Text>
+                <Text size={["sm", "md"]} mb="0">
+                  {itemText}
+                </Text>
               </Flex>
             ))}
           </VStack>
@@ -79,9 +87,8 @@ const Versus: FC = () => {
         <Box />
 
         {/* Right side (others) */}
-
         <Box borderRadius="20px" className={styles.animatedBoxOthers}>
-          <Heading as="h3" size="sm" textAlign="center" mb={4} opacity="0.6">
+          <Heading as="h3" size="sm" ml="80px" mb={0} opacity="0.6">
             Others
           </Heading>
           <VStack
@@ -89,16 +96,21 @@ const Versus: FC = () => {
             alignItems="flex-start"
             spacing={0}
             gap={4}
-            p="40px"
+            p={["20px", null, "30px", "20px 40px"]}
             backgroundColor="white"
             opacity="0.8"
           >
             {rightSideItems.map((itemText) => (
               <Flex as="li" alignItems="center" gap={4}>
-                <Box p={0.75} borderRadius="full" bgColor="gray.300">
-                  <X stroke="white" />
+                <Box
+                  width={["20px", "24px"]}
+                  padding="4px"
+                  borderRadius="full"
+                  bgColor="gray.300"
+                >
+                  <X stroke="white" width="100%" height="100%" />
                 </Box>
-                <Text mb="0" opacity={0.7}>
+                <Text mb="0" size={["sm", "md"]}>
                   {itemText}
                 </Text>
               </Flex>
