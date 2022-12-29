@@ -28,6 +28,7 @@ const Slider: FC = () => {
           modifier: 1,
         }}
       >
+        {/* TODO: add key when populated with real data */}
         {Array.from({ length: 10 }).map((_, index) => {
           return (
             <SwiperSlide className={styles.swiperSlide}>
@@ -55,10 +56,7 @@ const Carousel: FC = () => {
   return (
     <Box
       as="section"
-      mx={{
-        md: "clamp(-30px, calc((100vw - 1320px) / 2 * -1), -30px)",
-        xl: "max(calc((100vw - 1320px) / 2 * -1), -400px)",
-      }}
+      mx="clamp(-380px, calc((100vw - 1320px) / 2 * -1), -30px)"
     >
       <Center>
         <Heading as="h2" size="md" mb={20} textAlign="center">
