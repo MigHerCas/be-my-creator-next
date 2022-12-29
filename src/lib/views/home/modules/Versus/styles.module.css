@@ -1,0 +1,25 @@
+/* Default state */
+.animatedBoxOurs {
+  transform: perspective(2000px) scale(1) rotateX(0);
+  opacity: 0.8;
+  transition: transform 400ms ease-in;
+}
+
+.animatedBoxOthers {
+  transform: perspective(800px) rotateY(0deg) scale(1) rotateX(0deg);
+  opacity: 0.8;
+  transition: transform 400ms ease-in;
+}
+
+/* Animated state */
+.containerIsAnimated .animatedBoxOurs {
+  transform: perspective(1750px) scale(1.05) rotateY(5deg) rotateX(5deg)
+    translateX(15px);
+  opacity: 1;
+}
+
+.containerIsAnimated .animatedBoxOthers {
+  transform: perspective(1500px) rotateY(-5deg) scale(0.95) rotateX(5deg)
+    scale(1);
+  opacity: 1;
+}
