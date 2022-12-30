@@ -1,3 +1,4 @@
+import FixedBlobs from "@compositions/FixedBlobs";
 import { useStore } from "@supabase/Store";
 import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
@@ -19,6 +20,9 @@ const HomeView: NextPage = () => {
       <Carousel />
       <SuccessStories />
       <Versus />
+
+      {/* Fixed: Blob it!  */}
+      <FixedBlobs />
     </>
   );
 };
