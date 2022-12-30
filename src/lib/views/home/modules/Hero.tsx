@@ -17,11 +17,12 @@ const Hero: FC = () => {
       {/* Left side */}
       <GridItem
         colStart={1}
-        colEnd={[-1, null, null, 7]}
+        colEnd={[-1, null, null, 8]}
         textAlign={["center", null, null, "initial"]}
+        p="60px"
       >
         <CatchyBanner />
-        <Heading size={["md", null, "lg"]} mt={["auto", null, 8]}>
+        <Heading size={["md", null, "lg"]} mt={["auto", null, 10]}>
           Instantly connect with UGC creators
         </Heading>
         <Text maxW="40ch" mb={8} mx={["auto", null, null, 0]}>
