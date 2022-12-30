@@ -6,49 +6,37 @@ import { DollarSign, Clock, ThumbsUp } from "react-feather";
 import { useInView } from "react-intersection-observer";
 
 type StatItemContent = {
-  countupElement: JSX.Element;
   icon: JSX.Element;
   title: string;
+  startValue: number;
+  endValue: number;
+  leftSideOperator: string;
+  rightSideOperator: string;
 };
 
 const StatsItems = ({ inView }: { inView: boolean }) => {
   const items = [
     {
-      countupElement: (
-        <CountUp start={1} end={35} duration={2}>
-          {({ countUpRef }) => (
-            <Heading size="lg" fontWeight={900} mb={2}>
-              +<span ref={countUpRef} />%
-            </Heading>
-          )}
-        </CountUp>
-      ),
+      startValue: 1,
+      endValue: 35,
+      leftSideOperator: "+",
+      rightSideOperator: "%",
       title: "Conversion rate",
       icon: <DollarSign />,
     },
     {
-      countupElement: (
-        <CountUp start={1} end={11} duration={2}>
-          {({ countUpRef }) => (
-            <Heading size="lg" fontWeight={900} mb={2}>
-              x<span ref={countUpRef} />
-            </Heading>
-          )}
-        </CountUp>
-      ),
+      startValue: 1,
+      endValue: 11,
+      leftSideOperator: "x",
+      rightSideOperator: "",
       title: "Added time on site",
       icon: <Clock />,
     },
     {
-      countupElement: (
-        <CountUp start={1} end={18} duration={2}>
-          {({ countUpRef }) => (
-            <Heading size="lg" fontWeight={900} mb={2}>
-              +<span ref={countUpRef} />%
-            </Heading>
-          )}
-        </CountUp>
-      ),
+      startValue: 1,
+      endValue: 18,
+      leftSideOperator: "+",
+      rightSideOperator: "%",
       title: "Engagement rate",
       icon: <ThumbsUp />,
     },
@@ -64,15 +52,22 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
       gap="30px"
       wrap="wrap"
     >
-      {items.map(({ countupElement, icon, title }) => (
-        <GridItem
-          p={["20px", "30px"]}
-          borderRadius="24px"
-          bgColor="#1B1B1B"
-          key={title}
-          w={["260px", "280px", null, null, "320px"]}
-        >
-          <>
+      {items.map(
+        ({
+          startValue,
+          endValue,
+          leftSideOperator,
+          rightSideOperator,
+          icon,
+          title,
+        }) => (
+          <GridItem
+            p={["20px", "30px"]}
+            borderRadius="24px"
+            bgColor="#1B1B1B"
+            key={title}
+            w={["260px", "280px", null, null, "320px"]}
+          >
             <Box
               p={3}
               display="inline-block"
@@ -82,14 +77,24 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
             >
               {icon}
             </Box>
-            {inView ? countupElement : null}
+            {inView ? (
+              <CountUp start={startValue} end={endValue} duration={2}>
+                {({ countUpRef }) => (
+                  <Heading size="lg" fontWeight={900} mb={2}>
+                    {leftSideOperator}
+                    <span ref={countUpRef} />
+                    {rightSideOperator}
+                  </Heading>
+                )}
+              </CountUp>
+            ) : null}
 
             <Text size="md" mb={0}>
               {title}
             </Text>
-          </>
-        </GridItem>
-      ))}
+          </GridItem>
+        )
+      )}
     </Flex>
   );
 };
