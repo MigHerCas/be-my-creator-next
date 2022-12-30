@@ -82,6 +82,7 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
                 start={startValue}
                 end={endValue}
                 duration={2}
+                delay={0}
                 onEnd={() => console.log("Ended! 👏")}
                 onStart={() => console.log("Started! 💨")}
               >
