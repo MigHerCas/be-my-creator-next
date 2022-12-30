@@ -36,7 +36,6 @@ const NavBar: FC = () => {
         mx="auto"
         px="30px"
         height="90px"
-        overflow="hidden"
       >
         <IconButton
           size="md"
