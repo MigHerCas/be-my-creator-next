@@ -28,7 +28,7 @@ const NavBar: FC = () => {
   }, [isOpen, setLocked]);
 
   return (
-    <Box as="header" position="relative" zIndex="1">
+    <Box as="header" pos="relative" zIndex="1">
       <Flex
         alignItems="center"
         justifyContent="space-between"
@@ -75,7 +75,7 @@ const NavBar: FC = () => {
           pb="30px"
           px="30px"
           display={{ md: "none" }}
-          position="absolute"
+          pos="absolute"
           bottom="0"
           left="0"
           w="full"

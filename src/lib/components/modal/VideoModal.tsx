@@ -39,7 +39,7 @@ const VideoModal: FC<PropsWithChildren> = ({ children }) => {
             alignItems="center"
             justifyContent="space-between"
             spacing={4}
-            position="absolute"
+            pos="absolute"
             w="full"
             padding={3}
             zIndex="overlay"

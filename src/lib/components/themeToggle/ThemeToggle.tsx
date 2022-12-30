@@ -6,7 +6,7 @@ const ThemeToggle = () => {
 
   return (
     <IconButton
-      position="fixed"
+      pos="fixed"
       top={8}
       right={8}
       aria-label="theme toggle"
