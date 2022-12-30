@@ -91,7 +91,25 @@ h6 {
   border-radius: 20px;
   background-image: linear-gradient(
     to left,
-    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.25),
     rgba(0, 0, 0, 0)
   ) !important;
+}
+
+/* Glassmorphism */
+.glassmorphic {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.glassmorphic--no-shadow {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
