@@ -1,3 +1,4 @@
+import { useStore } from "@supabase/Store";
 import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
 
@@ -8,6 +9,8 @@ import SuccessStories from "./modules/SuccessStories";
 import Versus from "./modules/Versus/Versus";
 
 const HomeView: NextPage = () => {
+  const { leads } = useStore();
+  console.log(leads);
   return (
     <>
       <NextSeo title="Home" />
