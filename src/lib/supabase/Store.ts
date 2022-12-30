@@ -29,7 +29,7 @@ export const insertLead = async () => {
     const { data } = await supabase.from("leads").insert([newLead]);
     return data;
   } catch (error) {
-    console.log("error", error);
+    throw new Error(error as string);
   }
 };
 
@@ -40,14 +40,13 @@ export const insertLead = async () => {
 export const fetchLeads = async (
   setState: Dispatch<SetStateAction<unknown>>
 ) => {
-  console.log(supabase);
   try {
     const { data } = await supabase.from("leads").select("*");
 
     if (setState) setState(data);
     return data;
   } catch (error) {
-    console.log("error", error);
+    throw new Error(error as string);
   }
 };
 
