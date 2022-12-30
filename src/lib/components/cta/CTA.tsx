@@ -35,6 +35,7 @@ const CTA: FC<PropsWithChildren<Props>> = ({
     width: "fit-content",
     gap: "8px",
     color: "#fff",
+    boxShadow: "rgb(0 0 0 / 40%) 0px 10px 50px -12px",
     // TODO: align with theme colors
     backgroundColor: "#00C4A2",
     ...customStyles,
