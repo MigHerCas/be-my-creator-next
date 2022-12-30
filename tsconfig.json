@@ -17,12 +17,13 @@
     "paths": {
       "@components/*": ["lib/components/*"],
       "@compositions/*": ["lib/compositions/*"],
-      "@views/*": ["lib/views/*"],
-      "@layout/*": ["lib/layout/*"],
-      "@pages/*": ["pages/*"],
-      "@styles/*": ["lib/styles/*"],
       "@helpers/*": ["lib/helpers/*"],
-      "@hooks": ["lib/hooks"]
+      "@hooks": ["lib/hooks"],
+      "@layout/*": ["lib/layout/*"],
+      "@styles/*": ["lib/styles/*"],
+      "@supabase/*": ["lib/supabase/*"],
+      "@pages/*": ["pages/*"],
+      "@views/*": ["lib/views/*"]
     },
     "incremental": true
   },

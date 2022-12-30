@@ -64,7 +64,7 @@ const Versus: FC = () => {
             alignItems="flex-start"
             spacing={0}
             gap={4}
-            p={["15px", "20px", "30px", "40px"]}
+            p={["15px", "20px", "30px"]}
             backgroundColor="white"
           >
             {leftSideItems.map((itemText) => (
