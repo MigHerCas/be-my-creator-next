@@ -58,6 +58,8 @@ const Carousel: FC = () => {
   return (
     <Box
       as="section"
+      py="60px"
+      className="glassmorphic--no-shadow"
       mx="clamp(-380px, calc((100vw - 1320px) / 2 * -1), -30px)"
     >
       <Center px="30px">
