@@ -57,7 +57,6 @@ const Versus: FC = () => {
           pos="relative"
           overflow="hidden"
           className={styles.animatedBoxOurs}
-          boxShadow="rgba(0, 0, 0, 0.25) 0px 25px 50px -12px"
         >
           <VStack
             as="ul"
@@ -97,7 +96,6 @@ const Versus: FC = () => {
             spacing={0}
             gap={4}
             p={["20px", null, "30px", "20px 40px"]}
-            backgroundColor="white"
             opacity="0.8"
           >
             {rightSideItems.map((itemText) => (
