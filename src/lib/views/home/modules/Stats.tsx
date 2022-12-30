@@ -78,29 +78,14 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
               {icon}
             </Box>
             {inView ? (
-              <CountUp
-                start={startValue}
-                end={endValue}
-                duration={2}
-                delay={0}
-                onEnd={() => console.log("Ended! 👏")}
-                onStart={() => console.log("Started! 💨")}
-              >
-                {({ countUpRef, start }) => {
-                  console.log("CountUp", CountUp);
-                  console.log("countUpRef", countUpRef);
-
+              <CountUp start={startValue} end={endValue} duration={2} delay={0}>
+                {({ countUpRef }) => {
                   return (
-                    <div>
-                      <Heading size="lg" fontWeight={900} mb={2}>
-                        {leftSideOperator}
-                        <span ref={countUpRef} />
-                        {rightSideOperator}
-                      </Heading>
-                      <button type="button" onClick={start}>
-                        Start
-                      </button>
-                    </div>
+                    <Heading size="lg" fontWeight={900} mb={2}>
+                      {leftSideOperator}
+                      <span ref={countUpRef} />
+                      {rightSideOperator}
+                    </Heading>
                   );
                 }}
               </CountUp>
