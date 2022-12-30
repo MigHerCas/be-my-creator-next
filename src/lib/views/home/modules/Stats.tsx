@@ -78,14 +78,16 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
               {icon}
             </Box>
             {inView ? (
-              <CountUp start={startValue} end={endValue} duration={2}>
-                {({ countUpRef }) => (
-                  <Heading size="lg" fontWeight={900} mb={2}>
-                    {leftSideOperator}
-                    <span ref={countUpRef} />
-                    {rightSideOperator}
-                  </Heading>
-                )}
+              <CountUp start={startValue} end={endValue} duration={2} delay={0}>
+                {({ countUpRef }) => {
+                  return (
+                    <Heading size="lg" fontWeight={900} mb={2}>
+                      {leftSideOperator}
+                      <span ref={countUpRef} />
+                      {rightSideOperator}
+                    </Heading>
+                  );
+                }}
               </CountUp>
             ) : null}
 
