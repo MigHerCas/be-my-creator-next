@@ -1,15 +1,8 @@
-import {
-  Heading,
-  Grid,
-  GridItem,
-  Flex,
-  Text,
-  HStack,
-  Tag,
-} from "@chakra-ui/react";
+import { Heading, Grid, GridItem, Flex, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import VideoModal from "@components/modal/VideoModal";
 import VideoPlayer from "@components/video/VideoPlayer";
+import CatchyBanner from "@compositions/CatchyBanner";
 import type { FC } from "react";
 
 const Hero: FC = () => {
@@ -21,39 +14,14 @@ const Hero: FC = () => {
       rowGap={10}
       py="40px"
     >
+      {/* Left side */}
       <GridItem
         colStart={1}
         colEnd={[-1, null, null, 7]}
         textAlign={["center", null, null, "initial"]}
       >
-        <HStack
-          spacing={4}
-          mb={4}
-          justifyContent={["center", null, null, "initial"]}
-          display={["none", "flex"]}
-        >
-          <Tag
-            size="lg"
-            key="tag1"
-            variant="solid"
-            bgColor="#fff"
-            color="#000"
-            border="1px solid #eaeaeb"
-          >
-            Videos from $10
-          </Tag>
-          <Tag
-            size="lg"
-            key="tag2"
-            variant="solid"
-            bgColor="#fff"
-            color="#000"
-            border="1px solid #eaeaeb"
-          >
-            Campaigns from $200
-          </Tag>
-        </HStack>
-        <Heading size={["md", null, "lg"]}>
+        <CatchyBanner />
+        <Heading size={["md", null, "lg"]} mt={["auto", null, 8]}>
           Instantly connect with UGC creators
         </Heading>
         <Text maxW="40ch" mb={8} mx={["auto", null, null, 0]}>
@@ -69,6 +37,8 @@ const Hero: FC = () => {
           Book a call with us
         </CTA>
       </GridItem>
+
+      {/* Right side */}
       <GridItem colStart={[1, null, null, 8]} colEnd={-1}>
         <Flex
           backgroundColor="gray.300"
