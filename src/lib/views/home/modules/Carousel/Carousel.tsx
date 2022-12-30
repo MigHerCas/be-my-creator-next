@@ -19,12 +19,14 @@ const Slider: FC = () => {
         autoplay
         grabCursor
         autoHeight
+        centeredSlides
         mousewheel
         loop
         effect="coverflow"
         coverflowEffect={{
           slideShadows: true,
-          rotate: 25,
+          rotate: 15,
+          stretch: 40,
           modifier: 1,
         }}
       >
