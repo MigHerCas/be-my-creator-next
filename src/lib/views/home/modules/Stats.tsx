@@ -22,7 +22,7 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
       leftSideOperator: "+",
       rightSideOperator: "%",
       title: "Conversion rate",
-      icon: <DollarSign />,
+      icon: <DollarSign stroke="#BCE500" />,
     },
     {
       startValue: 1,
@@ -30,7 +30,7 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
       leftSideOperator: "x",
       rightSideOperator: "",
       title: "Added time on site",
-      icon: <Clock />,
+      icon: <Clock stroke="#BCE500" />,
     },
     {
       startValue: 1,
@@ -38,7 +38,7 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
       leftSideOperator: "+",
       rightSideOperator: "%",
       title: "Engagement rate",
-      icon: <ThumbsUp />,
+      icon: <ThumbsUp stroke="#BCE500" />,
     },
   ] as Array<StatItemContent>;
 

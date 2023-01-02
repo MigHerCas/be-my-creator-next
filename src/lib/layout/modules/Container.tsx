@@ -18,7 +18,7 @@ const Container: FC<PropsWithChildren<Props>> = ({
     mx: "auto",
     flex: "1",
     display: "flex",
-    gap: ["40px", null, "60px", "90px"],
+    gap: ["30px", null, "60px", "90px"],
     flexDir: "column",
   };
 
