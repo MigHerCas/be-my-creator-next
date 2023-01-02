@@ -9,8 +9,8 @@ const FixedBlobs: FC = () => {
         pos="fixed"
         bottom={["50%", "45%", "35%", null, null, "30%"]}
         left={["-40%", "-30%", "-20%", "-20%", null, "-10%"]}
-        w={["300px", "400px", null, "500px", "600px"]}
-        h={["300px", "400px", null, "500px", "600px"]}
+        w={["300px", "350px", "400px", null, "500px", "600px"]}
+        h={["300px", "350px", "400px", null, "500px", "600px"]}
         zIndex="-1"
       >
         <Blob type={2} />
@@ -19,9 +19,9 @@ const FixedBlobs: FC = () => {
       <Box
         pos="fixed"
         top={["50%", null, "50%"]}
-        right={["-60%", "-35%", "-20%", "-10%"]}
-        w={["300px", "400px", null, "500px", "600px"]}
-        h={["300px", "400px", null, "500px", "600px"]}
+        right={["-50%", "-35%", "-20%", "-10%"]}
+        w={["300px", "400px", "400px", null, "500px", "600px"]}
+        h={["300px", "400px", "400px", null, "500px", "600px"]}
         zIndex="-1"
       >
         <Blob type={0} isInverted />
