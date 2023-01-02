@@ -1,3 +1,4 @@
+import FixedBlobs from "@compositions/FixedBlobs";
 import type { ReactNode } from "react";
 
 import Container from "./modules/Container";
@@ -14,6 +15,9 @@ const Layout = ({ children }: LayoutProps) => {
       <Header />
       <Container htmlTag="main">{children}</Container>
       <Footer />
+
+      {/* Fixed: Blob it!  */}
+      <FixedBlobs />
     </>
   );
 };

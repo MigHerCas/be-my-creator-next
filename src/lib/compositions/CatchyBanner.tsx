@@ -9,7 +9,7 @@ const CatchyBanner: FC = () => {
       display={["none", null, "flex"]}
       px={4}
       py={3}
-      backgroundColor="hsl(170deg 100% 38% / 15%)"
+      className="glassmorphic"
       borderRadius="8px"
       alignItems="center"
       gap={3}
