@@ -30,7 +30,7 @@ const Steps: FC = () => {
           <Box
             p={4}
             display="flex"
-            gap={2}
+            gap={4}
             bgColor="#1C1C1C"
             borderRadius="full"
             mb={6}
@@ -59,7 +59,7 @@ const Steps: FC = () => {
           <Box
             p={4}
             display="flex"
-            gap={2}
+            gap={4}
             bgColor="#1C1C1C"
             borderRadius="full"
             mb={6}
@@ -89,7 +89,7 @@ const Steps: FC = () => {
           <Box
             p={4}
             display="flex"
-            gap={2}
+            gap={4}
             bgColor="#1C1C1C"
             borderRadius="full"
             mb={6}
