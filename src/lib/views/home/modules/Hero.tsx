@@ -34,14 +34,18 @@ const Hero: FC = () => {
           We make it easy for you to source and display quality user-generated
           content videos
         </Text>
-        <CTA
-          href="/"
-          customStyles={{
-            m: ["auto", null, null, 0],
-          }}
+
+        <Flex
+          alignItems="center"
+          justifyContent={["center", null, null, "flex-start"]}
+          gap={4}
+          wrap="wrap"
         >
-          Book a call with us
-        </CTA>
+          <CTA href="/" showArrow={false}>
+            Start a project
+          </CTA>
+          <CTA href="/">Book a call with us</CTA>
+        </Flex>
       </GridItem>
 
       {/* Right side */}
