@@ -11,6 +11,7 @@ interface Props {
   href: string;
   isExternal?: boolean;
   isSmall?: boolean;
+  isLight?: boolean;
   customStyles?: StyleProps;
   showArrow?: boolean;
 }
@@ -19,6 +20,7 @@ const CTA: FC<PropsWithChildren<Props>> = ({
   href,
   isExternal,
   isSmall = false,
+  isLight = false,
   customStyles,
   showArrow = true,
   children,
@@ -30,14 +32,13 @@ const CTA: FC<PropsWithChildren<Props>> = ({
     fontSize: isSmall ? "1rem" : "1.25rem",
     fontWeight: "500",
     whiteSpace: "nowrap",
-    padding: "1rem 1.5rem",
+    padding: isSmall ? "0.875rem 1rem" : "1rem 1.5rem",
     borderRadius: "12px",
     width: "fit-content",
     gap: "8px",
-    color: "#fff",
-    boxShadow: "rgb(0 0 0 / 40%) 0px 10px 50px -12px",
+    color: isLight ? "gray.800" : "white",
     // TODO: align with theme colors
-    backgroundColor: "#00C4A2",
+    backgroundColor: isLight ? "white" : "#262626",
     ...customStyles,
   };
 
