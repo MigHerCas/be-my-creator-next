@@ -2,18 +2,19 @@ import { Link } from "@chakra-ui/react";
 import type { StyleProps } from "@chakra-ui/react";
 import NextLink from "next/link";
 import type { FC, PropsWithChildren } from "react";
-import { ArrowRight, ArrowUpRight } from "react-feather";
+import { ArrowRight, ArrowUpRight, PlusCircle } from "react-feather";
 
 // Styles (needed for hover icon effect)
 import styles from "./styles.module.css";
 
+type IconName = "plus" | "arrow" | "arrowExternal";
+type Variant = "primary" | "secondary";
 interface Props {
   href: string;
-  isExternal?: boolean;
+  variant: Variant;
   isSmall?: boolean;
-  isLight?: boolean;
   customStyles?: StyleProps;
-  showArrow?: boolean;
+  icon?: IconName;
 }
 
 const baseStyles: (isSmall: boolean) => StyleProps = (isSmall) => {
@@ -31,27 +32,36 @@ const baseStyles: (isSmall: boolean) => StyleProps = (isSmall) => {
   };
 };
 
-export const CTA: FC<PropsWithChildren<Props>> = ({
+const CTA: FC<PropsWithChildren<Props>> = ({
   href,
-  isExternal,
+  variant,
+  icon,
   isSmall = false,
-  isLight = false,
   customStyles,
-  showArrow = true,
   children,
 }) => {
+  const colorConfig = {
+    primary: {
+      color: "white",
+      backgroundColor: "#262626",
+    },
+    secondary: {
+      color: "gray.800",
+      backgroundColor: "gray.200",
+    },
+  } as Record<Variant, { color: string; backgroundColor: string }>;
+
   const groupedStyles: StyleProps = {
     ...baseStyles(isSmall),
-    color: isLight ? "gray.800" : "white",
-    backgroundColor: isLight ? "white" : "#262626",
+    ...colorConfig[variant],
     ...customStyles,
   };
 
-  const arrowIcon = isExternal ? (
-    <ArrowUpRight className={styles.iconExternal} />
-  ) : (
-    <ArrowRight className={styles.icon} />
-  );
+  const iconMapper = {
+    arrow: <ArrowRight className={styles.arrow} />,
+    arrowExternal: <ArrowUpRight className={styles.arrowExternal} />,
+    plus: <PlusCircle className={styles.plus} />,
+  } as Record<IconName, JSX.Element>;
 
   return (
     <Link
@@ -62,42 +72,9 @@ export const CTA: FC<PropsWithChildren<Props>> = ({
       _hover={{ textDecoration: "none" }}
     >
       {children}
-      {showArrow ? arrowIcon : null}
+      {icon ? iconMapper[icon] : null}
     </Link>
   );
 };
 
-export const SecondaryCTA: FC<PropsWithChildren<Props>> = ({
-  href,
-  isExternal,
-  isSmall = false,
-  customStyles,
-  showArrow = true,
-  children,
-}) => {
-  const groupedStyles: StyleProps = {
-    ...baseStyles(isSmall),
-    color: "gray.800",
-    backgroundColor: "gray.200",
-    ...customStyles,
-  };
-
-  const arrowIcon = isExternal ? (
-    <ArrowUpRight className={styles.iconExternal} />
-  ) : (
-    <ArrowRight className={styles.icon} />
-  );
-
-  return (
-    <Link
-      as={NextLink}
-      href={href}
-      className={styles.link}
-      {...groupedStyles}
-      _hover={{ textDecoration: "none" }}
-    >
-      {children}
-      {showArrow ? arrowIcon : null}
-    </Link>
-  );
-};
+export default CTA;

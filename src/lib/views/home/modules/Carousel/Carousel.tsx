@@ -1,5 +1,5 @@
-import { Box, Center, Heading } from "@chakra-ui/react";
-import { CTA } from "@components/cta/CTA";
+import { Box, Center, Flex, Heading } from "@chakra-ui/react";
+import CTA from "@components/cta/CTA";
 import type { FC } from "react";
 import { A11y, Autoplay, EffectCoverflow } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -47,9 +47,14 @@ const Slider: FC = () => {
         })}
       </Swiper>
 
-      <Center mt={14}>
-        <CTA href="">Book a demo</CTA>
-      </Center>
+      <Flex mt={14} gap={4} justifyContent="center" wrap="wrap">
+        <CTA href="" variant="secondary" icon="plus">
+          Start your first project
+        </CTA>
+        <CTA href="" variant="primary" icon="arrow">
+          Book a demo
+        </CTA>
+      </Flex>
     </Box>
   );
 };

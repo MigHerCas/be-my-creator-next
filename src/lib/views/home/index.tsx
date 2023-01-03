@@ -16,8 +16,8 @@ const HomeView: NextPage = () => {
     <>
       <NextSeo title="Home" />
       <Hero />
-      <Stats />
       <Steps />
+      <Stats />
       <Carousel />
       <SuccessStories />
       <Versus />

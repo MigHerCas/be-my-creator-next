@@ -6,7 +6,7 @@ import {
   IconButton,
   useDisclosure,
 } from "@chakra-ui/react";
-import { CTA } from "@components/cta/CTA";
+import CTA from "@components/cta/CTA";
 import Logo from "@components/logo/Logo";
 import { MAX_WIDTH } from "@helpers/ui-values";
 import { useLockedBody } from "@hooks";
@@ -58,10 +58,11 @@ const NavBar: FC = () => {
 
           <CTA
             href=""
-            showArrow={false}
+            variant="primary"
             isSmall
+            icon="arrow"
             customStyles={{
-              display: ["none", null, "block"],
+              display: ["none", null, "flex"],
             }}
           >
             Book a call
@@ -111,7 +112,15 @@ const NavBar: FC = () => {
               </Link>
             ))}
 
-            <CTA href="" customStyles={{ mt: 4 }}>
+            <CTA
+              href=""
+              variant="secondary"
+              icon="plus"
+              customStyles={{ my: 2 }}
+            >
+              Start your first project
+            </CTA>
+            <CTA href="" variant="primary" icon="arrow">
               Book a call
             </CTA>
           </Flex>
