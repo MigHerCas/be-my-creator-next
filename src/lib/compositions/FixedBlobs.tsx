@@ -12,6 +12,9 @@ const FixedBlobs: FC = () => {
         w={["300px", "350px", "400px", null, "500px", "600px"]}
         h={["300px", "350px", "400px", null, "500px", "600px"]}
         zIndex="-1"
+        transitionProperty="bottom left"
+        transitionDuration="99999"
+        transitionTimingFunction="ease"
       >
         <Blob type={2} />
       </Box>
@@ -23,6 +26,9 @@ const FixedBlobs: FC = () => {
         w={["300px", "400px", "400px", null, "500px", "600px"]}
         h={["300px", "400px", "400px", null, "500px", "600px"]}
         zIndex="-1"
+        transitionProperty="bottom left"
+        transitionDuration="99999"
+        transitionTimingFunction="ease"
       >
         <Blob type={0} isInverted />
       </Box>
