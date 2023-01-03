@@ -33,8 +33,6 @@ Typographic tweaks!
 
 body {
   line-height: 1.5;
-  position: fixed;
-  height: 100%;
   -webkit-font-smoothing: antialiased;
 }
 
