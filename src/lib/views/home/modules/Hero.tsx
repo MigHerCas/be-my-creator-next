@@ -45,7 +45,7 @@ const Hero: FC = () => {
           gap={4}
           wrap="wrap"
         >
-          <CTA href="/demo" variant="secondary" icon="plus">
+          <CTA href="/new-project" variant="secondary" icon="plus">
             Start a project
           </CTA>
           <CTA href="/" variant="primary" icon="arrow">

@@ -48,7 +48,7 @@ const Slider: FC = () => {
       </Swiper>
 
       <Flex mt={14} gap={4} justifyContent="center" wrap="wrap">
-        <CTA href="/demo" variant="secondary" icon="plus">
+        <CTA href="/new-project" variant="secondary" icon="plus">
           Start your first project
         </CTA>
         <CTA href="" variant="primary" icon="arrow">

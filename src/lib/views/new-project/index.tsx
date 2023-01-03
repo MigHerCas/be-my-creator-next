@@ -2,7 +2,7 @@ import { Heading } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
 
-const DemoView: NextPage = () => {
+const NewProjectView: NextPage = () => {
   return (
     <>
       <NextSeo title="Home" />
@@ -11,4 +11,4 @@ const DemoView: NextPage = () => {
   );
 };
 
-export default DemoView;
+export default NewProjectView;
