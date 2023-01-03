@@ -6,7 +6,7 @@ import {
   IconButton,
   useDisclosure,
 } from "@chakra-ui/react";
-import CTA from "@components/cta/CTA";
+import { CTA } from "@components/cta/CTA";
 import Logo from "@components/logo/Logo";
 import { MAX_WIDTH } from "@helpers/ui-values";
 import { useLockedBody } from "@hooks";

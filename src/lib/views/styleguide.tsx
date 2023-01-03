@@ -1,5 +1,5 @@
 import { Container, Heading, Text } from "@chakra-ui/react";
-import CTA from "@components/cta/CTA";
+import { CTA } from "@components/cta/CTA";
 import { sampleText } from "@helpers/text";
 import type { NextPage } from "next";
 import NextLink from "next/link";
