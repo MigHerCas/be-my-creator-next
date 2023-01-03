@@ -1,5 +1,5 @@
 import { Heading, Grid, GridItem, Flex, Text } from "@chakra-ui/react";
-import { CTA, SecondaryCTA } from "@components/cta/CTA";
+import CTA from "@components/cta/CTA";
 import VideoModal from "@components/modal/VideoModal";
 import VideoPlayer from "@components/video/VideoPlayer";
 import CatchyBanner from "@compositions/CatchyBanner";
@@ -45,8 +45,10 @@ const Hero: FC = () => {
           gap={4}
           wrap="wrap"
         >
-          <SecondaryCTA href="/">Start a project</SecondaryCTA>
-          <CTA href="/" showArrow={false}>
+          <CTA href="/" variant="secondary" icon="plus">
+            Start a project
+          </CTA>
+          <CTA href="/" variant="primary" icon="arrow">
             Book a call with us
           </CTA>
         </Flex>

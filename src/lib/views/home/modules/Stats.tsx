@@ -1,5 +1,5 @@
 import { Box, Flex, GridItem, Heading, Text } from "@chakra-ui/react";
-import { SecondaryCTA } from "@components/cta/CTA";
+import CTA from "@components/cta/CTA";
 import type { FC } from "react";
 import CountUp from "react-countup";
 import { Clock, DollarSign, ThumbsUp } from "react-feather";
@@ -104,7 +104,7 @@ const Stats: FC = () => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     rootMargin: "-20%",
-    threshold: 0,
+    threshold: 0.2,
   });
 
   return (
@@ -131,9 +131,9 @@ const Stats: FC = () => {
           Make the Most of Every Single Site Visit with{" "}
           <b style={{ color: "#00C4A2" }}>BeMyCreator</b>
         </Heading>
-        <SecondaryCTA href="/" isLight>
-          Get started
-        </SecondaryCTA>
+        <CTA href="/" variant="secondary" icon="plus">
+          Create a project
+        </CTA>
       </Flex>
       <StatsItems inView={inView} />
     </Box>
