@@ -1,16 +1,26 @@
-.icon,
-.iconExternal {
+.arrow,
+.arrowExternal {
   transform: translate(0);
   transition: 200ms ease-in;
   transition-property: transform;
 }
 
-.link:hover > .icon,
-.link:focus > .icon {
+.link:hover > .arrow,
+.link:focus > .arrow {
   transform: translate(5px, 0);
 }
 
-.link:hover > .iconExternal,
-.link:focus > .iconExternal {
+.link:hover > .arrowExternal,
+.link:focus > .arrowExternal {
   transform: translate(2px, -2px);
+}
+
+.link > .plus {
+  transition: 200ms ease-in;
+  transform: rotate(0);
+  transition-property: transform;
+}
+
+.link:hover > .plus {
+  transform: rotate(90deg);
 }
