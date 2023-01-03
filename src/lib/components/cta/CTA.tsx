@@ -16,16 +16,8 @@ interface Props {
   showArrow?: boolean;
 }
 
-const CTA: FC<PropsWithChildren<Props>> = ({
-  href,
-  isExternal,
-  isSmall = false,
-  isLight = false,
-  customStyles,
-  showArrow = true,
-  children,
-}) => {
-  const baseStyles: StyleProps = {
+const baseStyles: (isSmall: boolean) => StyleProps = (isSmall) => {
+  return {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -36,8 +28,21 @@ const CTA: FC<PropsWithChildren<Props>> = ({
     borderRadius: "12px",
     width: "fit-content",
     gap: "8px",
+  };
+};
+
+export const CTA: FC<PropsWithChildren<Props>> = ({
+  href,
+  isExternal,
+  isSmall = false,
+  isLight = false,
+  customStyles,
+  showArrow = true,
+  children,
+}) => {
+  const groupedStyles: StyleProps = {
+    ...baseStyles(isSmall),
     color: isLight ? "gray.800" : "white",
-    // TODO: align with theme colors
     backgroundColor: isLight ? "white" : "#262626",
     ...customStyles,
   };
@@ -53,7 +58,7 @@ const CTA: FC<PropsWithChildren<Props>> = ({
       as={NextLink}
       href={href}
       className={styles.link}
-      {...baseStyles}
+      {...groupedStyles}
       _hover={{ textDecoration: "none" }}
     >
       {children}
@@ -62,4 +67,37 @@ const CTA: FC<PropsWithChildren<Props>> = ({
   );
 };
 
-export default CTA;
+export const SecondaryCTA: FC<PropsWithChildren<Props>> = ({
+  href,
+  isExternal,
+  isSmall = false,
+  customStyles,
+  showArrow = true,
+  children,
+}) => {
+  const groupedStyles: StyleProps = {
+    ...baseStyles(isSmall),
+    color: "gray.800",
+    backgroundColor: "gray.200",
+    ...customStyles,
+  };
+
+  const arrowIcon = isExternal ? (
+    <ArrowUpRight className={styles.iconExternal} />
+  ) : (
+    <ArrowRight className={styles.icon} />
+  );
+
+  return (
+    <Link
+      as={NextLink}
+      href={href}
+      className={styles.link}
+      {...groupedStyles}
+      _hover={{ textDecoration: "none" }}
+    >
+      {children}
+      {showArrow ? arrowIcon : null}
+    </Link>
+  );
+};

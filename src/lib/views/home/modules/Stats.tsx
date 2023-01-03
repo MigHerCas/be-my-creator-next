@@ -1,8 +1,8 @@
 import { Box, Flex, GridItem, Heading, Text } from "@chakra-ui/react";
-import CTA from "@components/cta/CTA";
+import { SecondaryCTA } from "@components/cta/CTA";
 import type { FC } from "react";
 import CountUp from "react-countup";
-import { DollarSign, Clock, ThumbsUp } from "react-feather";
+import { Clock, DollarSign, ThumbsUp } from "react-feather";
 import { useInView } from "react-intersection-observer";
 
 type StatItemContent = {
@@ -131,9 +131,9 @@ const Stats: FC = () => {
           Make the Most of Every Single Site Visit with{" "}
           <b style={{ color: "#00C4A2" }}>BeMyCreator</b>
         </Heading>
-        <CTA href="/" isLight>
+        <SecondaryCTA href="/" isLight>
           Get started
-        </CTA>
+        </SecondaryCTA>
       </Flex>
       <StatsItems inView={inView} />
     </Box>

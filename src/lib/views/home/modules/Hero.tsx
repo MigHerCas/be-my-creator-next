@@ -1,5 +1,5 @@
 import { Heading, Grid, GridItem, Flex, Text } from "@chakra-ui/react";
-import CTA from "@components/cta/CTA";
+import { CTA, SecondaryCTA } from "@components/cta/CTA";
 import VideoModal from "@components/modal/VideoModal";
 import VideoPlayer from "@components/video/VideoPlayer";
 import CatchyBanner from "@compositions/CatchyBanner";
@@ -30,7 +30,11 @@ const Hero: FC = () => {
         >
           Instantly connect with UGC creators
         </Heading>
-        <Text maxW={["25ch", null, "40ch"]} mb={8} mx={["auto", null, null, 0]}>
+        <Text
+          maxW={["25ch", "30ch", null, "40ch"]}
+          mb={8}
+          mx={["auto", null, null, 0]}
+        >
           We make it easy for you to source and display quality user-generated
           content videos
         </Text>
@@ -41,10 +45,10 @@ const Hero: FC = () => {
           gap={4}
           wrap="wrap"
         >
+          <SecondaryCTA href="/">Start a project</SecondaryCTA>
           <CTA href="/" showArrow={false}>
-            Start a project
+            Book a call with us
           </CTA>
-          <CTA href="/">Book a call with us</CTA>
         </Flex>
       </GridItem>
 

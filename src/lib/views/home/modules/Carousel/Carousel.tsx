@@ -1,5 +1,5 @@
 import { Box, Center, Heading } from "@chakra-ui/react";
-import CTA from "@components/cta/CTA";
+import { CTA } from "@components/cta/CTA";
 import type { FC } from "react";
 import { A11y, Autoplay, EffectCoverflow } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
