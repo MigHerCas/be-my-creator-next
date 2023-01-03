@@ -4,17 +4,14 @@ import type { FC } from "react";
 
 const FixedBlobs: FC = () => {
   return (
-    <>
+    <Box w="100vw" h="100vh" pos="fixed" top="0" left="0" zIndex="-1">
       <Box
         pos="fixed"
         bottom={["50%", "45%", "35%", null, null, "30%"]}
         left={["-40%", "-30%", "-20%", "-20%", null, "-10%"]}
         w={["300px", "350px", "400px", null, "500px", "600px"]}
         h={["300px", "350px", "400px", null, "500px", "600px"]}
-        zIndex="-1"
-        transitionProperty="bottom left"
-        transitionDuration="99999"
-        transitionTimingFunction="ease"
+        transition="all 9999 ease"
       >
         <Blob type={2} />
       </Box>
@@ -25,14 +22,13 @@ const FixedBlobs: FC = () => {
         right={["-50%", "-35%", "-20%", "-10%"]}
         w={["300px", "400px", "400px", null, "500px", "600px"]}
         h={["300px", "400px", "400px", null, "500px", "600px"]}
-        zIndex="-1"
         transitionProperty="bottom left"
         transitionDuration="99999"
         transitionTimingFunction="ease"
       >
         <Blob type={0} isInverted />
       </Box>
-    </>
+    </Box>
   );
 };
 
