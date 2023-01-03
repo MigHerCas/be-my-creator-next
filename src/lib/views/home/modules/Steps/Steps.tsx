@@ -8,7 +8,7 @@ const Steps: FC = () => {
   return (
     <Box
       as="section"
-      mt={[0, 0, "-30px", "-60px", null, "-60px"]}
+      mb={[0, 0, "-30px", "-60px", null, "-60px"]}
       pos="relative"
     >
       <Flex
