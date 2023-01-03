@@ -1,10 +1,20 @@
 import { Box } from "@chakra-ui/react";
 import Blob from "@components/blob/Blob";
 import type { FC } from "react";
+import { use100vh } from "react-div-100vh";
 
 const FixedBlobs: FC = () => {
+  const height = use100vh();
+
   return (
-    <Box pos="fixed" h="100dvh" w="100vw" top="0" left="0" zIndex="-1">
+    <Box
+      pos="fixed"
+      h={height || "100vh"}
+      w="100vw"
+      top="0"
+      left="0"
+      zIndex="-1"
+    >
       <Box
         pos="fixed"
         bottom={["50%", "45%", "35%", null, null, "30%"]}
