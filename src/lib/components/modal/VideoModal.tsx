@@ -41,7 +41,7 @@ const VideoModal: FC<PropsWithChildren> = ({ children }) => {
             spacing={4}
             pos="absolute"
             w="full"
-            padding={3}
+            p={3}
             zIndex="overlay"
             background="linear-gradient(0deg,rgba(0,0,0,0) 0,rgba(0,0,0,.31) 51.56%,rgba(0,0,0,.7) 100%)"
           >
@@ -69,7 +69,7 @@ const VideoModal: FC<PropsWithChildren> = ({ children }) => {
             alignItems="center"
             justifyContent="space-between"
             backgroundColor="white"
-            padding={3}
+            p={3}
             className={styles.footerContent}
           >
             <p>Like this?</p>

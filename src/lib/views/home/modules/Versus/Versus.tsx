@@ -70,7 +70,7 @@ const Versus: FC = () => {
               <Flex as="li" alignItems="center" gap={4}>
                 <Box
                   width={["20px", "24px"]}
-                  padding="4px"
+                  p="4px"
                   borderRadius="full"
                   bgColor="#00C4A2"
                 >
@@ -102,7 +102,7 @@ const Versus: FC = () => {
               <Flex as="li" alignItems="center" gap={4}>
                 <Box
                   width={["20px", "24px"]}
-                  padding="4px"
+                  p="4px"
                   borderRadius="full"
                   bgColor="gray.300"
                 >
