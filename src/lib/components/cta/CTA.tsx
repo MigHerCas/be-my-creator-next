@@ -7,14 +7,14 @@ import { ArrowRight, ArrowUpRight, PlusCircle } from "react-feather";
 // Styles (needed for hover icon effect)
 import styles from "./styles.module.css";
 
-type CTAIcon = "plus" | "arrow" | "arrowExternal";
-
+type IconName = "plus" | "arrow" | "arrowExternal";
+type Variant = "primary" | "secondary";
 interface Props {
   href: string;
-  variant: "primary" | "secondary";
+  variant: Variant;
   isSmall?: boolean;
   customStyles?: StyleProps;
-  icon?: CTAIcon;
+  icon?: IconName;
 }
 
 const baseStyles: (isSmall: boolean) => StyleProps = (isSmall) => {
@@ -40,20 +40,20 @@ const CTA: FC<PropsWithChildren<Props>> = ({
   customStyles,
   children,
 }) => {
-  const colorConfig =
-    variant === "primary"
-      ? {
-          color: "white",
-          backgroundColor: "#262626",
-        }
-      : {
-          color: "gray.800",
-          backgroundColor: "gray.200",
-        };
+  const colorConfig = {
+    primary: {
+      color: "white",
+      backgroundColor: "#262626",
+    },
+    secondary: {
+      color: "gray.800",
+      backgroundColor: "gray.200",
+    },
+  } as Record<Variant, { color: string; backgroundColor: string }>;
 
   const groupedStyles: StyleProps = {
     ...baseStyles(isSmall),
-    ...colorConfig,
+    ...colorConfig[variant],
     ...customStyles,
   };
 
@@ -61,7 +61,7 @@ const CTA: FC<PropsWithChildren<Props>> = ({
     arrow: <ArrowRight className={styles.arrow} />,
     arrowExternal: <ArrowUpRight className={styles.arrowExternal} />,
     plus: <PlusCircle className={styles.plus} />,
-  } as Record<CTAIcon, JSX.Element>;
+  } as Record<IconName, JSX.Element>;
 
   return (
     <Link
