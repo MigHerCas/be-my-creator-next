@@ -113,7 +113,7 @@ const NavBar: FC = () => {
             ))}
 
             <CTA
-              href=""
+              href="/demo"
               variant="secondary"
               icon="plus"
               customStyles={{ my: 2 }}

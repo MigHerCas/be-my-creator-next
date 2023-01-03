@@ -31,7 +31,7 @@ const StyleguideView: NextPage = () => {
       >
         Get in touch
       </CTA>
-      <CTA href="" variant="secondary" icon="arrowExternal">
+      <CTA href="/demo" variant="secondary" icon="arrowExternal">
         Get in touch - external link
       </CTA>
     </Container>
