@@ -5,15 +5,23 @@ import {
   Input,
 } from "@chakra-ui/react";
 import type { FC } from "react";
+import type { UseFormRegisterReturn } from "react-hook-form";
 
 interface Props {
   label: string;
-  helperText: string;
+  helperText?: string;
   type: string;
   placeholder: string;
+  registerCallback: UseFormRegisterReturn;
 }
 
-const InputGroup: FC<Props> = ({ label, helperText, type, placeholder }) => {
+const InputGroup: FC<Props> = ({
+  label,
+  helperText,
+  type,
+  placeholder,
+  registerCallback,
+}) => {
   return (
     <FormControl w="60%" mx="auto">
       <FormLabel fontSize="24px" fontWeight="400" mb="30px">
@@ -39,8 +47,9 @@ const InputGroup: FC<Props> = ({ label, helperText, type, placeholder }) => {
           border: "none",
           boxShadow: "#00C4A2 0px 2px",
         }}
+        {...registerCallback}
       />
-      <FormHelperText>{helperText}</FormHelperText>
+      {helperText ? <FormHelperText>{helperText}</FormHelperText> : null}
     </FormControl>
   );
 };
