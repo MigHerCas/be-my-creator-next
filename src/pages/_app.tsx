@@ -1,14 +1,29 @@
 import { Chakra } from "@components/Chakra";
 import Layout from "@layout/index";
+import type { NextPage } from "next";
 import { DefaultSeo } from "next-seo";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import type { ReactElement, ReactNode } from "react";
 
 import defaultSEOConfig from "../../next-seo.config";
 
-import "lib/styles/globals.css";
+import "@styles/globals.css";
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+export type NextPageWithLayout<P = Record<string, unknown>, IP = P> = NextPage<
+  P,
+  IP
+> & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+
+const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
+  const getLayout = Component.getLayout ?? ((page) => <Layout>{page}</Layout>);
+
   return (
     <Chakra>
       <Head>
@@ -18,9 +33,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         />
       </Head>
       <DefaultSeo {...defaultSEOConfig} />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      {getLayout(<Component {...pageProps} />)}
     </Chakra>
   );
 };
