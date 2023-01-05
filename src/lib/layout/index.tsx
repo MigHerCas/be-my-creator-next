@@ -7,17 +7,17 @@ import Header from "./modules/Header";
 
 type LayoutProps = {
   children: ReactNode;
+  hideBlobs?: boolean;
 };
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children, hideBlobs = false }: LayoutProps) => {
   return (
     <>
       <Header />
       <Container htmlTag="main">{children}</Container>
       <Footer />
 
-      {/* Fixed: Blob it!  */}
-      <FixedBlobs />
+      {hideBlobs ? null : <FixedBlobs />}
     </>
   );
 };

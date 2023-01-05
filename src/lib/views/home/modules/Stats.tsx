@@ -131,7 +131,7 @@ const Stats: FC = () => {
           Make the Most of Every Single Site Visit with{" "}
           <b style={{ color: "#00C4A2" }}>BeMyCreator</b>
         </Heading>
-        <CTA href="/" variant="secondary" icon="plus">
+        <CTA href="/new-project" variant="secondary" icon="plus">
           Create a project
         </CTA>
       </Flex>

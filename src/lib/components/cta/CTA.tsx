@@ -1,4 +1,4 @@
-import { Link } from "@chakra-ui/react";
+import { Link, useColorMode } from "@chakra-ui/react";
 import type { StyleProps } from "@chakra-ui/react";
 import NextLink from "next/link";
 import type { FC, PropsWithChildren } from "react";
@@ -40,15 +40,22 @@ const CTA: FC<PropsWithChildren<Props>> = ({
   customStyles,
   children,
 }) => {
+  const { colorMode } = useColorMode();
   const colorConfig = {
-    primary: {
-      color: "white",
-      backgroundColor: "#262626",
-    },
-    secondary: {
-      color: "gray.800",
-      backgroundColor: "gray.200",
-    },
+    primary:
+      colorMode === "light"
+        ? {
+            color: "white",
+            backgroundColor: "#262626",
+          }
+        : { color: "white", backgroundColor: "#1c1c1c" },
+    secondary:
+      colorMode === "light"
+        ? {
+            color: "gray.800",
+            backgroundColor: "gray.200",
+          }
+        : { color: "gray.800", backgroundColor: "gray.200" },
   } as Record<Variant, { color: string; backgroundColor: string }>;
 
   const groupedStyles: StyleProps = {
