@@ -19,16 +19,19 @@ const RadioCard: FC<PropsWithChildren<UseRadioProps>> = ({
         borderWidth="1px"
         borderRadius="md"
         boxShadow="md"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
         _checked={{
-          bg: "teal.600",
+          bg: "#00C4A2",
           color: "white",
-          borderColor: "teal.600",
         }}
         _focus={{
           boxShadow: "outline",
         }}
-        px={5}
-        py={3}
+        minW="200px"
+        minH="100px"
+        fontSize="24px"
       >
         {children}
       </Box>
