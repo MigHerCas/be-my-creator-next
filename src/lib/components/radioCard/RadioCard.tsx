@@ -11,7 +11,7 @@ const RadioCard: FC<PropsWithChildren<UseRadioProps>> = ({
   const input = getInputProps();
   const checkbox = getCheckboxProps();
   return (
-    <Box as="label">
+    <Box as="label" w="full">
       <input {...input} />
       <Box
         {...checkbox}
@@ -29,7 +29,7 @@ const RadioCard: FC<PropsWithChildren<UseRadioProps>> = ({
         _focus={{
           boxShadow: "outline",
         }}
-        minW="200px"
+        flex="1"
         minH="100px"
         fontSize="24px"
       >
