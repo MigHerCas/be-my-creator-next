@@ -1,4 +1,5 @@
 import { Button, Flex, Heading, useColorMode } from "@chakra-ui/react";
+import CalendlyIntegration from "@compositions/CalendlyIntegration";
 import Layout from "@layout/index";
 import type { NextPageWithLayout } from "@pages/_app";
 import { NextSeo } from "next-seo";
@@ -86,6 +87,7 @@ const NewProjectView: NextPageWithLayout = () => {
         <Button type="submit" size="lg">
           Submit
         </Button>
+        <CalendlyIntegration />
       </Flex>
     </>
   );
