@@ -48,7 +48,7 @@ const Hero: FC = () => {
           <CTA href="/new-project" variant="secondary" icon="plus">
             Start a project
           </CTA>
-          <CTA href="/" variant="primary" icon="arrow">
+          <CTA href="/new-call" variant="primary" icon="arrow">
             Book a call with us
           </CTA>
         </Flex>
