@@ -1,10 +1,11 @@
-import { Button, Flex, Heading, useColorMode } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, useColorMode } from "@chakra-ui/react";
 import CalendlyIntegration from "@compositions/CalendlyIntegration";
 import Layout from "@layout/index";
 import type { NextPageWithLayout } from "@pages/_app";
 import { NextSeo } from "next-seo";
 import type { ReactElement } from "react";
 import { useEffect } from "react";
+import { Tool } from "react-feather";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 
@@ -41,14 +42,30 @@ const NewProjectView: NextPageWithLayout = () => {
       <NextSeo title="New project" />
       <Flex
         as="form"
+        className="glassmorphic--light"
         onSubmit={handleSubmit(onSubmit)}
         flexDir="column"
         alignItems="center"
         gap="60px"
+        py="60px"
+        borderRadius="20px"
+        mx="auto"
+        width="80%"
+        minWidth="fit-content"
       >
-        <Heading size="lg" textAlign="center">
-          New project!
-        </Heading>
+        <Flex alignItems="center" gap={8}>
+          <Box
+            p={5}
+            display="inline-block"
+            bgColor="#272727"
+            borderRadius="full"
+          >
+            <Tool height="40px" width="40px" stroke="#BCE500" />
+          </Box>
+          <Heading size="lg" textAlign="center" mb={0}>
+            New project!
+          </Heading>
+        </Flex>
 
         <RadioGroupStack
           key="platform"
@@ -84,7 +101,7 @@ const NewProjectView: NextPageWithLayout = () => {
           registerCallback={emailField}
         />
 
-        <Button type="submit" size="lg">
+        <Button type="submit" size="lg" mb="-60px">
           Submit
         </Button>
         <CalendlyIntegration />
