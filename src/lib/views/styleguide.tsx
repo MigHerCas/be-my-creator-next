@@ -24,7 +24,7 @@ const StyleguideView: NextPage = () => {
 
       {/* CTA */}
       <CTA
-        href=""
+        href="/new-project"
         variant="primary"
         icon="arrow"
         customStyles={{ marginBottom: "16px" }}

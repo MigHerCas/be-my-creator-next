@@ -57,7 +57,7 @@ const NavBar: FC = () => {
           </HStack>
 
           <CTA
-            href=""
+            href="/new-call"
             variant="primary"
             isSmall
             icon="arrow"
@@ -120,7 +120,7 @@ const NavBar: FC = () => {
             >
               Start your first project
             </CTA>
-            <CTA href="" variant="primary" icon="arrow">
+            <CTA href="/new-call" variant="primary" icon="arrow">
               Book a call
             </CTA>
           </Flex>
