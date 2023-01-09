@@ -22,7 +22,6 @@ const Footer: FC = () => {
       maxW={MAX_WIDTH}
       mx="auto"
       p={["30px", null, "60px"]}
-      mt="30px"
       mb={["0", null, null, null, "60px"]}
       gridTemplateColumns={["repeat(2, 1fr)", null, null, "repeat(12, 1fr)"]}
       gap={["18px", null, null, "36px"]}
