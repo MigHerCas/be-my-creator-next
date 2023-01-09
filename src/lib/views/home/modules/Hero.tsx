@@ -66,9 +66,9 @@ const Hero: FC = () => {
           alignItems="center"
           justifyContent="center"
         >
-          <VideoModal>
-            <VideoPlayer />
-          </VideoModal>
+          {/* <VideoModal> */}
+          <VideoPlayer source="/videos/trend.mp4/" />
+          {/* </VideoModal> */}
         </Flex>
       </GridItem>
     </Grid>
