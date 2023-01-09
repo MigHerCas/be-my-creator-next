@@ -23,7 +23,7 @@ const Hero: FC = () => {
       >
         <CatchyBanner />
         <Heading
-          size={["md", null, "lg"]}
+          size="lg"
           maxW={["20ch", null, "30ch"]}
           mt={["auto", null, 10]}
           mx={["auto", null, null, 0]}
