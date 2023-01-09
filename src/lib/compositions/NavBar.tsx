@@ -12,22 +12,34 @@ import Logo from "@components/logo/Logo";
 import { MAX_WIDTH } from "@helpers/ui-values";
 import { useLockedBody } from "@hooks";
 import NextLink from "next/link";
+import { useRouter } from "next/router";
 import type { FC } from "react";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { Menu as MenuIcon, X, ArrowRightCircle } from "react-feather";
 
 const Links = ["Dashboard", "Projects", "Team"];
 
 const NavBar: FC = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onOpen, onClose, onToggle } = useDisclosure();
   const { setLocked } = useLockedBody();
+
   const mobileMenuBackground = useColorModeValue("white", "#272727");
+  const router = useRouter();
 
   useEffect(() => {
     setLocked(isOpen);
 
     return () => setLocked(false);
   }, [isOpen, setLocked]);
+
+  const hide = useCallback(() => {
+    onToggle();
+  }, [onToggle]);
+
+  useEffect(() => {
+    router.events.on("beforeHistoryChange", hide);
+    return () => router.events.off("beforeHistoryChange", hide);
+  }, [hide, router.events]);
 
   return (
     <Box as="header" pos="relative" zIndex="1">
