@@ -4,7 +4,7 @@ import { InlineWidget } from "react-calendly";
 const CalendlyIntegration: FC = () => {
   return (
     <InlineWidget
-      url="https://calendly.com/bemycreator/30min?background_color=262626&text_color=ffffff&primary_color=00c4a2"
+      url="https://calendly.com/bemycreator/30min?background_color=272727&text_color=ffffff&primary_color=00c4a2"
       styles={{
         width: "100%",
         height: "800px",

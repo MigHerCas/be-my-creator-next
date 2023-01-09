@@ -46,7 +46,7 @@ const CTA: FC<PropsWithChildren<Props>> = ({
       colorMode === "light"
         ? {
             color: "white",
-            backgroundColor: "#262626",
+            backgroundColor: "#272727",
           }
         : { color: "white", backgroundColor: "#1c1c1c" },
     secondary:
