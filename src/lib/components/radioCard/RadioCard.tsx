@@ -16,7 +16,7 @@ const RadioCard: FC<PropsWithChildren<UseRadioProps>> = ({
       <Box
         {...checkbox}
         cursor="pointer"
-        borderWidth="1px"
+        bgColor="#1c1c1c"
         borderRadius="md"
         boxShadow="md"
         display="flex"
