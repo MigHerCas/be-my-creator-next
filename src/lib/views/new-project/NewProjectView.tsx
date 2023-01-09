@@ -53,7 +53,7 @@ const NewProjectView: NextPageWithLayout = () => {
         width="80%"
         minWidth="fit-content"
       >
-        <Flex alignItems="center" gap={8}>
+        <Flex justifyContent="center" alignItems="center" gap={8} wrap="wrap">
           <Box
             p={5}
             display="inline-block"

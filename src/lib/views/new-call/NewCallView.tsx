@@ -24,7 +24,7 @@ const NewCallView: NextPageWithLayout = () => {
         py="60px"
         className="glassmorphic--light"
       >
-        <Flex alignItems="center" gap={8}>
+        <Flex justifyContent="center" alignItems="center" gap={8} wrap="wrap">
           <Box
             p={5}
             display="inline-block"
