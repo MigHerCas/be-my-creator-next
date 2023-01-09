@@ -24,7 +24,7 @@ const InputGroup: FC<Props> = ({
 }) => {
   return (
     <FormControl w="60%" mx="auto">
-      <FormLabel fontSize="24px" fontWeight="400" mb="30px">
+      <FormLabel fontSize="24px" fontWeight="400" mb="20px">
         {label}
       </FormLabel>
       <Input
