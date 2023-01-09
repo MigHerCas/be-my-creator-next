@@ -15,7 +15,7 @@ import RadioGroupStack from "./modules/RadioGroupStack";
 type Inputs = {
   email: string;
   brandName: string;
-  platforms: ["instagram", "tiktok", "twitter"];
+  platforms: ["Instagram", "Tiktok", "Twitter"];
   teamSize: ["1-5", "10-20", "+20"];
 };
 
@@ -70,7 +70,7 @@ const NewProjectView: NextPageWithLayout = () => {
         <RadioGroupStack
           key="platform"
           name="platform"
-          options={["instagram", "tiktok", "twitter"]}
+          options={["Instagram", "Tiktok", "Twitter"]}
           defaultValue="tiktok"
           label="Platform"
           onChange={console.log}
