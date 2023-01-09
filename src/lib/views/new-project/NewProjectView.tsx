@@ -46,21 +46,24 @@ const NewProjectView: NextPageWithLayout = () => {
         onSubmit={handleSubmit(onSubmit)}
         flexDir="column"
         alignItems="center"
-        gap="60px"
-        py="60px"
-        borderRadius="20px"
-        mx="auto"
-        width="80%"
-        minWidth="fit-content"
+        gap={["30px", "40px", "50px", "60px"]}
+        borderRadius={[0, null, "20px 20px 0 0"]}
+        mx={["-30px", null, "initial"]}
+        p={["30px", null, "50px", "60px"]}
       >
-        <Flex justifyContent="center" alignItems="center" gap={8} wrap="wrap">
+        <Flex
+          justifyContent="center"
+          alignItems="center"
+          gap={[4, null, 6, 8]}
+          wrap="wrap"
+        >
           <Box
-            p={5}
+            p={[3, null, null, 5]}
             display="inline-block"
             bgColor="#272727"
             borderRadius="full"
           >
-            <Tool height="40px" width="40px" stroke="#BCE500" />
+            <Tool height="30px" width="30px" stroke="#BCE500" />
           </Box>
           <Heading size="lg" textAlign="center" mb={0}>
             New project!
@@ -101,7 +104,7 @@ const NewProjectView: NextPageWithLayout = () => {
           registerCallback={emailField}
         />
 
-        <Button type="submit" size="lg" mb="-60px">
+        <Button type="submit" size="lg">
           Submit
         </Button>
         <CalendlyIntegration />
@@ -111,7 +114,7 @@ const NewProjectView: NextPageWithLayout = () => {
 };
 
 NewProjectView.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
+  return <Layout hideBlobsOnMobile>{page}</Layout>;
 };
 
 export default NewProjectView;

@@ -18,23 +18,25 @@ const NewCallView: NextPageWithLayout = () => {
     <>
       <NextSeo title="New project" />
       <Flex
+        className="glassmorphic--light"
         flexDir="column"
         alignItems="center"
-        gap="30px"
-        py="60px"
-        className="glassmorphic--light"
+        borderRadius={[0, null, "20px 20px 0 0"]}
+        gap={["30px", "40px", "50px", "60px"]}
+        mx={["-30px", null, "initial"]}
+        p={["30px", null, "50px", "60px"]}
       >
         <Flex justifyContent="center" alignItems="center" gap={8} wrap="wrap">
           <Box
-            p={5}
+            p={[3, null, null, 5]}
             display="inline-block"
             bgColor="#272727"
             borderRadius="full"
           >
-            <Video height="40px" width="40px" stroke="#BCE500" />
+            <Video height="30px" width="30px" stroke="#BCE500" />
           </Box>
           <Heading size="lg" textAlign="center" mb={0}>
-            Book a call with us
+            Let&apos;s have a chat
           </Heading>
         </Flex>
 
@@ -50,7 +52,7 @@ const NewCallView: NextPageWithLayout = () => {
 };
 
 NewCallView.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
+  return <Layout hideBlobsOnMobile>{page}</Layout>;
 };
 
 export default NewCallView;

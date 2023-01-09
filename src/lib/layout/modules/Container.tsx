@@ -14,7 +14,6 @@ const Container: FC<PropsWithChildren<Props>> = ({
     position: "relative",
     maxWidth: "1380px",
     px: "30px",
-    pt: "5vh",
     mx: "auto",
     flex: "1",
     display: "flex",

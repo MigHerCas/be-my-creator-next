@@ -31,7 +31,8 @@ const RadioCard: FC<PropsWithChildren<UseRadioProps>> = ({
         }}
         flex="1"
         minH="100px"
-        fontSize="24px"
+        fontSize="20px"
+        fontWeight="500"
       >
         {children}
       </Box>

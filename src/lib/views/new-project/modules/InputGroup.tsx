@@ -23,7 +23,7 @@ const InputGroup: FC<Props> = ({
   registerCallback,
 }) => {
   return (
-    <FormControl w="60%" mx="auto">
+    <FormControl mx="auto">
       <FormLabel fontSize="24px" fontWeight="400" mb="20px">
         {label}
       </FormLabel>
@@ -31,7 +31,7 @@ const InputGroup: FC<Props> = ({
         type={type}
         placeholder={placeholder}
         display="block"
-        fontSize="30px"
+        fontSize={["22px", null, "30px"]}
         p="0px 0px 8px"
         borderRadius={0}
         border="none"

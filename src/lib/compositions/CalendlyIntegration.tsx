@@ -7,7 +7,7 @@ const CalendlyIntegration: FC = () => {
       url="https://calendly.com/bemycreator/30min?background_color=272727&text_color=ffffff&primary_color=00c4a2"
       styles={{
         width: "100%",
-        height: "800px",
+        height: "960px",
         borderRadius: "20px",
         overflow: "hidden",
       }}
