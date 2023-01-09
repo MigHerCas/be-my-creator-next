@@ -1,9 +1,4 @@
-import {
-  FormControl,
-  FormLabel,
-  HStack,
-  useRadioGroup,
-} from "@chakra-ui/react";
+import { FormControl, FormLabel, Flex, useRadioGroup } from "@chakra-ui/react";
 import RadioCard from "@components/radioCard/RadioCard";
 import type { FC } from "react";
 
@@ -30,12 +25,12 @@ const RadioGroupStack: FC<Props> = ({
   const group = getRootProps();
 
   return (
-    <FormControl w="60%" mx="auto">
-      <FormLabel fontSize="24px" fontWeight="400" mb="20px">
+    <FormControl mx="auto">
+      <FormLabel fontSize="24px" fontWeight="500" mb="20px">
         {label}
       </FormLabel>
 
-      <HStack {...group}>
+      <Flex flexDir={["column", null, "row"]} gap={4} {...group}>
         {options.map((value) => {
           const radio = getRadioProps({ value });
           return (
@@ -44,7 +39,7 @@ const RadioGroupStack: FC<Props> = ({
             </RadioCard>
           );
         })}
-      </HStack>
+      </Flex>
     </FormControl>
   );
 };
