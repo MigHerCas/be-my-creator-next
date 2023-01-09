@@ -16,13 +16,13 @@
 
 ## Checklists
 <!-- DO NOT DELETE OR EDIT THIS LIST -->
-- [ ] Tested in local (Frontend: Chrome, Safari, Firefox, Mobile)
+- [ ] Tested locally (Frontend: Chrome, Safari, Firefox, Mobile)
 - [ ] Written tests
 - [ ] I reviewed my own Pull Request commit by commit
 - [ ] I didn't just select everything, this PR really does abide by these ^
 
 ## Screenshots
-<!-- ANY UI RELATED CHANGE MUST HAVE SCREENSHOTS FOR ALL OF THESE -->
+<!-- ANY UI-RELATED CHANGE MUST HAVE SCREENSHOTS FOR ALL OF THESE -->
 
 ### Original
 ![image](original_img)
