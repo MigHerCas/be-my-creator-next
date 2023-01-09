@@ -65,7 +65,6 @@ const Slider: FC = () => {
           modifier: 1,
         }}
       >
-        {/* TODO: add key when populated with real data */}
         {videosToShow.map(({ id, url }, index) => {
           return (
             <SwiperSlide key={id} className={styles.swiperSlide}>
