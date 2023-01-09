@@ -26,9 +26,6 @@ const RadioCard: FC<PropsWithChildren<UseRadioProps>> = ({
           bg: "#00C4A2",
           color: "white",
         }}
-        _focus={{
-          boxShadow: "outline",
-        }}
         flex="1"
         minH="100px"
         fontSize="24px"
