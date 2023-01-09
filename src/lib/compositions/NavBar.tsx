@@ -5,6 +5,7 @@ import {
   Link,
   IconButton,
   useDisclosure,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import Logo from "@components/logo/Logo";
@@ -20,6 +21,7 @@ const Links = ["Dashboard", "Projects", "Team"];
 const NavBar: FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { setLocked } = useLockedBody();
+  const mobileMenuBackground = useColorModeValue("white", "#272727");
 
   useEffect(() => {
     setLocked(isOpen);
@@ -81,7 +83,7 @@ const NavBar: FC = () => {
           w="full"
           height="calc(100vh - 90px)"
           transform="translateY(100%)"
-          backgroundColor="white"
+          backgroundColor={mobileMenuBackground}
         >
           <Flex
             as="nav"
@@ -107,7 +109,7 @@ const NavBar: FC = () => {
                   height="30px"
                   width="30px"
                   fill="#00C4A2"
-                  stroke="white"
+                  stroke={mobileMenuBackground}
                 />
               </Link>
             ))}
