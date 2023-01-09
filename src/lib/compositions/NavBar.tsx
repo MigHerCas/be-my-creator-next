@@ -22,7 +22,6 @@ const Links = ["Dashboard", "Projects", "Team"];
 const NavBar: FC = () => {
   const { isOpen, onOpen, onClose, onToggle } = useDisclosure();
   const { setLocked } = useLockedBody();
-  const mobileMenuBackground = useColorModeValue("white", "#272727");
 
   const mobileMenuBackground = useColorModeValue("white", "#272727");
   const router = useRouter();
