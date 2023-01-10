@@ -25,7 +25,7 @@ export const Heading = defineStyleConfig({
       marginBottom: "1.25rem",
     },
     lg: {
-      fontSize: ["2rem", null, "3rem", null, "4rem"],
+      fontSize: ["2rem", "2.5rem", "3rem", null, "4rem"],
       lineHeight: "1.1",
       fontWeight: "900",
       marginBottom: "2rem",

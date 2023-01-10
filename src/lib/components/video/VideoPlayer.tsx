@@ -3,26 +3,32 @@ import type { FC, VideoHTMLAttributes } from "react";
 import styles from "./styles.module.css";
 
 interface Props {
-  source?: string;
+  source: string;
+  options?: VideoHTMLAttributes<HTMLVideoElement>;
 }
 
-const VideoPlayer: FC<Props> = ({ source = "/videos/trend.mp4" }) => {
-  const options = {
-    autoPlay: true,
+const VideoPlayer: FC<Props> = ({ source, options = {} }) => {
+  const defaultOptions = {
+    autoPlay: false,
     muted: true,
     loop: true,
     controls: true,
     preload: "auto",
     poster: "/images/poster.jpg",
-    playsinline: "true",
+    playsInline: true,
     controlsList: "nodownload",
   } as VideoHTMLAttributes<HTMLVideoElement>;
+
+  const bundledOptions = {
+    ...defaultOptions,
+    ...options,
+  };
 
   const notSupportedText =
     "Sorry, your browser doesn't support embedded videos.";
 
   return (
-    <video {...options} className={styles.video}>
+    <video {...bundledOptions} className={styles.video}>
       <source src={source} type="video/mp4" />
       {notSupportedText}
     </video>
