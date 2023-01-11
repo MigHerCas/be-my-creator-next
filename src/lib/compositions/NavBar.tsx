@@ -17,7 +17,7 @@ import type { FC } from "react";
 import { useEffect } from "react";
 import { Menu as MenuIcon, X, ArrowRightCircle } from "react-feather";
 
-const Links = ["Dashboard", "Projects", "Team"];
+const Links = ["Blog", "Projects", "Team"];
 
 const NavBar: FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -55,7 +55,12 @@ const NavBar: FC = () => {
         <Flex alignItems="center" gap={4}>
           <HStack as="nav" spacing={4} display={{ base: "none", md: "flex" }}>
             {Links.map((link) => (
-              <Link key={link} href={`/${link}`} as={NextLink} p={4}>
+              <Link
+                key={link}
+                href={`/${link.toLowerCase()}`}
+                as={NextLink}
+                p={4}
+              >
                 {link}
               </Link>
             ))}

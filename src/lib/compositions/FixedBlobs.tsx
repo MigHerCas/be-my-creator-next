@@ -5,9 +5,15 @@ import { use100vh } from "react-div-100vh";
 
 interface Props {
   hideBlobsOnMobile?: boolean;
+  hideBlobs?: boolean;
 }
-const FixedBlobs: FC<Props> = ({ hideBlobsOnMobile = false }) => {
+const FixedBlobs: FC<Props> = ({
+  hideBlobsOnMobile = false,
+  hideBlobs = false,
+}) => {
   const height = use100vh();
+
+  if (hideBlobs) return null;
 
   return (
     <Box
