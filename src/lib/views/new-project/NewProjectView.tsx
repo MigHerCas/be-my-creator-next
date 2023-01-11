@@ -26,9 +26,11 @@ type Inputs = {
   teamSize: ["1-5", "10-20", "+20"];
 };
 
+const NUMBER_OF_STEPS = 4;
+
 const NewProjectView: NextPageWithLayout = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(1);
 
   useEffect(() => {
     if (colorMode === "light") toggleColorMode();
@@ -58,6 +60,7 @@ const NewProjectView: NextPageWithLayout = () => {
         borderRadius={[0, null, "20px 20px 0 0"]}
         mx={["-30px", null, "initial"]}
         p={["30px", null, "50px", "60px"]}
+        minH="calc(100vh - 180px)"
       >
         <Flex
           justifyContent="center"
@@ -78,96 +81,128 @@ const NewProjectView: NextPageWithLayout = () => {
           </Heading>
         </Flex>
 
-        <FormSteps numberOfSteps={4} currentStep={3} />
+        <FormSteps numberOfSteps={NUMBER_OF_STEPS} currentStep={step} />
 
-        <Button onClick={() => setStep((prev) => prev + 1)}>Next</Button>
+        <Box pos="relative" w="full">
+          {step === 1 ? (
+            <ScaleFade
+              initialScale={0.9}
+              in={step === 1}
+              delay={0.1}
+              transition={{
+                enter: {
+                  duration: 0.5,
+                },
+              }}
+            >
+              <RadioGroupStack
+                key="platform"
+                name="platform"
+                options={["Instagram", "Tiktok", "Twitter"]}
+                defaultValue="tiktok"
+                label="Platform"
+                onChange={console.log}
+              />
+            </ScaleFade>
+          ) : null}
 
-        <Box pos="relative" w="full" minH="300px">
-          <ScaleFade
-            initialScale={0.9}
-            style={{
-              position: "absolute",
-              left: 0,
-              top: 0,
-              width: "100%",
-              zIndex: step === 0 ? "10" : "-1",
-            }}
-            in={step === 0}
+          {step === 2 ? (
+            <ScaleFade
+              initialScale={0.9}
+              in={step === 2}
+              delay={0.1}
+              transition={{
+                enter: {
+                  duration: 0.5,
+                },
+              }}
+            >
+              <RadioGroupStack
+                key="team"
+                name="team"
+                options={["1-5", "10-20", "+20"]}
+                defaultValue="1-5"
+                label="Team"
+                onChange={console.log}
+              />
+            </ScaleFade>
+          ) : null}
+
+          {step === 3 ? (
+            <ScaleFade
+              initialScale={0.9}
+              in={step === 3}
+              delay={0.1}
+              transition={{
+                enter: {
+                  duration: 0.5,
+                },
+              }}
+            >
+              <InputGroup
+                label="Let's start with the name of your brand"
+                type="text"
+                placeholder="Your name brand"
+                registerCallback={brandNameField}
+              />
+              {errors.email && <span>This field is required</span>}
+            </ScaleFade>
+          ) : null}
+
+          {step === 4 ? (
+            <ScaleFade
+              initialScale={0.9}
+              in={step === 4}
+              delay={0.1}
+              transition={{
+                enter: {
+                  duration: 0.5,
+                },
+              }}
+            >
+              <InputGroup
+                label="Which email could we use to contact you?"
+                type="email"
+                placeholder="name@example.com"
+                helperText="We'll never share your email."
+                registerCallback={emailField}
+              />
+
+              <Button type="submit" size="lg">
+                Submit
+              </Button>
+            </ScaleFade>
+          ) : null}
+        </Box>
+        <Box mt="auto">
+          <Button
+            size="lg"
+            mr="10px"
+            onClick={() =>
+              setStep((prev) => {
+                if (prev > 1) {
+                  return prev - 1;
+                }
+                return prev;
+              })
+            }
           >
-            <RadioGroupStack
-              key="platform"
-              name="platform"
-              options={["Instagram", "Tiktok", "Twitter"]}
-              defaultValue="tiktok"
-              label="Platform"
-              onChange={console.log}
-            />
-          </ScaleFade>
+            Prev
+          </Button>
 
-          <ScaleFade
-            initialScale={0.9}
-            style={{
-              position: "absolute",
-              left: 0,
-              top: 0,
-              width: "100%",
-              zIndex: step === 1 ? "10" : "-1",
-            }}
-            in={step === 1}
+          <Button
+            size="lg"
+            onClick={() =>
+              setStep((prev) => {
+                if (prev < NUMBER_OF_STEPS) {
+                  return prev + 1;
+                }
+                return prev;
+              })
+            }
           >
-            <RadioGroupStack
-              key="team"
-              name="team"
-              options={["1-5", "10-20", "+20"]}
-              defaultValue="1-5"
-              label="Team"
-              onChange={console.log}
-            />
-          </ScaleFade>
-
-          <ScaleFade
-            initialScale={0.9}
-            style={{
-              position: "absolute",
-              left: 0,
-              top: 0,
-              width: "100%",
-              zIndex: step === 2 ? "10" : "-1",
-            }}
-            in={step === 2}
-          >
-            <InputGroup
-              label="Let's start with the name of your brand"
-              type="text"
-              placeholder="Your name brand"
-              registerCallback={brandNameField}
-            />
-            {errors.email && <span>This field is required</span>}
-          </ScaleFade>
-
-          <ScaleFade
-            initialScale={0.9}
-            style={{
-              position: "absolute",
-              left: 0,
-              top: 0,
-              width: "100%",
-              zIndex: step === 3 ? "10" : "-1",
-            }}
-            in={step === 3}
-          >
-            <InputGroup
-              label="Which email could we use to contact you?"
-              type="email"
-              placeholder="name@example.com"
-              helperText="We'll never share your email."
-              registerCallback={emailField}
-            />
-
-            <Button type="submit" size="lg">
-              Submit
-            </Button>
-          </ScaleFade>
+            Next
+          </Button>
         </Box>
       </Flex>
     </>
