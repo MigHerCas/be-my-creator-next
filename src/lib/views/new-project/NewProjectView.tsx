@@ -1,5 +1,6 @@
 import { Box, Button, Flex, Heading, useColorMode } from "@chakra-ui/react";
 import CalendlyIntegration from "@compositions/CalendlyIntegration";
+import FormSteps from "@compositions/FormSteps";
 import Layout from "@layout/index";
 import type { NextPageWithLayout } from "@pages/_app";
 import { NextSeo } from "next-seo";
@@ -69,6 +70,8 @@ const NewProjectView: NextPageWithLayout = () => {
             New project!
           </Heading>
         </Flex>
+
+        <FormSteps numberOfSteps={4} currentStep={3} />
 
         <RadioGroupStack
           key="platform"
