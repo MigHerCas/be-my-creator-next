@@ -1,11 +1,17 @@
-import { Box, Button, Flex, Heading, useColorMode } from "@chakra-ui/react";
-import CalendlyIntegration from "@compositions/CalendlyIntegration";
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  ScaleFade,
+  useColorMode,
+} from "@chakra-ui/react";
 import FormSteps from "@compositions/FormSteps";
 import Layout from "@layout/index";
 import type { NextPageWithLayout } from "@pages/_app";
 import { NextSeo } from "next-seo";
 import type { ReactElement } from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Tool } from "react-feather";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
@@ -22,6 +28,7 @@ type Inputs = {
 
 const NewProjectView: NextPageWithLayout = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const [step, setStep] = useState(0);
 
   useEffect(() => {
     if (colorMode === "light") toggleColorMode();
@@ -73,44 +80,95 @@ const NewProjectView: NextPageWithLayout = () => {
 
         <FormSteps numberOfSteps={4} currentStep={3} />
 
-        <RadioGroupStack
-          key="platform"
-          name="platform"
-          options={["Instagram", "Tiktok", "Twitter"]}
-          defaultValue="tiktok"
-          label="Platform"
-          onChange={console.log}
-        />
+        <Button onClick={() => setStep((prev) => prev + 1)}>Next</Button>
 
-        <RadioGroupStack
-          key="team"
-          name="team"
-          options={["1-5", "10-20", "+20"]}
-          defaultValue="1-5"
-          label="Team"
-          onChange={console.log}
-        />
+        <Box pos="relative" w="full" minH="300px">
+          <ScaleFade
+            initialScale={0.9}
+            style={{
+              position: "absolute",
+              left: 0,
+              top: 0,
+              width: "100%",
+              zIndex: step === 0 ? "10" : "-1",
+            }}
+            in={step === 0}
+          >
+            <RadioGroupStack
+              key="platform"
+              name="platform"
+              options={["Instagram", "Tiktok", "Twitter"]}
+              defaultValue="tiktok"
+              label="Platform"
+              onChange={console.log}
+            />
+          </ScaleFade>
 
-        <InputGroup
-          label="Let's start with the name of your brand"
-          type="text"
-          placeholder="Your name brand"
-          registerCallback={brandNameField}
-        />
-        {errors.email && <span>This field is required</span>}
+          <ScaleFade
+            initialScale={0.9}
+            style={{
+              position: "absolute",
+              left: 0,
+              top: 0,
+              width: "100%",
+              zIndex: step === 1 ? "10" : "-1",
+            }}
+            in={step === 1}
+          >
+            <RadioGroupStack
+              key="team"
+              name="team"
+              options={["1-5", "10-20", "+20"]}
+              defaultValue="1-5"
+              label="Team"
+              onChange={console.log}
+            />
+          </ScaleFade>
 
-        <InputGroup
-          label="Which email could we use to contact you?"
-          type="email"
-          placeholder="name@example.com"
-          helperText="We'll never share your email."
-          registerCallback={emailField}
-        />
+          <ScaleFade
+            initialScale={0.9}
+            style={{
+              position: "absolute",
+              left: 0,
+              top: 0,
+              width: "100%",
+              zIndex: step === 2 ? "10" : "-1",
+            }}
+            in={step === 2}
+          >
+            <InputGroup
+              label="Let's start with the name of your brand"
+              type="text"
+              placeholder="Your name brand"
+              registerCallback={brandNameField}
+            />
+            {errors.email && <span>This field is required</span>}
+          </ScaleFade>
 
-        <Button type="submit" size="lg">
-          Submit
-        </Button>
-        <CalendlyIntegration />
+          <ScaleFade
+            initialScale={0.9}
+            style={{
+              position: "absolute",
+              left: 0,
+              top: 0,
+              width: "100%",
+              zIndex: step === 3 ? "10" : "-1",
+            }}
+            in={step === 3}
+          >
+            <InputGroup
+              label="Which email could we use to contact you?"
+              type="email"
+              placeholder="name@example.com"
+              helperText="We'll never share your email."
+              registerCallback={emailField}
+            />
+
+            <Button type="submit" size="lg">
+              Submit
+            </Button>
+          </ScaleFade>
+        </Box>
       </Flex>
     </>
   );
