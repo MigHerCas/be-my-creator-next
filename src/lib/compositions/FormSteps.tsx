@@ -18,7 +18,7 @@ const FormSteps: FC<Props> = ({ currentStep, numberOfSteps }) => {
     return currentStep >= stepIndex + 1;
   };
 
-  if (currentStep + 1 > numberOfSteps)
+  if (currentStep > numberOfSteps)
     throw new Error(
       "currentStep can't be greater than the total amount of steps"
     );
