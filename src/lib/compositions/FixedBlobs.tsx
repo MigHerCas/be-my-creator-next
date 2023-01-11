@@ -17,7 +17,9 @@ const FixedBlobs: FC<Props> = ({
 
   return (
     <Box
-      display={hideBlobsOnMobile ? ["none", null, null, "block"] : "block"}
+      display={
+        hideBlobsOnMobile ? ["none", null, null, null, null, "block"] : "block"
+      }
       pos="fixed"
       h={height || "100vh"}
       w="100vw"
@@ -27,20 +29,20 @@ const FixedBlobs: FC<Props> = ({
     >
       <Box
         pos="fixed"
-        bottom={["50%", "45%", "35%", null, null, "30%"]}
-        left={["-40%", "-30%", "-20%", "-20%", null, "-10%"]}
-        w={["300px", "350px", "400px", null, "500px", "600px"]}
-        h={["300px", "350px", "400px", null, "500px", "600px"]}
+        top={["40%", "35%", "25%", null, null, "20%"]}
+        left={["-40%", "-30%", "-20%", "-20%", null, "-15%"]}
+        w={["300px", "350px", "400px", null, "500px"]}
+        h={["300px", "350px", "400px", null, "500px"]}
       >
         <Blob type={2} />
       </Box>
 
       <Box
         pos="fixed"
-        top={["50%", null, "50%"]}
-        right={["-50%", "-35%", "-20%", "-10%"]}
-        w={["300px", "400px", "400px", null, "500px", "600px"]}
-        h={["300px", "400px", "400px", null, "500px", "600px"]}
+        bottom="-20%"
+        right={["-50%", "-35%", "-20%", "-15%"]}
+        w={["300px", "400px", "400px", null, "500px"]}
+        h={["300px", "400px", "400px", null, "500px"]}
       >
         <Blob type={0} isInverted />
       </Box>
