@@ -22,7 +22,7 @@ const NewCallView: NextPageWithLayout = () => {
         flexDir="column"
         alignItems="center"
         borderRadius={[0, null, "20px 20px 0 0"]}
-        gap={["30px", "40px", "50px", "60px"]}
+        gap="30px"
         mx={["-30px", null, "initial"]}
         p={["30px", null, "50px", "60px"]}
       >
@@ -40,7 +40,7 @@ const NewCallView: NextPageWithLayout = () => {
           </Heading>
         </Flex>
 
-        <Text>
+        <Text mb={0}>
           Let&apos;s get started with a simple call to see how we can help each
           other.
         </Text>
