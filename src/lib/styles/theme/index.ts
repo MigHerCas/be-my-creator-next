@@ -1,10 +1,10 @@
-import type { ThemeComponentProps } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
 
 import { breakpoints } from "./breakpoints";
 import { colors } from "./colors";
 import { components } from "./components";
 import { config } from "./config";
+import { styles } from "./styles";
 import {
   fonts,
   fontSizes,
@@ -14,13 +14,7 @@ import {
 } from "./typography";
 
 const customTheme = extendTheme({
-  styles: {
-    global: ({ colorMode }: ThemeComponentProps) => ({
-      "html, body": {
-        bg: colorMode === "dark" ? "#272727" : "white",
-      },
-    }),
-  },
+  styles,
   breakpoints,
   colors,
   config,
