@@ -8,11 +8,11 @@ import { Tool } from "react-feather";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 
+import FormInputGroup from "./modules/FormInputGroup";
+import FormRadioGroupStack from "./modules/FormRadioGroupStack";
 import FormStepControl from "./modules/FormStepControls";
 import FormStepIndicator from "./modules/FormStepIndicator";
 import FormStepWrapper from "./modules/FormStepWrapper";
-import InputGroup from "./modules/InputGroup";
-import RadioGroupStack from "./modules/RadioGroupStack";
 
 type Inputs = {
   email: string;
@@ -44,7 +44,7 @@ const NewProjectView: NextPageWithLayout = () => {
     {
       step: 1,
       component: (
-        <RadioGroupStack
+        <FormRadioGroupStack
           key="platform"
           name="platform"
           options={["Instagram", "Tiktok", "Twitter"]}
@@ -57,7 +57,7 @@ const NewProjectView: NextPageWithLayout = () => {
     {
       step: 2,
       component: (
-        <RadioGroupStack
+        <FormRadioGroupStack
           key="team"
           name="team"
           options={["1-5", "10-20", "+20"]}
@@ -71,7 +71,7 @@ const NewProjectView: NextPageWithLayout = () => {
       step: 3,
       component: (
         <>
-          <InputGroup
+          <FormInputGroup
             label="Let's start with the name of your brand"
             type="text"
             placeholder="Your name brand"
@@ -84,7 +84,7 @@ const NewProjectView: NextPageWithLayout = () => {
     {
       step: 4,
       component: (
-        <InputGroup
+        <FormInputGroup
           label="Which email could we use to contact you?"
           type="email"
           placeholder="name@example.com"

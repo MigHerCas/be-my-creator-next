@@ -9,7 +9,7 @@ interface Props {
   defaultValue: string;
   onChange: () => void;
 }
-const RadioGroupStack: FC<Props> = ({
+const FormRadioGroupStack: FC<Props> = ({
   label,
   options,
   defaultValue,
@@ -44,4 +44,4 @@ const RadioGroupStack: FC<Props> = ({
   );
 };
 
-export default RadioGroupStack;
+export default FormRadioGroupStack;
