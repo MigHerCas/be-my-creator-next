@@ -11,7 +11,7 @@ interface Props {
   numberOfSteps: number;
 }
 
-const FormSteps: FC<Props> = ({ currentStep, numberOfSteps }) => {
+const FormStepIndicator: FC<Props> = ({ currentStep, numberOfSteps }) => {
   const activeColor = "#BCE500";
   const defaultColor = "#1c1c1c";
   const isStepActive = (stepIndex: number) => {
@@ -43,4 +43,4 @@ const FormSteps: FC<Props> = ({ currentStep, numberOfSteps }) => {
   );
 };
 
-export default FormSteps;
+export default FormStepIndicator;

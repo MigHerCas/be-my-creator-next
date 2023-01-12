@@ -6,7 +6,6 @@ import {
   ScaleFade,
   useColorMode,
 } from "@chakra-ui/react";
-import FormSteps from "@compositions/FormSteps";
 import Layout from "@layout/index";
 import type { NextPageWithLayout } from "@pages/_app";
 import { NextSeo } from "next-seo";
@@ -16,6 +15,7 @@ import { Tool } from "react-feather";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 
+import FormStepIndicator from "./modules/FormStepIndicator";
 import InputGroup from "./modules/InputGroup";
 import RadioGroupStack from "./modules/RadioGroupStack";
 
@@ -81,7 +81,7 @@ const NewProjectView: NextPageWithLayout = () => {
           </Heading>
         </Flex>
 
-        <FormSteps numberOfSteps={NUMBER_OF_STEPS} currentStep={step} />
+        <FormStepIndicator numberOfSteps={NUMBER_OF_STEPS} currentStep={step} />
 
         <Box pos="relative" w="full">
           {step === 1 ? (
