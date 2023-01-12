@@ -85,10 +85,13 @@ const ReviewBox: FC = () => {
           </Box>
           {/* Rating stars */}
           <Flex direction="row" gap="5px">
-            {Array.from({ length: 5 }).map((_, index) => (
+            {Array.from({ length: 5 }, (_, i) => {
+              return {
+                id: `star-${i}`,
+              };
+            }).map(({ id }) => (
               <Star
-                // eslint-disable-next-line react/no-array-index-key
-                key={`star-${index}`}
+                key={id}
                 fill="#FCC54E"
                 stroke="none"
                 width={24}

@@ -15,7 +15,7 @@ interface Props {
   registerCallback: UseFormRegisterReturn;
 }
 
-const InputGroup: FC<Props> = ({
+const FormInputGroup: FC<Props> = ({
   label,
   helperText,
   type,
@@ -54,4 +54,4 @@ const InputGroup: FC<Props> = ({
   );
 };
 
-export default InputGroup;
+export default FormInputGroup;
