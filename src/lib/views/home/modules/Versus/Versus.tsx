@@ -67,7 +67,7 @@ const Versus: FC = () => {
             backgroundColor="white"
           >
             {leftSideItems.map((itemText) => (
-              <Flex as="li" alignItems="center" gap={4}>
+              <Flex key={itemText} as="li" alignItems="center" gap={4}>
                 <Box
                   width={["20px", "24px"]}
                   p="4px"
@@ -99,7 +99,7 @@ const Versus: FC = () => {
             opacity="0.8"
           >
             {rightSideItems.map((itemText) => (
-              <Flex as="li" alignItems="center" gap={4}>
+              <Flex key={itemText} as="li" alignItems="center" gap={4}>
                 <Box
                   width={["20px", "24px"]}
                   p="4px"

@@ -27,10 +27,13 @@ const FormSteps: FC<Props> = ({ currentStep, numberOfSteps }) => {
       <Heading size="xs" flexBasis="100%" textAlign="center">
         {`Step ${currentStep} of ${numberOfSteps}`}
       </Heading>
-      {Array.from({ length: numberOfSteps }).map((_, index) => (
+      {Array.from({ length: numberOfSteps }, (_, i) => {
+        return {
+          id: `step-${i}`,
+        };
+      }).map(({ id }, index) => (
         <Box
-          // eslint-disable-next-line react/no-array-index-key
-          key={`step-${index}`}
+          key={id}
           height="5px"
           bgColor={isStepActive(index) ? activeColor : defaultColor}
           flex={1}
