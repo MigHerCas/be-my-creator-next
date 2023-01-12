@@ -1,13 +1,13 @@
-import { Box, Flex, Heading, useColorMode } from "@chakra-ui/react";
+import { Box, Flex, useColorMode } from "@chakra-ui/react";
 import Layout from "@layout/index";
 import type { NextPageWithLayout } from "@pages/_app";
 import { NextSeo } from "next-seo";
 import type { ReactElement } from "react";
 import { useEffect, useState } from "react";
-import { Tool } from "react-feather";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 
+import FormHeader from "./modules/FormHeader";
 import FormInputGroup from "./modules/FormInputGroup";
 import FormRadioGroupStack from "./modules/FormRadioGroupStack";
 import FormStepControl from "./modules/FormStepControls";
@@ -110,30 +110,16 @@ const NewProjectView: NextPageWithLayout = () => {
         p={["30px", null, "50px", "60px"]}
         minH="calc(100vh - 180px)"
       >
-        <Flex
-          justifyContent="center"
-          alignItems="center"
-          gap={[4, null, 6, 8]}
-          wrap="wrap"
-        >
-          <Box
-            p={[3, null, null, 5]}
-            display="inline-block"
-            bgColor="#272727"
-            borderRadius="full"
-          >
-            <Tool height="30px" width="30px" stroke="#BCE500" />
-          </Box>
-          <Heading size="lg" textAlign="center" mb={0}>
-            New project!
-          </Heading>
-        </Flex>
+        {/* Header (title and description) */}
+        <FormHeader />
 
+        {/* Steps indicator (green bar) */}
         <FormStepIndicator
           numberOfSteps={formStepsContent.length}
           currentStep={currentStep}
         />
 
+        {/* Form content (each step) */}
         <Box pos="relative" w="full">
           {formStepsContent.map(({ step, component }) => (
             <FormStepWrapper
@@ -144,6 +130,8 @@ const NewProjectView: NextPageWithLayout = () => {
             </FormStepWrapper>
           ))}
         </Box>
+
+        {/* Form controls (prev and next button) */}
         <FormStepControl
           setCurrentStep={setCurrentStep}
           numberOfTotalSteps={formStepsContent.length}
