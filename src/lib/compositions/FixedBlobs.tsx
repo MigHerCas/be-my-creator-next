@@ -31,8 +31,8 @@ const FixedBlobs: FC<Props> = ({
         pos="fixed"
         top={["40%", "35%", "25%", null, null, "20%"]}
         left={["-40%", "-30%", "-20%", "-20%", null, "-15%"]}
-        w={["300px", "350px", "400px", null, "500px"]}
-        h={["300px", "350px", "400px", null, "500px"]}
+        w={["300px", "350px", "400px", null, "500px", "600px"]}
+        h={["300px", "350px", "400px", null, "500px", "600px"]}
       >
         <Blob type={2} />
       </Box>
@@ -41,8 +41,8 @@ const FixedBlobs: FC<Props> = ({
         pos="fixed"
         bottom="-20%"
         right={["-50%", "-35%", "-20%", "-15%"]}
-        w={["300px", "400px", "400px", null, "500px"]}
-        h={["300px", "400px", "400px", null, "500px"]}
+        w={["300px", "400px", "400px", null, "500px", "600px"]}
+        h={["300px", "400px", "400px", null, "500px", "600px"]}
       >
         <Blob type={0} isInverted />
       </Box>
