@@ -19,7 +19,11 @@ import { Menu as MenuIcon, X, ArrowRightCircle } from "react-feather";
 
 const Links = ["Blog", "Projects", "Team"];
 
-const NavBar: FC = () => {
+interface Props {
+  hideLinks: boolean;
+}
+
+const NavBar: FC<Props> = ({ hideLinks }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useRouter();
   const { setLocked } = useLockedBody();
@@ -42,29 +46,40 @@ const NavBar: FC = () => {
         px="30px"
         height="90px"
       >
-        <IconButton
-          size="md"
-          icon={isOpen ? <X /> : <MenuIcon />}
-          aria-label="Open Menu"
-          display={{ base: "flex", md: "none" }}
-          onClick={isOpen ? onClose : onOpen}
-        />
-        <Box>
+        {hideLinks ? (
+          // Prevents Logo jump (acts as a burger menu placeholder (same size))
+          <Box
+            opacity="transparent"
+            w="40px"
+            display={{ base: "block", md: "none" }}
+          />
+        ) : (
+          <IconButton
+            size="md"
+            icon={isOpen ? <X /> : <MenuIcon />}
+            aria-label="Open Menu"
+            display={{ base: "flex", md: "none" }}
+            onClick={isOpen ? onClose : onOpen}
+          />
+        )}
+        <Box m={{ base: "auto", md: "0" }}>
           <Logo />
         </Box>
         <Flex alignItems="center" gap={4}>
-          <HStack as="nav" spacing={4} display={{ base: "none", md: "flex" }}>
-            {Links.map((link) => (
-              <Link
-                key={link}
-                href={`/${link.toLowerCase()}`}
-                as={NextLink}
-                p={4}
-              >
-                {link}
-              </Link>
-            ))}
-          </HStack>
+          {hideLinks ? null : (
+            <HStack as="nav" spacing={4} display={{ base: "none", md: "flex" }}>
+              {Links.map((link) => (
+                <Link
+                  key={link}
+                  href={`/${link.toLowerCase()}`}
+                  as={NextLink}
+                  p={4}
+                >
+                  {link}
+                </Link>
+              ))}
+            </HStack>
+          )}
 
           <CTA
             href="/new-call"

@@ -163,7 +163,11 @@ const NewProjectView: NextPageWithLayout = () => {
 };
 
 NewProjectView.getLayout = function getLayout(page: ReactElement) {
-  return <Layout hideBlobsOnMobile>{page}</Layout>;
+  return (
+    <Layout hideHeaderLinks hideBlobsOnMobile>
+      {page}
+    </Layout>
+  );
 };
 
 export default NewProjectView;

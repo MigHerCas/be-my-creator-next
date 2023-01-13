@@ -1,7 +1,12 @@
 import NavBar from "@compositions/NavBar";
+import type { FC } from "react";
 
-const Header = () => {
-  return <NavBar />;
+interface Props {
+  hideLinks: boolean;
+}
+
+const Header: FC<Props> = ({ hideLinks }) => {
+  return <NavBar hideLinks={hideLinks} />;
 };
 
 export default Header;
