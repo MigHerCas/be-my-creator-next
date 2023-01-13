@@ -1,6 +1,7 @@
 import { Box, Flex, useColorMode, useToast } from "@chakra-ui/react";
 import Layout from "@layout/index";
 import type { NextPageWithLayout } from "@pages/_app";
+import { insertLead } from "@supabase/Store";
 import { NextSeo } from "next-seo";
 import type { ReactElement } from "react";
 import { useEffect, useState } from "react";
@@ -24,6 +25,7 @@ export type FormFields = {
 const NewProjectView: NextPageWithLayout = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const [currentStep, setCurrentStep] = useState(1);
+  const [isSubmitCompleted, setIsSubmitCompleted] = useState(false);
   const toast = useToast();
 
   useEffect(() => {
@@ -46,7 +48,7 @@ const NewProjectView: NextPageWithLayout = () => {
     },
   });
 
-  const onSubmit: SubmitHandler<FormFields> = (data) => {
+  const onSubmit: SubmitHandler<FormFields> = async (data) => {
     toast({
       title: `Great! We have received your submission`,
       description: `We'll send a confirmation email to ${data.email}`,
@@ -55,7 +57,17 @@ const NewProjectView: NextPageWithLayout = () => {
       position: "bottom-right",
       duration: 20000,
     });
-    console.log(data);
+
+    await insertLead({
+      name: data.name,
+      email: data.email,
+      config: {
+        platforms: data.platforms,
+        teamSize: data.teamSize,
+      },
+    });
+
+    setIsSubmitCompleted(true);
   };
 
   const formStepsContent = [
@@ -121,55 +133,62 @@ const NewProjectView: NextPageWithLayout = () => {
         />
       ),
     },
-  ] as Array<{ id: keyof FormFields; step: number; component: JSX.Element }>;
+  ] as Array<{
+    id: keyof FormFields;
+    step: number;
+    component: JSX.Element;
+  }>;
 
   return (
     <>
       <NextSeo title="New project" />
-      <Flex
-        as="form"
-        className="glassmorphic--light"
-        onSubmit={handleSubmit(onSubmit)}
-        flexDir="column"
-        alignItems="center"
-        gap={["30px", "40px", "50px", "60px"]}
-        borderRadius={[0, null, "20px 20px 0 0"]}
-        mx={["-30px", null, "initial"]}
-        p={["30px", null, "50px", "60px"]}
-        minH="calc(100vh - 180px)"
-      >
-        {/* Header (title and description) */}
-        <FormHeader />
-
-        {/* Steps indicator (green bar) */}
-        <FormStepIndicator
-          numberOfSteps={formStepsContent.length}
-          currentStep={currentStep}
-        />
-
-        {/* Form content (each step) */}
-        <Box pos="relative" w="full">
-          {formStepsContent.map(({ step, component }) => (
-            <FormStepWrapper
-              key={`form-step-${step}`}
-              isActive={currentStep === step}
-            >
-              {component}
-            </FormStepWrapper>
-          ))}
+      {isSubmitCompleted ? (
+        <Box color="green.500" fontSize="40px">
+          Completed!
         </Box>
-
-        {/* Form controls (prev and next button) */}
-        <FormStepControl
-          currentStep={{
-            id: formStepsContent[currentStep - 1].id,
-            step: currentStep,
-          }}
-          setCurrentStep={setCurrentStep}
-          numberOfSteps={formStepsContent.length}
-          trigger={trigger}
-        />
-      </Flex>
+      ) : (
+        <Flex
+          as="form"
+          className="glassmorphic--light"
+          onSubmit={handleSubmit(onSubmit)}
+          flexDir="column"
+          alignItems="center"
+          gap={["30px", "40px", "50px", "60px"]}
+          borderRadius={[0, null, "20px 20px 0 0"]}
+          mx={["-30px", null, "initial"]}
+          p={["30px", null, "50px", "60px"]}
+          minH="calc(100vh - 180px)"
+        >
+          {/* Header (title and description) */}
+          <FormHeader />
+          {/* Steps indicator (green bar) */}
+          <FormStepIndicator
+            numberOfSteps={formStepsContent.length}
+            currentStep={currentStep}
+          />
+          {/* Form content (each step) */}
+          <Box pos="relative" w="full">
+            {formStepsContent.map(({ step, component }) => (
+              <FormStepWrapper
+                key={`form-step-${step}`}
+                isActive={currentStep === step}
+              >
+                {component}
+              </FormStepWrapper>
+            ))}
+          </Box>
+          {/* Form controls (prev and next button) */}
+          <FormStepControl
+            currentStep={{
+              id: formStepsContent[currentStep - 1].id,
+              step: currentStep,
+            }}
+            setCurrentStep={setCurrentStep}
+            numberOfSteps={formStepsContent.length}
+            trigger={trigger}
+          />
+        </Flex>
+      )}
     </>
   );
 };
