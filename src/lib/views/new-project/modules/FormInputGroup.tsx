@@ -15,6 +15,7 @@ interface Props {
   type: string;
   placeholder: string;
   registerCallback: UseFormRegisterReturn;
+  clearErrorCallback: () => void;
 }
 
 const FormInputGroup: FC<Props> = ({
@@ -24,6 +25,7 @@ const FormInputGroup: FC<Props> = ({
   type,
   placeholder,
   registerCallback,
+  clearErrorCallback,
 }) => {
   return (
     <FormControl mx="auto" isInvalid={Boolean(errorMessage)}>
@@ -42,6 +44,7 @@ const FormInputGroup: FC<Props> = ({
         border="none"
         outline="none"
         boxShadow="rgb(235 219 173 / 30%) 0px 1px"
+        onFocus={clearErrorCallback}
         _active={{
           outline: "none",
           border: "none",

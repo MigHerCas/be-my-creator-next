@@ -36,6 +36,7 @@ const NewProjectView: NextPageWithLayout = () => {
     formState: { errors },
     control,
     trigger,
+    clearErrors,
   } = useForm<FormFields>({
     defaultValues: {
       name: "",
@@ -99,6 +100,7 @@ const NewProjectView: NextPageWithLayout = () => {
             required:
               "Please add a name. If you do not have a brand, feel free to add your own name instead",
           })}
+          clearErrorCallback={() => clearErrors("name")}
         />
       ),
     },
@@ -115,6 +117,7 @@ const NewProjectView: NextPageWithLayout = () => {
           registerCallback={register("email", {
             required: "We need an email to contact you",
           })}
+          clearErrorCallback={() => clearErrors("email")}
         />
       ),
     },
