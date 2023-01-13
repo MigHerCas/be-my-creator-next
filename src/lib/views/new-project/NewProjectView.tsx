@@ -164,7 +164,14 @@ const NewProjectView: NextPageWithLayout = () => {
 
 NewProjectView.getLayout = function getLayout(page: ReactElement) {
   return (
-    <Layout hideHeaderLinks hideBlobsOnMobile>
+    <Layout
+      mainCTA={{
+        href: "/new-call",
+        text: "Book a call",
+      }}
+      hideHeaderLinks
+      hideBlobsOnMobile
+    >
       {page}
     </Layout>
   );

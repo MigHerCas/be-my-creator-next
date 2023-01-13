@@ -3,10 +3,12 @@ import type { ReactNode } from "react";
 
 import Container from "./modules/Container";
 import Footer from "./modules/Footer";
+import type { CTAInfo } from "./modules/Header";
 import Header from "./modules/Header";
 
 type LayoutProps = {
   children: ReactNode;
+  mainCTA?: CTAInfo;
   hideBlobsOnMobile?: boolean;
   hideBlobs?: boolean;
   hideHeaderLinks?: boolean;
@@ -14,13 +16,17 @@ type LayoutProps = {
 
 const Layout = ({
   children,
+  mainCTA = {
+    text: "Book a call",
+    href: "/new-call",
+  },
   hideHeaderLinks = false,
   hideBlobsOnMobile = false,
   hideBlobs = false,
 }: LayoutProps) => {
   return (
     <>
-      <Header hideLinks={hideHeaderLinks} />
+      <Header hideLinks={hideHeaderLinks} mainCTA={mainCTA} />
       <Container htmlTag="main">{children}</Container>
       <Footer />
 

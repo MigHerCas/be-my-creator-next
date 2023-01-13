@@ -52,7 +52,18 @@ const NewCallView: NextPageWithLayout = () => {
 };
 
 NewCallView.getLayout = function getLayout(page: ReactElement) {
-  return <Layout hideBlobsOnMobile>{page}</Layout>;
+  return (
+    <Layout
+      mainCTA={{
+        href: "/new-project",
+        text: "Create a project",
+      }}
+      hideHeaderLinks
+      hideBlobsOnMobile
+    >
+      {page}
+    </Layout>
+  );
 };
 
 export default NewCallView;
