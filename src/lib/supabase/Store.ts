@@ -1,4 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
+import type { FormFields } from "@views/new-project/NewProjectView";
 import type { Dispatch, SetStateAction } from "react";
 import { useEffect, useState } from "react";
 
@@ -12,21 +13,16 @@ export const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 export type Lead = {
   name: string;
   email: string;
-  config: object;
+  config: Omit<FormFields, "name" | "email">;
 };
 
 /**
- * Insert lead
+ * Insert a new lead into Leads table
+ * @param {object} dataToInsert Record to be inserted
  */
-export const insertLead = async () => {
-  const newLead: Lead = {
-    name: "Andrea",
-    email: "andreacos@hotmail.com",
-    config: {},
-  };
-
+export const insertLead = async (dataToInsert: Lead) => {
   try {
-    const { data } = await supabase.from("leads").insert([newLead]);
+    const { data } = await supabase.from("leads").insert([dataToInsert]);
     return data;
   } catch (error) {
     throw new Error(error as string);
