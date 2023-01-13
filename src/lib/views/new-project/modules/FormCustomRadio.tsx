@@ -1,14 +1,15 @@
 import type { UseRadioProps } from "@chakra-ui/react";
 import { Box, useRadio } from "@chakra-ui/react";
-import type { FC, PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
+import { forwardRef } from "react";
 
-const RadioCard: FC<PropsWithChildren<UseRadioProps>> = ({
-  children,
-  ...radioProps
-}) => {
-  const { getInputProps, getCheckboxProps } = useRadio(radioProps);
+const FormCustomRadio = forwardRef<
+  HTMLInputElement,
+  PropsWithChildren<UseRadioProps>
+>(({ children, ...radioProps }, ref) => {
+  const { state, getInputProps, getCheckboxProps } = useRadio(radioProps);
 
-  const input = getInputProps();
+  const input = getInputProps({ ref });
   const checkbox = getCheckboxProps();
   return (
     <Box as="label" w="full">
@@ -16,19 +17,13 @@ const RadioCard: FC<PropsWithChildren<UseRadioProps>> = ({
       <Box
         {...checkbox}
         cursor="pointer"
-        bgColor="#1c1c1c"
+        color="white"
+        bgColor={state.isChecked ? "#00C4A2" : "#1c1c1c"}
         borderRadius="md"
-        boxShadow="md"
         display="flex"
         alignItems="center"
         justifyContent="center"
-        _checked={{
-          bg: "#00C4A2",
-          color: "white",
-        }}
-        _focus={{
-          boxShadow: "outline",
-        }}
+        boxShadow={state.isFocused ? "outline" : "none"}
         flex="1"
         minH="100px"
         fontSize="20px"
@@ -38,6 +33,6 @@ const RadioCard: FC<PropsWithChildren<UseRadioProps>> = ({
       </Box>
     </Box>
   );
-};
+});
 
-export default RadioCard;
+export default FormCustomRadio;
