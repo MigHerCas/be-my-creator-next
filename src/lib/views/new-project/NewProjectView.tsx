@@ -163,7 +163,7 @@ const NewProjectView: NextPageWithLayout = () => {
         <FormStepControl
           currentStep={{
             id: formStepsContent[currentStep - 1].id,
-            step: currentStep - 1,
+            step: currentStep,
           }}
           setCurrentStep={setCurrentStep}
           numberOfSteps={formStepsContent.length}
