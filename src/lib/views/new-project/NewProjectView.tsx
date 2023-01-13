@@ -1,4 +1,4 @@
-import { Box, Flex, useColorMode } from "@chakra-ui/react";
+import { Box, Flex, useColorMode, useToast } from "@chakra-ui/react";
 import Layout from "@layout/index";
 import type { NextPageWithLayout } from "@pages/_app";
 import { NextSeo } from "next-seo";
@@ -9,21 +9,22 @@ import { useForm } from "react-hook-form";
 
 import FormHeader from "./modules/FormHeader";
 import FormInputGroup from "./modules/FormInputGroup";
-import FormRadioGroupStack from "./modules/FormRadioGroupStack";
+import FormRadioGroup from "./modules/FormRadioGroup";
 import FormStepControl from "./modules/FormStepControls";
 import FormStepIndicator from "./modules/FormStepIndicator";
 import FormStepWrapper from "./modules/FormStepWrapper";
 
-type Inputs = {
+export type FormFields = {
+  name: string;
   email: string;
-  brandName: string;
-  platforms: ["Instagram", "Tiktok", "Twitter"];
-  teamSize: ["1-5", "10-20", "+20"];
+  platforms: "Instagram" | "Tiktok" | "Twitter";
+  teamSize: "1-5" | "10-20" | "+20";
 };
 
 const NewProjectView: NextPageWithLayout = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const [currentStep, setCurrentStep] = useState(1);
+  const toast = useToast();
 
   useEffect(() => {
     if (colorMode === "light") toggleColorMode();
@@ -33,52 +34,68 @@ const NewProjectView: NextPageWithLayout = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<Inputs>();
+    control,
+  } = useForm<FormFields>({
+    defaultValues: {
+      name: "",
+      email: "",
+      platforms: "Instagram",
+      teamSize: "1-5",
+    },
+  });
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
-
-  const brandNameField = register("email", { required: true });
-  const emailField = register("brandName");
+  const onSubmit: SubmitHandler<FormFields> = (data) => {
+    toast({
+      title: `Great! We have received your submission`,
+      description: `We'll send a confirmation email to ${data.email}`,
+      variant: "customSuccess",
+      status: "success",
+      position: "bottom-right",
+      duration: 20000,
+    });
+    console.log(data);
+  };
 
   const formStepsContent = [
     {
       step: 1,
       component: (
-        <FormRadioGroupStack
-          key="platform"
-          name="platform"
+        <FormRadioGroup
+          key="platforms"
+          name="platforms"
+          label="Platforms"
+          control={control}
+          defaultValue="Instagram"
           options={["Instagram", "Tiktok", "Twitter"]}
-          defaultValue="tiktok"
-          label="Platform"
-          onChange={console.log}
         />
       ),
     },
     {
       step: 2,
       component: (
-        <FormRadioGroupStack
-          key="team"
-          name="team"
-          options={["1-5", "10-20", "+20"]}
+        <FormRadioGroup
+          key="teamSize"
+          name="teamSize"
+          label="Team size"
+          control={control}
           defaultValue="1-5"
-          label="Team"
-          onChange={console.log}
+          options={["1-5", "10-20", "+20"]}
         />
       ),
     },
     {
       step: 3,
       component: (
-        <>
-          <FormInputGroup
-            label="Let's start with the name of your brand"
-            type="text"
-            placeholder="Your name brand"
-            registerCallback={brandNameField}
-          />
-          {errors.email && <span>This field is required</span>}
-        </>
+        <FormInputGroup
+          label="Let's start with the name of your brand"
+          type="text"
+          placeholder="Your name brand"
+          errorMessage={errors.name?.message}
+          registerCallback={register("name", {
+            required:
+              "Please add a name. If you do not have a brand, feel free to add your own name instead",
+          })}
+        />
       ),
     },
     {
@@ -88,8 +105,11 @@ const NewProjectView: NextPageWithLayout = () => {
           label="Which email could we use to contact you?"
           type="email"
           placeholder="name@example.com"
+          errorMessage={errors.email?.message}
           helperText="We'll never share your email."
-          registerCallback={emailField}
+          registerCallback={register("email", {
+            required: "We need an email to contact you",
+          })}
         />
       ),
     },
@@ -133,8 +153,9 @@ const NewProjectView: NextPageWithLayout = () => {
 
         {/* Form controls (prev and next button) */}
         <FormStepControl
+          currentStep={currentStep}
           setCurrentStep={setCurrentStep}
-          numberOfTotalSteps={formStepsContent.length}
+          numberOfSteps={formStepsContent.length}
         />
       </Flex>
     </>

@@ -2,16 +2,22 @@ import { Box, Button } from "@chakra-ui/react";
 import type { Dispatch, FC, SetStateAction } from "react";
 
 interface Props {
+  currentStep: number;
   setCurrentStep: Dispatch<SetStateAction<number>>;
-  numberOfTotalSteps: number;
+  numberOfSteps: number;
 }
 
-const FormStepControl: FC<Props> = ({ setCurrentStep, numberOfTotalSteps }) => {
+const FormStepControl: FC<Props> = ({
+  currentStep,
+  setCurrentStep,
+  numberOfSteps,
+}) => {
   return (
     <Box mt="auto">
       <Button
         size="lg"
         mr="10px"
+        isDisabled={currentStep === 1}
         onClick={() =>
           setCurrentStep((prev) => {
             if (prev > 1) {
@@ -26,9 +32,10 @@ const FormStepControl: FC<Props> = ({ setCurrentStep, numberOfTotalSteps }) => {
 
       <Button
         size="lg"
+        isDisabled={currentStep === numberOfSteps}
         onClick={() =>
           setCurrentStep((prev) => {
-            if (prev < numberOfTotalSteps) {
+            if (prev < numberOfSteps) {
               return prev + 1;
             }
             return prev;
@@ -36,6 +43,15 @@ const FormStepControl: FC<Props> = ({ setCurrentStep, numberOfTotalSteps }) => {
         }
       >
         Next
+      </Button>
+
+      <Button
+        size="lg"
+        ml="10px"
+        type="submit"
+        isDisabled={currentStep < numberOfSteps}
+      >
+        Submit
       </Button>
     </Box>
   );
