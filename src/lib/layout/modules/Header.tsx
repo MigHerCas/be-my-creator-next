@@ -1,4 +1,4 @@
-import NavBar from "@compositions/NavBar";
+import NavBar from "@layout/modules/NavBar";
 import type { FC } from "react";
 
 interface Props {
