@@ -1,5 +1,6 @@
 import {
   FormControl,
+  FormErrorMessage,
   FormHelperText,
   FormLabel,
   Input,
@@ -9,6 +10,7 @@ import type { UseFormRegisterReturn } from "react-hook-form";
 
 interface Props {
   label: string;
+  errorMessage?: string;
   helperText?: string;
   type: string;
   placeholder: string;
@@ -17,19 +19,21 @@ interface Props {
 
 const FormInputGroup: FC<Props> = ({
   label,
+  errorMessage,
   helperText,
   type,
   placeholder,
   registerCallback,
 }) => {
   return (
-    <FormControl mx="auto">
+    <FormControl mx="auto" isInvalid={Boolean(errorMessage)}>
       <FormLabel fontSize="24px" fontWeight="400" mb="20px">
         {label}
       </FormLabel>
       <Input
         type={type}
         placeholder={placeholder}
+        required
         display="block"
         fontSize={["22px", null, "30px"]}
         p="0px 0px 8px"
@@ -50,6 +54,9 @@ const FormInputGroup: FC<Props> = ({
         {...registerCallback}
       />
       {helperText ? <FormHelperText>{helperText}</FormHelperText> : null}
+      {errorMessage ? (
+        <FormErrorMessage>{errorMessage}</FormErrorMessage>
+      ) : null}
     </FormControl>
   );
 };
