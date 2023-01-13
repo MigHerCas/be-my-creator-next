@@ -52,6 +52,9 @@ const FormInputGroup: FC<Props> = ({
           border: "none",
           boxShadow: "#00C4A2 0px 2px",
         }}
+        _invalid={{
+          boxShadow: "#FC8181 0px 2px",
+        }}
         {...registerCallback}
       />
       {helperText ? <FormHelperText>{helperText}</FormHelperText> : null}

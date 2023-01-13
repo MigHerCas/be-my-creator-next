@@ -35,6 +35,7 @@ const NewProjectView: NextPageWithLayout = () => {
     handleSubmit,
     formState: { errors },
     control,
+    trigger,
   } = useForm<FormFields>({
     defaultValues: {
       name: "",
@@ -58,6 +59,7 @@ const NewProjectView: NextPageWithLayout = () => {
 
   const formStepsContent = [
     {
+      id: "platforms",
       step: 1,
       component: (
         <FormRadioGroup
@@ -71,6 +73,7 @@ const NewProjectView: NextPageWithLayout = () => {
       ),
     },
     {
+      id: "teamSize",
       step: 2,
       component: (
         <FormRadioGroup
@@ -84,6 +87,7 @@ const NewProjectView: NextPageWithLayout = () => {
       ),
     },
     {
+      id: "name",
       step: 3,
       component: (
         <FormInputGroup
@@ -99,6 +103,7 @@ const NewProjectView: NextPageWithLayout = () => {
       ),
     },
     {
+      id: "email",
       step: 4,
       component: (
         <FormInputGroup
@@ -113,7 +118,7 @@ const NewProjectView: NextPageWithLayout = () => {
         />
       ),
     },
-  ];
+  ] as Array<{ id: keyof FormFields; step: number; component: JSX.Element }>;
 
   return (
     <>
@@ -153,9 +158,13 @@ const NewProjectView: NextPageWithLayout = () => {
 
         {/* Form controls (prev and next button) */}
         <FormStepControl
-          currentStep={currentStep}
+          currentStep={{
+            id: formStepsContent[currentStep - 1].id,
+            step: currentStep - 1,
+          }}
           setCurrentStep={setCurrentStep}
           numberOfSteps={formStepsContent.length}
+          trigger={trigger}
         />
       </Flex>
     </>
