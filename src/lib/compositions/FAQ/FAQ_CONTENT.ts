@@ -2,7 +2,7 @@ export const FAQ_CONTENT = [
   {
     id: "faq_agencies",
     tabTitle: "For agencies",
-    items: [
+    leftItems: [
       {
         title: "Agency Title 1",
         content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -27,6 +27,8 @@ export const FAQ_CONTENT = [
                         exercitation ullamco laboris nisi ut aliquip ex ea
                         commodo consequat.`,
       },
+    ],
+    rightItems: [
       {
         title: "Agency Title 4",
         content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -48,7 +50,7 @@ export const FAQ_CONTENT = [
   {
     id: "faq_brands",
     tabTitle: "For brands",
-    items: [
+    leftItems: [
       {
         title: "Brand Title 1",
         content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -73,6 +75,8 @@ export const FAQ_CONTENT = [
                         exercitation ullamco laboris nisi ut aliquip ex ea
                         commodo consequat.`,
       },
+    ],
+    rightItems: [
       {
         title: "Brand Title 4",
         content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -94,7 +98,7 @@ export const FAQ_CONTENT = [
   {
     id: "faq_creators",
     tabTitle: "For creators",
-    items: [
+    leftItems: [
       {
         title: "Creator Title 1",
         content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -119,6 +123,8 @@ export const FAQ_CONTENT = [
                         exercitation ullamco laboris nisi ut aliquip ex ea
                         commodo consequat.`,
       },
+    ],
+    rightItems: [
       {
         title: "Creator Title 4",
         content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
