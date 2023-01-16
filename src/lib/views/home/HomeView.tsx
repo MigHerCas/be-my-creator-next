@@ -1,5 +1,6 @@
 import { useColorMode } from "@chakra-ui/react";
 import FAQ from "@compositions/FAQ/FAQ";
+import Integrations from "@compositions/Integrations";
 import type { NextPageWithLayout } from "@pages/_app";
 import { NextSeo } from "next-seo";
 import { useEffect } from "react";
@@ -24,6 +25,7 @@ const HomeView: NextPageWithLayout = () => {
       <Hero />
       <Steps />
       <Stats />
+      <Integrations />
       <Carousel />
       <SuccessStories />
       <FAQ />
