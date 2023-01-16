@@ -1,6 +1,6 @@
 import { Heading, Grid, GridItem, Flex, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
-import VideoModal from "@components/modal/VideoModal";
+import VideoModal from "@components/video/VideoModal";
 import VideoPlayer from "@components/video/VideoPlayer";
 import CatchyBanner from "@compositions/CatchyBanner";
 import type { FC } from "react";
