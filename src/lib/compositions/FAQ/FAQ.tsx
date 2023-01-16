@@ -19,7 +19,10 @@ import { FAQ_CONTENT } from "./FAQ_CONTENT";
 
 const FAQ: FC = () => {
   return (
-    <Box>
+    <Box as="section">
+      <Heading mx="auto" maxW="20ch" size="md" textAlign="center" mb="30px">
+        Any question?
+      </Heading>
       <Tabs variant="solid-rounded" isFitted isLazy justifyContent="center">
         <TabList
           p="10px"
