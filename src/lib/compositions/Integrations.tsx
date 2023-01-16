@@ -39,6 +39,7 @@ const Integrations: FC = () => {
   return (
     <Grid
       as="section"
+      py="30px"
       templateColumns={["1fr", null, null, "1fr 1fr 1fr", "repeat(4, 1fr)"]}
     >
       {/* Heading and description */}
