@@ -4,6 +4,7 @@ import {
   Button,
   Spacer,
   Stack,
+  useDisclosure,
   VisuallyHidden,
 } from "@chakra-ui/react";
 import { DialogContent, DialogOverlay } from "@reach/dialog";
@@ -17,8 +18,9 @@ import styles from "./styles.module.css";
 import "@reach/dialog/styles.css";
 
 const VideoModal: FC<PropsWithChildren> = ({ children }) => {
+  const { onOpen, onClose } = useDisclosure();
+
   const [showDialog, setShowDialog] = useState(false);
-  const open = () => setShowDialog(true);
   const close = () => setShowDialog(false);
 
   const dialogOptions = {
@@ -28,7 +30,7 @@ const VideoModal: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <div>
-      <Button type="button" onClick={open} variant="solid">
+      <Button type="button" onClick={onOpen} variant="solid">
         Open Dialog
       </Button>
 
@@ -55,7 +57,7 @@ const VideoModal: FC<PropsWithChildren> = ({ children }) => {
             <button
               type="button"
               className={styles.closeButton}
-              onClick={close}
+              onClick={onClose}
             >
               <VisuallyHidden>Close</VisuallyHidden>
               <span aria-hidden>×</span>
@@ -63,18 +65,6 @@ const VideoModal: FC<PropsWithChildren> = ({ children }) => {
           </Stack>
 
           {children}
-
-          <Stack
-            direction="row"
-            alignItems="center"
-            justifyContent="space-between"
-            backgroundColor="white"
-            p={3}
-            className={styles.footerContent}
-          >
-            <p>Like this?</p>
-            <a>Try this out</a>
-          </Stack>
         </DialogContent>
       </DialogOverlay>
     </div>
