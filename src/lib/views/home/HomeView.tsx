@@ -1,4 +1,5 @@
 import { useColorMode } from "@chakra-ui/react";
+import FAQ from "@compositions/FAQ/FAQ";
 import type { NextPageWithLayout } from "@pages/_app";
 import { useStore } from "@supabase/Store";
 import { NextSeo } from "next-seo";
@@ -29,6 +30,7 @@ const HomeView: NextPageWithLayout = () => {
       <Stats />
       <Carousel />
       <SuccessStories />
+      <FAQ />
       <Versus />
     </>
   );
