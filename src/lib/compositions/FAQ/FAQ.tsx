@@ -13,6 +13,7 @@ import {
   TabPanels,
   Tabs,
 } from "@chakra-ui/react";
+import CTA from "@components/cta/CTA";
 import type { FC } from "react";
 import { Plus, Minus } from "react-feather";
 
@@ -138,6 +139,15 @@ const FAQ: FC = () => {
           ))}
         </TabPanels>
       </Tabs>
+
+      <CTA
+        variant="primary"
+        href="/new-call"
+        customStyles={{ mx: "auto" }}
+        icon="arrow"
+      >
+        Is your question not solved yet? Let&apos;s talk
+      </CTA>
     </Box>
   );
 };
