@@ -1,7 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import type { FormFields } from "@views/new-project/NewProjectView";
 import type { Dispatch, SetStateAction } from "react";
-import { useEffect, useState } from "react";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL as string;
 const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_KEY as string;
@@ -44,21 +43,4 @@ export const fetchLeads = async (
   } catch (error) {
     throw new Error(error as string);
   }
-};
-
-/**
- * @param {number} channelId the currently selected Channel
- */
-export const useStore = () => {
-  const [leads, setLeads] = useState<unknown>([]);
-
-  // Load initial data and set up listeners
-  useEffect(() => {
-    // Get Channels
-    fetchLeads(setLeads);
-  }, []);
-
-  return {
-    leads,
-  };
 };

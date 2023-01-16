@@ -1,7 +1,6 @@
 import { useColorMode } from "@chakra-ui/react";
 import FAQ from "@compositions/FAQ/FAQ";
 import type { NextPageWithLayout } from "@pages/_app";
-import { useStore } from "@supabase/Store";
 import { NextSeo } from "next-seo";
 import { useEffect } from "react";
 
@@ -13,9 +12,6 @@ import SuccessStories from "./modules/SuccessStories";
 import Versus from "./modules/Versus/Versus";
 
 const HomeView: NextPageWithLayout = () => {
-  const { leads } = useStore();
-  console.log(leads);
-
   const { colorMode, toggleColorMode } = useColorMode();
 
   useEffect(() => {
