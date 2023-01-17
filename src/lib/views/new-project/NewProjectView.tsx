@@ -1,4 +1,4 @@
-import { Box, Flex, useColorMode, useToast } from "@chakra-ui/react";
+import { Box, Flex, useColorMode } from "@chakra-ui/react";
 import Layout from "@layout/index";
 import type { NextPageWithLayout } from "@pages/_app";
 import { insertLead } from "@supabase/Store";
@@ -26,7 +26,6 @@ const NewProjectView: NextPageWithLayout = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitCompleted, setIsSubmitCompleted] = useState(false);
-  const toast = useToast();
 
   useEffect(() => {
     if (colorMode === "light") toggleColorMode();
@@ -49,15 +48,6 @@ const NewProjectView: NextPageWithLayout = () => {
   });
 
   const onSubmit: SubmitHandler<FormFields> = async (data) => {
-    toast({
-      title: `Great! We have received your submission`,
-      description: `We'll send a confirmation email to ${data.email}`,
-      variant: "customSuccess",
-      status: "success",
-      position: "bottom-right",
-      duration: 20000,
-    });
-
     await insertLead({
       name: data.name,
       email: data.email,
