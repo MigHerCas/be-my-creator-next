@@ -6,6 +6,9 @@ import { ArrowRight } from "react-feather";
 const CatchyBanner: FC = () => {
   return (
     <Flex
+      display={["none", "flex"]}
+      flexWrap="wrap"
+      justifyContent="center"
       px={4}
       py={3}
       className="glassmorphic"
