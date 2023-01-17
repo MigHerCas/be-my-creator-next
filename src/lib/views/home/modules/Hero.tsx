@@ -65,7 +65,7 @@ const Hero: FC = () => {
           alignItems="center"
           justifyContent="center"
         >
-          <VideoPlayer source="/videos/trend.mp4/" />
+          <VideoPlayer source="https://xudvhxwolsxldijaphhq.supabase.co/storage/v1/object/sign/main-bucket/videos/629a1b846dd7d3528640ea03_How%20To%20Example%20Home-transcode.mp4?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtYWluLWJ1Y2tldC92aWRlb3MvNjI5YTFiODQ2ZGQ3ZDM1Mjg2NDBlYTAzX0hvdyBUbyBFeGFtcGxlIEhvbWUtdHJhbnNjb2RlLm1wNCIsInRyYW5zZm9ybWF0aW9ucyI6IiIsImlhdCI6MTY3MzI2Mzk1MSwiZXhwIjoxOTg4NjIzOTUxfQ.wHYsK6vIOQaEcJ9vWjZe_MQV3gP1jRVRNJNYNe9JonA&t=2023-01-09T11%3A32%3A31.060Z" />
         </Flex>
       </GridItem>
     </Grid>
