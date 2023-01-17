@@ -72,6 +72,7 @@ const DesktopNavigation = ({
               href={`/${link.toLowerCase()}`}
               as={NextLink}
               p={4}
+              prefetch={false}
             >
               {link}
             </Link>
