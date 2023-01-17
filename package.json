@@ -23,7 +23,6 @@
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
-    "@chakra-ui/anatomy": "^2.1.1",
     "@chakra-ui/react": "^2.3.7",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
