@@ -1,7 +1,7 @@
 import { Box, Flex, useColorMode } from "@chakra-ui/react";
+import { insertLead } from "@database/Store";
 import Layout from "@layout/index";
 import type { NextPageWithLayout } from "@pages/_app";
-import { insertLead } from "@supabase/Store";
 import { NextSeo } from "next-seo";
 import type { ReactElement } from "react";
 import { useEffect, useState } from "react";
