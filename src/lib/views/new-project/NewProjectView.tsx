@@ -13,7 +13,6 @@ import FormInputGroup from "./modules/FormInputGroup";
 import FormRadioGroup from "./modules/FormRadioGroup";
 import FormStepControl from "./modules/FormStepControls";
 import FormStepIndicator from "./modules/FormStepIndicator";
-import FormStepWrapper from "./modules/FormStepWrapper";
 
 export type FormFields = {
   name: string;
@@ -158,14 +157,12 @@ const NewProjectView: NextPageWithLayout = () => {
           />
           {/* Form content (each step) */}
           <Box pos="relative" w="full">
-            {formStepsContent.map(({ step, component }) => (
-              <FormStepWrapper
-                key={`form-step-${step}`}
-                isActive={currentStep === step}
-              >
-                {component}
-              </FormStepWrapper>
-            ))}
+            {formStepsContent.map(({ step, component }) => {
+              const isActive = currentStep === step;
+
+              if (!isActive) return null;
+              return <Box key={`form-step-${step}`}>{component}</Box>;
+            })}
           </Box>
           {/* Form controls (prev and next button) */}
           <FormStepControl
