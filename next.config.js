@@ -1,22 +1,17 @@
-const withPWA = require("next-pwa")({
-  dest: "public",
-  disable:
-    process.env.NODE_ENV === "development" ||
-    process.env.NODE_ENV === "preview" ||
-    process.env.NODE_ENV === "production",
-  // delete two lines above to enable PWA in production deployment
-  // add your own icons to public/manifest.json
-  // to re-generate manifest.json, you can visit https://tomitm.github.io/appmanifest/
-});
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+    enabled: process.env.ANALYZE === 'true'
+})
 
 /** @type {import('next').NextConfig} */
-module.exports = withPWA({
+module.exports = withBundleAnalyzer({
   swcMinify: true,
   reactStrictMode: true,
   eslint: {
     dirs: ["src"],
   },
   env: {
+    NEXT_PUBLIC_ENV: 'PRODUCTION',
+    NEXT_PUBLIC_ANALYZE: 'true',
     NEXT_PUBLIC_SUPABASE_REFERENCE: process.env.NEXT_PUBLIC_SUPABASE_REFERENCE,
     NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
     NEXT_PUBLIC_SUPABASE_KEY: process.env.NEXT_PUBLIC_SUPABASE_KEY
