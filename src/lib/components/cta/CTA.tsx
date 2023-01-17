@@ -80,6 +80,7 @@ const CTA: FC<PropsWithChildren<Props>> = ({
       {...groupedStyles}
       onClick={onClick}
       _hover={{ textDecoration: "none" }}
+      prefetch={false}
     >
       {children}
       {icon ? iconMapper[icon] : null}
