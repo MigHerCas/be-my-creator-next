@@ -2,13 +2,6 @@ import { Box, Center, Flex, Heading } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import VideoPlayer from "@components/video/VideoPlayer";
 import type { FC } from "react";
-import { A11y, Autoplay, EffectCoverflow } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import "swiper/css";
-import "swiper/css/a11y";
-import "swiper/css/autoplay";
-import styles from "./styles.module.css";
 
 const Slider: FC = () => {
   const videosToShow = [
@@ -46,64 +39,39 @@ const Slider: FC = () => {
     },
   ];
   return (
-    <Box>
-      <Swiper
-        modules={[A11y, Autoplay, EffectCoverflow]}
-        slidesPerView="auto"
-        spaceBetween={30}
-        autoplay
-        grabCursor
-        autoHeight
-        centeredSlides
-        mousewheel
-        loop
-        effect="coverflow"
-        coverflowEffect={{
-          slideShadows: true,
-          rotate: 15,
-          stretch: 40,
-          modifier: 1,
-        }}
-      >
-        {videosToShow.map(({ id, url }, index) => {
-          return (
-            <SwiperSlide key={id} className={styles.swiperSlide}>
-              {index === 4 ? (
-                <Box
-                  h="560px"
-                  bgColor="#00C4A2"
-                  p="30px"
-                  borderRadius="20px"
-                  display="flex"
-                >
-                  <Heading size="md" color="white" mt="30px" mb="auto">
-                    TikTok influencers are ready to work with you
-                  </Heading>
-                </Box>
-              ) : (
-                <Box
-                  h="560px"
-                  bgColor="gray.200"
-                  borderRadius="20px"
-                  overflow="hidden"
-                >
-                  <VideoPlayer source={url} />
-                </Box>
-              )}
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
-
-      <Flex mt={14} gap={4} justifyContent="center" wrap="wrap">
-        <CTA href="/new-project" variant="secondary" icon="plus">
-          Start your first project
-        </CTA>
-        <CTA href="/new-call" variant="primary" icon="arrow">
-          Book a demo
-        </CTA>
-      </Flex>
-    </Box>
+    <Flex gap="30px" maxW="100vw" overflow="auto">
+      {videosToShow.map(({ id, url }, index) => {
+        return (
+          <Box key={id}>
+            {index === 4 ? (
+              <Box
+                h="560px"
+                w="315px"
+                overflow="hidden"
+                bgColor="#00C4A2"
+                p="30px"
+                borderRadius="20px"
+                display="flex"
+              >
+                <Heading size="md" color="white" mt="30px" mb="auto">
+                  TikTok influencers are ready to work with you
+                </Heading>
+              </Box>
+            ) : (
+              <Box
+                h="560px"
+                w="315px"
+                bgColor="gray.200"
+                borderRadius="20px"
+                overflow="hidden"
+              >
+                <VideoPlayer source={url} />
+              </Box>
+            )}
+          </Box>
+        );
+      })}
+    </Flex>
   );
 };
 
@@ -120,6 +88,14 @@ const Carousel: FC = () => {
         </Heading>
       </Center>
       <Slider />
+      <Flex mt={14} gap={4} justifyContent="center" wrap="wrap">
+        <CTA href="/new-project" variant="secondary" icon="plus">
+          Start your first project
+        </CTA>
+        <CTA href="/new-call" variant="primary" icon="arrow">
+          Book a demo
+        </CTA>
+      </Flex>
     </Box>
   );
 };

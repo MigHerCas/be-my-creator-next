@@ -17,17 +17,20 @@
     "up-latest": "yarn up --latest",
     "release": "cross-env standard-version",
     "push-release": "git push --follow-tags origin main",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
     "@chakra-ui/anatomy": "^2.1.1",
     "@chakra-ui/react": "^2.3.7",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@next/bundle-analyzer": "^13.1.2",
     "@supabase/supabase-js": "^2.2.2",
-    "framer-motion": "^7.6.9",
+    "framer-motion": "^8.4.3",
     "next": "^13.0.5",
-    "next-pwa": "^5.6.0",
     "next-seo": "^5.14.1",
     "react": "^18.2.0",
     "react-calendly": "^4.1.0",

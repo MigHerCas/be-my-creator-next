@@ -44,7 +44,7 @@ const Integrations: FC = () => {
     >
       {/* Heading and description */}
       <Box>
-        <Heading size="md" pos="sticky" top="30px">
+        <Heading size="md" pos="sticky" top="30px" mb="30px">
           Integrations
         </Heading>
       </Box>
