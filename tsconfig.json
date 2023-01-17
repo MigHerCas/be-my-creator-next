@@ -23,6 +23,7 @@
       "@styles/*": ["lib/styles/*"],
       "@supabase/*": ["lib/supabase/*"],
       "@pages/*": ["pages/*"],
+      "@providers/*": ["lib/providers/*"],
       "@views/*": ["lib/views/*"]
     },
     "incremental": true
