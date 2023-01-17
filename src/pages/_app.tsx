@@ -1,5 +1,5 @@
-import { Chakra } from "@components/Chakra";
 import Layout from "@layout/index";
+import { ChakraProvider } from "@providers/CustomChakraProvider";
 import type { NextPage } from "next";
 import { DefaultSeo } from "next-seo";
 import type { AppProps } from "next/app";
@@ -25,7 +25,7 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
   const getLayout = Component.getLayout ?? ((page) => <Layout>{page}</Layout>);
 
   return (
-    <Chakra>
+    <ChakraProvider>
       <Head>
         <meta
           name="viewport"
@@ -34,7 +34,7 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
       </Head>
       <DefaultSeo {...defaultSEOConfig} />
       {getLayout(<Component {...pageProps} />)}
-    </Chakra>
+    </ChakraProvider>
   );
 };
 
