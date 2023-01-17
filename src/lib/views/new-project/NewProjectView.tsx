@@ -1,7 +1,7 @@
-import { Box, Flex, useColorMode, useToast } from "@chakra-ui/react";
+import { Box, Flex, useColorMode } from "@chakra-ui/react";
+import { insertLead } from "@database/Store";
 import Layout from "@layout/index";
 import type { NextPageWithLayout } from "@pages/_app";
-import { insertLead } from "@supabase/Store";
 import { NextSeo } from "next-seo";
 import type { ReactElement } from "react";
 import { useEffect, useState } from "react";
@@ -13,7 +13,6 @@ import FormInputGroup from "./modules/FormInputGroup";
 import FormRadioGroup from "./modules/FormRadioGroup";
 import FormStepControl from "./modules/FormStepControls";
 import FormStepIndicator from "./modules/FormStepIndicator";
-import FormStepWrapper from "./modules/FormStepWrapper";
 
 export type FormFields = {
   name: string;
@@ -26,7 +25,6 @@ const NewProjectView: NextPageWithLayout = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitCompleted, setIsSubmitCompleted] = useState(false);
-  const toast = useToast();
 
   useEffect(() => {
     if (colorMode === "light") toggleColorMode();
@@ -49,15 +47,6 @@ const NewProjectView: NextPageWithLayout = () => {
   });
 
   const onSubmit: SubmitHandler<FormFields> = async (data) => {
-    toast({
-      title: `Great! We have received your submission`,
-      description: `We'll send a confirmation email to ${data.email}`,
-      variant: "customSuccess",
-      status: "success",
-      position: "bottom-right",
-      duration: 20000,
-    });
-
     await insertLead({
       name: data.name,
       email: data.email,
@@ -168,14 +157,12 @@ const NewProjectView: NextPageWithLayout = () => {
           />
           {/* Form content (each step) */}
           <Box pos="relative" w="full">
-            {formStepsContent.map(({ step, component }) => (
-              <FormStepWrapper
-                key={`form-step-${step}`}
-                isActive={currentStep === step}
-              >
-                {component}
-              </FormStepWrapper>
-            ))}
+            {formStepsContent.map(({ step, component }) => {
+              const isActive = currentStep === step;
+
+              if (!isActive) return null;
+              return <Box key={`form-step-${step}`}>{component}</Box>;
+            })}
           </Box>
           {/* Form controls (prev and next button) */}
           <FormStepControl

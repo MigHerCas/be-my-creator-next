@@ -1,6 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
 import type { FormFields } from "@views/new-project/NewProjectView";
-import type { Dispatch, SetStateAction } from "react";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL as string;
 const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_KEY as string;
@@ -22,23 +21,6 @@ export type Lead = {
 export const insertLead = async (dataToInsert: Lead) => {
   try {
     const { data } = await supabase.from("leads").insert([dataToInsert]);
-    return data;
-  } catch (error) {
-    throw new Error(error as string);
-  }
-};
-
-/**
- * Fetch all leads
- * @param {function} setState Optionally pass in a hook or callback to set the state
- */
-export const fetchLeads = async (
-  setState: Dispatch<SetStateAction<unknown>>
-) => {
-  try {
-    const { data } = await supabase.from("leads").select("*");
-
-    if (setState) setState(data);
     return data;
   } catch (error) {
     throw new Error(error as string);

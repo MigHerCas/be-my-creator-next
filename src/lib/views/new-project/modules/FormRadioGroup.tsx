@@ -15,7 +15,7 @@ interface Props {
 }
 
 const FormRadioGroup = forwardRef<HTMLInputElement, Props>(
-  ({ name, label, control, defaultValue, options }) => {
+  ({ name, label, control, defaultValue, options }, ref) => {
     const { field } = useController({
       name,
       control,
@@ -30,7 +30,7 @@ const FormRadioGroup = forwardRef<HTMLInputElement, Props>(
     const group = getRootProps();
 
     return (
-      <FormControl mx="auto">
+      <FormControl mx="auto" ref={ref}>
         <FormLabel fontSize="24px" fontWeight="500" mb="20px">
           {label}
         </FormLabel>

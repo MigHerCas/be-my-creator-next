@@ -21,8 +21,9 @@
       "@hooks": ["lib/hooks"],
       "@layout/*": ["lib/layout/*"],
       "@styles/*": ["lib/styles/*"],
-      "@supabase/*": ["lib/supabase/*"],
+      "@database/*": ["lib/database/*"],
       "@pages/*": ["pages/*"],
+      "@providers/*": ["lib/providers/*"],
       "@views/*": ["lib/views/*"]
     },
     "incremental": true

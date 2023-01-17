@@ -2,10 +2,7 @@ import { Heading, Grid, GridItem, Flex, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import VideoPlayer from "@components/video/VideoPlayer";
 import CatchyBanner from "@compositions/CatchyBanner";
-import dynamic from "next/dynamic";
 import type { FC } from "react";
-
-const VideoModal = dynamic(() => import("@components/video/VideoModal"));
 
 const Hero: FC = () => {
   return (
@@ -68,9 +65,7 @@ const Hero: FC = () => {
           alignItems="center"
           justifyContent="center"
         >
-          <VideoModal>
-            <VideoPlayer source="/videos/trend.mp4/" />
-          </VideoModal>
+          <VideoPlayer source="/videos/trend.mp4/" />
         </Flex>
       </GridItem>
     </Grid>

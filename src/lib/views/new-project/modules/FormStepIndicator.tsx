@@ -37,7 +37,6 @@ const FormStepIndicator: FC<Props> = ({ currentStep, numberOfSteps }) => {
           height="5px"
           bgColor={isStepActive(index) ? activeColor : defaultColor}
           flex={1}
-          transition="background-color 400ms cubic-bezier(.645, .045, .355, 1)"
         />
       ))}
     </Flex>
