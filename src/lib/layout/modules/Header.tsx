@@ -23,7 +23,6 @@ const LINKS = ["Blog", "Projects", "Team"];
 
 interface DesktopNavigationProps {
   mainCTA: CTAInfo;
-  hideLinks: boolean;
   isOpen: boolean;
   onOpen: () => void;
   onClose: () => void;
@@ -31,7 +30,6 @@ interface DesktopNavigationProps {
 
 const DesktopNavigation = ({
   mainCTA,
-  hideLinks,
   isOpen,
   onClose,
   onOpen,
@@ -44,41 +42,31 @@ const DesktopNavigation = ({
     px="30px"
     height="90px"
   >
-    {hideLinks ? (
-      // Prevents Logo jump (acts as a burger menu placeholder (same size))
-      <Box
-        opacity="transparent"
-        w="40px"
-        display={{ base: "block", md: "none" }}
-      />
-    ) : (
-      <IconButton
-        size="md"
-        icon={isOpen ? <X /> : <MenuIcon />}
-        aria-label="Open Menu"
-        display={{ base: "flex", md: "none" }}
-        onClick={isOpen ? onClose : onOpen}
-      />
-    )}
+    <IconButton
+      size="md"
+      icon={isOpen ? <X /> : <MenuIcon />}
+      aria-label="Open Menu"
+      display={{ base: "flex", md: "none" }}
+      onClick={isOpen ? onClose : onOpen}
+    />
+
     <Box m={{ base: "auto", md: "0" }}>
       <Logo />
     </Box>
     <Flex alignItems="center" gap={4}>
-      {hideLinks ? null : (
-        <HStack as="nav" spacing={4} display={{ base: "none", md: "flex" }}>
-          {LINKS.map((link) => (
-            <Link
-              key={link}
-              href={`/${link.toLowerCase()}`}
-              as={NextLink}
-              p={4}
-              prefetch={false}
-            >
-              {link}
-            </Link>
-          ))}
-        </HStack>
-      )}
+      <HStack as="nav" spacing={4} display={{ base: "none", md: "flex" }}>
+        {LINKS.map((link) => (
+          <Link
+            key={link}
+            href={`/${link.toLowerCase()}`}
+            as={NextLink}
+            p={4}
+            prefetch={false}
+          >
+            {link}
+          </Link>
+        ))}
+      </HStack>
 
       <CTA
         href={mainCTA.href}
@@ -186,11 +174,10 @@ export type CTAInfo = {
 };
 
 interface Props {
-  hideLinks: boolean;
   mainCTA: CTAInfo;
 }
 
-const Header: FC<Props> = ({ hideLinks, mainCTA }) => {
+const Header: FC<Props> = ({ mainCTA }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const { setLocked } = useLockedBody();
@@ -206,7 +193,6 @@ const Header: FC<Props> = ({ hideLinks, mainCTA }) => {
       <MobileNavigation isOpen={isOpen} onClose={onClose} />
       <DesktopNavigation
         mainCTA={mainCTA}
-        hideLinks={hideLinks}
         isOpen={isOpen}
         onOpen={onOpen}
         onClose={onClose}

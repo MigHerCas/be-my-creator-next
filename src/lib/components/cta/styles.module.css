@@ -1,4 +1,5 @@
 .arrow,
+.arrowLeft,
 .arrowExternal {
   transform: translate(0);
   transition: 200ms ease-in;
@@ -13,6 +14,11 @@
 .link:hover > .arrowExternal,
 .link:focus > .arrowExternal {
   transform: translate(2px, -2px);
+}
+
+.link:hover > .arrowLeft,
+.link:focus > .arrowLeft {
+  transform: translate(-5px, 0);
 }
 
 .link > .plus {

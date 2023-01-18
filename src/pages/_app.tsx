@@ -1,4 +1,4 @@
-import Layout from "@layout/index";
+import Layout from "@layout/Layout";
 import { ChakraProvider } from "@providers/CustomChakraProvider";
 import type { NextPage } from "next";
 import { DefaultSeo } from "next-seo";

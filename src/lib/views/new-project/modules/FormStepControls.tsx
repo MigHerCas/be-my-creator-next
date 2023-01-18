@@ -1,5 +1,6 @@
-import { Box, Button } from "@chakra-ui/react";
+import { Button, Flex } from "@chakra-ui/react";
 import type { Dispatch, FC, SetStateAction } from "react";
+import { ArrowLeft, ArrowRight, Upload } from "react-feather";
 import type { UseFormTrigger } from "react-hook-form";
 
 import type { FormFields } from "../NewProjectView";
@@ -18,10 +19,14 @@ const FormStepControl: FC<Props> = ({
   trigger,
 }) => {
   return (
-    <Box mt="auto">
+    <Flex
+      justifyContent="center"
+      gap={["10px", "20px"]}
+      flexWrap="wrap"
+      alignItems="stretch"
+    >
       <Button
         size="lg"
-        mr="10px"
         isDisabled={currentStep.step === 1}
         onClick={() =>
           setCurrentStep((prev) => {
@@ -32,36 +37,41 @@ const FormStepControl: FC<Props> = ({
           })
         }
       >
-        Prev
+        <ArrowLeft style={{ marginRight: "8px" }} /> Prev
       </Button>
 
-      <Button
-        size="lg"
-        isDisabled={currentStep.step === numberOfSteps}
-        onClick={async () => {
-          const isCorrect = await trigger(currentStep.id);
-          if (!isCorrect) return;
+      {currentStep.step >= numberOfSteps ? (
+        <Button
+          size="lg"
+          type="submit"
+          bgColor="#00C4A2"
+          _hover={{
+            backgroundColor: "#00C4A2",
+          }}
+        >
+          Submit
+          <Upload style={{ marginLeft: "8px" }} />
+        </Button>
+      ) : (
+        <Button
+          size="lg"
+          onClick={async () => {
+            const isCorrect = await trigger(currentStep.id);
+            if (!isCorrect) return;
 
-          setCurrentStep((prev) => {
-            if (prev < numberOfSteps) {
-              return prev + 1;
-            }
-            return prev;
-          });
-        }}
-      >
-        Next
-      </Button>
-
-      <Button
-        size="lg"
-        ml="10px"
-        type="submit"
-        isDisabled={currentStep.step < numberOfSteps}
-      >
-        Submit
-      </Button>
-    </Box>
+            setCurrentStep((prev) => {
+              if (prev < numberOfSteps) {
+                return prev + 1;
+              }
+              return prev;
+            });
+          }}
+        >
+          Next
+          <ArrowRight style={{ marginLeft: "8px" }} />
+        </Button>
+      )}
+    </Flex>
   );
 };
 

@@ -3,23 +3,11 @@ import Blob from "@components/blob/Blob";
 import type { FC } from "react";
 import { use100vh } from "react-div-100vh";
 
-interface Props {
-  hideBlobsOnMobile?: boolean;
-  hideBlobs?: boolean;
-}
-const FixedBlobs: FC<Props> = ({
-  hideBlobsOnMobile = false,
-  hideBlobs = false,
-}) => {
+const FixedBlobs: FC = () => {
   const height = use100vh();
-
-  if (hideBlobs) return null;
 
   return (
     <Box
-      display={
-        hideBlobsOnMobile ? ["none", null, null, null, null, "block"] : "block"
-      }
       pos="fixed"
       h={height || "100vh"}
       w="100vw"

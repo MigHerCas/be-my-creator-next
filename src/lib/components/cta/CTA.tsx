@@ -2,12 +2,12 @@ import { Link, useColorMode } from "@chakra-ui/react";
 import type { StyleProps } from "@chakra-ui/react";
 import NextLink from "next/link";
 import type { FC, MouseEventHandler, PropsWithChildren } from "react";
-import { ArrowRight, ArrowUpRight, PlusCircle } from "react-feather";
+import { ArrowRight, ArrowLeft, ArrowUpRight, PlusCircle } from "react-feather";
 
 // Styles (needed for hover icon effect)
 import styles from "./styles.module.css";
 
-type IconName = "plus" | "arrow" | "arrowExternal";
+type IconName = "plus" | "arrow" | "arrowExternal" | "arrowLeft";
 type Variant = "primary" | "secondary";
 interface Props {
   href: string;
@@ -70,6 +70,7 @@ const CTA: FC<PropsWithChildren<Props>> = ({
     arrow: <ArrowRight className={styles.arrow} />,
     arrowExternal: <ArrowUpRight className={styles.arrowExternal} />,
     plus: <PlusCircle className={styles.plus} />,
+    arrowLeft: <ArrowLeft className={styles.arrowLeft} />,
   } as Record<IconName, JSX.Element>;
 
   return (

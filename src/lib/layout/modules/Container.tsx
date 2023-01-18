@@ -4,10 +4,12 @@ import type { FC, PropsWithChildren } from "react";
 
 interface Props {
   htmlTag: As;
+  isFullHeight: boolean;
 }
 
 const Container: FC<PropsWithChildren<Props>> = ({
   children,
+  isFullHeight,
   htmlTag = "div",
 }) => {
   const baseStyles: StyleProps = {
@@ -16,6 +18,7 @@ const Container: FC<PropsWithChildren<Props>> = ({
     px: "30px",
     mx: "auto",
     flex: "1",
+    height: isFullHeight ? "100vh" : "auto",
     display: "flex",
     gap: ["30px", null, "60px", "90px"],
     flexDir: "column",
