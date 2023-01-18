@@ -9,9 +9,8 @@ import Header from "./modules/Header";
 type LayoutProps = {
   children: ReactNode;
   mainCTA?: CTAInfo;
-  hideBlobsOnMobile?: boolean;
-  hideBlobs?: boolean;
-  hideHeaderLinks?: boolean;
+  fullHeightMain?: boolean;
+  showOnlyMain?: boolean;
 };
 
 const Layout = ({
@@ -20,17 +19,23 @@ const Layout = ({
     text: "Book a call",
     href: "/new-call",
   },
-  hideHeaderLinks = false,
-  hideBlobsOnMobile = false,
-  hideBlobs = false,
+  fullHeightMain = false,
+  showOnlyMain = false,
 }: LayoutProps) => {
+  if (showOnlyMain)
+    return (
+      <Container htmlTag="main" isFullHeight={fullHeightMain}>
+        {children}
+      </Container>
+    );
   return (
     <>
-      <Header hideLinks={hideHeaderLinks} mainCTA={mainCTA} />
-      <Container htmlTag="main">{children}</Container>
+      <Header mainCTA={mainCTA} />
+      <Container htmlTag="main" isFullHeight={fullHeightMain}>
+        {children}
+      </Container>
       <Footer />
-
-      <FixedBlobs hideBlobsOnMobile={hideBlobsOnMobile} hideBlobs={hideBlobs} />
+      <FixedBlobs />
     </>
   );
 };

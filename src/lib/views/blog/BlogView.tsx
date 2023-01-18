@@ -8,7 +8,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
-import Layout from "@layout/index";
+import Layout from "@layout/Layout";
 import type { NextPageWithLayout } from "@pages/_app";
 import { NextSeo } from "next-seo";
 import NextImage from "next/image";
@@ -203,7 +203,7 @@ const BlogView: NextPageWithLayout = () => {
 };
 
 BlogView.getLayout = function getLayout(page: ReactElement) {
-  return <Layout hideBlobsOnMobile>{page}</Layout>;
+  return <Layout>{page}</Layout>;
 };
 
 export default BlogView;

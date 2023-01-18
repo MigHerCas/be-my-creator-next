@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, Text, useColorMode } from "@chakra-ui/react";
 import CalendlyIntegration from "@compositions/CalendlyIntegration";
-import Layout from "@layout/index";
+import Layout from "@layout/Layout";
 import type { NextPageWithLayout } from "@pages/_app";
 import { NextSeo } from "next-seo";
 import type { ReactElement } from "react";
@@ -58,8 +58,6 @@ NewCallView.getLayout = function getLayout(page: ReactElement) {
         href: "/new-project",
         text: "Create a project",
       }}
-      hideHeaderLinks
-      hideBlobsOnMobile
     >
       {page}
     </Layout>
