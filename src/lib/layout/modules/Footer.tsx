@@ -126,12 +126,7 @@ const Footer: FC = () => {
       </GridItem>
 
       <GridItem colStart={1} colEnd={[3, null, null, 5]}>
-        <Text
-          fontSize="sm"
-          color="gray.500"
-          mb={0}
-          textAlign={["center", null, "initial"]}
-        >
+        <Text fontSize="sm" mb={0} textAlign={["center", null, "initial"]}>
           {new Date().getFullYear()} - Be My Creator
         </Text>
       </GridItem>
