@@ -1,8 +1,9 @@
 import { Box, Flex, useColorMode } from "@chakra-ui/react";
 import { insertLead } from "@database/Store";
-import Layout from "@layout/index";
+import Layout from "@layout/Layout";
 import type { NextPageWithLayout } from "@pages/_app";
 import { NextSeo } from "next-seo";
+import dynamic from "next/dynamic";
 import type { ReactElement } from "react";
 import { useEffect, useState } from "react";
 import type { SubmitHandler } from "react-hook-form";
@@ -13,6 +14,8 @@ import FormInputGroup from "./modules/FormInputGroup";
 import FormRadioGroup from "./modules/FormRadioGroup";
 import FormStepControl from "./modules/FormStepControls";
 import FormStepIndicator from "./modules/FormStepIndicator";
+
+const FormCompleted = dynamic(() => import("./modules/FormCompleted"));
 
 export type FormFields = {
   name: string;
@@ -132,9 +135,7 @@ const NewProjectView: NextPageWithLayout = () => {
     <>
       <NextSeo title="New project" />
       {isSubmitCompleted ? (
-        <Box color="green.500" fontSize="40px">
-          Completed!
-        </Box>
+        <FormCompleted />
       ) : (
         <Flex
           as="form"
@@ -143,10 +144,11 @@ const NewProjectView: NextPageWithLayout = () => {
           flexDir="column"
           alignItems="center"
           gap={["30px", "40px", "50px", "60px"]}
-          borderRadius={[0, null, "20px 20px 0 0"]}
-          mx={["-30px", null, "initial"]}
+          mx={["-30px", null, null, null, "initial"]}
+          my={[0, null, null, null, "auto"]}
           p={["30px", null, "50px", "60px"]}
-          minH="calc(100vh - 180px)"
+          minHeight={["100vh", null, null, null, "0"]}
+          borderRadius={[0, null, null, "20px"]}
         >
           {/* Header (title and description) */}
           <FormHeader />
@@ -161,7 +163,14 @@ const NewProjectView: NextPageWithLayout = () => {
               const isActive = currentStep === step;
 
               if (!isActive) return null;
-              return <Box key={`form-step-${step}`}>{component}</Box>;
+              return (
+                <Flex
+                  key={`form-step-${step}`}
+                  minHeight={["none", null, "160px"]}
+                >
+                  {component}
+                </Flex>
+              );
             })}
           </Box>
           {/* Form controls (prev and next button) */}
@@ -182,14 +191,7 @@ const NewProjectView: NextPageWithLayout = () => {
 
 NewProjectView.getLayout = function getLayout(page: ReactElement) {
   return (
-    <Layout
-      mainCTA={{
-        href: "/new-call",
-        text: "Book a call",
-      }}
-      hideHeaderLinks
-      hideBlobsOnMobile
-    >
+    <Layout showOnlyMain fullHeightMain>
       {page}
     </Layout>
   );
