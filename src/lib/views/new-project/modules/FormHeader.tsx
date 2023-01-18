@@ -1,4 +1,5 @@
 import { Flex, Heading, Box } from "@chakra-ui/react";
+import CTA from "@components/cta/CTA";
 import type { FC } from "react";
 import { Tool } from "react-feather";
 
@@ -7,12 +8,26 @@ const FormHeader: FC = () => {
     <Flex
       justifyContent="center"
       alignItems="center"
+      w="full"
+      position="relative"
       gap={[4, null, 6, 8]}
       wrap="wrap"
     >
+      <CTA
+        href="/"
+        variant="primary"
+        icon="arrowLeft"
+        customStyles={{
+          position: "absolute",
+          top: "50%",
+          left: 0,
+          padding: "12px",
+          transform: "translateY(-50%)",
+        }}
+      />
       <Box
         p={[3, null, null, 5]}
-        display="inline-block"
+        display={["none", "inline-block"]}
         bgColor="#272727"
         borderRadius="full"
       >
