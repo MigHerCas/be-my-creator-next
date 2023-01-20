@@ -29,18 +29,18 @@ const BlogView: NextPageWithLayout = () => {
         maxW="1000px"
         textAlign="center"
       >
-        <Heading size="md" fontFamily="body" fontWeight="500" m={0}>
+        <Heading size="md" fontFamily="body" m={0}>
           The End of Moore’s Law?
         </Heading>
-        <Heading size="sm" color="#8c8d91" my="20px" fontWeight="500">
+        <Heading size="sm" color="#8c8d91" my="20px">
           As chips are getting smaller, prices are going up
         </Heading>
 
         <Box>
-          <Text size="xs" fontWeight="400" mb={1}>
+          <Text size="xs" mb={1}>
             BY ANNA-SOFIA LESIV
           </Text>
-          <Text size="xs" fontWeight="400" mt={0}>
+          <Text size="xs" mt={0}>
             JANUARY 9, 2023
           </Text>
         </Box>
@@ -82,13 +82,7 @@ const BlogView: NextPageWithLayout = () => {
           September 2022, before adding, “The idea that the chip is going to go
           down in price is a story of the past.”
         </Text>
-        <Heading
-          size="sm"
-          fontFamily="body"
-          mt="30px"
-          fontSize="30px"
-          fontWeight="600"
-        >
+        <Heading size="sm" fontFamily="body" mt="30px" fontSize="30px">
           A wild west of hardware
         </Heading>
         <Text marginBottom="20px">
@@ -109,13 +103,7 @@ const BlogView: NextPageWithLayout = () => {
           what the future might look like as a new chapter opens up in the world
           of hardware.
         </Text>
-        <Heading
-          size="sm"
-          fontFamily="body"
-          mt="30px"
-          fontSize="30px"
-          fontWeight="600"
-        >
+        <Heading size="sm" fontFamily="body" mt="30px" fontSize="30px">
           A wild west of hardware
         </Heading>
         <Text marginBottom="20px">
@@ -163,7 +151,6 @@ const BlogView: NextPageWithLayout = () => {
                     variant="subtle"
                     p="10px 20px"
                     borderRadius="100px"
-                    fontWeight="500"
                     fontSize="16px"
                     textTransform="capitalize"
                   >
