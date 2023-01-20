@@ -5,13 +5,11 @@ export const Text = defineStyleConfig({
   baseStyle: {
     lineHeight: "1.5",
     letterSpacing: "-0.02em",
-    fontWeight: 400,
     marginBottom: "12px",
   },
   sizes: {
     xs: {
       fontSize: "0.875rem",
-      fontWeight: "600",
     },
     sm: {
       fontSize: "1rem",

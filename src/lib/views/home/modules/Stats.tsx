@@ -81,7 +81,7 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
               <CountUp start={startValue} end={endValue} duration={2} delay={0}>
                 {({ countUpRef }) => {
                   return (
-                    <Heading size="lg" fontWeight={900} mb={2}>
+                    <Heading size="lg" mb={2}>
                       {leftSideOperator}
                       <span ref={countUpRef} />
                       {rightSideOperator}

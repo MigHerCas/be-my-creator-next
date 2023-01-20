@@ -107,15 +107,10 @@ const ReviewBox: FC = () => {
               mr={2}
             />
             <Box>
-              <Text size="xs" fontWeight={400} m={0}>
+              <Text size="xs" m={0}>
                 Kent c. Dodds
               </Text>
-              <Text
-                size="xs"
-                fontWeight={400}
-                color="hsla(0, 0%, 100%, 0.5)"
-                m={0}
-              >
+              <Text size="xs" color="hsla(0, 0%, 100%, 0.5)" m={0}>
                 Design director at Connor
               </Text>
             </Box>

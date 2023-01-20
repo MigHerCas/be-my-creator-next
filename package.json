@@ -27,6 +27,8 @@
     "@chakra-ui/react": "^2.4.9",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@fontsource/poppins": "^4.5.10",
+    "@fontsource/red-hat-display": "^4.5.12",
     "@next/bundle-analyzer": "^13.1.2",
     "@supabase/supabase-js": "^2.2.2",
     "framer-motion": "^8.4.3",
