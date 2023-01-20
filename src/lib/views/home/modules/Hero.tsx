@@ -1,6 +1,6 @@
 import { Heading, Grid, GridItem, Flex, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
-import VideoPlayer from "@components/video/VideoPlayer";
+import HeroPlayer from "@components/video/HeroPlayer";
 import CatchyBanner from "@compositions/CatchyBanner";
 import type { FC } from "react";
 
@@ -55,18 +55,7 @@ const Hero: FC = () => {
 
       {/* Right side */}
       <GridItem colStart={[1, null, null, 8]} colEnd={-1}>
-        <Flex
-          backgroundColor="gray.300"
-          borderRadius="20px"
-          minH="600px"
-          maxW="400px"
-          ml="auto"
-          mr={["auto", null, null, 0]}
-          alignItems="center"
-          justifyContent="center"
-        >
-          <VideoPlayer source="https://xudvhxwolsxldijaphhq.supabase.co/storage/v1/object/sign/main-bucket/videos/629a1b846dd7d3528640ea03_How%20To%20Example%20Home-transcode.mp4?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtYWluLWJ1Y2tldC92aWRlb3MvNjI5YTFiODQ2ZGQ3ZDM1Mjg2NDBlYTAzX0hvdyBUbyBFeGFtcGxlIEhvbWUtdHJhbnNjb2RlLm1wNCIsInRyYW5zZm9ybWF0aW9ucyI6IiIsImlhdCI6MTY3MzI2Mzk1MSwiZXhwIjoxOTg4NjIzOTUxfQ.wHYsK6vIOQaEcJ9vWjZe_MQV3gP1jRVRNJNYNe9JonA&t=2023-01-09T11%3A32%3A31.060Z" />
-        </Flex>
+        <HeroPlayer source="https://xudvhxwolsxldijaphhq.supabase.co/storage/v1/object/sign/main-bucket/videos/629a1b846dd7d3528640ea03_How%20To%20Example%20Home-transcode.mp4?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtYWluLWJ1Y2tldC92aWRlb3MvNjI5YTFiODQ2ZGQ3ZDM1Mjg2NDBlYTAzX0hvdyBUbyBFeGFtcGxlIEhvbWUtdHJhbnNjb2RlLm1wNCIsInRyYW5zZm9ybWF0aW9ucyI6IiIsImlhdCI6MTY3MzI2Mzk1MSwiZXhwIjoxOTg4NjIzOTUxfQ.wHYsK6vIOQaEcJ9vWjZe_MQV3gP1jRVRNJNYNe9JonA&t=2023-01-09T11%3A32%3A31.060Z" />
       </GridItem>
     </Grid>
   );
