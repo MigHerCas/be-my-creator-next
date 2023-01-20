@@ -29,7 +29,7 @@ const FormInputGroup: FC<Props> = ({
 }) => {
   return (
     <FormControl mx="auto" isInvalid={Boolean(errorMessage)}>
-      <FormLabel fontSize="24px" fontWeight="400" mb="20px">
+      <FormLabel fontSize="24px" mb="20px">
         {label}
       </FormLabel>
       <Input
