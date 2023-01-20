@@ -25,10 +25,10 @@ const HomeView: NextPageWithLayout = () => {
     <>
       <NextSeo title="Home" />
       <Hero />
+      <Carousel />
       <Steps />
       <Stats />
       <Integrations />
-      <Carousel />
       <SuccessStories />
       <FAQ />
       <Versus />

@@ -41,8 +41,7 @@
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
     "react-hook-form": "^7.41.3",
-    "react-intersection-observer": "^9.4.1",
-    "swiper": "^8.4.5"
+    "react-intersection-observer": "^9.4.1"
   },
   "devDependencies": {
     "@playwright/test": "^1.28.0",
