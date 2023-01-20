@@ -29,7 +29,7 @@ const BlogView: NextPageWithLayout = () => {
         maxW="1000px"
         textAlign="center"
       >
-        <Heading size="md" fontFamily="body" m={0}>
+        <Heading size="md" m={0}>
           The End of Moore’s Law?
         </Heading>
         <Heading size="sm" color="#8c8d91" my="20px">
@@ -179,8 +179,8 @@ const BlogView: NextPageWithLayout = () => {
               Become a suscriber
             </Heading>
 
-            <CTA href="/" variant="secondary" icon="arrow">
-              Go to page
+            <CTA href="/new-project" variant="secondary" icon="arrow">
+              Create your first campaign
             </CTA>
           </Flex>
         </Box>
