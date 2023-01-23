@@ -1,7 +1,5 @@
-import { Badge, Flex, Link, Text } from "@chakra-ui/react";
-import NextLink from "next/link";
+import { Badge, Flex, Text } from "@chakra-ui/react";
 import type { FC } from "react";
-import { ArrowRight } from "react-feather";
 
 const CatchyBanner: FC = () => {
   return (
@@ -33,19 +31,6 @@ const CatchyBanner: FC = () => {
       <Text size="sm" mb={0} fontWeight={600}>
         Startups can get up to $25k in credits
       </Text>
-
-      <Link
-        href="/"
-        display={["none", null, null, null, "flex"]}
-        as={NextLink}
-        color="#00C4A2"
-        fontWeight={600}
-        alignItems="center"
-        gap={1}
-      >
-        Check it out
-        <ArrowRight stroke="#00C4A2" />
-      </Link>
     </Flex>
   );
 };

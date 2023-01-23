@@ -30,3 +30,11 @@
 .link:hover > .plus {
   transform: rotate(90deg);
 }
+
+.greenDot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #00c4a2;
+  border-radius: 50%;
+}

@@ -23,6 +23,10 @@ module.exports = withBundleAnalyzer({
         protocol: 'https',
         hostname: 'd24ovhgu8s7341.cloudfront.net',
       },
+        {
+        protocol: 'https',
+        hostname: 'xudvhxwolsxldijaphhq.supabase.co',
+      },
     ],
   },
 });
