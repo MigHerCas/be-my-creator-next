@@ -1,7 +1,7 @@
 import FixedBlobs from "@compositions/FixedBlobs";
 import type { ReactNode } from "react";
 
-import Container from "./modules/Container";
+import MainContainer from "./modules/Container";
 import Footer from "./modules/Footer";
 import type { CTAInfo } from "./modules/Header";
 import Header from "./modules/Header";
@@ -22,22 +22,11 @@ const Layout = ({
   fullHeightMain = false,
   showOnlyMain = false,
 }: LayoutProps) => {
-  if (showOnlyMain)
-    return (
-      <>
-        <Container htmlTag="main" isFullHeight={fullHeightMain}>
-          {children}
-        </Container>
-        <FixedBlobs />
-      </>
-    );
   return (
     <>
-      <Header mainCTA={mainCTA} />
-      <Container htmlTag="main" isFullHeight={fullHeightMain}>
-        {children}
-      </Container>
-      <Footer />
+      {showOnlyMain ? null : <Header mainCTA={mainCTA} />}
+      <MainContainer isFullHeight={fullHeightMain}>{children}</MainContainer>
+      {showOnlyMain ? null : <Footer />}
       <FixedBlobs />
     </>
   );
