@@ -62,6 +62,7 @@ const FAQ: FC = () => {
             <TabPanel p={0} key={id}>
               <Accordion
                 allowMultiple
+                defaultIndex={[0, 3, 4]}
                 display="grid"
                 gridTemplateColumns={["1fr", null, null, "1fr 1fr"]}
                 gap="30px"
@@ -147,7 +148,7 @@ const FAQ: FC = () => {
         customStyles={{ mx: "auto" }}
         icon="arrow"
       >
-        Is your question not solved yet? Let&apos;s talk
+        Still lost? Let&apos;s talk
       </CTA>
     </Box>
   );
