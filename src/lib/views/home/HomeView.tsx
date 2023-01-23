@@ -5,8 +5,8 @@ import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 
-import Carousel from "./modules/Carousel/Carousel";
 import Hero from "./modules/Hero";
+import Slider from "./modules/Slider/Slider";
 import Stats from "./modules/Stats";
 import Steps from "./modules/Steps/Steps";
 import SuccessStories from "./modules/SuccessStories";
@@ -25,7 +25,7 @@ const HomeView: NextPageWithLayout = () => {
     <>
       <NextSeo title="Home" />
       <Hero />
-      <Carousel />
+      <Slider />
       <Steps />
       <Stats />
       <Integrations />
