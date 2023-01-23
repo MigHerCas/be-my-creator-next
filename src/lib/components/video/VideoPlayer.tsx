@@ -9,7 +9,7 @@ interface Props {
 
 const VideoPlayer: FC<Props> = ({ source, options = {} }) => {
   const defaultOptions = {
-    autoPlay: false,
+    autoPlay: true,
     muted: true,
     loop: true,
     controls: true,
