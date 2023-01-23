@@ -1,5 +1,5 @@
 import { FormControl, FormLabel, Flex, useRadioGroup } from "@chakra-ui/react";
-import type { FormFields } from "@views/new-project/NewProjectView";
+import type { FormFields } from "@database/Store";
 import { forwardRef } from "react";
 import type { Control } from "react-hook-form";
 import { useController } from "react-hook-form";

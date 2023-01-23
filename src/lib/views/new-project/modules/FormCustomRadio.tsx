@@ -27,6 +27,7 @@ const FormCustomRadio = forwardRef<
         flex="1"
         minH="100px"
         fontSize="20px"
+        fontWeight={500}
       >
         {children}
       </Box>
