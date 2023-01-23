@@ -1,18 +1,18 @@
 import { useColorMode } from "@chakra-ui/react";
-import Integrations from "@compositions/Integrations";
 import type { NextPageWithLayout } from "@pages/_app";
 import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 
-import Hero from "./modules/Hero";
+import Hero from "./modules/Hero/Hero";
+import Integrations from "./modules/Integrations";
 import Slider from "./modules/Slider/Slider";
 import Stats from "./modules/Stats";
 import Steps from "./modules/Steps/Steps";
 import SuccessStories from "./modules/SuccessStories";
 import Versus from "./modules/Versus/Versus";
 
-const FAQ = dynamic(() => import("@compositions/FAQ/FAQ"));
+const FAQ = dynamic(() => import("@views/home/modules/FAQ/FAQ"));
 
 const HomeView: NextPageWithLayout = () => {
   const { colorMode, toggleColorMode } = useColorMode();

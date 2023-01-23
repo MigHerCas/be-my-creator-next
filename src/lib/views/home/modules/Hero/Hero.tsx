@@ -1,7 +1,7 @@
 import { Heading, Grid, GridItem, Flex, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
-import HeroPlayer from "@components/video/HeroPlayer";
-import CatchyBanner from "@compositions/CatchyBanner";
+import CatchyBanner from "@views/home/modules/CatchyBanner";
+import HeroPlayer from "@views/home/modules/Hero/HeroPlayer";
 import type { FC } from "react";
 
 const Hero: FC = () => {

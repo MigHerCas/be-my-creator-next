@@ -1,5 +1,5 @@
 import { Box, Center, Heading } from "@chakra-ui/react";
-import ReviewBox from "@compositions/ReviewBox";
+import ReviewBox from "@views/home/modules/ReviewBox";
 import type { FC } from "react";
 
 const SuccessStories: FC = () => {
