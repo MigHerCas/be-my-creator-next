@@ -13,9 +13,10 @@ interface Props {
   href: string;
   variant: Variant;
   isSmall?: boolean;
-  customStyles?: StyleProps;
+  showDot?: boolean;
   icon?: IconName;
   onClick?: MouseEventHandler<HTMLAnchorElement>;
+  customStyles?: StyleProps;
 }
 
 const baseStyles: (isSmall: boolean) => StyleProps = (isSmall) => {
@@ -23,10 +24,10 @@ const baseStyles: (isSmall: boolean) => StyleProps = (isSmall) => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    fontSize: isSmall ? "1rem" : "1.25rem",
+    fontSize: isSmall ? "1rem" : "1.35rem",
     fontWeight: "500",
     whiteSpace: "nowrap",
-    padding: isSmall ? "0.875rem 1rem" : "1rem 1.5rem",
+    padding: isSmall ? "0.875rem 1rem" : "1.25rem 1.75rem",
     borderRadius: "12px",
     width: "fit-content",
     gap: "8px",
@@ -38,9 +39,10 @@ const CTA: FC<PropsWithChildren<Props>> = ({
   variant,
   icon,
   isSmall = false,
-  customStyles,
   onClick,
+  showDot = false,
   children,
+  customStyles,
 }) => {
   const { colorMode } = useColorMode();
   const colorConfig = {
@@ -83,6 +85,7 @@ const CTA: FC<PropsWithChildren<Props>> = ({
       _hover={{ textDecoration: "none" }}
       prefetch={false}
     >
+      {showDot ? <span className={styles.greenDot} /> : null}
       {children}
       {icon ? iconMapper[icon] : null}
     </Link>
