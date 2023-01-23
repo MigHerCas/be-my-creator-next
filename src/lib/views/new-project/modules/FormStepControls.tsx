@@ -1,9 +1,8 @@
 import { Button, Flex } from "@chakra-ui/react";
+import type { FormFields } from "@database/Store";
 import type { Dispatch, FC, SetStateAction } from "react";
 import { ArrowLeft, ArrowRight, Upload } from "react-feather";
 import type { UseFormTrigger } from "react-hook-form";
-
-import type { FormFields } from "../NewProjectView";
 
 interface Props {
   currentStep: { id: keyof FormFields; step: number };
