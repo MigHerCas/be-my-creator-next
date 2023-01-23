@@ -36,6 +36,7 @@ const FAQ: FC = () => {
           p="10px"
           border="1px solid"
           borderColor="gray.200"
+          bgColor="white"
           w="fit-content"
           borderRadius={["20px", "100px"]}
           gap="10px"
