@@ -1,5 +1,4 @@
 import { Box, Divider, Fade, Heading, Text } from "@chakra-ui/react";
-import CTA from "@components/cta/CTA";
 import type { FC } from "react";
 
 interface Props {
@@ -10,14 +9,15 @@ const VideoModalDrawer: FC<Props> = ({ isOpen }) => {
   return (
     <Fade in={isOpen}>
       <Box
-        // pos="fixed"
+        pos="fixed"
         top="50%"
         right={0}
         width="500px"
         height="100vh"
         display={{ base: "none", "2xl": "flex" }}
         flexDir="column"
-        justifyContent="space-between"
+        justifyContent="flex-start"
+        gap="30px"
         bgColor="white"
         transform="translateY(-50%)"
         zIndex={4}
@@ -31,12 +31,10 @@ const VideoModalDrawer: FC<Props> = ({ isOpen }) => {
             distinctio ducimus amet possimus non, voluptatibus nobis alias
             maxime.
           </Text>
-          <CTA href="/new-project" variant="primary" icon="plus" showDot>
-            Start now
-          </CTA>
         </Box>
 
         <Divider />
+
         <Box>
           <Heading size="md">Meet us</Heading>
           <Text size="md" mb="30px">
@@ -44,9 +42,6 @@ const VideoModalDrawer: FC<Props> = ({ isOpen }) => {
             distinctio ducimus amet possimus non, voluptatibus nobis alias
             maxime.
           </Text>
-          <CTA href="/new-project" variant="secondary" icon="arrow">
-            Book a call
-          </CTA>
         </Box>
       </Box>
     </Fade>
