@@ -1,57 +1,90 @@
 import {
-  Button,
   Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
   ModalFooter,
   ModalOverlay,
-  useDisclosure,
 } from "@chakra-ui/react";
+import CTA from "@components/cta/CTA";
 import type { FC, PropsWithChildren } from "react";
 
-const VideoModal: FC<PropsWithChildren> = ({ children }) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+import VideoModalDrawer from "./VideoModalDrawer";
 
+interface Props {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const VideoModal: FC<PropsWithChildren<Props>> = ({
+  children,
+  isOpen,
+  onClose,
+}) => {
   return (
-    <div>
-      <Button type="button" onClick={onOpen} variant="solid">
-        Open Dialog
-      </Button>
+    <Modal
+      isCentered
+      motionPreset="slideInBottom"
+      blockScrollOnMount
+      isOpen={isOpen}
+      onClose={onClose}
+      closeOnEsc
+      closeOnOverlayClick
+    >
+      <ModalOverlay className="glassmorphic" bg="blackAlpha.200">
+        <VideoModalDrawer isOpen={isOpen} />
+      </ModalOverlay>
 
-      <Modal
-        isCentered
-        motionPreset="slideInBottom"
-        blockScrollOnMount
-        isOpen={isOpen}
-        onClose={onClose}
+      <ModalContent
+        pos="relative"
+        width="auto"
+        isolation="isolate"
+        borderRadius="20px"
+        maxHeight="100vh"
       >
-        <ModalOverlay className="glassmorphic--light" bg="blackAlpha.300" />
-        <ModalContent
-          pos="relative"
-          isolation="isolate"
+        <ModalCloseButton
+          pos="absolute"
+          top="15px"
+          right="15px"
+          zIndex="1"
+          bgColor="#272727"
+          p={2}
+          color="white"
+        />
+
+        <ModalBody
+          p={0}
           borderRadius="20px"
           overflow="hidden"
           maxW="406px"
+          _before={{
+            content: "''",
+            position: "absolute",
+            width: "calc(100% + 60px)",
+            height: "calc(100% + 60px)",
+            border: "32px solid #00C4A2",
+            top: "-30px",
+            left: "-30px",
+            backgroundColor: "#00C4A2",
+            zIndex: "-1",
+            borderRadius: "45px",
+          }}
         >
-          <ModalCloseButton
-            pos="absolute"
-            top="15px"
-            right="15px"
-            zIndex="1"
-            color="white"
-          />
-          <ModalBody p={0}>{children}</ModalBody>
+          {children}
+        </ModalBody>
 
-          <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
-              Close
-            </Button>
-            <Button variant="ghost">Secondary Action</Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
-    </div>
+        <ModalFooter
+          bgColor="#00C4A2"
+          p="30px 0 0"
+          display="flex"
+          justifyContent="center"
+        >
+          <CTA href="/new-project" variant="primary" icon="plus" showDot>
+            Start now
+          </CTA>
+        </ModalFooter>
+      </ModalContent>
+    </Modal>
   );
 };
 
