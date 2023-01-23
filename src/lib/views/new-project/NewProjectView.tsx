@@ -131,7 +131,8 @@ const NewProjectView: NextPageWithLayout = () => {
 
       <Flex
         as="form"
-        className="glassmorphic--light"
+        bgColor="#272727"
+        border="20px solid #1c1c1c"
         onSubmit={handleSubmit(onSubmit)}
         flexDir="column"
         alignItems="center"
