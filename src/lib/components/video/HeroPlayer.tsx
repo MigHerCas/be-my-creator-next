@@ -43,6 +43,7 @@ const HeroPlayer: FC<Props> = ({ source }) => {
     <Flex
       pos="relative"
       alignItems="center"
+      isolation="isolate"
       justifyContent="center"
       _before={beforePseudoElementStyling}
     >
