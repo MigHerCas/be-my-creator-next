@@ -100,6 +100,7 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
     </Flex>
   );
 };
+
 const Stats: FC = () => {
   const { ref, inView } = useInView({
     triggerOnce: true,
