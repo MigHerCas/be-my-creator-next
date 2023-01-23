@@ -18,7 +18,7 @@ export type FormFields = {
 
 /**
  * Insert a new lead into Leads table
- * @param {object} dataToInsert Record to be inserted
+ * @param {Lead} dataToInsert Record to be inserted
  */
 export const insertLead = async (
   supabase: SupabaseClient,

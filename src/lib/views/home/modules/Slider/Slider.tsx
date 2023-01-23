@@ -10,10 +10,10 @@ import { SOURCE_LIST } from "./SOURCE_LIST";
 const VideoPlayer = dynamic(() => import("@components/video/VideoPlayer"));
 
 const VideoModalContent = dynamic(
-  () => import("@components/video/VideoModalContent")
+  () => import("../VideoModal/VideoModalContent")
 );
 const VideoModalWrapper = dynamic(
-  () => import("@components/video/VideoModalWrapper")
+  () => import("../VideoModal/VideoModalWrapper")
 );
 
 const SliderTrack: FC = () => {
