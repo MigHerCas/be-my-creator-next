@@ -24,9 +24,12 @@ const Layout = ({
 }: LayoutProps) => {
   if (showOnlyMain)
     return (
-      <Container htmlTag="main" isFullHeight={fullHeightMain}>
-        {children}
-      </Container>
+      <>
+        <Container htmlTag="main" isFullHeight={fullHeightMain}>
+          {children}
+        </Container>
+        <FixedBlobs />
+      </>
     );
   return (
     <>

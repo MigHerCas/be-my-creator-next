@@ -7,6 +7,7 @@ import {
   useDisclosure,
   useColorModeValue,
 } from "@chakra-ui/react";
+import Blob from "@components/blob/Blob";
 import CTA from "@components/cta/CTA";
 import Logo from "@components/logo/Logo";
 import { MAX_WIDTH } from "@helpers/ui-values";
@@ -109,6 +110,16 @@ const MobileNavigation = ({ isOpen, onClose }: MobileNavigationProps) => {
       transform="translateY(100%)"
       backgroundColor={backgroundColor}
     >
+      <Box
+        pos="absolute"
+        bottom={0}
+        right={0}
+        w="600px"
+        h="600px"
+        transform="translate(40%, 40%)"
+      >
+        <Blob type={0} isInverted />
+      </Box>
       <Flex
         as="nav"
         direction="column"

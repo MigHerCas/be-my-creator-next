@@ -27,6 +27,8 @@ const VideoModalWrapper: FC<PropsWithChildren<Props>> = ({
       onClose={onClose}
       closeOnEsc
       closeOnOverlayClick
+      autoFocus={false}
+      returnFocusOnClose={false}
     >
       <ModalOverlay className="glassmorphic" bg="blackAlpha.200" />
 
