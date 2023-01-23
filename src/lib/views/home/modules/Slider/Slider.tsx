@@ -1,6 +1,5 @@
 import { Box, Center, Flex, Heading, useDisclosure } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
-import VideoPlayer from "@components/video/VideoPlayer";
 import dynamic from "next/dynamic";
 import type { FC } from "react";
 import { useState } from "react";
@@ -8,9 +7,16 @@ import { useState } from "react";
 import SliderCard from "./SliderCard";
 import { SOURCE_LIST } from "./SOURCE_LIST";
 
-const VideoModal = dynamic(() => import("@components/video/VideoModal"));
+const VideoPlayer = dynamic(() => import("@components/video/VideoPlayer"));
 
-const Slider: FC = () => {
+const VideoModalContent = dynamic(
+  () => import("@components/video/VideoModalContent")
+);
+const VideoModalWrapper = dynamic(
+  () => import("@components/video/VideoModalWrapper")
+);
+
+const SliderTrack: FC = () => {
   const [currentSource, setCurrentSource] = useState("");
   const [currentPoster, setCurrentPoster] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -30,29 +36,36 @@ const Slider: FC = () => {
           />
         );
       })}
-      <VideoModal isOpen={isOpen} onClose={onClose}>
-        <VideoPlayer
-          source={currentSource}
-          options={{ poster: currentPoster }}
-        />
-      </VideoModal>
+      <VideoModalWrapper isOpen={isOpen} onClose={onClose}>
+        <VideoModalContent isOpen={isOpen} onClose={onClose}>
+          <VideoPlayer
+            source={currentSource}
+            options={{ poster: currentPoster }}
+          />
+        </VideoModalContent>
+      </VideoModalWrapper>
     </Flex>
   );
 };
 
-const Carousel: FC = () => {
+const Slider: FC = () => {
   return (
     <Box
       as="section"
       py="60px"
       mx="clamp(-380px, calc((100vw - 1320px) / 2 * -1), -30px)"
     >
+      {/* Header */}
       <Center px="30px">
         <Heading as="h2" size="md" mb={20} textAlign="center">
           Check some examples
         </Heading>
       </Center>
-      <Slider />
+
+      {/* Track */}
+      <SliderTrack />
+
+      {/* CTA */}
       <Flex mt={14} gap={4} justifyContent="center" wrap="wrap">
         <CTA href="/new-project" variant="secondary" icon="plus">
           Start your first project
@@ -65,4 +78,4 @@ const Carousel: FC = () => {
   );
 };
 
-export default Carousel;
+export default Slider;
