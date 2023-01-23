@@ -24,21 +24,24 @@ const FormStepControl: FC<Props> = ({
       flexWrap="wrap"
       alignItems="stretch"
     >
+      {/* Previous button */}
       <Button
         size="lg"
         isDisabled={currentStep.step === 1}
-        onClick={() =>
+        onClick={() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
           setCurrentStep((prev) => {
             if (prev > 1) {
               return prev - 1;
             }
             return prev;
-          })
-        }
+          });
+        }}
       >
         <ArrowLeft style={{ marginRight: "8px" }} /> Prev
       </Button>
 
+      {/* Submit button */}
       {currentStep.step >= numberOfSteps ? (
         <Button
           size="lg"
@@ -52,9 +55,11 @@ const FormStepControl: FC<Props> = ({
           <Upload style={{ marginLeft: "8px" }} />
         </Button>
       ) : (
+        // Next button
         <Button
           size="lg"
           onClick={async () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
             const isCorrect = await trigger(currentStep.id);
             if (!isCorrect) return;
 
