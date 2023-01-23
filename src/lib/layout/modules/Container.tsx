@@ -1,5 +1,6 @@
 import { Container as ChakraContainer } from "@chakra-ui/react";
 import type { StyleProps, As } from "@chakra-ui/react";
+import { APP_MAX_WIDTH } from "@helpers/ui-values";
 import type { FC, PropsWithChildren } from "react";
 
 interface Props {
@@ -14,7 +15,7 @@ const Container: FC<PropsWithChildren<Props>> = ({
 }) => {
   const baseStyles: StyleProps = {
     position: "relative",
-    maxWidth: "1380px",
+    maxWidth: APP_MAX_WIDTH,
     px: "30px",
     mx: "auto",
     flex: "1",

@@ -10,7 +10,7 @@ import {
 import Blob from "@components/blob/Blob";
 import CTA from "@components/cta/CTA";
 import Logo from "@components/logo/Logo";
-import { MAX_WIDTH } from "@helpers/ui-values";
+import { APP_MAX_WIDTH, HEADER_HEIGHT } from "@helpers/ui-values";
 import { useLockedBody } from "@hooks";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
@@ -38,10 +38,10 @@ const DesktopNavigation = ({
   <Flex
     alignItems="center"
     justifyContent="space-between"
-    maxW={MAX_WIDTH}
+    maxW={APP_MAX_WIDTH}
     mx="auto"
     px="30px"
-    height="90px"
+    height={HEADER_HEIGHT}
   >
     <IconButton
       size="md"
@@ -106,7 +106,7 @@ const MobileNavigation = ({ isOpen, onClose }: MobileNavigationProps) => {
       bottom="0"
       left="0"
       w="full"
-      height="calc(100vh - 90px)"
+      height={`calc(100vh - ${HEADER_HEIGHT})`}
       transform="translateY(100%)"
       backgroundColor={backgroundColor}
     >
