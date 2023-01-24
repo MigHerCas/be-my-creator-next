@@ -38,9 +38,9 @@ const SliderCard: FC<Props> = ({
   return (
     <Box
       tabIndex={0}
-      h="560px"
+      w={["315px", null, null, "360px"]}
+      h={["560px", null, null, "640px"]}
       pos="relative"
-      w="315px"
       flexShrink={0}
       bgColor="gray.200"
       borderRadius="20px"
@@ -87,6 +87,8 @@ const SliderCard: FC<Props> = ({
       {/* Poster image */}
       <Box
         transform="scale(1)"
+        w={["315px", null, null, "360px"]}
+        h={["560px", null, null, "640px"]}
         transition="transform 250ms ease-in-out"
         _groupHover={{
           transform: "scale(1.05)",
@@ -94,8 +96,7 @@ const SliderCard: FC<Props> = ({
       >
         <NextImage
           src={posterUrl}
-          height={560}
-          width={315}
+          fill
           placeholder="blur"
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
           priority
