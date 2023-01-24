@@ -1,17 +1,17 @@
 import { Link, useColorModeValue } from "@chakra-ui/react";
 import NextLink from "next/link";
-import type { FC } from "react";
+import type { FC, MouseEventHandler } from "react";
 
 interface Props {
   height?: string;
+  onClickCallback?: MouseEventHandler<HTMLAnchorElement>;
 }
 
-const Logo: FC<Props> = ({ height = "90" }) => {
+const Logo: FC<Props> = ({ height = "90", onClickCallback = () => {} }) => {
   // TODO: align with theme colors
   const fillColor = useColorModeValue("#272727", "white");
-
   return (
-    <Link href="/" as={NextLink}>
+    <Link href="/" as={NextLink} onClick={onClickCallback}>
       <svg
         fill="none"
         height={height}
