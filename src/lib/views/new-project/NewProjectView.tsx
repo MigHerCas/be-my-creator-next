@@ -25,6 +25,10 @@ const NewProjectView: NextPageWithLayout = () => {
     if (colorMode === "light") toggleColorMode();
   }, [colorMode, toggleColorMode]);
 
+  useEffect(() => {
+    if (window) window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   const {
     register,
     handleSubmit,
