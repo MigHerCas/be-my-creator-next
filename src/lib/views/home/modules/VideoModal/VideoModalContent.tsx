@@ -16,8 +16,8 @@ const VideoModalContent: FC<PropsWithChildren<Props>> = ({
   const circleBackgroundStyles = {
     content: "''",
     position: "absolute",
-    width: "600px",
-    height: "600px",
+    width: ["400px", null, "600px"],
+    height: ["400px", null, "600px"],
     border: "30px solid #00C4A2",
     top: "50%",
     left: "50%",
