@@ -28,13 +28,7 @@ const FormInputGroup: FC<Props> = ({
   clearErrorCallback,
 }) => {
   return (
-    <FormControl
-      mx="auto"
-      isInvalid={Boolean(errorMessage)}
-      onFocus={() => {
-        if (window) window.scrollTo({ top: 0, behavior: "smooth" });
-      }}
-    >
+    <FormControl mx="auto" isInvalid={Boolean(errorMessage)}>
       <FormLabel fontSize="24px" mb="20px">
         {label}
       </FormLabel>
@@ -50,7 +44,10 @@ const FormInputGroup: FC<Props> = ({
         border="none"
         outline="none"
         boxShadow="rgb(235 219 173 / 30%) 0px 1px"
-        onFocus={clearErrorCallback}
+        onFocus={() => {
+          clearErrorCallback();
+          if (window) window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
         _active={{
           outline: "none",
           border: "none",
