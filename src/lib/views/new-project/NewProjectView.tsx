@@ -150,21 +150,11 @@ const NewProjectView: NextPageWithLayout = () => {
           numberOfSteps={formStepsContent.length}
           currentStep={currentStep}
         />
-        {/* Form content (each step) */}
+        {/* Form step content */}
         <Box pos="relative" w="full">
-          {formStepsContent.map(({ step, component }) => {
-            const isActive = currentStep === step;
-
-            if (!isActive) return null;
-            return (
-              <Flex
-                key={`form-step-${step}`}
-                minHeight={["none", null, "160px"]}
-              >
-                {component}
-              </Flex>
-            );
-          })}
+          <Flex minHeight={["none", null, "160px"]}>
+            {formStepsContent[currentStep - 1].component}
+          </Flex>
         </Box>
         {/* Form controls (prev and next button) */}
         <FormStepControl
