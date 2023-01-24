@@ -25,10 +25,6 @@ const NewProjectView: NextPageWithLayout = () => {
     if (colorMode === "light") toggleColorMode();
   }, [colorMode, toggleColorMode]);
 
-  useEffect(() => {
-    if (window) window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
-
   const {
     register,
     handleSubmit,
@@ -136,7 +132,7 @@ const NewProjectView: NextPageWithLayout = () => {
       <Flex
         as="form"
         bgColor="#272727"
-        border="20px solid #1c1c1c"
+        border={["none", null, null, null, "20px solid #1c1c1c"]}
         onSubmit={handleSubmit(onSubmit)}
         flexDir="column"
         alignItems="center"
@@ -145,7 +141,7 @@ const NewProjectView: NextPageWithLayout = () => {
         my={[0, null, null, null, "auto"]}
         p={["30px", null, "50px", "60px"]}
         minHeight={["100vh", null, null, null, "0"]}
-        borderRadius={[0, null, null, "45px"]}
+        borderRadius={[0, null, null, null, "45px"]}
       >
         {/* Header (title and description) */}
         <FormHeader />
