@@ -40,7 +40,6 @@ const FormInputGroup: FC<Props> = ({
         fontSize={["22px", null, "30px"]}
         p="0px 0px 8px"
         borderRadius={0}
-        autoFocus
         border="none"
         outline="none"
         boxShadow="rgb(235 219 173 / 30%) 0px 1px"
