@@ -28,7 +28,7 @@ const FormHeader: FC = () => {
       <Box
         p={[3, null, null, 5]}
         display={["none", "inline-block"]}
-        bgColor="#272727"
+        bgColor="#1c1c1c"
         borderRadius="full"
       >
         <Tool height="30px" width="30px" stroke="#BCE500" />

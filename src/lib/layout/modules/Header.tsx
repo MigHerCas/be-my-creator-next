@@ -2,21 +2,21 @@ import {
   Box,
   Flex,
   HStack,
-  Link,
   IconButton,
-  useDisclosure,
+  Link,
   useColorModeValue,
+  useDisclosure,
 } from "@chakra-ui/react";
 import Blob from "@components/blob/Blob";
 import CTA from "@components/cta/CTA";
 import Logo from "@components/logo/Logo";
-import { MAX_WIDTH } from "@helpers/ui-values";
+import { APP_MAX_WIDTH, HEADER_HEIGHT } from "@helpers/ui-values";
 import { useLockedBody } from "@hooks";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
-import type { FC } from "react";
+import type { FC, SyntheticEvent } from "react";
 import { useEffect } from "react";
-import { Menu as MenuIcon, X, ArrowRightCircle } from "react-feather";
+import { ArrowRightCircle, Menu as MenuIcon, X } from "react-feather";
 
 const LINKS = ["Blog", "Projects", "Team"];
 
@@ -27,6 +27,7 @@ interface DesktopNavigationProps {
   isOpen: boolean;
   onOpen: () => void;
   onClose: () => void;
+  closeMenuOnClickCallback: (e: SyntheticEvent, link: string) => void;
 }
 
 const DesktopNavigation = ({
@@ -34,14 +35,15 @@ const DesktopNavigation = ({
   isOpen,
   onClose,
   onOpen,
+  closeMenuOnClickCallback,
 }: DesktopNavigationProps) => (
   <Flex
     alignItems="center"
     justifyContent="space-between"
-    maxW={MAX_WIDTH}
+    maxW={APP_MAX_WIDTH}
     mx="auto"
     px="30px"
-    height="90px"
+    height={HEADER_HEIGHT}
   >
     <IconButton
       size="md"
@@ -52,7 +54,7 @@ const DesktopNavigation = ({
     />
 
     <Box m={{ base: "auto", md: "0" }}>
-      <Logo />
+      <Logo onClickCallback={(e) => closeMenuOnClickCallback(e, "/")} />
     </Box>
     <Flex alignItems="center" gap={4}>
       <HStack as="nav" spacing={4} display={{ base: "none", md: "flex" }}>
@@ -88,11 +90,13 @@ const DesktopNavigation = ({
 
 interface MobileNavigationProps {
   isOpen: boolean;
-  onClose: () => void;
+  closeMenuOnClickCallback: (e: SyntheticEvent, link: string) => void;
 }
 
-const MobileNavigation = ({ isOpen, onClose }: MobileNavigationProps) => {
-  const router = useRouter();
+const MobileNavigation = ({
+  isOpen,
+  closeMenuOnClickCallback,
+}: MobileNavigationProps) => {
   const backgroundColor = useColorModeValue("white", "#272727");
 
   if (!isOpen) return null;
@@ -106,7 +110,7 @@ const MobileNavigation = ({ isOpen, onClose }: MobileNavigationProps) => {
       bottom="0"
       left="0"
       w="full"
-      height="calc(100vh - 90px)"
+      height={`calc(100vh - ${HEADER_HEIGHT})`}
       transform="translateY(100%)"
       backgroundColor={backgroundColor}
     >
@@ -138,6 +142,7 @@ const MobileNavigation = ({ isOpen, onClose }: MobileNavigationProps) => {
             display="flex"
             alignItems="center"
             gap={4}
+            onClick={(e) => closeMenuOnClickCallback(e, link)}
           >
             {link}
             <ArrowRightCircle
@@ -153,11 +158,7 @@ const MobileNavigation = ({ isOpen, onClose }: MobileNavigationProps) => {
           variant="secondary"
           icon="plus"
           customStyles={{ my: 2 }}
-          onClick={(e) => {
-            e.preventDefault();
-            onClose();
-            router.push("/new-project");
-          }}
+          onClick={(e) => closeMenuOnClickCallback(e, "/new-project")}
         >
           Start your first project
         </CTA>
@@ -165,11 +166,7 @@ const MobileNavigation = ({ isOpen, onClose }: MobileNavigationProps) => {
           href="/new-call"
           variant="primary"
           icon="arrow"
-          onClick={(e) => {
-            e.preventDefault();
-            onClose();
-            router.push("/new-call");
-          }}
+          onClick={(e) => closeMenuOnClickCallback(e, "/new-call")}
         >
           Book a call
         </CTA>
@@ -190,6 +187,13 @@ interface Props {
 
 const Header: FC<Props> = ({ mainCTA }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const router = useRouter();
+
+  const closeMenuOnClickCallback = (e: SyntheticEvent, link: string) => {
+    e.preventDefault();
+    onClose();
+    router.push(`/${link}`);
+  };
 
   const { setLocked } = useLockedBody();
 
@@ -201,12 +205,16 @@ const Header: FC<Props> = ({ mainCTA }) => {
 
   return (
     <Box as="header" pos="relative" zIndex="1">
-      <MobileNavigation isOpen={isOpen} onClose={onClose} />
+      <MobileNavigation
+        isOpen={isOpen}
+        closeMenuOnClickCallback={closeMenuOnClickCallback}
+      />
       <DesktopNavigation
         mainCTA={mainCTA}
         isOpen={isOpen}
         onOpen={onOpen}
         onClose={onClose}
+        closeMenuOnClickCallback={closeMenuOnClickCallback}
       />
     </Box>
   );

@@ -17,9 +17,6 @@ const FormStepControl: FC<Props> = ({
   numberOfSteps,
   trigger,
 }) => {
-  const scrollToTop = () => {
-    if (window) window.scrollTo({ top: 0, behavior: "smooth" });
-  };
   return (
     <Flex
       justifyContent="center"
@@ -32,7 +29,6 @@ const FormStepControl: FC<Props> = ({
         size="lg"
         isDisabled={currentStep.step === 1}
         onClick={() => {
-          scrollToTop();
           setCurrentStep((prev) => {
             if (prev > 1) {
               return prev - 1;
@@ -62,7 +58,6 @@ const FormStepControl: FC<Props> = ({
         <Button
           size="lg"
           onClick={async () => {
-            scrollToTop();
             const isCorrect = await trigger(currentStep.id);
             if (!isCorrect) return;
 

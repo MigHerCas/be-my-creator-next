@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import Logo from "@components/logo/Logo";
 import IconSocial from "@components/social/IconsSocial";
-import { MAX_WIDTH } from "@helpers/ui-values";
+import { APP_MAX_WIDTH } from "@helpers/ui-values";
 import NextLink from "next/link";
 import type { FC } from "react";
 
@@ -19,7 +19,7 @@ const Footer: FC = () => {
     <Grid
       as="footer"
       className="glassmorphic"
-      maxW={MAX_WIDTH}
+      maxW={APP_MAX_WIDTH}
       mx="auto"
       borderRadius={["0", null, null, null, "20px"]}
       p={["30px", null, "60px"]}

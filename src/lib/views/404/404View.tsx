@@ -1,5 +1,6 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
+import { HEADER_HEIGHT } from "@helpers/ui-values";
 import { NextSeo } from "next-seo";
 import NextImage from "next/image";
 import type { FC } from "react";
@@ -7,7 +8,7 @@ import type { FC } from "react";
 const Page404View: FC = () => {
   return (
     <Flex
-      minHeight="calc(100vh - 90px)"
+      minHeight={`calc(100vh - ${HEADER_HEIGHT})`}
       direction="column"
       justifyContent="center"
     >

@@ -25,6 +25,10 @@ const NewProjectView: NextPageWithLayout = () => {
     if (colorMode === "light") toggleColorMode();
   }, [colorMode, toggleColorMode]);
 
+  useEffect(() => {
+    if (window) window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   const {
     register,
     handleSubmit,
@@ -141,7 +145,7 @@ const NewProjectView: NextPageWithLayout = () => {
         my={[0, null, null, null, "auto"]}
         p={["30px", null, "50px", "60px"]}
         minHeight={["100vh", null, null, null, "0"]}
-        borderRadius={[0, null, null, "20px"]}
+        borderRadius={[0, null, null, "45px"]}
       >
         {/* Header (title and description) */}
         <FormHeader />
@@ -150,21 +154,11 @@ const NewProjectView: NextPageWithLayout = () => {
           numberOfSteps={formStepsContent.length}
           currentStep={currentStep}
         />
-        {/* Form content (each step) */}
+        {/* Form step content */}
         <Box pos="relative" w="full">
-          {formStepsContent.map(({ step, component }) => {
-            const isActive = currentStep === step;
-
-            if (!isActive) return null;
-            return (
-              <Flex
-                key={`form-step-${step}`}
-                minHeight={["none", null, "160px"]}
-              >
-                {component}
-              </Flex>
-            );
-          })}
+          <Flex minHeight={["none", null, "160px"]}>
+            {formStepsContent[currentStep - 1].component}
+          </Flex>
         </Box>
         {/* Form controls (prev and next button) */}
         <FormStepControl
