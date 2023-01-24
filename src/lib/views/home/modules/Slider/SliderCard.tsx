@@ -1,4 +1,8 @@
 import { Box } from "@chakra-ui/react";
+import {
+  SLIDER_CARD_WIDTH_SIZES,
+  SLIDER_CARD_HEIGHT_SIZES,
+} from "@helpers/ui-values";
 import NextImage from "next/image";
 import type { Dispatch, FC, SetStateAction } from "react";
 import { Triangle } from "react-feather";
@@ -38,8 +42,8 @@ const SliderCard: FC<Props> = ({
   return (
     <Box
       tabIndex={0}
-      w={["315px", null, null, "360px"]}
-      h={["560px", null, null, "640px"]}
+      w={SLIDER_CARD_WIDTH_SIZES}
+      h={SLIDER_CARD_HEIGHT_SIZES}
       pos="relative"
       flexShrink={0}
       bgColor="gray.200"
@@ -87,8 +91,8 @@ const SliderCard: FC<Props> = ({
       {/* Poster image */}
       <Box
         transform="scale(1)"
-        w={["315px", null, null, "360px"]}
-        h={["560px", null, null, "640px"]}
+        w={SLIDER_CARD_WIDTH_SIZES}
+        h={SLIDER_CARD_HEIGHT_SIZES}
         transition="transform 250ms ease-in-out"
         _groupHover={{
           transform: "scale(1.05)",
@@ -104,12 +108,12 @@ const SliderCard: FC<Props> = ({
         />
       </Box>
 
-      {/* Video duration  */}
+      {/* Video duration TODO: dynamic  */}
       <Box
         px={2}
         py={1}
         pos="absolute"
-        bottom="-15%"
+        bottom="5px"
         right="5px"
         display="inline-block"
         bgColor="#272727"
@@ -117,8 +121,6 @@ const SliderCard: FC<Props> = ({
         color="white"
         borderRadius="20px"
         zIndex={2}
-        transition="all 250ms ease-in-out"
-        _groupHover={{ bottom: "5px", opacity: 1 }}
       >
         0:15
       </Box>
