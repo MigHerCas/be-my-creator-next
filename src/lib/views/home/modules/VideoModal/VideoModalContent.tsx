@@ -1,4 +1,5 @@
-import { Flex, Box } from "@chakra-ui/react";
+import { Flex, Box, Text } from "@chakra-ui/react";
+import CTA from "@components/cta/CTA";
 import type { FC, PropsWithChildren } from "react";
 
 import VideoModalDrawer from "./VideoModalDrawer";
@@ -16,13 +17,13 @@ const VideoModalContent: FC<PropsWithChildren<Props>> = ({
   const circleBackgroundStyles = {
     content: "''",
     position: "absolute",
-    width: "600px",
-    height: "600px",
+    width: ["500px", "550px", "600px"],
+    height: ["500px", "550px", "600px"],
     border: "30px solid #00C4A2",
     top: "50%",
     left: "50%",
     backgroundColor: "white",
-    zIndex: "-1",
+    zIndex: "-2",
     borderRadius: "50%",
     transform: "translate(-50%, -50%)",
   };
@@ -31,8 +32,10 @@ const VideoModalContent: FC<PropsWithChildren<Props>> = ({
     <Flex w="100vw" h="100vh" justifyContent="space-between" overflow="hidden">
       <Flex
         pos="relative"
-        p={0}
+        py={0}
+        px="20px"
         flex={1}
+        flexDirection="column"
         borderRadius="20px"
         overflow="hidden"
         justifyContent="center"
@@ -46,6 +49,22 @@ const VideoModalContent: FC<PropsWithChildren<Props>> = ({
           _before={circleBackgroundStyles}
         >
           {children}
+          <Flex
+            w="100%"
+            alignItems="center"
+            justifyContent="center"
+            py="20px"
+            bgColor="#272727"
+            borderRadius="0 0 20px 20px"
+            gap="12px"
+          >
+            <Text size="md" mb={0} color="white">
+              Like it?
+            </Text>
+            <CTA href="/new-project" variant="secondary" icon="arrow" isSmall>
+              Try it for free!
+            </CTA>
+          </Flex>
         </Box>
       </Flex>
       <VideoModalDrawer isOpen={isOpen} />

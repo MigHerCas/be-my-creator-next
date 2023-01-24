@@ -42,15 +42,17 @@ const VideoModalWrapper: FC<PropsWithChildren<Props>> = ({
       >
         <ModalCloseButton
           pos="absolute"
-          top="15px"
-          right="15px"
-          zIndex="1"
+          top="30px"
+          right="30px"
+          zIndex={2}
           bgColor="#272727"
           p={2}
           color="white"
         />
 
-        <ModalBody p={0}>{children}</ModalBody>
+        <ModalBody p={0} isolation="isolate">
+          {children}
+        </ModalBody>
       </ModalContent>
     </Modal>
   );
