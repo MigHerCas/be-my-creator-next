@@ -24,7 +24,9 @@ const baseStyles: (isSmall: boolean) => StyleProps = (isSmall) => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    fontSize: isSmall ? "1rem" : "1.35rem",
+    fontSize: isSmall
+      ? ["0.875rem", null, "1rem"]
+      : ["1.125rem", null, "1.35rem"],
     fontWeight: "500",
     whiteSpace: "nowrap",
     padding: isSmall ? "0.875rem 1rem" : "1.25rem 1.75rem",
