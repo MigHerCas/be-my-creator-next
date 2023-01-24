@@ -58,6 +58,9 @@ const FormInputGroup: FC<Props> = ({
         _invalid={{
           boxShadow: "#FC8181 0px 2px",
         }}
+        onFocusCapture={() => {
+          if (window) window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
         {...registerCallback}
       />
       {helperText ? <FormHelperText>{helperText}</FormHelperText> : null}
