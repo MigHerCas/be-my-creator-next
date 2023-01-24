@@ -28,7 +28,13 @@ const FormInputGroup: FC<Props> = ({
   clearErrorCallback,
 }) => {
   return (
-    <FormControl mx="auto" isInvalid={Boolean(errorMessage)}>
+    <FormControl
+      mx="auto"
+      isInvalid={Boolean(errorMessage)}
+      onFocus={() => {
+        if (window) window.scrollTo({ top: 0, behavior: "smooth" });
+      }}
+    >
       <FormLabel fontSize="24px" mb="20px">
         {label}
       </FormLabel>
@@ -57,9 +63,6 @@ const FormInputGroup: FC<Props> = ({
         }}
         _invalid={{
           boxShadow: "#FC8181 0px 2px",
-        }}
-        onFocusCapture={() => {
-          if (window) window.scrollTo({ top: 0, behavior: "smooth" });
         }}
         {...registerCallback}
       />
