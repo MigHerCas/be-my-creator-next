@@ -104,7 +104,7 @@ const SliderCard: FC<Props> = ({
           fill
           placeholder="blur"
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
-          // priority
+          priority
           alt={`Poster for video with id ${id}`}
         />
       </Box>
