@@ -1,5 +1,6 @@
 import type { UseRadioProps } from "@chakra-ui/react";
 import { Box, useRadio } from "@chakra-ui/react";
+import { themeColors } from "@helpers/ui-values";
 import type { PropsWithChildren } from "react";
 import { forwardRef } from "react";
 
@@ -18,7 +19,7 @@ const FormCustomRadio = forwardRef<
         {...checkbox}
         cursor="pointer"
         color="white"
-        bgColor={state.isChecked ? "#00C4A2" : "#1c1c1c"}
+        bgColor={state.isChecked ? themeColors.primary : themeColors.black}
         borderRadius="md"
         display="flex"
         alignItems="center"

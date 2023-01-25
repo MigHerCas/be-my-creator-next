@@ -1,5 +1,6 @@
 import { Box, Flex, Heading, Text, useColorMode } from "@chakra-ui/react";
 import CalendlyIntegration from "@compositions/CalendlyIntegration";
+import { themeColors } from "@helpers/ui-values";
 import Layout from "@layout/Layout";
 import type { NextPageWithLayout } from "@pages/_app";
 import { NextSeo } from "next-seo";
@@ -30,10 +31,10 @@ const NewCallView: NextPageWithLayout = () => {
           <Box
             p={[3, null, null, 5]}
             display="inline-block"
-            bgColor="#272727"
+            bgColor={themeColors.darkGrey}
             borderRadius="full"
           >
-            <Video height="30px" width="30px" stroke="#BCE500" />
+            <Video height="30px" width="30px" stroke={themeColors.pistache} />
           </Box>
           <Heading size="lg" textAlign="center" mb={0}>
             Let&apos;s have a chat

@@ -1,7 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
 
-import { breakpoints } from "./breakpoints";
-import { colors } from "./colors";
 import { components } from "./components";
 import { config } from "./config";
 import { styles } from "./styles";
@@ -15,8 +13,6 @@ import {
 
 const customTheme = extendTheme({
   styles,
-  breakpoints,
-  colors,
   config,
   fonts,
   fontSizes,

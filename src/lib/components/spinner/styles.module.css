@@ -10,7 +10,7 @@
   height: 100%;
   position: absolute;
   width: 100%;
-  border: 2.2px solid #00c4a2;
+  border: 2.2px solid var(--theme-color-primary);
 }
 
 .spinner div:nth-of-type(1) {

@@ -1,5 +1,6 @@
 import { Link, useColorMode } from "@chakra-ui/react";
 import type { StyleProps } from "@chakra-ui/react";
+import { themeColors } from "@helpers/ui-values";
 import NextLink from "next/link";
 import type { FC, MouseEventHandler, PropsWithChildren } from "react";
 import { ArrowRight, ArrowLeft, ArrowUpRight, PlusCircle } from "react-feather";
@@ -52,9 +53,9 @@ const CTA: FC<PropsWithChildren<Props>> = ({
       colorMode === "light"
         ? {
             color: "white",
-            backgroundColor: "#272727",
+            backgroundColor: themeColors.darkGrey,
           }
-        : { color: "white", backgroundColor: "#1c1c1c" },
+        : { color: "white", backgroundColor: themeColors.black },
     secondary:
       colorMode === "light"
         ? {

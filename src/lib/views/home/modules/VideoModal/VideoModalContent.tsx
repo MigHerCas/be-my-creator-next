@@ -1,5 +1,6 @@
 import { Flex, Box, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
+import { themeColors } from "@helpers/ui-values";
 import type { FC, PropsWithChildren } from "react";
 
 import VideoModalDrawer from "./VideoModalDrawer";
@@ -19,7 +20,7 @@ const VideoModalContent: FC<PropsWithChildren<Props>> = ({
     position: "absolute",
     width: ["500px", "550px", "600px"],
     height: ["500px", "550px", "600px"],
-    border: "30px solid #00C4A2",
+    border: `30px solid ${themeColors.primary}`,
     top: "50%",
     left: "50%",
     backgroundColor: "white",
@@ -54,7 +55,7 @@ const VideoModalContent: FC<PropsWithChildren<Props>> = ({
             alignItems="center"
             justifyContent="center"
             py="20px"
-            bgColor="#272727"
+            bgColor={themeColors.darkGrey}
             borderRadius="0 0 20px 20px"
             gap="12px"
           >

@@ -1,3 +1,14 @@
+:root {
+  --theme-color-black: "hsl(0, 0%, 11%)";
+  --theme-color-darkGrey: "hsl(0, 0%, 15%)";
+  --theme-color-mediumGrey: "hsl(228, 2%, 56%)";
+  --theme-color-ligthGrey: "hsla(0, 0%, 100%, 0.5)";
+  --theme-color-primary: "hsl(170, 100%, 38%)";
+  --theme-color-orange: "hsl(41, 97%, 65%)";
+  --theme-color-red: "hsl(0, 95%, 75%)";
+  --theme-color-pistache: "hsl(71, 100%, 45%)";
+}
+
 /*
 1. Use a more-intuitive box-sizing model.
 */
@@ -121,11 +132,11 @@ h6 {
 
 /* NProgress */
 #nprogress .bar {
-  background-color: #00c4a2 !important;
+  background-color: var(--theme-color-primary) !important;
   height: 4px !important;
 }
 
 #nprogress .spinner-icon {
-  border-top-color: #00c4a2;
-  border-left-color: #00c4a2;
+  border-top-color: var(--theme-color-primary);
+  border-left-color: var(--theme-color-primary);
 }

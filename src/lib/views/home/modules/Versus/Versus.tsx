@@ -1,5 +1,5 @@
 import { Box, Flex, Heading, Text, VStack } from "@chakra-ui/react";
-import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
+import { SECTION_VERTICAL_SPACING, themeColors } from "@helpers/ui-values";
 import type { FC } from "react";
 import { Check, X } from "react-feather";
 import { useInView } from "react-intersection-observer";
@@ -73,7 +73,7 @@ const Versus: FC = () => {
                   width={["20px", "24px"]}
                   p="4px"
                   borderRadius="full"
-                  bgColor="#00C4A2"
+                  bgColor={themeColors.primary}
                 >
                   <Check stroke="white" width="100%" height="100%" />
                 </Box>

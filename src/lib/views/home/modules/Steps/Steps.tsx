@@ -1,5 +1,5 @@
 import { Box, Center, Flex, Heading, Text } from "@chakra-ui/react";
-import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
+import { SECTION_VERTICAL_SPACING, themeColors } from "@helpers/ui-values";
 import type { FC } from "react";
 import { DownloadCloud, Tool, Zap } from "react-feather";
 
@@ -13,17 +13,17 @@ const Steps: FC = () => {
     {
       heading: "Build your project",
       description: sampleDescription,
-      icon: <Tool stroke="#BCE500" />,
+      icon: <Tool stroke={themeColors.pistache} />,
     },
     {
       heading: "Match with creators",
       description: sampleDescription,
-      icon: <Zap stroke="#BCE500" />,
+      icon: <Zap stroke={themeColors.pistache} />,
     },
     {
       heading: "Get your content!",
       description: sampleDescription,
-      icon: <DownloadCloud stroke="#BCE500" />,
+      icon: <DownloadCloud stroke={themeColors.pistache} />,
     },
   ];
   return (
@@ -55,7 +55,7 @@ const Steps: FC = () => {
             key={heading}
             flex="1"
             as="li"
-            bgColor="#272727"
+            bgColor={themeColors.darkGrey}
             borderRadius="20px"
             p="30px"
             minW="260px"
@@ -65,7 +65,7 @@ const Steps: FC = () => {
               p={4}
               display="flex"
               gap={4}
-              bgColor="#1C1C1C"
+              bgColor={themeColors.black}
               borderRadius="full"
               mb={6}
               width="fit-content"
@@ -78,7 +78,7 @@ const Steps: FC = () => {
             <Heading size="sm" color="white">
               {heading}
             </Heading>
-            <Text color="hsla(0, 0%, 100%, 0.5)">{description}</Text>
+            <Text color={themeColors.ligthGrey}>{description}</Text>
           </Box>
         ))}
 
