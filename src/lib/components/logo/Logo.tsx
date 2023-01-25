@@ -1,4 +1,4 @@
-import { Link, useColorModeValue } from "@chakra-ui/react";
+import { Link, useColorModeValue, VisuallyHidden } from "@chakra-ui/react";
 import { themeColors } from "@helpers/ui-values";
 import NextLink from "next/link";
 import type { FC, MouseEventHandler } from "react";
@@ -12,6 +12,7 @@ const Logo: FC<Props> = ({ height = "90", onClickCallback = () => {} }) => {
   const fillColor = useColorModeValue(themeColors.darkGrey, "white");
   return (
     <Link href="/" as={NextLink} onClick={onClickCallback}>
+      <VisuallyHidden>BeMyCreator Logo</VisuallyHidden>
       <svg
         fill="none"
         height={height}
