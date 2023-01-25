@@ -1,3 +1,14 @@
+:root {
+  --theme-color-black: "#1c1c1c";
+  --theme-color-darkGrey: "#272727";
+  --theme-color-mediumGrey: "#8c8d91";
+  --theme-color-ligthGrey: "hsla(0, 0%, 100%, 0.5)";
+  --theme-color-primary: "#00C4A2";
+  --theme-color-orange: "#FCC54E";
+  --theme-color-red: "#FC8181";
+  --theme-color-pistache: "#BCE500";
+}
+
 /*
 1. Use a more-intuitive box-sizing model.
 */
@@ -121,11 +132,11 @@ h6 {
 
 /* NProgress */
 #nprogress .bar {
-  background-color: #00c4a2 !important;
+  background-color: var(--theme-color-primary) !important;
   height: 4px !important;
 }
 
 #nprogress .spinner-icon {
-  border-top-color: #00c4a2;
-  border-left-color: #00c4a2;
+  border-top-color: var(--theme-color-primary);
+  border-left-color: var(--theme-color-primary);
 }
