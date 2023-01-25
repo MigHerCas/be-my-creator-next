@@ -11,6 +11,7 @@ const themeColors = {
   ligthGrey: "hsla(0, 0%, 100%, 0.5)",
   primary: "#00C4A2",
   orange: "#FCC54E",
+  red: "#FC8181",
   pistache: "#BCE500",
 };
 
