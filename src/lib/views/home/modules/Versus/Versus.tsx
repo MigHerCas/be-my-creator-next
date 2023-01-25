@@ -1,4 +1,5 @@
 import { Box, Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
 import type { FC } from "react";
 import { Check, X } from "react-feather";
 import { useInView } from "react-intersection-observer";
@@ -34,7 +35,7 @@ const Versus: FC = () => {
       as="section"
       ref={ref}
       isolation="isolate"
-      py={["10px", "20px", null, "60px"]}
+      py={SECTION_VERTICAL_SPACING}
       className={inView ? styles.containerIsAnimated : undefined}
     >
       <Box textAlign="center" mb="50px">
@@ -47,7 +48,7 @@ const Versus: FC = () => {
         justifyContent="center"
         alignItems="center"
         wrap="wrap"
-        gap={[8, 10, null, "10px"]}
+        gap={["30px", null, null, "10px"]}
       >
         {/* Left side (BMC) */}
         <Box
@@ -86,8 +87,19 @@ const Versus: FC = () => {
         <Box />
 
         {/* Right side (others) */}
-        <Box borderRadius="20px" className={styles.animatedBoxOthers}>
-          <Heading as="h3" size="sm" ml="80px" mb={0} opacity="0.6">
+        <Box
+          borderRadius="20px"
+          className={styles.animatedBoxOthers}
+          backgroundColor="white"
+          p="30px"
+        >
+          <Heading
+            as="h3"
+            size="sm"
+            textIndent={["40px", null, "80px"]}
+            mb="20px"
+            opacity="0.6"
+          >
             Others
           </Heading>
           <VStack
@@ -95,7 +107,6 @@ const Versus: FC = () => {
             alignItems="flex-start"
             spacing={0}
             gap={4}
-            p={["20px", null, "30px", "20px 40px"]}
             opacity="0.8"
           >
             {rightSideItems.map((itemText) => (

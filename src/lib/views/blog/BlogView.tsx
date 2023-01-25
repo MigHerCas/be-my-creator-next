@@ -82,7 +82,7 @@ const BlogView: NextPageWithLayout = () => {
           September 2022, before adding, “The idea that the chip is going to go
           down in price is a story of the past.”
         </Text>
-        <Heading size="sm" fontFamily="body" mt="30px" fontSize="30px">
+        <Heading size="sm" fontFamily="body" mt="40px" fontSize="30px">
           A wild west of hardware
         </Heading>
         <Text marginBottom="20px">
@@ -103,7 +103,7 @@ const BlogView: NextPageWithLayout = () => {
           what the future might look like as a new chapter opens up in the world
           of hardware.
         </Text>
-        <Heading size="sm" fontFamily="body" mt="30px" fontSize="30px">
+        <Heading size="sm" fontFamily="body" mt="40px" fontSize="30px">
           A wild west of hardware
         </Heading>
         <Text marginBottom="20px">

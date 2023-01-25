@@ -16,11 +16,7 @@ const MainContainer: FC<PropsWithChildren<Props>> = ({
     maxWidth: APP_MAX_WIDTH,
     px: "30px",
     mx: "auto",
-    flex: "1",
     height: isFullHeight ? "100vh" : "auto",
-    display: "flex",
-    gap: ["30px", null, "60px", "90px"],
-    flexDir: "column",
   };
 
   return (

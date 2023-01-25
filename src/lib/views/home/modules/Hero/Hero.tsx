@@ -1,5 +1,6 @@
 import { Heading, Grid, GridItem, Flex, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
+import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
 import CatchyBanner from "@views/home/modules/CatchyBanner";
 import HeroPlayer from "@views/home/modules/Hero/HeroPlayer";
 import type { FC } from "react";
@@ -10,18 +11,19 @@ const Hero: FC = () => {
       as="section"
       templateColumns="repeat(12, 1fr)"
       alignItems="center"
-      rowGap={10}
-      py="40px"
+      rowGap={["30px", null, "40px"]}
+      py={SECTION_VERTICAL_SPACING}
     >
       {/* Left side */}
       <GridItem
         colStart={1}
         colEnd={[-1, null, null, 8]}
         textAlign={["center", null, null, "initial"]}
-        p={[0, null, "60px"]}
+        px={["30px", null, null, null, "60px"]}
       >
         <CatchyBanner />
         <Heading
+          as="h1"
           size="lg"
           maxW={["20ch", null, "30ch"]}
           mt={["auto", null, 10]}

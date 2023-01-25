@@ -1,5 +1,6 @@
 import { Box, Center, Flex, Heading, useDisclosure } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
+import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
 import dynamic from "next/dynamic";
 import type { FC } from "react";
 import { useState } from "react";
@@ -52,12 +53,17 @@ const Slider: FC = () => {
   return (
     <Box
       as="section"
-      py="60px"
+      py={SECTION_VERTICAL_SPACING}
       mx="clamp(-380px, calc((100vw - 1320px) / 2 * -1), -30px)"
     >
       {/* Header */}
       <Center px="30px">
-        <Heading as="h2" size="md" mb={20} textAlign="center">
+        <Heading
+          as="h2"
+          size="md"
+          mb={["30px", "40px", null, "60px"]}
+          textAlign="center"
+        >
           Check some examples
         </Heading>
       </Center>
@@ -66,7 +72,13 @@ const Slider: FC = () => {
       <SliderTrack />
 
       {/* CTA */}
-      <Flex mt={14} gap={4} justifyContent="center" wrap="wrap">
+      <Flex
+        mt={["30px", "40px", null, "60px"]}
+        gap={4}
+        justifyContent="center"
+        wrap="wrap"
+        px="20px"
+      >
         <CTA href="/new-project" variant="secondary" icon="plus">
           Start your first project
         </CTA>

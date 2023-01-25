@@ -1,127 +1,100 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Center, Flex, Heading, Text } from "@chakra-ui/react";
+import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
 import type { FC } from "react";
 import { DownloadCloud, Tool, Zap } from "react-feather";
 
 import styles from "./styles.module.css";
 
 const Steps: FC = () => {
+  const sampleDescription =
+    "Duis mollis, est non commodo luctus, nisi erat porttitor ligula";
+
+  const content = [
+    {
+      heading: "Build your project",
+      description: sampleDescription,
+      icon: <Tool stroke="#BCE500" />,
+    },
+    {
+      heading: "Match with creators",
+      description: sampleDescription,
+      icon: <Zap stroke="#BCE500" />,
+    },
+    {
+      heading: "Get your content!",
+      description: sampleDescription,
+      icon: <DownloadCloud stroke="#BCE500" />,
+    },
+  ];
   return (
-    <Box
-      as="section"
-      mb={[0, 0, "-30px", "-60px", null, "-60px"]}
-      pos="relative"
-    >
+    <Box as="section" py={SECTION_VERTICAL_SPACING}>
+      {/* Header */}
+      <Center px="30px">
+        <Heading
+          as="h2"
+          size="md"
+          mb={["30px", "40px", null, "60px"]}
+          textAlign="center"
+        >
+          Create your first campaign for free
+        </Heading>
+      </Center>
+
+      {/* Steps */}
       <Flex
         as="ol"
         flexDir={["column", null, null, "row"]}
         alignItems="center"
         listStyleType="none"
+        pos="relative"
         gap="30px"
         wrap="wrap"
       >
-        <Box
-          flex="1"
-          bgColor="#272727"
-          borderRadius="20px"
-          p="30px"
-          minW="260px"
-          maxW="420px"
-        >
+        {content.map(({ heading, description, icon }, index) => (
           <Box
-            p={4}
-            display="flex"
-            gap={4}
-            bgColor="#1C1C1C"
-            borderRadius="full"
-            mb={6}
-            width="fit-content"
+            key={heading}
+            flex="1"
+            as="li"
+            bgColor="#272727"
+            borderRadius="20px"
+            p="30px"
+            minW="260px"
+            maxW="420px"
           >
-            <Tool stroke="#BCE500" />
-            <Heading size="xs" color="white" mb={0}>
-              Step 1
+            <Box
+              p={4}
+              display="flex"
+              gap={4}
+              bgColor="#1C1C1C"
+              borderRadius="full"
+              mb={6}
+              width="fit-content"
+            >
+              {icon}
+              <Heading size="xs" as="h3" color="white" mb={0}>
+                Step {index + 1}
+              </Heading>
+            </Box>
+            <Heading size="sm" color="white">
+              {heading}
             </Heading>
+            <Text color="hsla(0, 0%, 100%, 0.5)">{description}</Text>
           </Box>
-          <Heading size="sm" color="white">
-            Build your project
-          </Heading>
-          <Text color="hsla(0, 0%, 100%, 0.5)">
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula
-          </Text>
-        </Box>
+        ))}
+
+        {/* Animated gradient */}
         <Box
-          flex="1"
-          bgColor="#272727"
-          borderRadius="20px"
-          p="30px"
-          minW="260px"
-          maxW="420px"
-        >
-          <Box
-            p={4}
-            display="flex"
-            gap={4}
-            bgColor="#1C1C1C"
-            borderRadius="full"
-            mb={6}
-            width="fit-content"
-          >
-            <Zap stroke="#BCE500" />
-            <Heading size="xs" color="white" mb={0}>
-              Step 2
-            </Heading>
-          </Box>
-
-          <Heading size="sm" color="white">
-            Match with creators
-          </Heading>
-          <Text color="hsla(0, 0%, 100%, 0.5)">
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula
-          </Text>
-        </Box>
-        <Box
-          flex="1"
-          bgColor="#272727"
-          borderRadius="20px"
-          p="30px"
-          minW="260px"
-          maxW="420px"
-        >
-          <Box
-            p={4}
-            display="flex"
-            gap={4}
-            bgColor="#1C1C1C"
-            borderRadius="full"
-            mb={6}
-            width="fit-content"
-          >
-            <DownloadCloud stroke="#BCE500" />
-
-            <Heading size="xs" color="white" mb={0}>
-              Step 3
-            </Heading>
-          </Box>
-
-          <Heading size="sm" color="white">
-            Get your content!
-          </Heading>
-          <Text color="hsla(0, 0%, 100%, 0.5)">
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula
-          </Text>
-        </Box>
+          pos="absolute"
+          className={styles.animatedGradient}
+          top={["30px", null, "40px", "50%"]}
+          bottom={["30px", null, "40px", "50%"]}
+          left={["50%", null, null, "0"]}
+          transform={["translateX(-50%)", null, null, "translateY(-50%)"]}
+          h={["auto", null, null, "50%"]}
+          w={["200px", null, null, "100%"]}
+          zIndex="-1"
+        />
       </Flex>
-
-      {/* Inside line */}
-      <Box
-        pos="absolute"
-        className={styles.animatedGradient}
-        top={[0, null, null, "50%"]}
-        left={["50%", null, null, "0"]}
-        transform={["translateX(-50%)", null, null, "translateY(-50%)"]}
-        h={["100%", null, null, "50%"]}
-        w={["200px", null, null, "100%"]}
-        zIndex="-1"
-      />
     </Box>
   );
 };
