@@ -131,6 +131,9 @@ const NewProjectView: NextPageWithLayout = () => {
 
       <Flex
         as="form"
+        pos="relative"
+        top="50%"
+        transform="translateY(-50%)"
         bgColor="#272727"
         border={["none", null, null, null, "20px solid #1c1c1c"]}
         onSubmit={handleSubmit(onSubmit)}
