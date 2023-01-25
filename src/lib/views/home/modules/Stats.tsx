@@ -115,6 +115,7 @@ const Stats: FC = () => {
       alignItems="center"
       px={["30px", null, "60px"]}
       py={["50px", null, "60px"]}
+      mb={["30px", null, "40px", null, "60px"]}
       bgColor="#272727"
       color="white"
       borderRadius={["0", null, "20px"]}
