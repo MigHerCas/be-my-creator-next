@@ -13,6 +13,7 @@ const Hero: FC = () => {
       alignItems="center"
       rowGap={["30px", null, "40px"]}
       py={SECTION_VERTICAL_SPACING}
+      mb="60px"
     >
       {/* Left side */}
       <GridItem
@@ -57,7 +58,7 @@ const Hero: FC = () => {
 
       {/* Right side */}
       <GridItem colStart={[1, null, null, 8]} colEnd={-1}>
-        <HeroPlayer source="https://xudvhxwolsxldijaphhq.supabase.co/storage/v1/object/sign/main-bucket/videos/629a1b846dd7d3528640ea03_How%20To%20Example%20Home-transcode.mp4?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtYWluLWJ1Y2tldC92aWRlb3MvNjI5YTFiODQ2ZGQ3ZDM1Mjg2NDBlYTAzX0hvdyBUbyBFeGFtcGxlIEhvbWUtdHJhbnNjb2RlLm1wNCIsInRyYW5zZm9ybWF0aW9ucyI6IiIsImlhdCI6MTY3MzI2Mzk1MSwiZXhwIjoxOTg4NjIzOTUxfQ.wHYsK6vIOQaEcJ9vWjZe_MQV3gP1jRVRNJNYNe9JonA&t=2023-01-09T11%3A32%3A31.060Z" />
+        <HeroPlayer source="https://xudvhxwolsxldijaphhq.supabase.co/storage/v1/object/sign/main-bucket/videos/629a1b846dd7d3528640ea03_How%20To%20Example%20Home-transcode%20(1).mp4?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtYWluLWJ1Y2tldC92aWRlb3MvNjI5YTFiODQ2ZGQ3ZDM1Mjg2NDBlYTAzX0hvdyBUbyBFeGFtcGxlIEhvbWUtdHJhbnNjb2RlICgxKS5tcDQiLCJpYXQiOjE2NzQ2MzIwMDcsImV4cCI6MTY3NTIzNjgwN30.FWggb_PrjieXhiZpVdKKl8jN0FEaOgcw9qKLbpCQZ2o&t=2023-01-25T07%3A33%3A27.540Z" />
       </GridItem>
     </Grid>
   );
