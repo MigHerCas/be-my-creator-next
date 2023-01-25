@@ -17,7 +17,6 @@ interface Props {
 const FAQItem: FC<Props> = ({ title, content }) => {
   return (
     <AccordionItem
-      key={title}
       borderWidth="1px"
       borderStyle="solid"
       borderColor="gray.200"

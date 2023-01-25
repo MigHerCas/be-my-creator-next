@@ -82,7 +82,9 @@ const FAQContainer: FC = () => {
                     gap="30px"
                   >
                     {items.map(({ title, content }) => {
-                      return <FAQItem title={title} content={content} />;
+                      return (
+                        <FAQItem key={title} title={title} content={content} />
+                      );
                     })}
                   </Flex>
                 ))}
