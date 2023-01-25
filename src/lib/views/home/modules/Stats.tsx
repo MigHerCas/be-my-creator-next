@@ -1,6 +1,6 @@
 import { Box, Flex, GridItem, Heading, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
-import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
+import { SECTION_VERTICAL_SPACING, themeColors } from "@helpers/ui-values";
 import type { FC } from "react";
 import CountUp from "react-countup";
 import { Clock, DollarSign, ThumbsUp } from "react-feather";
@@ -132,7 +132,7 @@ const Stats: FC = () => {
       >
         <Heading maxW="25ch" as="h2" mb={0}>
           Make the Most of Every Single Site Visit with{" "}
-          <b style={{ color: "#00C4A2" }}>BeMyCreator</b>
+          <b style={{ color: themeColors.primary }}>BeMyCreator</b>
         </Heading>
         <CTA href="/new-project" variant="secondary" icon="plus">
           Create a project

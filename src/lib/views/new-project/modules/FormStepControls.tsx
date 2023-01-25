@@ -48,7 +48,7 @@ const FormStepControl: FC<Props> = ({
           type="submit"
           bgColor={themeColors.primary}
           _hover={{
-            backgroundColor: "#00C4A2",
+            backgroundColor: themeColors.primary,
           }}
         >
           Submit
