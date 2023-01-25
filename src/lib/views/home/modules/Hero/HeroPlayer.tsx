@@ -12,6 +12,8 @@ const HeroPlayer: FC<Props> = ({ source }) => {
     loop: true,
     controls: false,
     preload: "auto",
+    poster:
+      "https://xudvhxwolsxldijaphhq.supabase.co/storage/v1/object/sign/main-bucket/images/video-capture-2381.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtYWluLWJ1Y2tldC9pbWFnZXMvdmlkZW8tY2FwdHVyZS0yMzgxLnBuZyIsImlhdCI6MTY3NDE5OTM2MiwiZXhwIjoxNzA1NzM1MzYyfQ.R9fWnOMSuwLG1ScCL89wGc45TN0oq22cIG2lBilEUKQ&t=2023-01-20T07%3A22%3A42.561Z",
     playsInline: true,
     "webkit-playsinline": "true",
     controlsList: "nodownload",
