@@ -1,4 +1,5 @@
 import {
+  Flex,
   Grid,
   GridItem,
   Heading,
@@ -6,7 +7,6 @@ import {
   Stack,
   StackItem,
   Text,
-  VStack,
 } from "@chakra-ui/react";
 import Logo from "@components/logo/Logo";
 import IconSocial from "@components/social/IconsSocial";
@@ -37,7 +37,6 @@ const Footer: FC = () => {
 
         {/* Social icons */}
         <Stack
-          as="ul"
           role="list"
           direction="row"
           gap={4}
@@ -71,7 +70,7 @@ const Footer: FC = () => {
           justifyContent={["normal", "space-between"]}
           gap={6}
         >
-          <VStack as="ul" role="list" alignItems="start" listStyleType="none">
+          <Flex flexDir="column" alignItems="start" listStyleType="none">
             <Heading size="xs" m={0} py="6px">
               Company
             </Heading>
@@ -87,8 +86,8 @@ const Footer: FC = () => {
             <Link as={NextLink} href="/" py="6px">
               Pricing
             </Link>
-          </VStack>
-          <VStack as="ul" role="list" alignItems="start" listStyleType="none">
+          </Flex>
+          <Flex flexDir="column" alignItems="start" listStyleType="none">
             <Heading size="xs" m={0} py="6px">
               CMS
             </Heading>
@@ -104,8 +103,8 @@ const Footer: FC = () => {
             <Link as={NextLink} href="/" py="6px">
               Contact
             </Link>
-          </VStack>
-          <VStack as="ul" role="list" alignItems="start" listStyleType="none">
+          </Flex>
+          <Flex flexDir="column" alignItems="start" listStyleType="none">
             <Heading size="xs" m={0} py="6px">
               Template
             </Heading>
@@ -121,7 +120,7 @@ const Footer: FC = () => {
             <Link as={NextLink} href="/" py="6px">
               Changelog
             </Link>
-          </VStack>
+          </Flex>
         </Grid>
       </GridItem>
 
