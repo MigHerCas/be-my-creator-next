@@ -92,6 +92,7 @@ const SliderCard: FC<Props> = ({
       {/* Poster image */}
       <Box
         transform="scale(1)"
+        pos="relative"
         w={SLIDER_CARD_WIDTH_SIZES}
         h={SLIDER_CARD_HEIGHT_SIZES}
         transition="transform 250ms ease-in-out"
@@ -102,6 +103,9 @@ const SliderCard: FC<Props> = ({
         <NextImage
           src={posterUrl}
           fill
+          sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
           placeholder="blur"
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
           priority={false}

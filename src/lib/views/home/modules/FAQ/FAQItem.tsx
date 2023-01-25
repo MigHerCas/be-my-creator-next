@@ -2,7 +2,6 @@ import {
   AccordionButton,
   AccordionItem,
   AccordionPanel,
-  Box,
   Heading,
   IconButton,
 } from "@chakra-ui/react";
@@ -26,7 +25,7 @@ const FAQItem: FC<Props> = ({ title, content }) => {
     >
       {({ isExpanded }) => (
         <>
-          <Box>
+          <h2>
             <AccordionButton
               _hover={{ bgColor: "inherit" }}
               p="30px"
@@ -59,7 +58,7 @@ const FAQItem: FC<Props> = ({ title, content }) => {
                 )}
               </IconButton>
             </AccordionButton>
-          </Box>
+          </h2>
           <AccordionPanel px="30px" pb="30px" pt={0} fontSize="1.125rem">
             {content}
           </AccordionPanel>
