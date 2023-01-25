@@ -1,5 +1,6 @@
 import { Heading, Grid, GridItem, Flex, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
+import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
 import CatchyBanner from "@views/home/modules/CatchyBanner";
 import HeroPlayer from "@views/home/modules/Hero/HeroPlayer";
 import type { FC } from "react";
@@ -11,7 +12,7 @@ const Hero: FC = () => {
       templateColumns="repeat(12, 1fr)"
       alignItems="center"
       rowGap={["30px", null, "40px"]}
-      py={["30px", null, "40px", null, "60px"]}
+      py={SECTION_VERTICAL_SPACING}
     >
       {/* Left side */}
       <GridItem

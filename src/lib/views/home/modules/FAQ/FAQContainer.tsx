@@ -10,6 +10,7 @@ import {
   Tabs,
 } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
+import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
 import type { FC } from "react";
 
 import { FAQ_CONTENT } from "./FAQ_CONTENT";
@@ -17,14 +18,14 @@ import FAQItem from "./FAQItem";
 
 const FAQContainer: FC = () => {
   return (
-    <Box as="section" py={["30px", null, "40px", null, "60px"]}>
+    <Box as="section" py={SECTION_VERTICAL_SPACING}>
       {/* Heading */}
       <Heading
         mx="auto"
         maxW="20ch"
         size="md"
         textAlign="center"
-        mb={["30px", null, "40px", null, "60px"]}
+        mb={SECTION_VERTICAL_SPACING}
       >
         Any question?
       </Heading>
@@ -35,7 +36,7 @@ const FAQContainer: FC = () => {
         isFitted
         isLazy
         justifyContent="center"
-        mb={["30px", null, "40px", null, "60px"]}
+        mb={SECTION_VERTICAL_SPACING}
       >
         <TabList
           p="10px"

@@ -1,5 +1,6 @@
 import { Box, Flex, GridItem, Heading, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
+import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
 import type { FC } from "react";
 import CountUp from "react-countup";
 import { Clock, DollarSign, ThumbsUp } from "react-feather";
@@ -115,7 +116,7 @@ const Stats: FC = () => {
       alignItems="center"
       px={["30px", null, "60px"]}
       py={["50px", null, "60px"]}
-      mb={["30px", null, "40px", null, "60px"]}
+      mb={SECTION_VERTICAL_SPACING}
       bgColor="#272727"
       color="white"
       borderRadius={["0", null, "20px"]}

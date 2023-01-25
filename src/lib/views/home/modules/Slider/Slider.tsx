@@ -1,5 +1,6 @@
 import { Box, Center, Flex, Heading, useDisclosure } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
+import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
 import dynamic from "next/dynamic";
 import type { FC } from "react";
 import { useState } from "react";
@@ -52,7 +53,7 @@ const Slider: FC = () => {
   return (
     <Box
       as="section"
-      py={["30px", null, "40px", null, "60px"]}
+      py={SECTION_VERTICAL_SPACING}
       mx="clamp(-380px, calc((100vw - 1320px) / 2 * -1), -30px)"
     >
       {/* Header */}

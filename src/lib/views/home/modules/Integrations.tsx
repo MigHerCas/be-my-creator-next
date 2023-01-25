@@ -1,4 +1,5 @@
 import { Box, Flex, Grid, Heading, Text } from "@chakra-ui/react";
+import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
 import type { FC } from "react";
 import { Activity } from "react-feather";
 
@@ -39,7 +40,7 @@ const Integrations: FC = () => {
   return (
     <Grid
       as="section"
-      py={["30px", null, "40px", null, "60px"]}
+      py={SECTION_VERTICAL_SPACING}
       templateColumns={["1fr", null, null, "1fr 1fr 1fr", "repeat(4, 1fr)"]}
     >
       {/* Heading and description */}

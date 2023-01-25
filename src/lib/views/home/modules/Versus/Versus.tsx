@@ -1,4 +1,5 @@
 import { Box, Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
 import type { FC } from "react";
 import { Check, X } from "react-feather";
 import { useInView } from "react-intersection-observer";
@@ -34,7 +35,7 @@ const Versus: FC = () => {
       as="section"
       ref={ref}
       isolation="isolate"
-      py={["30px", null, "40px", null, "60px"]}
+      py={SECTION_VERTICAL_SPACING}
       className={inView ? styles.containerIsAnimated : undefined}
     >
       <Box textAlign="center" mb="50px">

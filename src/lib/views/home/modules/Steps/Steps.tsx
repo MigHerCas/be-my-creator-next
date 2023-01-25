@@ -1,4 +1,5 @@
 import { Box, Center, Flex, Heading, Text } from "@chakra-ui/react";
+import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
 import type { FC } from "react";
 import { DownloadCloud, Tool, Zap } from "react-feather";
 
@@ -26,7 +27,7 @@ const Steps: FC = () => {
     },
   ];
   return (
-    <Box as="section" py={["30px", null, "40px", null, "60px"]}>
+    <Box as="section" py={SECTION_VERTICAL_SPACING}>
       {/* Header */}
       <Center px="30px">
         <Heading
