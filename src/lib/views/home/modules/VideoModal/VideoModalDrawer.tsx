@@ -1,5 +1,6 @@
 import { Box, Divider, Fade, Flex, Heading, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
+import { themeColors } from "@helpers/ui-values";
 import type { FC } from "react";
 
 interface Props {
@@ -17,7 +18,7 @@ const VideoModalDrawer: FC<Props> = ({ isOpen }) => {
         bgColor="white"
         zIndex={4}
         p="60px 30px 30px 60px"
-        borderLeft="30px solid #00C4A2"
+        borderLeft={`30px solid ${themeColors.primary}`}
       >
         <Flex justifyContent="space-between" flexDir="column" gap="30px">
           <Box>

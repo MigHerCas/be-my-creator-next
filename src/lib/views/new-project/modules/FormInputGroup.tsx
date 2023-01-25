@@ -5,6 +5,7 @@ import {
   FormLabel,
   Input,
 } from "@chakra-ui/react";
+import { themeColors } from "@helpers/ui-values";
 import type { FC } from "react";
 import type { UseFormRegisterReturn } from "react-hook-form";
 
@@ -50,15 +51,15 @@ const FormInputGroup: FC<Props> = ({
         _active={{
           outline: "none",
           border: "none",
-          boxShadow: "#00C4A2 0px 2px",
+          boxShadow: `${themeColors.primary} 0px 2px`,
         }}
         _focus={{
           outline: "none",
           border: "none",
-          boxShadow: "#00C4A2 0px 2px",
+          boxShadow: `${themeColors.primary} 0px 2px`,
         }}
         _invalid={{
-          boxShadow: "#FC8181 0px 2px",
+          boxShadow: `${themeColors.red} 0px 2px`,
         }}
         {...registerCallback}
       />
