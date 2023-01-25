@@ -1,12 +1,12 @@
 :root {
-  --theme-color-black: "hsl(0, 0%, 11%)";
-  --theme-color-darkGrey: "hsl(0, 0%, 15%)";
-  --theme-color-mediumGrey: "hsl(228, 2%, 56%)";
-  --theme-color-ligthGrey: "hsla(0, 0%, 100%, 0.5)";
-  --theme-color-primary: "hsl(170, 100%, 38%)";
-  --theme-color-orange: "hsl(41, 97%, 65%)";
-  --theme-color-red: "hsl(0, 95%, 75%)";
-  --theme-color-pistache: "hsl(71, 100%, 45%)";
+  --theme-color-black: hsl(0, 0%, 11%);
+  --theme-color-darkGrey: hsl(0, 0%, 15%);
+  --theme-color-mediumGrey: hsl(228, 2%, 56%);
+  --theme-color-ligthGrey: hsla(0, 0%, 100%, 0.5);
+  --theme-color-primary: hsl(170, 100%, 38%);
+  --theme-color-orange: hsl(41, 97%, 65%);
+  --theme-color-red: hsl(0, 95%, 75%);
+  --theme-color-pistache: hsl(71, 100%, 45%);
 }
 
 /*
