@@ -1,4 +1,5 @@
 import { Badge, Flex, Text } from "@chakra-ui/react";
+import { themeColors } from "@helpers/ui-values";
 import type { FC } from "react";
 
 const CatchyBanner: FC = () => {
@@ -19,7 +20,7 @@ const CatchyBanner: FC = () => {
     >
       <Badge
         color="white"
-        bgColor="#00C4A2"
+        bgColor={themeColors.primary}
         px={2.5}
         py={1.5}
         borderRadius="4px"

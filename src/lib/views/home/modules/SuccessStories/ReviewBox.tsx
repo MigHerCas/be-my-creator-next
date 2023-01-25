@@ -7,6 +7,7 @@ import {
   HStack,
   Text,
 } from "@chakra-ui/react";
+import { themeColors } from "@helpers/ui-values";
 import type { FC } from "react";
 import { Star, GitHub } from "react-feather";
 
@@ -23,7 +24,7 @@ const ReviewBox: FC = () => {
     >
       <Box
         color="white"
-        backgroundColor="#00C4A2"
+        backgroundColor={themeColors.primary}
         borderRadius="12px"
         display={["none", null, null, "flex"]}
         my={[0, null, null, "90px"]}

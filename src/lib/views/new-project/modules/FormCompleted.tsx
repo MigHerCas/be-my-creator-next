@@ -1,6 +1,7 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import CalendlyIntegration from "@compositions/CalendlyIntegration";
+import { themeColors } from "@helpers/ui-values";
 import type { FC } from "react";
 import { Check } from "react-feather";
 
@@ -15,7 +16,7 @@ const FormCompleted: FC = () => {
       justifyContent="center"
       alignItems="center"
     >
-      <Box p={[4, null, 8]} bgColor="#00C4A2" borderRadius="full">
+      <Box p={[4, null, 8]} bgColor={themeColors.primary} borderRadius="full">
         <Check width={30} height={30} />
       </Box>
       <Heading size="lg" textAlign="center" mb={0}>

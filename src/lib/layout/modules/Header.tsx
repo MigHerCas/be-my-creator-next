@@ -10,7 +10,7 @@ import {
 import Blob from "@components/blob/Blob";
 import CTA from "@components/cta/CTA";
 import Logo from "@components/logo/Logo";
-import { APP_MAX_WIDTH, HEADER_HEIGHT } from "@helpers/ui-values";
+import { APP_MAX_WIDTH, HEADER_HEIGHT, themeColors } from "@helpers/ui-values";
 import { useLockedBody } from "@hooks";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
@@ -148,7 +148,7 @@ const MobileNavigation = ({
             <ArrowRightCircle
               height="30px"
               width="30px"
-              fill="#00C4A2"
+              fill={themeColors.primary}
               stroke={backgroundColor}
             />
           </Link>

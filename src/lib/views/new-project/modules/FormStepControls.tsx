@@ -1,5 +1,6 @@
 import { Button, Flex } from "@chakra-ui/react";
 import type { FormFields } from "@database/Store";
+import { themeColors } from "@helpers/ui-values";
 import type { Dispatch, FC, SetStateAction } from "react";
 import { ArrowLeft, ArrowRight, Upload } from "react-feather";
 import type { UseFormTrigger } from "react-hook-form";
@@ -45,7 +46,7 @@ const FormStepControl: FC<Props> = ({
         <Button
           size="lg"
           type="submit"
-          bgColor="#00C4A2"
+          bgColor={themeColors.primary}
           _hover={{
             backgroundColor: "#00C4A2",
           }}
