@@ -23,7 +23,7 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
       leftSideOperator: "+",
       rightSideOperator: "%",
       title: "Conversion rate",
-      icon: <DollarSign stroke="#BCE500" />,
+      icon: <DollarSign stroke={themeColors.pistache} />,
     },
     {
       startValue: 1,
@@ -31,7 +31,7 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
       leftSideOperator: "x",
       rightSideOperator: "",
       title: "Added time on site",
-      icon: <Clock stroke="#BCE500" />,
+      icon: <Clock stroke={themeColors.pistache} />,
     },
     {
       startValue: 1,
@@ -39,7 +39,7 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
       leftSideOperator: "+",
       rightSideOperator: "%",
       title: "Engagement rate",
-      icon: <ThumbsUp stroke="#BCE500" />,
+      icon: <ThumbsUp stroke={themeColors.pistache} />,
     },
   ] as Array<StatItemContent>;
 
@@ -65,14 +65,14 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
           <GridItem
             p={["20px", "30px"]}
             borderRadius="24px"
-            bgColor="#1B1B1B"
+            bgColor={themeColors.black}
             key={title}
             w={["260px", "280px", null, null, "320px"]}
           >
             <Box
               p={3}
               display="inline-block"
-              bgColor="#272727"
+              bgColor={themeColors.darkGrey}
               borderRadius="full"
               mb={8}
             >
@@ -117,7 +117,7 @@ const Stats: FC = () => {
       px={["30px", null, "60px"]}
       py={["50px", null, "60px"]}
       mb={SECTION_VERTICAL_SPACING}
-      bgColor="#272727"
+      bgColor={themeColors.darkGrey}
       color="white"
       borderRadius={["0", null, "20px"]}
       mx={["-30px", null, "initial"]}
