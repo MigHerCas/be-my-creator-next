@@ -13,6 +13,7 @@ const Hero: FC = () => {
       alignItems="center"
       rowGap={["30px", null, "40px"]}
       py={SECTION_VERTICAL_SPACING}
+      mb="60px"
     >
       {/* Left side */}
       <GridItem
