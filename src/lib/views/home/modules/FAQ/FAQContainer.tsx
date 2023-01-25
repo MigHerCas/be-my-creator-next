@@ -43,7 +43,7 @@ const FAQContainer: FC = () => {
           borderColor="gray.200"
           bgColor="white"
           w="fit-content"
-          borderRadius={["20px", "100px"]}
+          borderRadius={["20px", null, "100px"]}
           gap="10px"
           mx="auto"
           mb="30px"
