@@ -41,46 +41,47 @@ const Steps: FC = () => {
       </Center>
 
       {/* Steps */}
-      <Flex
-        as="ol"
-        flexDir={["column", null, null, "row"]}
-        alignItems="center"
-        listStyleType="none"
-        pos="relative"
-        gap="30px"
-        wrap="wrap"
-      >
-        {content.map(({ heading, description, icon }, index) => (
-          <Box
-            key={heading}
-            flex="1"
-            as="li"
-            bgColor={themeColors.darkGrey}
-            borderRadius="20px"
-            p="30px"
-            minW="260px"
-            maxW="420px"
-          >
+      <Box pos="relative">
+        <Flex
+          as="ol"
+          flexDir={["column", null, null, "row"]}
+          alignItems="center"
+          listStyleType="none"
+          gap="30px"
+          wrap="wrap"
+        >
+          {content.map(({ heading, description, icon }, index) => (
             <Box
-              p={4}
-              display="flex"
-              gap={4}
-              bgColor={themeColors.black}
-              borderRadius="full"
-              mb={6}
-              width="fit-content"
+              key={heading}
+              flex="1"
+              as="li"
+              bgColor={themeColors.darkGrey}
+              borderRadius="20px"
+              p="30px"
+              minW="260px"
+              maxW="420px"
             >
-              {icon}
-              <Heading size="xs" as="h3" color="white" mb={0}>
-                Step {index + 1}
+              <Box
+                p={4}
+                display="flex"
+                gap={4}
+                bgColor={themeColors.black}
+                borderRadius="full"
+                mb={6}
+                width="fit-content"
+              >
+                {icon}
+                <Heading size="xs" as="h3" color="white" mb={0}>
+                  Step {index + 1}
+                </Heading>
+              </Box>
+              <Heading size="sm" color="white">
+                {heading}
               </Heading>
+              <Text color={themeColors.ligthGrey}>{description}</Text>
             </Box>
-            <Heading size="sm" color="white">
-              {heading}
-            </Heading>
-            <Text color={themeColors.ligthGrey}>{description}</Text>
-          </Box>
-        ))}
+          ))}
+        </Flex>
 
         {/* Animated gradient */}
         <Box
@@ -94,7 +95,7 @@ const Steps: FC = () => {
           w={["200px", null, null, "100%"]}
           zIndex="-1"
         />
-      </Flex>
+      </Box>
     </Box>
   );
 };
