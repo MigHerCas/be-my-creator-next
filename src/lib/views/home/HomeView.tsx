@@ -7,12 +7,12 @@ import { useEffect } from "react";
 import Hero from "./modules/Hero/Hero";
 import Integrations from "./modules/Integrations";
 import Slider from "./modules/Slider/Slider";
-import Stats from "./modules/Stats";
-import Steps from "./modules/Steps/Steps";
 import SuccessStories from "./modules/SuccessStories/SuccessStories";
-import Versus from "./modules/Versus/Versus";
 
-const FAQ = dynamic(() => import("@views/home/modules/FAQ/FAQContainer"));
+const Steps = dynamic(() => import("./modules/Steps/Steps"));
+const Stats = dynamic(() => import("./modules/Stats"));
+const FAQ = dynamic(() => import("./modules/FAQ/FAQContainer"));
+const Versus = dynamic(() => import("./modules/Versus/Versus"));
 
 const HomeView: NextPageWithLayout = () => {
   const { colorMode, toggleColorMode } = useColorMode();
