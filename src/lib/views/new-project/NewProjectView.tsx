@@ -1,6 +1,7 @@
 import { Box, Flex, useColorMode } from "@chakra-ui/react";
 import type { FormFields } from "@database/Store";
 import { insertLead, SUPABASE_KEY, SUPABASE_URL } from "@database/Store";
+import { themeColors } from "@helpers/ui-values";
 import Layout from "@layout/Layout";
 import type { NextPageWithLayout } from "@pages/_app";
 import { NextSeo } from "next-seo";
@@ -134,8 +135,8 @@ const NewProjectView: NextPageWithLayout = () => {
         pos="relative"
         top="50%"
         transform="translateY(-50%)"
-        bgColor="#272727"
-        border={["none", null, null, null, "20px solid #1c1c1c"]}
+        bgColor={themeColors.darkGrey}
+        border={["none", null, null, null, `20px solid ${themeColors.black}`]}
         onSubmit={handleSubmit(onSubmit)}
         flexDir="column"
         alignItems="center"

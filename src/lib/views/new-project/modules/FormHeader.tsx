@@ -1,5 +1,6 @@
 import { Flex, Heading, Box } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
+import { themeColors } from "@helpers/ui-values";
 import type { FC } from "react";
 import { Tool } from "react-feather";
 
@@ -28,10 +29,10 @@ const FormHeader: FC = () => {
       <Box
         p={[3, null, null, 5]}
         display={["none", "inline-block"]}
-        bgColor="#1c1c1c"
+        bgColor={themeColors.black}
         borderRadius="full"
       >
-        <Tool height="30px" width="30px" stroke="#BCE500" />
+        <Tool height="30px" width="30px" stroke={themeColors.pistache} />
       </Box>
       <Heading size="lg" textAlign="center" mb={0}>
         New project!
