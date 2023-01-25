@@ -5,6 +5,7 @@ import {
   ModalContent,
   ModalOverlay,
 } from "@chakra-ui/react";
+import { themeColors } from "@helpers/ui-values";
 import type { FC, PropsWithChildren } from "react";
 
 interface Props {
@@ -45,7 +46,7 @@ const VideoModalWrapper: FC<PropsWithChildren<Props>> = ({
           top="30px"
           right="30px"
           zIndex={2}
-          bgColor="#272727"
+          bgColor={themeColors.darkGrey}
           p={2}
           color="white"
         />

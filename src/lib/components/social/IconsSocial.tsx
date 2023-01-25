@@ -1,4 +1,5 @@
 import { IconButton, useColorModeValue } from "@chakra-ui/react";
+import { themeColors } from "@helpers/ui-values";
 import NextLink from "next/link";
 import type { FC } from "react";
 
@@ -10,8 +11,7 @@ interface IconSocialProps {
 }
 
 const IconSocial: FC<IconSocialProps> = ({ variant, href }) => {
-  // TODO: align colors with theme
-  const fillColor = useColorModeValue("#000", "#fff");
+  const fillColor = useColorModeValue(themeColors.black, "white");
   const iconVariants = {
     Facebook: (
       <svg

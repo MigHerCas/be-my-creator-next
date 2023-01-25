@@ -8,6 +8,7 @@ const SECTION_VERTICAL_SPACING = ["30px", null, "40px", null, "60px"];
 const themeColors = {
   black: "#1c1c1c",
   darkGrey: "#272727",
+  mediumGrey: "#8c8d91",
   ligthGrey: "hsla(0, 0%, 100%, 0.5)",
   primary: "#00C4A2",
   orange: "#FCC54E",

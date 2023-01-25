@@ -97,7 +97,7 @@ const MobileNavigation = ({
   isOpen,
   closeMenuOnClickCallback,
 }: MobileNavigationProps) => {
-  const backgroundColor = useColorModeValue("white", "#272727");
+  const backgroundColor = useColorModeValue("white", themeColors.darkGrey);
 
   if (!isOpen) return null;
 

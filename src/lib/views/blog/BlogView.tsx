@@ -8,6 +8,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
+import { themeColors } from "@helpers/ui-values";
 import Layout from "@layout/Layout";
 import type { NextPageWithLayout } from "@pages/_app";
 import { NextSeo } from "next-seo";
@@ -32,7 +33,7 @@ const BlogView: NextPageWithLayout = () => {
         <Heading size="md" m={0}>
           The End of Moore’s Law?
         </Heading>
-        <Heading size="sm" color="#8c8d91" my="20px">
+        <Heading size="sm" color={themeColors.mediumGrey} my="20px">
           As chips are getting smaller, prices are going up
         </Heading>
 
@@ -62,7 +63,11 @@ const BlogView: NextPageWithLayout = () => {
           />
 
           <figcaption
-            style={{ color: "#8c8d91", marginTop: "8px", fontSize: "14px" }}
+            style={{
+              color: themeColors.mediumGrey,
+              marginTop: "8px",
+              fontSize: "14px",
+            }}
           >
             Alexandre Debieve / Unsplash
           </figcaption>
@@ -166,7 +171,7 @@ const BlogView: NextPageWithLayout = () => {
             flexDirection="column"
             justifyContent="center"
             alignItems="center"
-            backgroundColor="#272727"
+            backgroundColor={themeColors.darkGrey}
             color="white"
             boxShadow="rgb(15 15 15 / 5%) 0px 0px 0px 1px, rgb(15 15 15 / 10%) 0px 3px 6px, rgb(15 15 15 / 20%) 0px 9px 24px"
             borderRadius={[0, null, "20px"]}

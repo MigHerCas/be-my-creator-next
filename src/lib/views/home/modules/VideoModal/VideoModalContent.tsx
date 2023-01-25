@@ -55,7 +55,7 @@ const VideoModalContent: FC<PropsWithChildren<Props>> = ({
             alignItems="center"
             justifyContent="center"
             py="20px"
-            bgColor="#272727"
+            bgColor={themeColors.darkGrey}
             borderRadius="0 0 20px 20px"
             gap="12px"
           >

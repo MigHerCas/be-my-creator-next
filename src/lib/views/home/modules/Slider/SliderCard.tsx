@@ -2,6 +2,7 @@ import { Box } from "@chakra-ui/react";
 import {
   SLIDER_CARD_WIDTH_SIZES,
   SLIDER_CARD_HEIGHT_SIZES,
+  themeColors,
 } from "@helpers/ui-values";
 import NextImage from "next/image";
 import type { Dispatch, FC, SetStateAction } from "react";
@@ -82,8 +83,8 @@ const SliderCard: FC<Props> = ({
         <Triangle
           width={20}
           height={20}
-          stroke="#272727"
-          fill="#272727"
+          stroke={themeColors.darkGrey}
+          fill={themeColors.darkGrey}
           style={{ transform: "translateX(2px) rotate(90deg)" }}
         />
       </Box>
@@ -116,7 +117,7 @@ const SliderCard: FC<Props> = ({
         bottom="5px"
         right="5px"
         display="inline-block"
-        bgColor="#272727"
+        bgColor={themeColors.darkGrey}
         opacity="0.75"
         color="white"
         borderRadius="20px"
