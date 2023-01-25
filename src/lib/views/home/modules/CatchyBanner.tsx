@@ -4,7 +4,7 @@ import type { FC } from "react";
 const CatchyBanner: FC = () => {
   return (
     <Flex
-      display={["none", "flex"]}
+      display={["none", null, "flex"]}
       flexWrap="wrap"
       justifyContent="center"
       px={4}

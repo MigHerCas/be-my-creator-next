@@ -4,6 +4,8 @@ import type { NextPage } from "next";
 import { DefaultSeo } from "next-seo";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import Router from "next/router";
+import NProgress from "nprogress";
 import type { ReactElement, ReactNode } from "react";
 
 import defaultSEOConfig from "../../next-seo.config";
@@ -20,6 +22,18 @@ export type NextPageWithLayout<P = Record<string, unknown>, IP = P> = NextPage<
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
+
+// NProgress router event handler
+Router.events.on("routeChangeStart", () => {
+  NProgress.start();
+});
+
+Router.events.on("routeChangeComplete", () => {
+  NProgress.done(false);
+  window.scrollTo({ top: 0 });
+});
+
+Router.events.on("routeChangeError", () => NProgress.done());
 
 const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
   const getLayout = Component.getLayout ?? ((page) => <Layout>{page}</Layout>);

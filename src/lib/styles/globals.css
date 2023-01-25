@@ -118,3 +118,14 @@ h6 {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 }
+
+/* NProgress */
+#nprogress .bar {
+  background-color: #00c4a2 !important;
+  height: 4px !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: #00c4a2;
+  border-left-color: #00c4a2;
+}
