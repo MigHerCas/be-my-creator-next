@@ -6,14 +6,14 @@ const SECTION_VERTICAL_SPACING = ["30px", null, "40px", null, "60px"];
 
 // Theme colors
 const themeColors = {
-  black: "#1c1c1c",
-  darkGrey: "#272727",
-  mediumGrey: "#8c8d91",
+  black: "hsl(0, 0%, 11%)",
+  darkGrey: "hsl(0, 0%, 15%)",
+  mediumGrey: "hsl(228, 2%, 56%)",
   ligthGrey: "hsla(0, 0%, 100%, 0.5)",
-  primary: "#00C4A2",
-  orange: "#FCC54E",
-  red: "#FC8181",
-  pistache: "#BCE500",
+  primary: "hsl(170, 100%, 38%)",
+  orange: "hsl(41, 97%, 65%)",
+  red: "hsl(0, 95%, 75%)",
+  pistache: "hsl(71, 100%, 45%)",
 };
 
 export {
