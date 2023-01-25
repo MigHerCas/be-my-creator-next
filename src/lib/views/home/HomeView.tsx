@@ -9,7 +9,7 @@ import Integrations from "./modules/Integrations";
 import Slider from "./modules/Slider/Slider";
 import Stats from "./modules/Stats";
 import Steps from "./modules/Steps/Steps";
-import SuccessStories from "./modules/SuccessStories";
+import SuccessStories from "./modules/SuccessStories/SuccessStories";
 import Versus from "./modules/Versus/Versus";
 
 const FAQ = dynamic(() => import("@views/home/modules/FAQ/FAQ"));
