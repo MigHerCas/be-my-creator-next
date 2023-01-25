@@ -16,7 +16,6 @@ const MainContainer: FC<PropsWithChildren<Props>> = ({
     maxWidth: APP_MAX_WIDTH,
     px: "30px",
     mx: "auto",
-    flex: "1",
     height: isFullHeight ? "100vh" : "auto",
   };
 
