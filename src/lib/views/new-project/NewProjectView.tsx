@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 
+import FormCheckboxGroup from "./modules/FormCheckboxGroup";
 import FormHeader from "./modules/FormHeader";
 import FormInputGroup from "./modules/FormInputGroup";
 import FormRadioGroup from "./modules/FormRadioGroup";
@@ -37,6 +38,7 @@ const NewProjectView: NextPageWithLayout = () => {
     defaultValues: {
       name: "",
       email: "",
+      test: "1",
       platforms: "Instagram",
       teamSize: "1-5",
     },
@@ -49,6 +51,7 @@ const NewProjectView: NextPageWithLayout = () => {
       name: data.name,
       email: data.email,
       config: {
+        test: data.test,
         platforms: data.platforms,
         teamSize: data.teamSize,
       },
@@ -73,8 +76,22 @@ const NewProjectView: NextPageWithLayout = () => {
       ),
     },
     {
-      id: "teamSize",
+      id: "test",
       step: 2,
+      component: (
+        <FormCheckboxGroup
+          key="test"
+          name="test"
+          label="Test"
+          control={control}
+          defaultValue="1"
+          options={["1", "2", "3", "4", "5"]}
+        />
+      ),
+    },
+    {
+      id: "teamSize",
+      step: 3,
       component: (
         <FormRadioGroup
           key="teamSize"
@@ -88,7 +105,7 @@ const NewProjectView: NextPageWithLayout = () => {
     },
     {
       id: "name",
-      step: 3,
+      step: 4,
       component: (
         <FormInputGroup
           label="Let's start with the name of your brand"
@@ -105,7 +122,7 @@ const NewProjectView: NextPageWithLayout = () => {
     },
     {
       id: "email",
-      step: 4,
+      step: 5,
       component: (
         <FormInputGroup
           label="Which email could we use to contact you?"
