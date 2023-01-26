@@ -5,7 +5,7 @@ import { DefaultSeo } from "next-seo";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import Router from "next/router";
-import NProgress from "nprogress";
+import nProgress from "nprogress";
 import type { ReactElement, ReactNode } from "react";
 
 import defaultSEOConfig from "../../next-seo.config";
@@ -25,15 +25,15 @@ type AppPropsWithLayout = AppProps & {
 
 // NProgress router event handler
 Router.events.on("routeChangeStart", () => {
-  NProgress.start();
+  nProgress.start();
 });
 
 Router.events.on("routeChangeComplete", () => {
-  NProgress.done(false);
+  nProgress.done(false);
   window.scrollTo({ top: 0 });
 });
 
-Router.events.on("routeChangeError", () => NProgress.done());
+Router.events.on("routeChangeError", () => nProgress.done());
 
 const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
   const getLayout = Component.getLayout ?? ((page) => <Layout>{page}</Layout>);
