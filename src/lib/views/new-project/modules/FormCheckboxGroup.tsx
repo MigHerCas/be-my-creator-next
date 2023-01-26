@@ -1,13 +1,13 @@
 import {
+  Flex,
   FormControl,
   FormLabel,
-  Flex,
   Text,
   useCheckboxGroup,
 } from "@chakra-ui/react";
 import type { FormFields } from "@database/Store";
 import { forwardRef } from "react";
-import type { Control } from "react-hook-form";
+import type { UseFormRegisterReturn } from "react-hook-form";
 
 import FormCustomCheckbox from "./FormCustomCheckbox";
 
@@ -15,12 +15,12 @@ interface Props {
   name: keyof FormFields;
   label: string;
   options: Array<string>;
-  control: Control<FormFields>;
   defaultValue: string;
+  registerCallback: UseFormRegisterReturn;
 }
 
 const FormCheckboxGroup = forwardRef<HTMLInputElement, Props>(
-  ({ label, defaultValue, options }, ref) => {
+  ({ label, defaultValue, options, registerCallback }, ref) => {
     const { value, getCheckboxProps } = useCheckboxGroup({
       defaultValue: [defaultValue],
     });
@@ -36,7 +36,11 @@ const FormCheckboxGroup = forwardRef<HTMLInputElement, Props>(
           {options.map((optionValue) => {
             const checkbox = getCheckboxProps({ value: optionValue });
             return (
-              <FormCustomCheckbox key={optionValue} {...checkbox}>
+              <FormCustomCheckbox
+                key={optionValue}
+                {...checkbox}
+                registerCallback={registerCallback}
+              >
                 {optionValue}
               </FormCustomCheckbox>
             );

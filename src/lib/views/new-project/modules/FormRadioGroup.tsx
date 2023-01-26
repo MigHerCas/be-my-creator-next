@@ -9,6 +9,7 @@ import FormCustomRadio from "./FormCustomRadio";
 interface Props {
   name: keyof FormFields;
   label: string;
+  // TODO: align on this
   options: Array<string>;
   control: Control<FormFields>;
   defaultValue: string;

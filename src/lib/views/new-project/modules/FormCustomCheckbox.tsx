@@ -3,18 +3,21 @@ import { useCheckbox, Box } from "@chakra-ui/react";
 import { themeColors } from "@helpers/ui-values";
 import type { PropsWithChildren } from "react";
 import { forwardRef } from "react";
+import type { UseFormRegisterReturn } from "react-hook-form";
 
 const FormCustomCheckbox = forwardRef<
   HTMLInputElement,
-  PropsWithChildren<UseCheckboxProps>
->(({ children, ...checkboxProps }, ref) => {
+  PropsWithChildren<
+    UseCheckboxProps & { registerCallback: UseFormRegisterReturn }
+  >
+>(({ children, registerCallback, ...checkboxProps }, ref) => {
   const { state, getCheckboxProps, getInputProps } = useCheckbox(checkboxProps);
 
   const input = getInputProps({ ref });
   const checkbox = getCheckboxProps();
   return (
     <Box as="label" w="full">
-      <input {...input} />
+      <input {...input} {...registerCallback} />
       <Box
         {...checkbox}
         cursor="pointer"

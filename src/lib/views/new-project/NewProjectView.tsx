@@ -30,6 +30,7 @@ const NewProjectView: NextPageWithLayout = () => {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
     control,
     trigger,
@@ -44,7 +45,10 @@ const NewProjectView: NextPageWithLayout = () => {
     },
   });
 
+  console.log("test", watch("test"));
+
   const onSubmit: SubmitHandler<FormFields> = async (data) => {
+    // TODO: trigger nprogress here
     const { createClient } = await import("@supabase/supabase-js");
     const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
     await insertLead(supabase, {
@@ -83,8 +87,10 @@ const NewProjectView: NextPageWithLayout = () => {
           key="test"
           name="test"
           label="Test"
-          control={control}
           defaultValue="1"
+          registerCallback={register("test", {
+            required: "Please select one option at least",
+          })}
           options={["1", "2", "3", "4", "5"]}
         />
       ),
