@@ -12,7 +12,7 @@ export type Lead = {
 export type FormFields = {
   name: string;
   email: string;
-  test: "1" | "2" | "3" | "4" | "5";
+  test: Array<string | number>;
   platforms: "Instagram" | "Tiktok" | "Twitter";
   teamSize: "1-5" | "10-20" | "+20";
 };
