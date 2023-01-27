@@ -1,4 +1,10 @@
-import { FormControl, FormLabel, Flex, useRadioGroup } from "@chakra-ui/react";
+import {
+  FormControl,
+  FormLabel,
+  Flex,
+  useRadioGroup,
+  FormErrorMessage,
+} from "@chakra-ui/react";
 import type { FormFields } from "@database/Store";
 import { forwardRef } from "react";
 import type { Control } from "react-hook-form";
@@ -9,29 +15,32 @@ import FormCustomRadio from "./FormCustomRadio";
 interface Props {
   name: keyof FormFields;
   label: string;
-  // TODO: align on this
   options: Array<string>;
   control: Control<FormFields>;
   defaultValue: string;
+  errorMessage?: string;
 }
 
 const FormRadioGroup = forwardRef<HTMLInputElement, Props>(
-  ({ name, label, control, defaultValue, options }, ref) => {
+  ({ name, label, control, defaultValue, options, errorMessage }, ref) => {
     const { field } = useController({
       name,
       control,
-      rules: { required: "Toggle is required" },
+      rules: { required: "Please select at least one option" },
       defaultValue,
     });
 
+    const value = field.value as string;
+
     const { getRootProps, getRadioProps } = useRadioGroup({
       ...field,
+      value,
     });
 
     const group = getRootProps();
 
     return (
-      <FormControl mx="auto" ref={ref}>
+      <FormControl mx="auto" ref={ref} isInvalid={Boolean(errorMessage)}>
         <FormLabel fontSize="24px" mb="20px">
           {label}
         </FormLabel>
@@ -46,6 +55,9 @@ const FormRadioGroup = forwardRef<HTMLInputElement, Props>(
             );
           })}
         </Flex>
+        {errorMessage ? (
+          <FormErrorMessage>{errorMessage}</FormErrorMessage>
+        ) : null}
       </FormControl>
     );
   }
