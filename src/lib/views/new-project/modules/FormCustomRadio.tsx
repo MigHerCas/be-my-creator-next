@@ -14,7 +14,7 @@ const FormCustomRadio = forwardRef<
   const checkbox = getCheckboxProps();
   return (
     <Box as="label" w="full">
-      <input {...input} />
+      <input {...input} hidden />
       <Box
         {...checkbox}
         cursor="pointer"
