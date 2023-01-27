@@ -6,24 +6,32 @@ import {
   useCheckboxGroup,
 } from "@chakra-ui/react";
 import type { FormFields } from "@database/Store";
-import { forwardRef } from "react";
-import type { UseFormRegisterReturn } from "react-hook-form";
+import { forwardRef, useEffect } from "react";
+import type { Control, UseFormSetValue } from "react-hook-form";
+import { Controller } from "react-hook-form";
 
 import FormCustomCheckbox from "./FormCustomCheckbox";
 
 interface Props {
   name: keyof FormFields;
   label: string;
-  options: Array<string>;
-  defaultValue: string;
-  registerCallback: UseFormRegisterReturn;
+  options: Array<string | number>;
+  defaultValue: Array<string | number>;
+  setValue: UseFormSetValue<FormFields>;
+  control: Control<FormFields>;
 }
 
 const FormCheckboxGroup = forwardRef<HTMLInputElement, Props>(
-  ({ label, defaultValue, options, registerCallback }, ref) => {
+  ({ name, label, control, setValue, options, defaultValue }, ref) => {
     const { value, getCheckboxProps } = useCheckboxGroup({
-      defaultValue: [defaultValue],
+      defaultValue,
     });
+
+    useEffect(() => {
+      setValue("test", value, {
+        shouldValidate: true,
+      });
+    }, [setValue, value]);
 
     return (
       <FormControl mx="auto" ref={ref}>
@@ -36,13 +44,16 @@ const FormCheckboxGroup = forwardRef<HTMLInputElement, Props>(
           {options.map((optionValue) => {
             const checkbox = getCheckboxProps({ value: optionValue });
             return (
-              <FormCustomCheckbox
-                key={optionValue}
-                {...checkbox}
-                registerCallback={registerCallback}
-              >
-                {optionValue}
-              </FormCustomCheckbox>
+              <Controller
+                name={name}
+                control={control}
+                defaultValue={defaultValue}
+                render={() => (
+                  <FormCustomCheckbox key={optionValue} {...checkbox}>
+                    {optionValue}
+                  </FormCustomCheckbox>
+                )}
+              />
             );
           })}
         </Flex>
