@@ -33,7 +33,7 @@ const FormCheckboxGroup = forwardRef<HTMLInputElement, Props>(
 
     useEffect(() => {
       setValue("test", value, {
-        shouldValidate: true,
+        shouldValidate: value.length > 0,
       });
     }, [setValue, value]);
 
