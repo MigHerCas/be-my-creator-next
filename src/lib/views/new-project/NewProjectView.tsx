@@ -6,6 +6,7 @@ import Layout from "@layout/Layout";
 import type { NextPageWithLayout } from "@pages/_app";
 import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
+import nProgress from "nprogress";
 import type { ReactElement } from "react";
 import { useEffect, useState } from "react";
 import type { SubmitHandler } from "react-hook-form";
@@ -18,6 +19,8 @@ import FormRadioGroup from "./modules/FormRadioGroup";
 import FormStepControl from "./modules/FormStepControls";
 import FormStepIndicator from "./modules/FormStepIndicator";
 
+const SUCCESS_PATH = "/success";
+
 const NewProjectView: NextPageWithLayout = () => {
   const router = useRouter();
   const { colorMode, toggleColorMode } = useColorMode();
@@ -27,28 +30,29 @@ const NewProjectView: NextPageWithLayout = () => {
     if (colorMode === "light") toggleColorMode();
   }, [colorMode, toggleColorMode]);
 
+  const defaultValues = {
+    name: "",
+    email: "",
+    test: [],
+    platforms: "Instagram",
+    teamSize: "1-5",
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } as Record<keyof FormFields, any>;
+
   const {
     register,
     handleSubmit,
-    watch,
+    setValue,
     formState: { errors },
     control,
     trigger,
     clearErrors,
   } = useForm<FormFields>({
-    defaultValues: {
-      name: "",
-      email: "",
-      test: "1",
-      platforms: "Instagram",
-      teamSize: "1-5",
-    },
+    defaultValues,
   });
 
-  console.log("test", watch("test"));
-
   const onSubmit: SubmitHandler<FormFields> = async (data) => {
-    // TODO: trigger nprogress here
+    nProgress.start();
     const { createClient } = await import("@supabase/supabase-js");
     const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
     await insertLead(supabase, {
@@ -61,7 +65,7 @@ const NewProjectView: NextPageWithLayout = () => {
       },
     });
 
-    router.push("/success");
+    router.push(SUCCESS_PATH);
   };
 
   const formStepsContent = [
@@ -74,7 +78,8 @@ const NewProjectView: NextPageWithLayout = () => {
           name="platforms"
           label="Platforms"
           control={control}
-          defaultValue="Instagram"
+          defaultValue={defaultValues.platforms}
+          errorMessage={errors.platforms?.message}
           options={["Instagram", "Tiktok", "Twitter"]}
         />
       ),
@@ -87,10 +92,10 @@ const NewProjectView: NextPageWithLayout = () => {
           key="test"
           name="test"
           label="Test"
-          defaultValue="1"
-          registerCallback={register("test", {
-            required: "Please select one option at least",
-          })}
+          defaultValue={defaultValues.test}
+          control={control}
+          setValue={setValue}
+          errorMessage={errors.test?.message}
           options={["1", "2", "3", "4", "5"]}
         />
       ),
@@ -104,7 +109,8 @@ const NewProjectView: NextPageWithLayout = () => {
           name="teamSize"
           label="Team size"
           control={control}
-          defaultValue="1-5"
+          defaultValue={defaultValues.teamSize}
+          errorMessage={errors.teamSize?.message}
           options={["1-5", "10-20", "+20"]}
         />
       ),
