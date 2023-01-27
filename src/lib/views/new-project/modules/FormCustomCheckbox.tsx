@@ -1,20 +1,22 @@
-import type { UseRadioProps } from "@chakra-ui/react";
-import { Box, useRadio } from "@chakra-ui/react";
+import type { UseCheckboxProps } from "@chakra-ui/react";
+import { Box, useCheckbox } from "@chakra-ui/react";
 import { themeColors } from "@helpers/ui-values";
 import type { PropsWithChildren } from "react";
 import { forwardRef } from "react";
 
-const FormCustomRadio = forwardRef<
+const FormCustomCheckbox = forwardRef<
   HTMLInputElement,
-  PropsWithChildren<UseRadioProps>
->(({ children, ...radioProps }, ref) => {
-  const { state, getInputProps, getCheckboxProps } = useRadio(radioProps);
+  PropsWithChildren<UseCheckboxProps>
+>(({ children, ...checkboxProps }, ref) => {
+  const { state, getCheckboxProps, getInputProps } = useCheckbox({
+    ...checkboxProps,
+  });
 
   const input = getInputProps({ ref });
   const checkbox = getCheckboxProps();
   return (
     <Box as="label" w="full">
-      <input {...input} hidden />
+      <input {...input} />
       <Box
         {...checkbox}
         cursor="pointer"
@@ -24,7 +26,7 @@ const FormCustomRadio = forwardRef<
         display="flex"
         alignItems="center"
         justifyContent="center"
-        boxShadow={state.isFocused ? "outline" : "none"}
+        boxShadow={state.isChecked ? "outline" : "none"}
         flex="1"
         minH="100px"
         fontSize="20px"
@@ -36,4 +38,4 @@ const FormCustomRadio = forwardRef<
   );
 });
 
-export default FormCustomRadio;
+export default FormCustomCheckbox;

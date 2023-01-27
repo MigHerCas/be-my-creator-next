@@ -6,16 +6,20 @@ import Layout from "@layout/Layout";
 import type { NextPageWithLayout } from "@pages/_app";
 import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
+import nProgress from "nprogress";
 import type { ReactElement } from "react";
 import { useEffect, useState } from "react";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 
+import FormCheckboxGroup from "./modules/FormCheckboxGroup";
 import FormHeader from "./modules/FormHeader";
 import FormInputGroup from "./modules/FormInputGroup";
 import FormRadioGroup from "./modules/FormRadioGroup";
 import FormStepControl from "./modules/FormStepControls";
 import FormStepIndicator from "./modules/FormStepIndicator";
+
+const SUCCESS_PATH = "/success";
 
 const NewProjectView: NextPageWithLayout = () => {
   const router = useRouter();
@@ -26,35 +30,42 @@ const NewProjectView: NextPageWithLayout = () => {
     if (colorMode === "light") toggleColorMode();
   }, [colorMode, toggleColorMode]);
 
+  const defaultValues = {
+    name: "",
+    email: "",
+    test: [],
+    platforms: "Instagram",
+    teamSize: "1-5",
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } as Record<keyof FormFields, any>;
+
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
     control,
     trigger,
     clearErrors,
   } = useForm<FormFields>({
-    defaultValues: {
-      name: "",
-      email: "",
-      platforms: "Instagram",
-      teamSize: "1-5",
-    },
+    defaultValues,
   });
 
   const onSubmit: SubmitHandler<FormFields> = async (data) => {
+    nProgress.start();
     const { createClient } = await import("@supabase/supabase-js");
     const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
     await insertLead(supabase, {
       name: data.name,
       email: data.email,
       config: {
+        test: data.test,
         platforms: data.platforms,
         teamSize: data.teamSize,
       },
     });
 
-    router.push("/success");
+    router.push(SUCCESS_PATH);
   };
 
   const formStepsContent = [
@@ -67,28 +78,46 @@ const NewProjectView: NextPageWithLayout = () => {
           name="platforms"
           label="Platforms"
           control={control}
-          defaultValue="Instagram"
+          defaultValue={defaultValues.platforms}
+          errorMessage={errors.platforms?.message}
           options={["Instagram", "Tiktok", "Twitter"]}
         />
       ),
     },
     {
-      id: "teamSize",
+      id: "test",
       step: 2,
+      component: (
+        <FormCheckboxGroup
+          key="test"
+          name="test"
+          label="Test"
+          defaultValue={defaultValues.test}
+          control={control}
+          setValue={setValue}
+          errorMessage={errors.test?.message}
+          options={["1", "2", "3", "4", "5"]}
+        />
+      ),
+    },
+    {
+      id: "teamSize",
+      step: 3,
       component: (
         <FormRadioGroup
           key="teamSize"
           name="teamSize"
           label="Team size"
           control={control}
-          defaultValue="1-5"
+          defaultValue={defaultValues.teamSize}
+          errorMessage={errors.teamSize?.message}
           options={["1-5", "10-20", "+20"]}
         />
       ),
     },
     {
       id: "name",
-      step: 3,
+      step: 4,
       component: (
         <FormInputGroup
           label="Let's start with the name of your brand"
@@ -105,7 +134,7 @@ const NewProjectView: NextPageWithLayout = () => {
     },
     {
       id: "email",
-      step: 4,
+      step: 5,
       component: (
         <FormInputGroup
           label="Which email could we use to contact you?"
