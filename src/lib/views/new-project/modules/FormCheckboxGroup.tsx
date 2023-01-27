@@ -1,8 +1,8 @@
 import {
   Flex,
   FormControl,
+  FormErrorMessage,
   FormLabel,
-  Text,
   useCheckboxGroup,
 } from "@chakra-ui/react";
 import type { FormFields } from "@database/Store";
@@ -19,10 +19,14 @@ interface Props {
   defaultValue: Array<string | number>;
   setValue: UseFormSetValue<FormFields>;
   control: Control<FormFields>;
+  errorMessage?: string;
 }
 
 const FormCheckboxGroup = forwardRef<HTMLInputElement, Props>(
-  ({ name, label, control, setValue, options, defaultValue }, ref) => {
+  (
+    { name, label, control, setValue, options, defaultValue, errorMessage },
+    ref
+  ) => {
     const { value, getCheckboxProps } = useCheckboxGroup({
       defaultValue,
     });
@@ -34,12 +38,11 @@ const FormCheckboxGroup = forwardRef<HTMLInputElement, Props>(
     }, [setValue, value]);
 
     return (
-      <FormControl mx="auto" ref={ref}>
+      <FormControl mx="auto" ref={ref} isInvalid={Boolean(errorMessage)}>
         <FormLabel fontSize="24px" mb="20px">
           {label}
         </FormLabel>
 
-        <Text>The selected checkboxes are: {value.sort().join(" and ")}</Text>
         <Flex flexDir={["column", null, "row"]} gap={4}>
           {options.map((optionValue) => {
             const checkbox = getCheckboxProps({ value: optionValue });
@@ -47,6 +50,10 @@ const FormCheckboxGroup = forwardRef<HTMLInputElement, Props>(
               <Controller
                 name={name}
                 control={control}
+                rules={{
+                  required: "Please select one option at least",
+                  minLength: 1,
+                }}
                 defaultValue={defaultValue}
                 render={() => (
                   <FormCustomCheckbox key={optionValue} {...checkbox}>
@@ -57,6 +64,9 @@ const FormCheckboxGroup = forwardRef<HTMLInputElement, Props>(
             );
           })}
         </Flex>
+        {errorMessage ? (
+          <FormErrorMessage>{errorMessage}</FormErrorMessage>
+        ) : null}
       </FormControl>
     );
   }
