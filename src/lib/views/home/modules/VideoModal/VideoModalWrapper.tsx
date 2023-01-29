@@ -7,6 +7,7 @@ import {
 } from "@chakra-ui/react";
 import { themeColors } from "@helpers/ui-values";
 import type { FC, PropsWithChildren } from "react";
+import { use100vh } from "react-div-100vh";
 
 interface Props {
   isOpen: boolean;
@@ -18,6 +19,7 @@ const VideoModalWrapper: FC<PropsWithChildren<Props>> = ({
   isOpen,
   onClose,
 }) => {
+  const height = use100vh();
   return (
     <Modal
       size="full"
@@ -37,7 +39,7 @@ const VideoModalWrapper: FC<PropsWithChildren<Props>> = ({
         pos="relative"
         isolation="isolate"
         borderRadius="20px"
-        maxH="100vh"
+        maxH={height || "100vh"}
         bgColor="transparent"
         maxW="100vw"
       >

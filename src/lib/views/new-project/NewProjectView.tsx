@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import nProgress from "nprogress";
 import type { ReactElement } from "react";
 import { useEffect, useState } from "react";
+import { use100vh } from "react-div-100vh";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 
@@ -25,6 +26,7 @@ const NewProjectView: NextPageWithLayout = () => {
   const router = useRouter();
   const { colorMode, toggleColorMode } = useColorMode();
   const [currentStep, setCurrentStep] = useState(1);
+  const height = use100vh();
 
   useEffect(() => {
     if (colorMode === "light") toggleColorMode();
@@ -173,7 +175,7 @@ const NewProjectView: NextPageWithLayout = () => {
         mx={["-30px", null, null, null, "initial"]}
         my={[0, null, null, null, "auto"]}
         p={["30px", null, "50px", "60px"]}
-        minHeight={["100vh", null, null, null, "0"]}
+        minHeight={[height || "100vh", null, null, null, "0"]}
         borderRadius={[0, null, null, null, "45px"]}
       >
         {/* Header (title and description) */}
