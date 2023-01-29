@@ -17,7 +17,7 @@ const NewCallView: NextPageWithLayout = () => {
 
   return (
     <>
-      <NextSeo title="New project" />
+      <NextSeo title="Book a call with us | BeMyCreator" />
       <Flex
         className="glassmorphic--light"
         flexDir="column"

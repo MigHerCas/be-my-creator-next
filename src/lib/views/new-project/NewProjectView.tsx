@@ -159,7 +159,7 @@ const NewProjectView: NextPageWithLayout = () => {
 
   return (
     <>
-      <NextSeo title="New project" />
+      <NextSeo title="Create your first campaign | BeMyCreator" />
 
       <Flex
         as="form"
