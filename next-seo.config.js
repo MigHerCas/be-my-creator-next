@@ -18,7 +18,7 @@ const defaultSEOConfig = {
     site_name: "BeMyCreator",
   },
   twitter: {
-    handle: "@sozonome",
+    handle: "@bemycreator",
     cardType: "summary_large_image",
   },
 };
