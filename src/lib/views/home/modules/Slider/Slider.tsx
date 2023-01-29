@@ -23,7 +23,15 @@ const SliderTrack: FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Flex gap="20px" maxW="100vw" overflow="auto" px="20px">
+    <Flex
+      gap="20px"
+      maxW="100vw"
+      overflowX="auto"
+      sx={{
+        "-webkit-overflow-scrolling": "touch",
+      }}
+      px="20px"
+    >
       {SOURCE_LIST.map(({ id, videoUrl, posterUrl }) => {
         return (
           <SliderCard
