@@ -19,7 +19,7 @@ import type { ReactElement } from "react";
 const BlogView: NextPageWithLayout = () => {
   return (
     <Box w="full" as="article">
-      <NextSeo title="Blog post" />
+      <NextSeo title="Blog post | BeMyCreator" />
       {/* Post title and meta */}
       <Box
         itemScope

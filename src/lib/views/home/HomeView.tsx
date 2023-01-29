@@ -23,7 +23,7 @@ const HomeView: NextPageWithLayout = () => {
 
   return (
     <>
-      <NextSeo title="Home" />
+      <NextSeo title="Homepage | BeMyCreator" />
       <Hero />
       <Slider />
       <Steps />
