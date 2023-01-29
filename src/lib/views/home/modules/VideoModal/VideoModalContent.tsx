@@ -2,6 +2,7 @@ import { Flex, Box, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import { themeColors } from "@helpers/ui-values";
 import type { FC, PropsWithChildren } from "react";
+import { use100vh } from "react-div-100vh";
 
 import VideoModalDrawer from "./VideoModalDrawer";
 
@@ -15,6 +16,7 @@ const VideoModalContent: FC<PropsWithChildren<Props>> = ({
   onClose,
   children,
 }) => {
+  const height = use100vh();
   const circleBackgroundStyles = {
     content: "''",
     position: "absolute",
@@ -30,7 +32,12 @@ const VideoModalContent: FC<PropsWithChildren<Props>> = ({
   };
 
   return (
-    <Flex w="100vw" h="100vh" justifyContent="space-between" overflow="hidden">
+    <Flex
+      w="100vw"
+      h={height || "100vh"}
+      justifyContent="space-between"
+      overflow="hidden"
+    >
       <Flex
         pos="relative"
         py={0}
@@ -46,6 +53,8 @@ const VideoModalContent: FC<PropsWithChildren<Props>> = ({
         <Box
           pos="relative"
           maxW="406px"
+          borderRadius="20px"
+          bgColor="gray.200"
           zIndex={2}
           _before={circleBackgroundStyles}
         >
