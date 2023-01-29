@@ -2,18 +2,20 @@ import { Box, Divider, Fade, Flex, Heading, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import { themeColors } from "@helpers/ui-values";
 import type { FC } from "react";
+import { use100vh } from "react-div-100vh";
 
 interface Props {
   isOpen: boolean;
 }
 
 const VideoModalDrawer: FC<Props> = ({ isOpen }) => {
+  const height = use100vh();
   return (
     <Fade in={isOpen}>
       <Box
         width="500px"
         flexShrink={0}
-        height="100vh"
+        height={height || "100vh"}
         display={{ base: "none", "2xl": "block" }}
         bgColor="white"
         zIndex={4}
