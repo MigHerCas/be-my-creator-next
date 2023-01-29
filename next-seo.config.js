@@ -11,7 +11,7 @@ const defaultSEOConfig = {
     description: "Your UGC agency for brands and creators",
     images: [
       {
-        url: "https://xudvhxwolsxldijaphhq.supabase.co/storage/v1/object/sign/main-bucket/images/video-capture-9275.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtYWluLWJ1Y2tldC9pbWFnZXMvdmlkZW8tY2FwdHVyZS05Mjc1LnBuZyIsImlhdCI6MTY3NDk4Mzc1MiwiZXhwIjoxNzA2NTE5NzUyfQ.9v6-eHALF8ilenK7N7OXOJmckPSxk-xcWQsV1S93Fs4&t=2023-01-29T09%3A15%3A52.980Z",
+        url: "https://xudvhxwolsxldijaphhq.supabase.co/storage/v1/object/sign/main-bucket/images/open-graph.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtYWluLWJ1Y2tldC9pbWFnZXMvb3Blbi1ncmFwaC5wbmciLCJpYXQiOjE2NzQ5ODQ5ODEsImV4cCI6MTcwNjUyMDk4MX0.oJdlcmnxC92YHmhfkQfaIm_YqclXU6TKtJKQyhmcjGE&t=2023-01-29T09%3A36%3A21.871Z",
         alt: "bemycreator.com og-image",
       },
     ],
