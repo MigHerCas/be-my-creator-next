@@ -10,7 +10,7 @@ import { Minus, Plus } from "react-feather";
 
 interface Props {
   title: string;
-  content: string;
+  content: React.ReactNode;
 }
 
 const FAQItem: FC<Props> = ({ title, content }) => {
