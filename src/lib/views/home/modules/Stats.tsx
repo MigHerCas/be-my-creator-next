@@ -27,18 +27,18 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
     },
     {
       startValue: 1,
-      endValue: 11,
+      endValue: 28,
       leftSideOperator: "x",
       rightSideOperator: "",
-      title: "Added time on site",
+      title: `Increase the "Add to cart" rate`,
       icon: <Clock stroke={themeColors.pistache} />,
     },
     {
       startValue: 1,
-      endValue: 18,
-      leftSideOperator: "+",
+      endValue: 92,
+      leftSideOperator: "",
       rightSideOperator: "%",
-      title: "Engagement rate",
+      title: "consumers trust peer recommendations",
       icon: <ThumbsUp stroke={themeColors.pistache} />,
     },
   ] as Array<StatItemContent>;
@@ -131,7 +131,7 @@ const Stats: FC = () => {
         mb="60px"
       >
         <Heading maxW="25ch" as="h2" mb={0}>
-          Make the Most of Every Single Site Visit with{" "}
+          Run ads using the creator&apos;s handle with{" "}
           <b style={{ color: themeColors.primary }}>BeMyCreator</b>
         </Heading>
         <CTA href="/new-project" variant="secondary" icon="plus">
