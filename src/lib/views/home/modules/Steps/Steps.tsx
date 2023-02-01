@@ -11,17 +11,17 @@ const Steps: FC = () => {
 
   const content = [
     {
-      heading: "Build your project",
+      heading: "Choose the type of content for your brand",
       description: sampleDescription,
       icon: <Tool stroke={themeColors.pistache} />,
     },
     {
-      heading: "Match with creators",
+      heading: "Specify length and format",
       description: sampleDescription,
       icon: <Zap stroke={themeColors.pistache} />,
     },
     {
-      heading: "Get your content!",
+      heading: "Get your content within 7 days!",
       description: sampleDescription,
       icon: <DownloadCloud stroke={themeColors.pistache} />,
     },
@@ -36,7 +36,7 @@ const Steps: FC = () => {
           mb={["30px", "40px", null, "60px"]}
           textAlign="center"
         >
-          Create your first campaign for free
+          How it works?
         </Heading>
       </Center>
 
