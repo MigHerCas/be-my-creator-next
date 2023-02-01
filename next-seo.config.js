@@ -2,7 +2,7 @@
 const defaultSEOConfig = {
   title: "Be My Creator",
   titleTemplate: "%s | UGC",
-  defaultTitle: "nextarter-chakra",
+  defaultTitle: "BeMyCreator | Your UGC agency",
   description: "Your UGC agency",
   canonical: "https://bemycreator.com",
   openGraph: {
@@ -18,7 +18,7 @@ const defaultSEOConfig = {
     site_name: "BeMyCreator",
   },
   twitter: {
-    handle: "@bemycreator",
+    handle: "@Bemycreator",
     cardType: "summary_large_image",
   },
 };
