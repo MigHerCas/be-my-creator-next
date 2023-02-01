@@ -6,23 +6,21 @@ import { DownloadCloud, Tool, Zap } from "react-feather";
 import styles from "./styles.module.css";
 
 const Steps: FC = () => {
-  const sampleDescription =
-    "Duis mollis, est non commodo luctus, nisi erat porttitor ligula";
-
   const content = [
     {
       heading: "Choose the type of content for your brand",
-      description: sampleDescription,
+      description: "Specify what kind of content your brand needs",
       icon: <Tool stroke={themeColors.pistache} />,
     },
     {
-      heading: "Specify length and format",
-      description: sampleDescription,
+      heading: "Pick your Creators within our catalog",
+      description:
+        "In less than 3 days you will receive UGC creator's portfolios to choose",
       icon: <Zap stroke={themeColors.pistache} />,
     },
     {
-      heading: "Get your content within 7 days!",
-      description: sampleDescription,
+      heading: "Boost Your Sales",
+      description: "Our team will manage your Ads to convert more",
       icon: <DownloadCloud stroke={themeColors.pistache} />,
     },
   ];
