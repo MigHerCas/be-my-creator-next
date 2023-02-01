@@ -45,7 +45,7 @@ const Steps: FC = () => {
         <Flex
           as="ol"
           flexDir={["column", null, null, "row"]}
-          alignItems="center"
+          alignItems={["center", null, null, "stretch"]}
           listStyleType="none"
           gap="30px"
           wrap="wrap"
