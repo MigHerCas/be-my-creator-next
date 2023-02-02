@@ -1,6 +1,7 @@
 import {
   FormControl,
   FormLabel,
+  Text,
   Flex,
   useRadioGroup,
   FormErrorMessage,
@@ -15,6 +16,7 @@ import FormCustomRadio from "./FormCustomRadio";
 interface Props {
   name: keyof FormFields;
   label: string;
+  description?: string;
   options: Array<string>;
   control: Control<FormFields>;
   defaultValue: string;
@@ -22,7 +24,10 @@ interface Props {
 }
 
 const FormRadioGroup = forwardRef<HTMLInputElement, Props>(
-  ({ name, label, control, defaultValue, options, errorMessage }, ref) => {
+  (
+    { name, label, description, control, defaultValue, options, errorMessage },
+    ref
+  ) => {
     const { field } = useController({
       name,
       control,
@@ -44,6 +49,13 @@ const FormRadioGroup = forwardRef<HTMLInputElement, Props>(
         <FormLabel fontSize="24px" mb="20px">
           {label}
         </FormLabel>
+
+        {/* Description (if needed) */}
+        {description ? (
+          <Text size="md" mb="30px">
+            {description}
+          </Text>
+        ) : null}
 
         <Flex flexDir={["column", null, "row"]} gap={4} {...group}>
           {options.map((optionValue) => {
