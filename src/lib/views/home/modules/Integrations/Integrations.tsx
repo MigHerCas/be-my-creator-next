@@ -92,7 +92,7 @@ const Integrations: FC = () => {
             key={id}
             wrap="wrap"
             padding="20px"
-            gap="15px"
+            gap={["15px", null, null, null, "10px", "15px"]}
             alignItems="center"
             borderRadius="20px"
             borderWidth="1px"
