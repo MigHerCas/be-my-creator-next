@@ -30,7 +30,7 @@ const CatchyBanner: FC = () => {
         New
       </Badge>
       <Text size="sm" mb={0} fontWeight={600}>
-        Startups can get up to $25k in credits
+        Are you an agency? Let&apos;s work together
       </Text>
     </Flex>
   );

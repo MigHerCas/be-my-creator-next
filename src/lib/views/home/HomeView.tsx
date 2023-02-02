@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import { useEffect } from "react";
 
 import Hero from "./modules/Hero/Hero";
-import Integrations from "./modules/Integrations";
+import Integrations from "./modules/Integrations/Integrations";
 import Slider from "./modules/Slider/Slider";
 import Steps from "./modules/Steps/Steps";
 import SuccessStories from "./modules/SuccessStories/SuccessStories";

@@ -7,19 +7,18 @@ import { useInView } from "react-intersection-observer";
 import styles from "./styles.module.css";
 
 const leftSideItems = [
-  "Affordable, monthly pricing",
+  "Control over creator’s insights",
   "Fast booking and delivery",
   "Flexible and scalable",
-  "Quality vetted, experienced creators",
+  "Gain access to quality vetted creators",
   "100% usage rights included",
-  "Proprietary matching technology",
 ];
 
 const rightSideItems = [
-  "Expensive, marked-up pricing",
+  "Don’t have access to their accounts",
   "Long slow briefing and delivery",
   "Inflexible and slow to scale",
-  "Find creators on ad-hoc project basis",
+  "Don’t always deliver best quality",
   "Usage rights variable and unclear",
   "Manual co-ordination process",
 ];
@@ -100,7 +99,7 @@ const Versus: FC = () => {
             mb="20px"
             opacity="0.6"
           >
-            Others
+            Influencers
           </Heading>
           <VStack
             as="ul"

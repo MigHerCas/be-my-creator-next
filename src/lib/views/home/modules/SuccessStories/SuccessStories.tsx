@@ -9,8 +9,9 @@ const SuccessStories: FC = () => {
     <Box as="section" py={SECTION_VERTICAL_SPACING} pos="relative">
       <Center mb={["30px", null, "60px", null, "90px"]}>
         <Heading maxW="20ch" size="lg" textAlign="center" mb={0}>
-          Trusted by <span style={{ color: themeColors.primary }}>leaders</span>{" "}
-          of the creative community
+          Let creators{" "}
+          <span style={{ color: themeColors.primary }}>empower</span> your brand
+          with UGC
         </Heading>
       </Center>
       <ReviewBox />

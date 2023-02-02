@@ -30,15 +30,14 @@ const Hero: FC = () => {
           mt={["auto", null, 10]}
           mx={["auto", null, null, 0]}
         >
-          Instantly connect with UGC creators
+          Boost your sales with UGC creators
         </Heading>
         <Text
           maxW={["25ch", "30ch", null, "40ch"]}
           mb={8}
           mx={["auto", null, null, 0]}
         >
-          We make it easy for you to source and display quality user-generated
-          content videos
+          Empowering creators, elevating brands
         </Text>
 
         <Flex
@@ -48,7 +47,7 @@ const Hero: FC = () => {
           wrap="wrap"
         >
           <CTA href="/new-project" variant="secondary" icon="plus" showDot>
-            Start a project now
+            Find your creator
           </CTA>
           <CTA href="/new-call" variant="primary" icon="arrow">
             Book a call with us

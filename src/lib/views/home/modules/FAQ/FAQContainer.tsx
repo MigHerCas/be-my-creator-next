@@ -69,7 +69,7 @@ const FAQContainer: FC = () => {
             <TabPanel p={0} key={id}>
               <Accordion
                 allowMultiple
-                defaultIndex={[0, 3, 4]}
+                defaultIndex={[0, 1, 2]}
                 display="grid"
                 gridTemplateColumns={["1fr", null, null, "1fr 1fr"]}
                 gap="30px"

@@ -72,7 +72,7 @@ const Slider: FC = () => {
           mb={["30px", "40px", null, "60px"]}
           textAlign="center"
         >
-          Check some examples
+          What can you do with BeMyCreator?
         </Heading>
       </Center>
 
