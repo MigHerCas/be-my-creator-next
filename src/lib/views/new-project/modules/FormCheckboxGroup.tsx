@@ -15,8 +15,8 @@ import FormCustomCheckbox from "./FormCustomCheckbox";
 interface Props {
   name: keyof FormFields;
   label: string;
-  options: Array<string | number>;
-  defaultValue: Array<string | number>;
+  options: Array<string>;
+  defaultValue: Array<string>;
   setValue: UseFormSetValue<FormFields>;
   control: Control<FormFields>;
   errorMessage?: string;
@@ -32,10 +32,10 @@ const FormCheckboxGroup = forwardRef<HTMLInputElement, Props>(
     });
 
     useEffect(() => {
-      setValue("test", value, {
+      setValue(name, value as string[], {
         shouldValidate: value.length > 0,
       });
-    }, [setValue, value]);
+    }, [name, setValue, value]);
 
     return (
       <FormControl mx="auto" ref={ref} isInvalid={Boolean(errorMessage)}>
@@ -52,7 +52,10 @@ const FormCheckboxGroup = forwardRef<HTMLInputElement, Props>(
                 control={control}
                 rules={{
                   required: "Please select one option at least",
-                  minLength: 1,
+                  minLength: {
+                    value: 1,
+                    message: "Please select one option at least",
+                  },
                 }}
                 defaultValue={defaultValue}
                 render={() => (
