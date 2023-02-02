@@ -35,11 +35,10 @@ const NewProjectView: NextPageWithLayout = () => {
   const defaultValues = {
     name: "",
     email: "",
-    test: [],
-    platforms: "Instagram",
-    teamSize: "1-5",
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } as Record<keyof FormFields, any>;
+    whitelistedAds: "Yes",
+    budget: "$500 - $2000",
+    contentType: [],
+  } as FormFields;
 
   const {
     register,
@@ -57,14 +56,12 @@ const NewProjectView: NextPageWithLayout = () => {
     nProgress.start();
     const { createClient } = await import("@supabase/supabase-js");
     const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    const { name, email, ...config } = data;
     await insertLead(supabase, {
-      name: data.name,
-      email: data.email,
-      config: {
-        test: data.test,
-        platforms: data.platforms,
-        teamSize: data.teamSize,
-      },
+      name,
+      email,
+      config,
     });
 
     router.push(SUCCESS_PATH);
@@ -72,48 +69,49 @@ const NewProjectView: NextPageWithLayout = () => {
 
   const formStepsContent = [
     {
-      id: "platforms",
+      id: "contentType",
       step: 1,
       component: (
-        <FormRadioGroup
-          key="platforms"
-          name="platforms"
-          label="Platforms"
+        <FormCheckboxGroup
+          key="contentType"
+          name="contentType"
+          setValue={setValue}
+          label="What kind of content are you looking for?"
           control={control}
-          defaultValue={defaultValues.platforms}
-          errorMessage={errors.platforms?.message}
-          options={["Instagram", "Tiktok", "Twitter"]}
+          defaultValue={defaultValues.contentType}
+          errorMessage={errors.contentType?.message}
+          options={["Explainer", "Testimonial", "Unboxing", "Other"]}
         />
       ),
     },
     {
-      id: "test",
+      id: "whitelistedAds",
       step: 2,
       component: (
-        <FormCheckboxGroup
-          key="test"
-          name="test"
-          label="Test"
-          defaultValue={defaultValues.test}
+        <FormRadioGroup
+          key="whitelistedAds"
+          name="whitelistedAds"
+          label="Are you interested on Whitelisted Ads?"
+          description="Creator Licensing (UGC Whitelisting) is the process of a creator allowing a brand to run ads from their account. It appears as if the content is coming directly from the creator, which provides greater social proof and authenticity."
           control={control}
-          setValue={setValue}
-          errorMessage={errors.test?.message}
-          options={["1", "2", "3", "4", "5"]}
+          defaultValue={defaultValues.whitelistedAds}
+          errorMessage={errors.whitelistedAds?.message}
+          options={["Yes", "No"]}
         />
       ),
     },
     {
-      id: "teamSize",
+      id: "budget",
       step: 3,
       component: (
         <FormRadioGroup
-          key="teamSize"
-          name="teamSize"
-          label="Team size"
+          key="budget"
+          name="budget"
+          label="What's your budget?"
           control={control}
-          defaultValue={defaultValues.teamSize}
-          errorMessage={errors.teamSize?.message}
-          options={["1-5", "10-20", "+20"]}
+          defaultValue={defaultValues.budget}
+          errorMessage={errors.budget?.message}
+          options={["$200 - $500", "$500 - $2000", "I don't know yet"]}
         />
       ),
     },
@@ -122,7 +120,7 @@ const NewProjectView: NextPageWithLayout = () => {
       step: 4,
       component: (
         <FormInputGroup
-          label="Let's start with the name of your brand"
+          label="What's the name of your brand"
           type="text"
           placeholder="Your name brand"
           errorMessage={errors.name?.message}
@@ -157,6 +155,7 @@ const NewProjectView: NextPageWithLayout = () => {
     component: JSX.Element;
   }>;
 
+  const currentStepContent = formStepsContent[currentStep - 1];
   return (
     <>
       <NextSeo title="Create your first campaign | BeMyCreator" />
@@ -180,21 +179,23 @@ const NewProjectView: NextPageWithLayout = () => {
       >
         {/* Header (title and description) */}
         <FormHeader />
+
         {/* Steps indicator (green bar) */}
         <FormStepIndicator
           numberOfSteps={formStepsContent.length}
           currentStep={currentStep}
         />
+
         {/* Form step content */}
         <Box pos="relative" w="full">
           <Flex minHeight={["none", null, "160px"]}>
-            {formStepsContent[currentStep - 1].component}
+            {currentStepContent.component}
           </Flex>
         </Box>
         {/* Form controls (prev and next button) */}
         <FormStepControl
           currentStep={{
-            id: formStepsContent[currentStep - 1].id,
+            id: currentStepContent.id,
             step: currentStep,
           }}
           setCurrentStep={setCurrentStep}
