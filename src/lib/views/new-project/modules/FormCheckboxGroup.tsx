@@ -48,6 +48,7 @@ const FormCheckboxGroup = forwardRef<HTMLInputElement, Props>(
             const checkbox = getCheckboxProps({ value: optionValue });
             return (
               <Controller
+                key={optionValue.toString()}
                 name={name}
                 control={control}
                 rules={{
