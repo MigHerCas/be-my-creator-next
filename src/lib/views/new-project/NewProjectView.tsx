@@ -189,7 +189,7 @@ const NewProjectView: NextPageWithLayout = () => {
             <Flex
               key={id}
               minHeight={["none", null, "160px"]}
-              display={step === currentStep ? "flex" : "none"}
+              hidden={step !== currentStep}
             >
               {component}
             </Flex>
