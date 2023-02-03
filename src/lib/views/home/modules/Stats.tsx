@@ -38,7 +38,7 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
       endValue: 92,
       leftSideOperator: "",
       rightSideOperator: "%",
-      title: "consumers trust peer recommendations",
+      title: "Of consumers trust peer recommendations",
       icon: <ThumbsUp stroke={themeColors.pistache} />,
     },
   ] as Array<StatItemContent>;
