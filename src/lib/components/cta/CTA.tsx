@@ -1,9 +1,9 @@
-import { Link, useColorMode } from "@chakra-ui/react";
 import type { StyleProps } from "@chakra-ui/react";
+import { Link, useColorMode } from "@chakra-ui/react";
 import { themeColors } from "@helpers/ui-values";
 import NextLink from "next/link";
-import type { FC, MouseEventHandler, PropsWithChildren } from "react";
-import { ArrowRight, ArrowLeft, ArrowUpRight, PlusCircle } from "react-feather";
+import type { MouseEventHandler, PropsWithChildren } from "react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, PlusCircle } from "react-feather";
 
 // Styles (needed for hover icon effect)
 import styles from "./styles.module.css";
@@ -37,16 +37,16 @@ const baseStyles: (isSmall: boolean) => StyleProps = (isSmall) => {
   };
 };
 
-const CTA: FC<PropsWithChildren<Props>> = ({
+const CTA = ({
   href,
   variant,
   icon,
   isSmall = false,
   onClick,
   showDot = false,
-  children,
   customStyles,
-}) => {
+  children,
+}: PropsWithChildren<Props>) => {
   const { colorMode } = useColorMode();
   const colorConfig = {
     primary:

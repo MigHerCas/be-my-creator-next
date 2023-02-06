@@ -1,5 +1,4 @@
 import { themeColors } from "@helpers/ui-values";
-import type { FC } from "react";
 
 import styles from "./styles.module.css";
 
@@ -8,7 +7,7 @@ interface Props {
   isInverted?: boolean;
 }
 
-const Blob: FC<Props> = ({ type, isInverted = false }) => {
+const Blob = ({ type, isInverted = false }: Props) => {
   const variants = [
     <path
       fill={themeColors.primary}

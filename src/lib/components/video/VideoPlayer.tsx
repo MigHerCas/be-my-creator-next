@@ -1,4 +1,4 @@
-import type { FC, VideoHTMLAttributes } from "react";
+import type { VideoHTMLAttributes } from "react";
 
 import styles from "./styles.module.css";
 
@@ -7,7 +7,7 @@ interface Props {
   options?: VideoHTMLAttributes<HTMLVideoElement>;
 }
 
-const VideoPlayer: FC<Props> = ({ source, options = {} }) => {
+const VideoPlayer = ({ source, options = {} }: Props) => {
   const defaultOptions = {
     autoPlay: true,
     muted: true,

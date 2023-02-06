@@ -3,9 +3,8 @@ import CTA from "@components/cta/CTA";
 import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
 import CatchyBanner from "@views/home/modules/CatchyBanner";
 import HeroPlayer from "@views/home/modules/Hero/HeroPlayer";
-import type { FC } from "react";
 
-const Hero: FC = () => {
+const Hero = () => {
   return (
     <Grid
       as="section"

@@ -1,6 +1,5 @@
 import { Box, Flex, Heading } from "@chakra-ui/react";
 import { themeColors } from "@helpers/ui-values";
-import type { FC } from "react";
 
 interface Props {
   /**
@@ -12,7 +11,7 @@ interface Props {
   numberOfSteps: number;
 }
 
-const FormStepIndicator: FC<Props> = ({ currentStep, numberOfSteps }) => {
+const FormStepIndicator = ({ currentStep, numberOfSteps }: Props) => {
   const activeColor = themeColors.pistache;
   const defaultColor = themeColors.black;
   const isStepActive = (stepIndex: number) => {

@@ -1,9 +1,8 @@
 import { Box } from "@chakra-ui/react";
 import Blob from "@components/blob/Blob";
-import type { FC } from "react";
 import { use100vh } from "react-div-100vh";
 
-const FixedBlobs: FC = () => {
+const FixedBlobs = () => {
   const height = use100vh();
 
   return (

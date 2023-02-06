@@ -1,6 +1,5 @@
 import { Box, Flex, Grid, Heading, Text } from "@chakra-ui/react";
 import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
-import type { FC } from "react";
 
 import {
   IconAmazonIntegration,
@@ -11,7 +10,7 @@ import {
   IconYoutubeIntegration,
 } from "./icons";
 
-const Integrations: FC = () => {
+const Integrations = () => {
   const integrationsList = [
     {
       id: "1",

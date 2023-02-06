@@ -1,6 +1,5 @@
 import { Box, Flex, Heading, Text, VStack } from "@chakra-ui/react";
 import { SECTION_VERTICAL_SPACING, themeColors } from "@helpers/ui-values";
-import type { FC } from "react";
 import { Check, X } from "react-feather";
 import { useInView } from "react-intersection-observer";
 
@@ -23,7 +22,7 @@ const rightSideItems = [
   "Manual co-ordination process",
 ];
 
-const Versus: FC = () => {
+const Versus = () => {
   const { ref, inView } = useInView({
     threshold: 0.8,
     triggerOnce: true,

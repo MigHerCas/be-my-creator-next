@@ -2,7 +2,6 @@ import { Box, Center, Flex, Heading, useDisclosure } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
 import dynamic from "next/dynamic";
-import type { FC } from "react";
 import { useState } from "react";
 
 import SliderCard from "./SliderCard";
@@ -17,7 +16,7 @@ const VideoModalWrapper = dynamic(
   () => import("../VideoModal/VideoModalWrapper")
 );
 
-const SliderTrack: FC = () => {
+const SliderTrack = () => {
   const [currentSource, setCurrentSource] = useState("");
   const [currentPoster, setCurrentPoster] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -57,7 +56,7 @@ const SliderTrack: FC = () => {
   );
 };
 
-const Slider: FC = () => {
+const Slider = () => {
   return (
     <Box
       as="section"

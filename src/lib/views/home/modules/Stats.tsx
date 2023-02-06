@@ -1,7 +1,6 @@
 import { Box, Flex, GridItem, Heading, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import { SECTION_VERTICAL_SPACING, themeColors } from "@helpers/ui-values";
-import type { FC } from "react";
 import CountUp from "react-countup";
 import { Clock, DollarSign, ThumbsUp } from "react-feather";
 import { useInView } from "react-intersection-observer";
@@ -102,7 +101,7 @@ const StatsItems = ({ inView }: { inView: boolean }) => {
   );
 };
 
-const Stats: FC = () => {
+const Stats = () => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     rootMargin: "-20%",

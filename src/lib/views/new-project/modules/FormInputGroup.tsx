@@ -6,7 +6,6 @@ import {
   Input,
 } from "@chakra-ui/react";
 import { themeColors } from "@helpers/ui-values";
-import type { FC } from "react";
 import type { UseFormRegisterReturn } from "react-hook-form";
 
 interface Props {
@@ -19,7 +18,7 @@ interface Props {
   clearErrorCallback: () => void;
 }
 
-const FormInputGroup: FC<Props> = ({
+const FormInputGroup = ({
   label,
   errorMessage,
   helperText,
@@ -27,7 +26,7 @@ const FormInputGroup: FC<Props> = ({
   placeholder,
   registerCallback,
   clearErrorCallback,
-}) => {
+}: Props) => {
   return (
     <FormControl mx="auto" isInvalid={Boolean(errorMessage)}>
       <FormLabel fontSize="24px" mb="20px">

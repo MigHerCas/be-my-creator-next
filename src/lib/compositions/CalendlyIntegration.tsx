@@ -1,7 +1,6 @@
-import type { FC } from "react";
 import { InlineWidget } from "react-calendly";
 
-const CalendlyIntegration: FC = () => {
+const CalendlyIntegration = () => {
   return (
     <InlineWidget
       url="https://calendly.com/bemycreator/30min?background_color=272727&text_color=ffffff&primary_color=00c4a2"
