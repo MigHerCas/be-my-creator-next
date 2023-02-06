@@ -12,6 +12,7 @@ type LayoutProps = {
   mainCTA?: CTAInfo;
   fullHeightMain?: boolean;
   showOnlyMain?: boolean;
+  hideBlobs?: boolean;
 };
 
 const Layout = ({
@@ -22,14 +23,15 @@ const Layout = ({
   },
   fullHeightMain = false,
   showOnlyMain = false,
+  hideBlobs = false,
 }: LayoutProps) => {
   return (
     <>
       {showOnlyMain ? null : <Header mainCTA={mainCTA} />}
       <MainContainer isFullHeight={fullHeightMain}>{children}</MainContainer>
       {showOnlyMain ? null : <Footer />}
-      <FixedBlobs />
       <WhatsAppCTA />
+      {hideBlobs ? null : <FixedBlobs />}
     </>
   );
 };

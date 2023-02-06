@@ -73,8 +73,8 @@ const Footer = () => {
             <Heading size="xs" m={0} py="6px">
               Company
             </Heading>
-            <Link as={NextLink} href="/" py="6px">
-              Landing
+            <Link as={NextLink} href="/legal/terms-and-conditions" py="6px">
+              Terms and conditions
             </Link>
             <Link as={NextLink} href="/" py="6px">
               Features
