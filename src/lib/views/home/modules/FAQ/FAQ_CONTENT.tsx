@@ -30,30 +30,23 @@ export const FAQ_CONTENT = [
       {
         title: "How does it work?",
         content: (
-          <ol style={{ listStyleType: "none", paddingLeft: "0" }}>
-            <li>
-              1. Get your referral link:
-              <p style={{ paddingLeft: "20px", margin: "10px 0" }}>
-                Contact Us and you will be signed up for our Affiliate Program
-                and get your personal referral link.
-              </p>
-            </li>
-            <li>
-              2. Get a free starter pack with tips for success
-              <p style={{ paddingLeft: "20px", margin: "10px 0" }}>
-                We&apos;ve put together some resources that you can start using
-                when referring Be My Creator.
-              </p>
-            </li>
-            <li>3. Start sharing and Earn Passive Incomes</li>
-          </ol>
+          <>
+            <p style={{ marginBottom: "10px" }}>
+              In collaboration with agencies, we offer two options:
+            </p>
+            <ol style={{ listStyleType: "none", paddingLeft: "20px" }}>
+              <li style={{ marginBottom: "10px" }}>
+                - Get 2 videos to promote your business whenever you bring a new
+                customer.
+              </li>
+              <li>
+                - Get a commission every time you bring in a new customer, if
+                they pay a subscription, you get one percent a month.
+                Commissions will depend on the plan your client chooses
+              </li>
+            </ol>
+          </>
         ),
-      },
-    ],
-    rightItems: [
-      {
-        title: "What are the conditions of your affiliate program?",
-        content: `You will earn up to $200 for every referral that makes a purchase at the end of their billing cycle. Also, the business you referred will get $100 discount for the next video.`,
       },
     ],
   },
@@ -62,14 +55,23 @@ export const FAQ_CONTENT = [
     tabTitle: "For creators",
     leftItems: [
       {
-        title: "How are creators paid?",
-        content: `BMC handles all elements of creators payouts, so you don't need to worry about it. To pay creators for their work on your campaign(s), you will add a balance to your I account by "topping up." You are only able to onboard creators if you have a sufficient balance on your account to cover the content costs; this ensures that you only pay for content which is within your budget.`,
+        title: "How much will I earn?",
+        content: `It depends on you, normally budgets are from 50-150$/video. You can work on commission as well`,
+      },
+      {
+        title: "Do I need a certain amount of followers to join Be My Creator?",
+        content: `No. All you have to do is shoot good content to get paid.`,
       },
     ],
     rightItems: [
       {
-        title: "Is there any fee applied on produced content?",
-        content: `Yes. BeMyCreator charges a fee on content produced through the platform; these costs cover our administration and labor costs, and offset the transaction fees we pay to process creator payments.`,
+        title:
+          "Can I shoot this content from my house or do I have to go to shoots?",
+        content: `You don't have to go out of your way to shoot content unless the brand has required it. If your thing is to go hiking, pack up your bag with the brand products and shoot content while you do what you love to do most. You don’t have to physically go to any “shoot”.`,
+      },
+      {
+        title: "When do I get paid for my work?",
+        content: `Payment is dropped immediately into your Paypal account as soon as your content is approved by the brands.`,
       },
     ],
   },
