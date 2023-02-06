@@ -5,7 +5,7 @@ import { DownloadCloud, Tool, Zap } from "react-feather";
 
 import styles from "./styles.module.css";
 
-const Steps: FC = () => {
+const HowItWorks: FC = () => {
   const content = [
     {
       heading: "Choose the type of content for your brand",
@@ -98,4 +98,4 @@ const Steps: FC = () => {
   );
 };
 
-export default Steps;
+export default HowItWorks;
