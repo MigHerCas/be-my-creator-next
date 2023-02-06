@@ -106,7 +106,7 @@ const FAQContainer = () => {
       {/* CTA */}
       <CTA
         variant="primary"
-        href="/new-call"
+        href="/strategy-call"
         customStyles={{ mx: "auto" }}
         icon="arrow"
       >

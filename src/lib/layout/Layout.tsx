@@ -19,7 +19,7 @@ const Layout = ({
   children,
   mainCTA = {
     text: "Book a call",
-    href: "/new-call",
+    href: "/strategy-call",
   },
   fullHeightMain = false,
   showOnlyMain = false,
