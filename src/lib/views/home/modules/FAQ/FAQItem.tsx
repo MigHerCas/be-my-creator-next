@@ -30,6 +30,7 @@ const FAQItem: FC<Props> = ({ title, content }) => {
               _hover={{ bgColor: "inherit" }}
               p="30px"
               as="div"
+              gap="20px"
               flexWrap="nowrap"
             >
               <Heading
