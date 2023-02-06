@@ -5,6 +5,7 @@ import Footer from "./modules/Footer";
 import type { CTAInfo } from "./modules/Header";
 import Header from "./modules/Header";
 import MainContainer from "./modules/MainContainer";
+import WhatsAppCTA from "./modules/WhatsAppCTA";
 
 type LayoutProps = {
   children: ReactNode;
@@ -28,6 +29,7 @@ const Layout = ({
       <MainContainer isFullHeight={fullHeightMain}>{children}</MainContainer>
       {showOnlyMain ? null : <Footer />}
       <FixedBlobs />
+      <WhatsAppCTA />
     </>
   );
 };
