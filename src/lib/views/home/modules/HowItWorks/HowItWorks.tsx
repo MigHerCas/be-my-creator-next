@@ -1,27 +1,29 @@
 import { Box, Center, Flex, Heading, Text } from "@chakra-ui/react";
 import { SECTION_VERTICAL_SPACING, themeColors } from "@helpers/ui-values";
 import type { FC } from "react";
-import { DownloadCloud, Tool, Zap } from "react-feather";
+import { MessageCircle, UserCheck, BarChart } from "react-feather";
 
 import styles from "./styles.module.css";
 
 const HowItWorks: FC = () => {
   const content = [
     {
-      heading: "Choose the type of content for your brand",
-      description: "Specify what kind of content your brand needs",
-      icon: <Tool stroke={themeColors.pistache} />,
+      heading: "Tell us your needs",
+      description:
+        "Give us information and examples of what kind of content your brand needs",
+      icon: <MessageCircle stroke={themeColors.pistache} />,
     },
     {
-      heading: "Pick your Creators within our catalog",
+      heading: "Approve our suggestions",
       description:
         "In less than 3 days you will receive UGC creator's portfolios to choose",
-      icon: <Zap stroke={themeColors.pistache} />,
+      icon: <UserCheck stroke={themeColors.pistache} />,
     },
     {
       heading: "Boost Your Sales",
-      description: "Our team will manage your Ads to convert more",
-      icon: <DownloadCloud stroke={themeColors.pistache} />,
+      description:
+        "Once you received the video, our team will manage your Ads to convert more",
+      icon: <BarChart stroke={themeColors.pistache} />,
     },
   ];
   return (
