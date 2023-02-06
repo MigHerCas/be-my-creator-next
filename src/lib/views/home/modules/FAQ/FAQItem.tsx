@@ -5,7 +5,6 @@ import {
   Heading,
   IconButton,
 } from "@chakra-ui/react";
-import type { FC } from "react";
 import { Minus, Plus } from "react-feather";
 
 interface Props {
@@ -13,7 +12,7 @@ interface Props {
   content: React.ReactNode;
 }
 
-const FAQItem: FC<Props> = ({ title, content }) => {
+const FAQItem = ({ title, content }: Props) => {
   return (
     <AccordionItem
       borderWidth="1px"

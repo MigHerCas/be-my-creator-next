@@ -12,9 +12,8 @@ import Logo from "@components/logo/Logo";
 import IconSocial from "@components/social/IconsSocial";
 import { APP_MAX_WIDTH } from "@helpers/ui-values";
 import NextLink from "next/link";
-import type { FC } from "react";
 
-const Footer: FC = () => {
+const Footer = () => {
   return (
     <Grid
       as="footer"

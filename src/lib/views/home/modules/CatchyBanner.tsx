@@ -1,8 +1,7 @@
 import { Badge, Flex, Text } from "@chakra-ui/react";
 import { themeColors } from "@helpers/ui-values";
-import type { FC } from "react";
 
-const CatchyBanner: FC = () => {
+const CatchyBanner = () => {
   return (
     <Flex
       display={["none", null, "flex"]}

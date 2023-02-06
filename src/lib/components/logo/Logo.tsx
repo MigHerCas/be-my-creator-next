@@ -1,14 +1,14 @@
 import { Link, useColorModeValue, VisuallyHidden } from "@chakra-ui/react";
 import { themeColors } from "@helpers/ui-values";
 import NextLink from "next/link";
-import type { FC, MouseEventHandler } from "react";
+import type { MouseEventHandler } from "react";
 
 interface Props {
   height?: string;
   onClickCallback?: MouseEventHandler<HTMLAnchorElement>;
 }
 
-const Logo: FC<Props> = ({ height = "90", onClickCallback = () => {} }) => {
+const Logo = ({ height = "90", onClickCallback = () => {} }: Props) => {
   const fillColor = useColorModeValue(themeColors.darkGrey, "white");
   return (
     <Link href="/" as={NextLink} onClick={onClickCallback}>

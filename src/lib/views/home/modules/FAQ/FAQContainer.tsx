@@ -11,12 +11,11 @@ import {
 } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
-import type { FC } from "react";
 
 import { FAQ_CONTENT } from "./FAQ_CONTENT";
 import FAQItem from "./FAQItem";
 
-const FAQContainer: FC = () => {
+const FAQContainer = () => {
   return (
     <Box as="section" py={SECTION_VERTICAL_SPACING}>
       {/* Heading */}
