@@ -26,6 +26,9 @@ const NewCallView: NextPageWithLayout = () => {
         gap="30px"
         mx={["-30px", null, "initial"]}
         p={["30px", null, "50px", "60px"]}
+        sx={{
+          "-webkit-overflow-scrolling": "touch",
+        }}
       >
         <Flex justifyContent="center" alignItems="center" gap={8} wrap="wrap">
           <Box

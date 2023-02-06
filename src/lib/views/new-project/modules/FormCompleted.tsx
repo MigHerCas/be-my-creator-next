@@ -14,6 +14,9 @@ const FormCompleted = () => {
       minHeight="100vh"
       justifyContent="center"
       alignItems="center"
+      sx={{
+        "-webkit-overflow-scrolling": "touch",
+      }}
     >
       <Box p={[4, null, 8]} bgColor={themeColors.primary} borderRadius="full">
         <Check width={30} height={30} />
