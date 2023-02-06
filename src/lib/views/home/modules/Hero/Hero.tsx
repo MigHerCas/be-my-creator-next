@@ -48,8 +48,8 @@ const Hero = () => {
           <CTA href="/new-project" variant="secondary" icon="plus" showDot>
             Find your creator
           </CTA>
-          <CTA href="/new-call" variant="primary" icon="arrow">
-            Book a call with us
+          <CTA href="/strategy-call" variant="primary" icon="arrow">
+            Free Strategy Call
           </CTA>
         </Flex>
       </GridItem>

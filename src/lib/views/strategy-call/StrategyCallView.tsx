@@ -9,7 +9,7 @@ import { Video } from "react-feather";
 
 import CalendlyIntegration from "lib/shared/modules/CalendlyIntegration";
 
-const NewCallView: NextPageWithLayout = () => {
+const StrategyCallView: NextPageWithLayout = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   useEffect(() => {
@@ -56,7 +56,7 @@ const NewCallView: NextPageWithLayout = () => {
   );
 };
 
-NewCallView.getLayout = function getLayout(page: ReactElement) {
+StrategyCallView.getLayout = function getLayout(page: ReactElement) {
   return (
     <Layout
       mainCTA={{
@@ -69,4 +69,4 @@ NewCallView.getLayout = function getLayout(page: ReactElement) {
   );
 };
 
-export default NewCallView;
+export default StrategyCallView;

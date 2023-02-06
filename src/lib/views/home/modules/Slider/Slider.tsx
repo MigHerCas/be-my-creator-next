@@ -89,7 +89,7 @@ const Slider = () => {
         <CTA href="/new-project" variant="secondary" icon="plus">
           Start your first project
         </CTA>
-        <CTA href="/new-call" variant="primary" icon="arrow">
+        <CTA href="/strategy-call" variant="primary" icon="arrow">
           Book a demo
         </CTA>
       </Flex>

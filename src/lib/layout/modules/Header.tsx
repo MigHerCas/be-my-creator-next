@@ -163,12 +163,12 @@ const MobileNavigation = ({
           Start your first project
         </CTA>
         <CTA
-          href="/new-call"
+          href="/strategy-call"
           variant="primary"
           icon="arrow"
-          onClick={(e) => closeMenuOnClickCallback(e, "/new-call")}
+          onClick={(e) => closeMenuOnClickCallback(e, "/strategy-call")}
         >
-          Book a call
+          Free Strategy Call
         </CTA>
       </Flex>
     </Box>
