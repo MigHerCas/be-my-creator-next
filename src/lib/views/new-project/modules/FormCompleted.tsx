@@ -1,8 +1,9 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
-import CalendlyIntegration from "@compositions/CalendlyIntegration";
 import { themeColors } from "@helpers/ui-values";
 import { Check } from "react-feather";
+
+import CalendlyIntegration from "lib/shared/modules/CalendlyIntegration";
 
 const FormCompleted = () => {
   return (
