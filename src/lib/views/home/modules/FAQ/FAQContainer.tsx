@@ -75,19 +75,29 @@ const FAQContainer: FC = () => {
                 gap="30px"
                 alignItems="flex-start"
               >
-                {[leftItems, rightItems].map((items, index) => (
-                  <Flex
-                    key={`${id}-${index === 0 ? "left" : "right"}`}
-                    flexDir="column"
-                    gap="30px"
-                  >
-                    {items.map(({ title, content }) => {
-                      return (
-                        <FAQItem key={title} title={title} content={content} />
-                      );
-                    })}
-                  </Flex>
-                ))}
+                {[leftItems, rightItems].map((items, index) => {
+                  if (!items || !items.length) {
+                    return null;
+                  }
+
+                  return (
+                    <Flex
+                      key={`${id}-${index === 0 ? "left" : "right"}`}
+                      flexDir="column"
+                      gap="30px"
+                    >
+                      {items.map(({ title, content }) => {
+                        return (
+                          <FAQItem
+                            key={title}
+                            title={title}
+                            content={content}
+                          />
+                        );
+                      })}
+                    </Flex>
+                  );
+                })}
               </Accordion>
             </TabPanel>
           ))}
