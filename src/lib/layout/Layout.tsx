@@ -1,4 +1,4 @@
-import FixedBlobs from "@compositions/FixedBlobs";
+import FixedBlobs from "@layout/modules/FixedBlobs";
 import type { ReactNode } from "react";
 
 import Footer from "./modules/Footer";

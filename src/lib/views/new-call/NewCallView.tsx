@@ -1,5 +1,4 @@
 import { Box, Flex, Heading, Text, useColorMode } from "@chakra-ui/react";
-import CalendlyIntegration from "@compositions/CalendlyIntegration";
 import { themeColors } from "@helpers/ui-values";
 import Layout from "@layout/Layout";
 import type { NextPageWithLayout } from "@pages/_app";
@@ -7,6 +6,8 @@ import { NextSeo } from "next-seo";
 import type { ReactElement } from "react";
 import { useEffect } from "react";
 import { Video } from "react-feather";
+
+import CalendlyIntegration from "lib/shared/modules/CalendlyIntegration";
 
 const NewCallView: NextPageWithLayout = () => {
   const { colorMode, toggleColorMode } = useColorMode();
