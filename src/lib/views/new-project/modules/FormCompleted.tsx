@@ -2,10 +2,9 @@ import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import CalendlyIntegration from "@compositions/CalendlyIntegration";
 import { themeColors } from "@helpers/ui-values";
-import type { FC } from "react";
 import { Check } from "react-feather";
 
-const FormCompleted: FC = () => {
+const FormCompleted = () => {
   return (
     <Flex
       fontSize="40px"

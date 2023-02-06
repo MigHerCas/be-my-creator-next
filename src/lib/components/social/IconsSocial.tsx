@@ -1,16 +1,15 @@
 import { IconButton, useColorModeValue } from "@chakra-ui/react";
 import { themeColors } from "@helpers/ui-values";
 import NextLink from "next/link";
-import type { FC } from "react";
 
 type SocialPlatforms = "LinkedIn" | "Twitter" | "Facebook" | "Instagram";
 
-interface IconSocialProps {
+interface Props {
   variant: SocialPlatforms;
   href: string;
 }
 
-const IconSocial: FC<IconSocialProps> = ({ variant, href }) => {
+const IconSocial = ({ variant, href }: Props) => {
   const fillColor = useColorModeValue(themeColors.black, "white");
   const iconVariants = {
     Facebook: (

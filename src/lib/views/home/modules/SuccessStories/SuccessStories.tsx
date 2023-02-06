@@ -1,10 +1,9 @@
 import { Box, Center, Heading } from "@chakra-ui/react";
 import { SECTION_VERTICAL_SPACING, themeColors } from "@helpers/ui-values";
-import type { FC } from "react";
 
 import ReviewBox from "./ReviewBox";
 
-const SuccessStories: FC = () => {
+const SuccessStories = () => {
   return (
     <Box as="section" py={SECTION_VERTICAL_SPACING} pos="relative">
       <Center mb={["30px", null, "60px", null, "90px"]}>

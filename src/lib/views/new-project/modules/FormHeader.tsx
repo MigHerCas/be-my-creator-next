@@ -1,10 +1,9 @@
 import { Flex, Heading, Box } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import { themeColors } from "@helpers/ui-values";
-import type { FC } from "react";
 import { Tool } from "react-feather";
 
-const FormHeader: FC = () => {
+const FormHeader = () => {
   return (
     <Flex
       justifyContent="center"

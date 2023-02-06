@@ -1,16 +1,14 @@
 import { Box, Center, Flex, Heading, Text } from "@chakra-ui/react";
 import { SECTION_VERTICAL_SPACING, themeColors } from "@helpers/ui-values";
-import type { FC } from "react";
 import { MessageCircle, UserCheck, BarChart } from "react-feather";
 
 import styles from "./styles.module.css";
 
-const HowItWorks: FC = () => {
+const HowItWorks = () => {
   const content = [
     {
-      heading: "Tell us your needs",
-      description:
-        "Give us information and examples of what kind of content your brand needs",
+      heading: "Choose the type of content for your brand",
+      description: "Specify what kind of content your brand needs",
       icon: <MessageCircle stroke={themeColors.pistache} />,
     },
     {
@@ -21,8 +19,7 @@ const HowItWorks: FC = () => {
     },
     {
       heading: "Boost Your Sales",
-      description:
-        "Once you received the video, our team will manage your Ads to convert more",
+      description: "Our team will manage your Ads to convert more",
       icon: <BarChart stroke={themeColors.pistache} />,
     },
   ];

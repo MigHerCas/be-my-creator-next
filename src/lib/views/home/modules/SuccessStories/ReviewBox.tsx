@@ -8,10 +8,9 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { themeColors } from "@helpers/ui-values";
-import type { FC } from "react";
 import { Star, GitHub } from "react-feather";
 
-const ReviewBox: FC = () => {
+const ReviewBox = () => {
   return (
     <Grid
       gridTemplateColumns={["1fr", null, null, "repeat(12, 1fr)"]}
