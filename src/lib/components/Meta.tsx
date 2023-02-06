@@ -10,6 +10,26 @@ const Meta = () => {
       <meta name="format-detection" content="telephone=no" />
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="theme-color" content="#ffffff" />
+      <meta name="language" content="English" />
+      <meta property="og:type" content="website" />
+      <meta name="author" content="BeMyCreator" />
+      <meta
+        name="keywords"
+        content="ugc ads, ugc creator, user generated content creator,  ugc meaning, what is ugc, contenido generado por el usuario, whitelisted ads, influencer marketing, ugc marketing campaign"
+      />
+
+      <meta name="title" content="BeMyCreator | Your UGC agency" />
+      <meta property="og:title" content="BeMyCreator | Your UGC agency" />
+
+      <meta
+        name="description"
+        content="Empower your brand with the help of UGC creators"
+      />
+      <meta
+        property="og:description"
+        content="Empower your brand with the help of UGC creators"
+      />
+
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
       <link
         rel="apple-touch-icon"
