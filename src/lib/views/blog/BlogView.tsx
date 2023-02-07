@@ -14,14 +14,40 @@ import type { NextPageWithLayout } from "@pages/_app";
 import { NextSeo } from "next-seo";
 import NextImage from "next/image";
 import NextLink from "next/link";
-import type { ReactElement } from "react";
+import type { ReactElement, ReactNode } from "react";
 
-const BlogView: NextPageWithLayout = () => {
+export interface BlogPageProps {
+  title: string;
+  subtitle?: string;
+  author: string;
+  date: string;
+  imgSrc?: string;
+  imgCaption?: string;
+  body: Array<ContentBlock>;
+  footerText?: string;
+}
+
+type ContentBlock = {
+  type: "heading" | "paragraph";
+  content: ReactNode;
+};
+
+const BlogView: NextPageWithLayout<BlogPageProps> = ({
+  title,
+  subtitle,
+  body,
+  imgSrc = "",
+  imgCaption = "",
+  author,
+  footerText = "",
+  date,
+}) => {
   return (
     <Box w="full" as="article">
-      <NextSeo title="Blog post | BeMyCreator" />
+      <NextSeo title={`${title} | BeMyCreator`} description={subtitle} />
       {/* Post title and meta */}
       <Box
+        as="header"
         itemScope
         itemType="http://schema.org/Article"
         mx="auto"
@@ -31,120 +57,83 @@ const BlogView: NextPageWithLayout = () => {
         textAlign="center"
       >
         <Heading size="md" m={0}>
-          The End of Moore’s Law?
+          {title}
         </Heading>
         <Heading size="sm" color={themeColors.mediumGrey} my="20px">
-          As chips are getting smaller, prices are going up
+          {subtitle}
         </Heading>
 
         <Box>
           <Text size="xs" mb={1}>
-            BY ANNA-SOFIA LESIV
+            BY {author}
           </Text>
           <Text size="xs" mt={0}>
-            JANUARY 9, 2023
+            {date}
           </Text>
         </Box>
       </Box>
 
-      <Flex
-        position="relative"
-        justifyContent="center"
-        textAlign="center"
-        mx={["-30px", null, "initial"]}
-      >
-        <figure>
-          <NextImage
-            src="https://d24ovhgu8s7341.cloudfront.net/uploads/post/cover/2427/alexandre-debieve-FO7JIlwjOtU-unsplash.jpg"
-            alt="sample text"
-            width={900}
-            height={700}
-            loading="eager"
-          />
+      {imgSrc?.length > 0 ? (
+        <Flex
+          position="relative"
+          justifyContent="center"
+          textAlign="center"
+          mx={["-30px", null, "initial"]}
+        >
+          <figure>
+            <NextImage
+              src={imgSrc}
+              alt={imgCaption}
+              width={900}
+              height={700}
+              loading="eager"
+            />
 
-          <figcaption
-            style={{
-              color: themeColors.mediumGrey,
-              marginTop: "8px",
-              fontSize: "14px",
-            }}
-          >
-            Alexandre Debieve / Unsplash
-          </figcaption>
-        </figure>
-      </Flex>
+            <figcaption
+              style={{
+                color: themeColors.mediumGrey,
+                marginTop: "8px",
+                fontSize: "14px",
+              }}
+            >
+              {imgCaption}
+            </figcaption>
+          </figure>
+        </Flex>
+      ) : null}
 
       {/* Post body */}
       <Box maxW="760px" mx="auto" pt="60px">
-        <Text marginBottom="20px">
-          This phenomenon is responsible for creating the most valuable
-          companies on Earth while completely redefining humanity&apos;s
-          relationship with technology. So it’s particularly startling that all
-          that is now in the past.
-        </Text>
-        <Text marginBottom="20px">
-          “Moore’s Law is dead,” pronounced Nvidia’s CEO Jensen Huang in
-          September 2022, before adding, “The idea that the chip is going to go
-          down in price is a story of the past.”
-        </Text>
-        <Heading size="sm" fontFamily="body" mt="40px" fontSize="30px">
-          A wild west of hardware
-        </Heading>
-        <Text marginBottom="20px">
-          Today’s chips come packed with billions of transistors, capable of
-          executing billions of instructions per second. The smallest
-          transistors on the market are now hitting the 3 nanometer mark, a
-          length equivalent to 15 Silicon atoms. But getting ever smaller
-          presents tremendous financial, let alone physical, challenges, and
-          many are bracing themselves for a world where achieving our digital
-          dreams is only going to get more expensive from here.
-        </Text>
-        <Text marginBottom="20px">
-          Every major company that relies on computing is exploring ways to
-          approach this new normal. Some are rethinking the designs of chips in
-          their devices while others are beefing up the number of silicon
-          experts they have in house. We can trace the evolution of chip
-          economics and design to better understand how we got here, and explore
-          what the future might look like as a new chapter opens up in the world
-          of hardware.
-        </Text>
-        <Heading size="sm" fontFamily="body" mt="40px" fontSize="30px">
-          A wild west of hardware
-        </Heading>
-        <Text marginBottom="20px">
-          Today’s chips come packed with billions of transistors, capable of
-          executing billions of instructions per second. The smallest
-          transistors on the market are now hitting the 3 nanometer mark, a
-          length equivalent to 15 Silicon atoms. But getting ever smaller
-          presents tremendous financial, let alone physical, challenges, and
-          many are bracing themselves for a world where achieving our digital
-          dreams is only going to get more expensive from here.
-        </Text>
-        <Text mb={0}>
-          Every major company that relies on computing is exploring ways to
-          approach this new normal. Some are rethinking the designs of chips in
-          their devices while others are beefing up the number of silicon
-          experts they have in house. We can trace the evolution of chip
-          economics and design to better understand how we got here, and explore
-          what the future might look like as a new chapter opens up in the world
-          of hardware.
-        </Text>
+        {body.map(({ type, content }) => {
+          if (type === "heading") {
+            return (
+              <Heading
+                as="h3"
+                size="sm"
+                fontFamily="body"
+                mt="40px"
+                fontSize="30px"
+              >
+                {content}
+              </Heading>
+            );
+          }
+
+          return <Text marginBottom="20px">{content}</Text>;
+        })}
 
         {/* Post footer */}
         <Box>
+          {footerText?.length ? (
+            <>
+              <Divider borderBottomWidth="2px" opacity="1" my="50px" />
+
+              <Text marginBottom="20px" fontStyle="italic">
+                {footerText}
+              </Text>
+            </>
+          ) : null}
           <Divider borderBottomWidth="2px" opacity="1" my="50px" />
-
-          <Text marginBottom="20px" fontStyle="italic">
-            Unless otherwise noted, source material including quotes in this
-            piece comes from The Silicon Boys: And Their Valley of Dreams by
-            David A. Kaplan.{" "}
-            <Link as={NextLink} href="/" textDecor="underline">
-              Link here
-            </Link>
-          </Text>
-
-          <Divider borderBottomWidth="2px" opacity="1" my="50px" />
-
           <Box textAlign="center" mb="50px">
             <Heading size="sm">What did you think of this post</Heading>
             <Flex justifyContent="center" wrap="wrap" gap={2}>
@@ -181,11 +170,11 @@ const BlogView: NextPageWithLayout = () => {
             <Heading size="md" fontSize="28px" textAlign="center">
               Like this?
               <br />
-              Become a suscriber
+              Start your first UGC project
             </Heading>
 
-            <CTA href="/new-project" variant="secondary" icon="arrow">
-              Create your first campaign
+            <CTA href="/new-project" variant="secondary" icon="arrow" showDot>
+              Find your creators
             </CTA>
           </Flex>
         </Box>
