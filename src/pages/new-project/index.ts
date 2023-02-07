@@ -1,3 +1,3 @@
-import NewProjectView from "@views/new-project/NewProjectView";
+import NewProjectView from "@views/NewProject/NewProjectView";
 
 export default NewProjectView;
