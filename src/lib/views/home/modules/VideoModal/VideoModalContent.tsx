@@ -17,19 +17,6 @@ const VideoModalContent: FC<PropsWithChildren<Props>> = ({
   children,
 }) => {
   const height = use100vh();
-  const circleBackgroundStyles = {
-    content: "''",
-    position: "absolute",
-    width: ["500px", "550px", "600px"],
-    height: ["500px", "550px", "600px"],
-    border: `30px solid ${themeColors.primary}`,
-    top: "50%",
-    left: "50%",
-    backgroundColor: "white",
-    zIndex: "-2",
-    borderRadius: "50%",
-    transform: "translate(-50%, -50%)",
-  };
 
   return (
     <Flex
@@ -50,14 +37,7 @@ const VideoModalContent: FC<PropsWithChildren<Props>> = ({
         alignItems="center"
       >
         <Box pos="absolute" w="100%" h="100%" onClick={onClose} />
-        <Box
-          pos="relative"
-          maxW="406px"
-          borderRadius="20px"
-          bgColor="gray.200"
-          zIndex={2}
-          _before={circleBackgroundStyles}
-        >
+        <Box maxW="406px" borderRadius="20px" bgColor="gray.200" zIndex={2}>
           {children}
           <Flex
             w="100%"
