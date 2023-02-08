@@ -133,8 +133,8 @@ const Stats = () => {
           Run ads using the creator&apos;s handle with{" "}
           <b style={{ color: themeColors.primary }}>BeMyCreator</b>
         </Heading>
-        <CTA href="/new-project" variant="secondary" icon="plus">
-          Create a project
+        <CTA href="/new-project" variant="secondary" icon="plus" showDot>
+          Find your creator
         </CTA>
       </Flex>
       <StatsItems inView={inView} />

@@ -42,8 +42,8 @@ const VideoModalDrawer = ({ isOpen }: Props) => {
               distinctio ducimus amet possimus non, voluptatibus nobis alias
               maxime.
             </Text>
-            <CTA href="/new-project" variant="secondary" icon="arrow">
-              Book a call
+            <CTA href="/strategy-call" variant="secondary" icon="arrow">
+              Free Strategy Call
             </CTA>
           </Box>
         </Flex>

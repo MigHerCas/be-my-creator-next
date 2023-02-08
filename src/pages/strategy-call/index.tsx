@@ -1,3 +1,3 @@
-import StrategyCallView from "@views/strategy-call/StrategyCallView";
+import StrategyCallView from "@views/StrategyCall/StrategyCallView";
 
 export default StrategyCallView;

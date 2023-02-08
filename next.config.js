@@ -15,16 +15,14 @@ module.exports = withBundleAnalyzer({
     NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
     NEXT_PUBLIC_SUPABASE_KEY: process.env.NEXT_PUBLIC_SUPABASE_KEY
   },
-  // TODO: Remove this before production
   images: {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'd24ovhgu8s7341.cloudfront.net',
-      },
-        {
-        protocol: 'https',
         hostname: 'xudvhxwolsxldijaphhq.supabase.co',
+      }, {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
       },
     ],
   },

@@ -1,3 +1,3 @@
-import SuccessView from "@views/success/SuccessView";
+import SuccessView from "@views/Sucess/SuccessView";
 
 export default SuccessView;
