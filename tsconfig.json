@@ -20,6 +20,7 @@
       "@helpers/*": ["lib/helpers/*"],
       "@hooks": ["lib/hooks"],
       "@layout/*": ["lib/layout/*"],
+      "@routes": ["lib/routes/routes.ts"],
       "@styles/*": ["lib/styles/*"],
       "@database/*": ["lib/database/*"],
       "@pages/*": ["pages/*"],
