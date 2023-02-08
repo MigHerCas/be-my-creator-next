@@ -33,17 +33,30 @@ const VideoModalContent: FC<PropsWithChildren<Props>> = ({
         flexDirection="column"
         borderRadius="20px"
         overflow="hidden"
-        justifyContent="center"
+        pt="80px"
+        justifyContent="flex-start"
         alignItems="center"
       >
         <Box pos="absolute" w="100%" h="100%" onClick={onClose} />
-        <Box maxW="406px" borderRadius="20px" bgColor="gray.200" zIndex={2}>
+        <Box
+          pos="relative"
+          maxW="406px"
+          w="100%"
+          minHeight="480px"
+          borderRadius="20px 20px 0 0"
+          bgColor="gray.200"
+          zIndex={2}
+        >
           {children}
           <Flex
+            pos="absolute"
+            bottom={0}
+            left={0}
+            transform="translateY(100%)"
             w="100%"
             alignItems="center"
             justifyContent="center"
-            py="20px"
+            py={["15px", null, "20px"]}
             bgColor={themeColors.darkGrey}
             borderRadius="0 0 20px 20px"
             gap="12px"
