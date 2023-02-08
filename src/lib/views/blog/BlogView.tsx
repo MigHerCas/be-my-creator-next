@@ -108,6 +108,7 @@ const BlogView: NextPageWithLayout<BlogPageProps> = ({
           if (type === "heading") {
             return (
               <Heading
+                key={content?.toString()}
                 as="h3"
                 size="sm"
                 fontFamily="body"
@@ -119,7 +120,11 @@ const BlogView: NextPageWithLayout<BlogPageProps> = ({
             );
           }
 
-          return <Text marginBottom="20px">{content}</Text>;
+          return (
+            <Text key={content?.toString()} marginBottom="20px">
+              {content}
+            </Text>
+          );
         })}
 
         {/* Post footer */}
