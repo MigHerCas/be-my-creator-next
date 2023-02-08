@@ -1,6 +1,7 @@
 import { Flex, Box, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import { themeColors } from "@helpers/ui-values";
+import { Routes } from "@routes";
 import type { FC, PropsWithChildren } from "react";
 import { use100vh } from "react-div-100vh";
 
@@ -51,7 +52,12 @@ const VideoModalContent: FC<PropsWithChildren<Props>> = ({
             <Text size="md" mb={0} color="white">
               Like it?
             </Text>
-            <CTA href="/new-project" variant="secondary" icon="arrow" isSmall>
+            <CTA
+              href={Routes.newProject}
+              variant="secondary"
+              icon="arrow"
+              isSmall
+            >
               Try it for free!
             </CTA>
           </Flex>

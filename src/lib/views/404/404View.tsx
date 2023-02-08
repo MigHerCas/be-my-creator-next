@@ -1,6 +1,7 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import { HEADER_HEIGHT } from "@helpers/ui-values";
+import { Routes } from "@routes";
 import { NextSeo } from "next-seo";
 import NextImage from "next/image";
 
@@ -32,7 +33,7 @@ const Page404View = () => {
           </Text>
 
           <CTA
-            href="/"
+            href={Routes.home}
             variant="primary"
             icon="arrow"
             customStyles={{ mx: "auto" }}

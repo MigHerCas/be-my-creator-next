@@ -2,6 +2,7 @@ import { Box, Flex, Heading, Text, useColorMode } from "@chakra-ui/react";
 import { themeColors } from "@helpers/ui-values";
 import Layout from "@layout/Layout";
 import type { NextPageWithLayout } from "@pages/_app";
+import { Routes } from "@routes";
 import { NextSeo } from "next-seo";
 import type { ReactElement } from "react";
 import { useEffect } from "react";
@@ -60,7 +61,7 @@ StrategyCallView.getLayout = function getLayout(page: ReactElement) {
   return (
     <Layout
       mainCTA={{
-        href: "/new-project",
+        href: Routes.newProject,
         text: "Create a project",
       }}
     >

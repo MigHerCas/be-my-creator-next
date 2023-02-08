@@ -1,6 +1,7 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import { themeColors } from "@helpers/ui-values";
+import { Routes } from "@routes";
 import { Check } from "react-feather";
 
 import CalendlyIntegration from "lib/shared/modules/CalendlyIntegration";
@@ -28,7 +29,7 @@ const FormCompleted = () => {
       <Text>We will contact you now. Book a call with us now!</Text>
 
       <CalendlyIntegration />
-      <CTA href="/" variant="primary" icon="arrow">
+      <CTA href={Routes.home} variant="primary" icon="arrow">
         Back home
       </CTA>
     </Flex>

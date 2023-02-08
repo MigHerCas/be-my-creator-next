@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
+import { Routes } from "@routes";
 
 import { FAQ_CONTENT } from "./FAQ_CONTENT";
 import FAQItem from "./FAQItem";
@@ -106,7 +107,7 @@ const FAQContainer = () => {
       {/* CTA */}
       <CTA
         variant="primary"
-        href="/strategy-call"
+        href={Routes.strategyCall}
         customStyles={{ mx: "auto" }}
         icon="arrow"
       >
