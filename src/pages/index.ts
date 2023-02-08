@@ -1,4 +1,4 @@
-import HomeView from "@views/Home/HomeView";
+import HomeView from "@views/home/HomeView";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 export async function getServerSideProps({
