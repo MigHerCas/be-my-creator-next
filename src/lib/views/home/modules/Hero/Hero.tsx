@@ -2,7 +2,7 @@ import { Heading, Grid, GridItem, Flex, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
 // import CatchyBanner from "@views/Home/modules/CatchyBanner";
-import HeroPlayer from "@views/Home/modules/Hero/HeroPlayer";
+import HeroPlayer from "@views/home/modules/Hero/HeroPlayer";
 
 const Hero = () => {
   return (

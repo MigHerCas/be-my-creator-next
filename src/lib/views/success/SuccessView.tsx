@@ -1,6 +1,6 @@
 import Layout from "@layout/Layout";
 import type { NextPageWithLayout } from "@pages/_app";
-import FormCompleted from "@views/NewProject/modules/FormCompleted";
+import FormCompleted from "@views/new-project/modules/FormCompleted";
 import type { ReactElement } from "react";
 
 const SuccessView: NextPageWithLayout = () => {

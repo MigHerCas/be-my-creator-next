@@ -1,6 +1,6 @@
 import Layout from "@layout/Layout";
-import type { BlogPageProps } from "@views/Blog/BlogView";
-import BlogView from "@views/Blog/BlogView";
+import type { BlogPageProps } from "@views/blog/BlogView";
+import BlogView from "@views/blog/BlogView";
 import type { ReactElement } from "react";
 
 const content: BlogPageProps = {

@@ -1,6 +1,6 @@
 import Layout from "@layout/Layout";
-import type { PlainPageProps } from "@views/PlainPage/PlainPageView";
-import PlainPageView from "@views/PlainPage/PlainPageView";
+import type { PlainPageProps } from "@views/plain-page/PlainPageView";
+import PlainPageView from "@views/plain-page/PlainPageView";
 import type { ReactElement } from "react";
 
 const content: PlainPageProps = {
