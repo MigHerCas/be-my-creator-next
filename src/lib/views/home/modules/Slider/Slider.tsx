@@ -1,6 +1,7 @@
 import { Box, Center, Flex, Heading, useDisclosure } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
+import { Routes } from "@routes";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 
@@ -86,10 +87,10 @@ const Slider = () => {
         wrap="wrap"
         px="20px"
       >
-        <CTA href="/new-project" variant="secondary" icon="plus">
+        <CTA href={Routes.newProject} variant="secondary" icon="plus">
           Start your first project
         </CTA>
-        <CTA href="/strategy-call" variant="primary" icon="arrow">
+        <CTA href={Routes.strategyCall} variant="primary" icon="arrow">
           Book a demo
         </CTA>
       </Flex>

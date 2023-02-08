@@ -12,6 +12,7 @@ import CTA from "@components/cta/CTA";
 import Logo from "@components/logo/Logo";
 import { APP_MAX_WIDTH, HEADER_HEIGHT, themeColors } from "@helpers/ui-values";
 import { useLockedBody } from "@hooks";
+import { Routes } from "@routes";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 import type { FC, SyntheticEvent } from "react";
@@ -54,7 +55,7 @@ const DesktopNavigation = ({
     />
 
     <Box m={{ base: "auto", md: "0" }}>
-      <Logo onClickCallback={(e) => closeMenuOnClickCallback(e, "/")} />
+      <Logo onClickCallback={(e) => closeMenuOnClickCallback(e, Routes.home)} />
     </Box>
     <Flex alignItems="center" gap={4}>
       <HStack as="nav" spacing={4} display={{ base: "none", md: "flex" }}>
@@ -154,19 +155,19 @@ const MobileNavigation = ({
           </Link>
         ))}
         <CTA
-          href="/new-project"
+          href={Routes.newProject}
           variant="secondary"
           icon="plus"
           customStyles={{ my: 2 }}
-          onClick={(e) => closeMenuOnClickCallback(e, "/new-project")}
+          onClick={(e) => closeMenuOnClickCallback(e, Routes.newProject)}
         >
           Start your first project
         </CTA>
         <CTA
-          href="/strategy-call"
+          href={Routes.strategyCall}
           variant="primary"
           icon="arrow"
-          onClick={(e) => closeMenuOnClickCallback(e, "/strategy-call")}
+          onClick={(e) => closeMenuOnClickCallback(e, Routes.strategyCall)}
         >
           Free Strategy Call
         </CTA>

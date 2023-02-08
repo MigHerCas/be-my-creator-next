@@ -1,4 +1,5 @@
 import FixedBlobs from "@layout/modules/FixedBlobs";
+import { Routes } from "@routes";
 import type { ReactNode } from "react";
 
 import Footer from "./modules/Footer";
@@ -19,7 +20,7 @@ const Layout = ({
   children,
   mainCTA = {
     text: "Book a call",
-    href: "/strategy-call",
+    href: Routes.strategyCall,
   },
   fullHeightMain = false,
   showOnlyMain = false,

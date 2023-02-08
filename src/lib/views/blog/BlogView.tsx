@@ -11,6 +11,7 @@ import CTA from "@components/cta/CTA";
 import { themeColors } from "@helpers/ui-values";
 import Layout from "@layout/Layout";
 import type { NextPageWithLayout } from "@pages/_app";
+import { Routes } from "@routes";
 import { NextSeo } from "next-seo";
 import NextImage from "next/image";
 import NextLink from "next/link";
@@ -143,7 +144,7 @@ const BlogView: NextPageWithLayout<BlogPageProps> = ({
             <Heading size="sm">What did you think of this post</Heading>
             <Flex justifyContent="center" wrap="wrap" gap={2}>
               {["Amazing", "Good", "Meh", "Bad"].map((opinion) => (
-                <Link as={NextLink} href="/">
+                <Link as={NextLink} href={Routes.home}>
                   <Badge
                     key={opinion}
                     colorScheme="gray"
@@ -178,7 +179,12 @@ const BlogView: NextPageWithLayout<BlogPageProps> = ({
               Start your first UGC project
             </Heading>
 
-            <CTA href="/new-project" variant="secondary" icon="arrow" showDot>
+            <CTA
+              href={Routes.newProject}
+              variant="secondary"
+              icon="arrow"
+              showDot
+            >
               Find your creators
             </CTA>
           </Flex>

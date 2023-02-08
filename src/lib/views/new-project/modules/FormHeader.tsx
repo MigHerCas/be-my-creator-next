@@ -1,6 +1,7 @@
 import { Flex, Heading, Box } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import { themeColors } from "@helpers/ui-values";
+import { Routes } from "@routes";
 import { Tool } from "react-feather";
 
 const FormHeader = () => {
@@ -14,7 +15,7 @@ const FormHeader = () => {
       wrap="wrap"
     >
       <CTA
-        href="/"
+        href={Routes.home}
         variant="primary"
         icon="arrowLeft"
         customStyles={{

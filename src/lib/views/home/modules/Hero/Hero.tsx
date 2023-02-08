@@ -1,6 +1,7 @@
 import { Heading, Grid, GridItem, Flex, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
+import { Routes } from "@routes";
 // import CatchyBanner from "@views/Home/modules/CatchyBanner";
 import HeroPlayer from "@views/home/modules/Hero/HeroPlayer";
 
@@ -45,10 +46,10 @@ const Hero = () => {
           gap={4}
           wrap="wrap"
         >
-          <CTA href="/new-project" variant="secondary" icon="plus" showDot>
+          <CTA href={Routes.newProject} variant="secondary" icon="plus" showDot>
             Find your creator
           </CTA>
-          <CTA href="/strategy-call" variant="primary" icon="arrow">
+          <CTA href={Routes.strategyCall} variant="primary" icon="arrow">
             Free Strategy Call
           </CTA>
         </Flex>

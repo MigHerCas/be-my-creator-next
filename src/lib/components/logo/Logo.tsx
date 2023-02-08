@@ -1,17 +1,19 @@
 import { Link, useColorModeValue, VisuallyHidden } from "@chakra-ui/react";
 import { themeColors } from "@helpers/ui-values";
+import { Routes } from "@routes";
 import NextLink from "next/link";
 import type { MouseEventHandler } from "react";
 
 interface Props {
   height?: string;
+
   onClickCallback?: MouseEventHandler<HTMLAnchorElement>;
 }
 
 const Logo = ({ height = "90", onClickCallback = () => {} }: Props) => {
   const fillColor = useColorModeValue(themeColors.darkGrey, "white");
   return (
-    <Link href="/" as={NextLink} onClick={onClickCallback}>
+    <Link href={Routes.home} as={NextLink} onClick={onClickCallback}>
       <VisuallyHidden>BeMyCreator Logo</VisuallyHidden>
       <svg
         fill="none"

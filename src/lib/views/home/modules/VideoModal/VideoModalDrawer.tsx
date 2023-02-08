@@ -1,6 +1,7 @@
 import { Box, Divider, Fade, Flex, Heading, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import { themeColors } from "@helpers/ui-values";
+import { Routes } from "@routes";
 import { use100vh } from "react-div-100vh";
 
 interface Props {
@@ -29,7 +30,7 @@ const VideoModalDrawer = ({ isOpen }: Props) => {
               distinctio ducimus amet possimus non, voluptatibus nobis alias
               maxime.
             </Text>
-            <CTA href="/new-project" variant="primary" icon="plus" showDot>
+            <CTA href={Routes.newProject} variant="primary" icon="plus" showDot>
               Start now
             </CTA>
           </Box>
@@ -42,7 +43,7 @@ const VideoModalDrawer = ({ isOpen }: Props) => {
               distinctio ducimus amet possimus non, voluptatibus nobis alias
               maxime.
             </Text>
-            <CTA href="/strategy-call" variant="secondary" icon="arrow">
+            <CTA href={Routes.strategyCall} variant="secondary" icon="arrow">
               Free Strategy Call
             </CTA>
           </Box>
