@@ -9,6 +9,8 @@
 
 [![Depfu](https://badges.depfu.com/badges/9e426e58f99c3bd470987a3c6b014a96/overview.svg)](https://depfu.com/github/sozonome/nextarter-chakra?project_id=26148) [![Depfu](https://badges.depfu.com/badges/9e426e58f99c3bd470987a3c6b014a96/count.svg)](https://depfu.com/github/sozonome/nextarter-chakra?project_id=26148)
 
+Live demo: https://be-my-creator-next.vercel.app/
+
 ## Stack
 Next.js - ChakraUI - TypeScript - Supabase
 
@@ -31,7 +33,5 @@ Own design and development
 ```bash
 yarn dev
 ```
-
-Live demo: https://be-my-creator-next.vercel.app/
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
