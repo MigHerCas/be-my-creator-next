@@ -27,4 +27,6 @@
 yarn dev
 ```
 
+Live demo: https://be-my-creator-next.vercel.app/
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
