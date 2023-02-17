@@ -3,7 +3,7 @@ import { Box } from "@chakra-ui/react";
 const WhatsAppCTA = () => {
   return (
     <Box
-      href="https://api.whatsapp.com/send?phone=34657772532&text=Hola"
+      href="https://api.whatsapp.com/send?phone=34655572532&text=Hola"
       as="a"
       target="_blank"
       p="6px"
