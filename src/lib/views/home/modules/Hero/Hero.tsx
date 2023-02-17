@@ -2,7 +2,7 @@ import { Heading, Grid, GridItem, Flex, Text } from "@chakra-ui/react";
 import CTA from "@components/cta/CTA";
 import { SECTION_VERTICAL_SPACING } from "@helpers/ui-values";
 import { Routes } from "@routes";
-// import CatchyBanner from "@views/Home/modules/CatchyBanner";
+import CatchyBanner from "@views/home/modules/CatchyBanner";
 import HeroPlayer from "@views/home/modules/Hero/HeroPlayer";
 
 const Hero = () => {
@@ -22,7 +22,7 @@ const Hero = () => {
         textAlign={["center", null, null, "initial"]}
         px={["30px", null, null, null, "60px"]}
       >
-        {/* <CatchyBanner /> */}
+        <CatchyBanner />
         <Heading
           as="h1"
           size="lg"
@@ -57,7 +57,7 @@ const Hero = () => {
 
       {/* Right side */}
       <GridItem colStart={[1, null, null, 8]} colEnd={-1}>
-        <HeroPlayer source="https://xudvhxwolsxldijaphhq.supabase.co/storage/v1/object/sign/main-bucket/videos/629a1b846dd7d3528640ea03_How%20To%20Example%20Home-transcode%20(1).mp4?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtYWluLWJ1Y2tldC92aWRlb3MvNjI5YTFiODQ2ZGQ3ZDM1Mjg2NDBlYTAzX0hvdyBUbyBFeGFtcGxlIEhvbWUtdHJhbnNjb2RlICgxKS5tcDQiLCJpYXQiOjE2NzQ2MzIwMDcsImV4cCI6MTY3NTIzNjgwN30.FWggb_PrjieXhiZpVdKKl8jN0FEaOgcw9qKLbpCQZ2o&t=2023-01-25T07%3A33%3A27.540Z" />
+        <HeroPlayer source="https://xudvhxwolsxldijaphhq.supabase.co/storage/v1/object/sign/main-bucket/videos/629a1cc464c6711d28c1743e_Lifestyle%20Example%20Home-transcode.mp4?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtYWluLWJ1Y2tldC92aWRlb3MvNjI5YTFjYzQ2NGM2NzExZDI4YzE3NDNlX0xpZmVzdHlsZSBFeGFtcGxlIEhvbWUtdHJhbnNjb2RlLm1wNCIsInRyYW5zZm9ybWF0aW9ucyI6IiIsImlhdCI6MTY3MzI2Mzk5NywiZXhwIjoxOTg4NjIzOTk3fQ.I2ZdO-uModdapk62ihAcfRWIL9Rge9FOYZ3pMPR-K-M&t=2023-01-09T11%3A33%3A17.352Z" />
       </GridItem>
     </Grid>
   );
