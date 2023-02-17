@@ -13,7 +13,7 @@ const HeroPlayer: FC<Props> = ({ source }) => {
     controls: false,
     preload: "auto",
     poster:
-      "https://xudvhxwolsxldijaphhq.supabase.co/storage/v1/object/sign/main-bucket/videos/629a1b846dd7d3528640ea03_How%20To%20Example%20Home-transcode%20(1).mp4?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtYWluLWJ1Y2tldC92aWRlb3MvNjI5YTFiODQ2ZGQ3ZDM1Mjg2NDBlYTAzX0hvdyBUbyBFeGFtcGxlIEhvbWUtdHJhbnNjb2RlICgxKS5tcDQiLCJpYXQiOjE2NzY2MjUzMTgsImV4cCI6MTcwODE2MTMxOH0.TAneDUGLXgLnWA-BLFucWtS2v5eYVpVca_mGSbJI4ic&t=2023-02-17T09%3A15%3A18.151Z",
+      "https://xudvhxwolsxldijaphhq.supabase.co/storage/v1/object/sign/main-bucket/images/video-capture-4965.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtYWluLWJ1Y2tldC9pbWFnZXMvdmlkZW8tY2FwdHVyZS00OTY1LnBuZyIsImlhdCI6MTY3NDE5OTM4NCwiZXhwIjoxNzA1NzM1Mzg0fQ.fg8qFO8OOLbrq8jGIVtCP6FbvMEPtZJ0v6AZ--R6ONs&t=2023-01-20T07%3A23%3A04.105Z",
     playsInline: true,
     "webkit-playsinline": "true",
     controlsList: "nodownload",
@@ -26,7 +26,7 @@ const HeroPlayer: FC<Props> = ({ source }) => {
   const beforePseudoElementStyling = {
     content: '""',
     backgroundImage:
-      "url(https://xudvhxwolsxldijaphhq.supabase.co/storage/v1/object/sign/main-bucket/videos/629a1b846dd7d3528640ea03_How%20To%20Example%20Home-transcode%20(1).mp4?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtYWluLWJ1Y2tldC92aWRlb3MvNjI5YTFiODQ2ZGQ3ZDM1Mjg2NDBlYTAzX0hvdyBUbyBFeGFtcGxlIEhvbWUtdHJhbnNjb2RlICgxKS5tcDQiLCJpYXQiOjE2NzY2MjUzMTgsImV4cCI6MTcwODE2MTMxOH0.TAneDUGLXgLnWA-BLFucWtS2v5eYVpVca_mGSbJI4ic&t=2023-02-17T09%3A15%3A18.151Z)",
+      "url(https://xudvhxwolsxldijaphhq.supabase.co/storage/v1/object/sign/main-bucket/frames/frame-tiktok.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtYWluLWJ1Y2tldC9mcmFtZXMvZnJhbWUtdGlrdG9rLndlYnAiLCJpYXQiOjE2NzY2MjYwNzQsImV4cCI6MTcwODE2MjA3NH0.rGhk89f28NvGcB2yxvJlmnD52FH_hoI8_oZkfzl85Cw&t=2023-02-17T09%3A27%3A54.642Z)",
     width: ["264px", null, null, "310px"],
     height: ["545", null, null, "640px"],
     backgroundRepeat: "no-repeat",
